@@ -1,0 +1,9 @@
+[submodule "ReplicatedGDB"]
+	path = ReplicatedGDB
+	url = git@github.com:deadlockcharlie/ReplicatedGDB.git
+[submodule "replicatedGDBLF"]
+	path = replicatedGDBLF
+	url = git@github.com:deadlockcharlie/replicatedGDBLF.git
+[submodule "YCSB"]
+	path = YCSB
+	url = git@github.com:deadlockcharlie/YCSB.git

@@ -1,0 +1,39 @@
+services:
+  orientdb1:
+    image: orientdb:3.2.7
+    container_name: orientdb1
+    environment:
+      - ORIENTDB_ROOT_PASSWORD=rootpwd
+      - ORIENTDB_DATABASE=demo
+      - ORIENTDB_MODE=distributed
+    ports:
+      - "2424:2424"   # binary protocol
+      - "2480:2480"   # web console
+    networks:
+      - orient-net
+
+  orientdb2:
+    image: orientdb:3.2.7
+    container_name: orientdb2
+    environment:
+      - ORIENTDB_ROOT_PASSWORD=rootpwd
+      - ORIENTDB_DATABASE=demo
+      - ORIENTDB_MODE=distributed
+      - ORIENTDB_NODE_NAME=orientdb2
+    networks:
+      - orient-net
+
+  orientdb3:
+    image: orientdb:3.2.7
+    container_name: orientdb3
+    environment:
+      - ORIENTDB_ROOT_PASSWORD=rootpwd
+      - ORIENTDB_DATABASE=demo
+      - ORIENTDB_MODE=distributed
+      - ORIENTDB_NODE_NAME=orientdb3
+    networks:
+      - orient-net
+
+networks:
+  orient-net:
+    driver: bridge

@@ -1,0 +1,121 @@
+version: "3.8"
+
+services:
+  agent1:
+    image: arangodb:3.11
+    container_name: agent1
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8531
+              --agency.activate true
+              --agency.my-address tcp://agent1:8531
+              --agency.size 3
+              --agency.supervision true
+              --log.output -
+    networks:
+      - arango-net
+
+  agent2:
+    image: arangodb:3.11
+    container_name: agent2
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8531
+              --agency.activate true
+              --agency.my-address tcp://agent2:8531
+              --agency.endpoint tcp://agent1:8531
+              --agency.size 3
+              --agency.supervision true
+              --log.output -
+    networks:
+      - arango-net
+
+  agent3:
+    image: arangodb:3.11
+    container_name: agent3
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8531
+              --agency.activate true
+              --agency.my-address tcp://agent3:8531
+              --agency.endpoint tcp://agent1:8531
+              --agency.size 3
+              --agency.supervision true
+              --log.output -
+    networks:
+      - arango-net
+    
+
+  coordinator1:
+    image: arangodb:3.11
+    container_name: coordinator1
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8529
+              --cluster.my-role COORDINATOR
+              --cluster.my-address tcp://coordinator1:8529
+              --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
+              --log.output -
+    ports:
+      - "8529:8529"
+    networks:
+      - arango-net
+
+  dbserver1:
+    image: arangodb:3.11
+    container_name: dbserver1
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8530
+              --cluster.my-role DBSERVER
+              --cluster.my-address tcp://dbserver1:8530
+              --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
+              --log.output -
+    networks:
+      - arango-net
+
+  dbserver2:
+    image: arangodb:3.11
+    container_name: dbserver2
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8530
+              --cluster.my-role DBSERVER
+              --cluster.my-address tcp://dbserver2:8530
+              --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
+              --log.output -
+    networks:
+      - arango-net
+
+  dbserver3:
+    image: arangodb:3.11
+    container_name: dbserver3
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8530
+              --cluster.my-role DBSERVER
+              --cluster.my-address tcp://dbserver3:8530
+              --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
+              --log.output -
+    networks:
+      - arango-net
+
+
+networks:
+  arango-net:
+    driver: bridge
