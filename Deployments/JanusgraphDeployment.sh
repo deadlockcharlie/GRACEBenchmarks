@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-COMPOSE_FILE="./Dockerfiles/JanusgraphCassandra1Replica"
+COMPOSE_FILE="./Deployments/Dockerfiles/JanusgraphCassandra1Replica"
 
 echo "🚀 Starting Cassandra and JanusGraph containers..."
 docker compose -f $COMPOSE_FILE up -d

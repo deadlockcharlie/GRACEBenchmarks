@@ -37,140 +37,138 @@ echo "Compiling YCSB"
 cd $YCSB_DIRECTORY
 mvn -q clean install -DskipTests
 
-# Benchmark with GRACE
-echo "Benchmarking with GRACE"
-# Deploy the replicas
-cd $GRACE_DIRECTORY
+# # Benchmark with GRACE
+# echo "Benchmarking with GRACE"
+# # Deploy the replicas
+# cd $GRACE_DIRECTORY
 
-#Create a distribution configuration
-cat > $DIST_CONF <<EOL
-{
-  "base_website_port": 7474,
-  "base_protocol_port": 7687,
-  "base_app_port": 3000,
-  "base_prometheus_port": 9090,
-  "base_grafana_port": 5000,
-  "provider_port": 1234,
-  "provider": true,
-  "preload_data": false,
-  "dbs" : [
-    {
-     "database": "memgraph", 
-      "password": "verysecretpassword",
-      "user": "pandey",
-      "app_log_level": "error"
-    }
-  ]
-}
-EOL
+# #Create a distribution configuration
+# cat > $DIST_CONF <<EOL
+# {
+#   "base_website_port": 7474,
+#   "base_protocol_port": 7687,
+#   "base_app_port": 3000,
+#   "base_prometheus_port": 9090,
+#   "base_grafana_port": 5000,
+#   "provider_port": 1234,
+#   "provider": true,
+#   "preload_data": false,
+#   "dbs" : [
+#     {
+#      "database": "memgraph", 
+#       "password": "verysecretpassword",
+#       "user": "pandey",
+#       "app_log_level": "error"
+#     }
+#   ]
+# }
+# EOL
 
-# Start the replicas
-python3 Deployment.py up $DIST_CONF
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
-#Run the benchmark with grace workload
-echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/GRACE/results.txt
-# Switch to GRACE directory
-cd $GRACE_DIRECTORY
-# Tear down the deployment
-python3 Deployment.py down $DIST_CONF
-# Remove the distribution configuration file
-rm $DIST_CONF
-
-
-
-
-# Benchmark with Memgraph
-echo "Running YCSB benchmark with Memgraph workload"
-#Switch to LF directory
-cd $LF_DIRECTORY
-#Create a distribution configuration
-cat > $DIST_CONF <<EOL
-{
-  "base_website_port": 7474,
-  "base_protocol_port": 7687,
-  "base_app_port": 3000,
-  "preload_data": false,
-  "dbs" : [
-    {
-      "database": "memgraph", 
-      "password": "verysecretpassword",
-      "user": "pandey",
-      "app_log_level": "info"
-    }
-  ]
-}
-EOL
-
-# Start the replicas
-python3 Deployment.py up $DIST_CONF
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
-#Run the benchmark with graphdb workload
-bin/ycsb.sh run grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/MemGraph/results.txt
-# Switch to LF directory
-cd $LF_DIRECTORY
-# Tear down the deployment
-python3 Deployment.py down $DIST_CONF
-# Remove the distribution configuration file
-rm $DIST_CONF
+# # Start the replicas
+# python3 Deployment.py up $DIST_CONF
+# # Switch to the YCSB directory
+# cd $YCSB_DIRECTORY
+# #Run the benchmark with grace workload
+# echo "Running YCSB benchmark with Grace workload"
+# bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/GRACE/results.txt
+# # Switch to GRACE directory
+# cd $GRACE_DIRECTORY
+# # Tear down the deployment
+# python3 Deployment.py down $DIST_CONF
+# # Remove the distribution configuration file
+# rm $DIST_CONF
 
 
 
 
+# # Benchmark with Memgraph
+# echo "Running YCSB benchmark with Memgraph workload"
+# #Switch to LF directory
+# cd $LF_DIRECTORY
+# #Create a distribution configuration
+# cat > $DIST_CONF <<EOL
+# {
+#   "base_website_port": 7474,
+#   "base_protocol_port": 7687,
+#   "base_app_port": 3000,
+#   "preload_data": false,
+#   "dbs" : [
+#     {
+#       "database": "memgraph", 
+#       "password": "verysecretpassword",
+#       "user": "pandey",
+#       "app_log_level": "info"
+#     }
+#   ]
+# }
+# EOL
 
-# Benchmark with Neo4j
-echo "Running YCSB benchmark with Neo4j workload"
-# Switch to Neo4j directory
-cd $LF_DIRECTORY
-#Create a distribution configuration
-cat > $DIST_CONF <<EOL
-{
-  "base_website_port": 7474,
-  "base_protocol_port": 7687,
-  "base_app_port": 3000,
-  "preload_data": false,
-  "dbs" : [
-    {
-      "database": "neo4j", 
-      "password": "verysecretpassword",
-      "user": "pandey",
-      "app_log_level": "info"
-    }
-  ]
-}
-EOL
-
-# Start the replicas
-python3 Deployment.py up $DIST_CONF
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
-#Run the benchmark with graphdb workload
-bin/ycsb.sh run grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4j/results.txt
-# Switch to Neo4j directory
-cd $LF_DIRECTORY
-# Tear down the deployment
-python3 Deployment.py down $DIST_CONF
-# Remove the distribution configuration file
-rm $DIST_CONF
-
+# # Start the replicas
+# python3 Deployment.py up $DIST_CONF
+# # Switch to the YCSB directory
+# cd $YCSB_DIRECTORY
+# #Run the benchmark with graphdb workload
+# bin/ycsb.sh run grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/MemGraph/results.txt
+# # Switch to LF directory
+# cd $LF_DIRECTORY
+# # Tear down the deployment
+# python3 Deployment.py down $DIST_CONF
+# # Remove the distribution configuration file
+# rm $DIST_CONF
 
 
-# Benchmark with Arangodb
-echo "Running YCSB benchmark with ArangoDB workload"
-cd $DEPLOYMENTS_DIR
-./ArangoDBDeployment.sh
 
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
-#Run the benchmark with graphdb workload
-bin/ycsb.sh run arangodb  -P workloads/workload_grace  -p DBTYPE="arangodb" -p DBURI="http://localhost:8529" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/ArangoDB/results.txt
 
-#Shut down replicas
-docker stop arangodb1
 
-echo "Benchmarking completed. Results are stored in the Results directory."
+# # Benchmark with Neo4j
+# echo "Running YCSB benchmark with Neo4j workload"
+# # Switch to Neo4j directory
+# cd $LF_DIRECTORY
+# #Create a distribution configuration
+# cat > $DIST_CONF <<EOL
+# {
+#   "base_website_port": 7474,
+#   "base_protocol_port": 7687,
+#   "base_app_port": 3000,
+#   "preload_data": false,
+#   "dbs" : [
+#     {
+#       "database": "neo4j", 
+#       "password": "verysecretpassword",
+#       "user": "pandey",
+#       "app_log_level": "info"
+#     }
+#   ]
+# }
+# EOL
+
+# # Start the replicas
+# python3 Deployment.py up $DIST_CONF
+# # Switch to the YCSB directory
+# cd $YCSB_DIRECTORY
+# #Run the benchmark with graphdb workload
+# bin/ycsb.sh run grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4j/results.txt
+# # Switch to Neo4j directory
+# cd $LF_DIRECTORY
+# # Tear down the deployment
+# python3 Deployment.py down $DIST_CONF
+# # Remove the distribution configuration file
+# rm $DIST_CONF
+
+
+
+# # Benchmark with Arangodb
+# echo "Running YCSB benchmark with ArangoDB workload"
+# cd $DEPLOYMENTS_DIR
+# ./ArangoDBDeployment.sh
+
+# # Switch to the YCSB directory
+# cd $YCSB_DIRECTORY
+# #Run the benchmark with graphdb workload
+# bin/ycsb.sh run arangodb  -P workloads/workload_grace  -p DBTYPE="arangodb" -p DBURI="http://localhost:8529" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/ArangoDB/results.txt
+
+# #Shut down replicas
+# docker stop arangodb1
 
 
 # Benchmark with MongoDB
