@@ -6,12 +6,27 @@ services:
     ports:
       - "27017:27017"
 
+  mongo1-netem:
+    image: gaiadocker/iproute2
+    container_name: mongo1-netem
+    network_mode: "service:mongo1"   # share net namespace with mongo1
+    cap_add:
+      - NET_ADMIN
+    command: sleep infinity
+
   mongo2:
     image: mongo:latest
     container_name: mongo2
     command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
     ports:
       - "27018:27017"
+  mongo2-netem:
+    image: gaiadocker/iproute2
+    container_name: mongo2-netem
+    network_mode: "service:mongo2"   # share net namespace with mongo2
+    cap_add:
+      - NET_ADMIN
+    command: sleep infinity
 
   mongo3:
     image: mongo:latest
@@ -19,3 +34,11 @@ services:
     command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
     ports:
       - "27019:27017"
+  mongo3-netem:
+    image: gaiadocker/iproute2
+    container_name: mongo3-netem
+    network_mode: "service:mongo3"   # share net namespace with mongo1
+    cap_add:
+      - NET_ADMIN
+    command: sleep infinity
+    
