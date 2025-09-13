@@ -1,0 +1,35 @@
+services:
+  cassandra1:
+    image: cassandra:latest
+    container_name: cassandra1
+    environment:
+      - CASSANDRA_CLUSTER_NAME=JanusGraphCluster
+      - CASSANDRA_SEEDS=cassandra1
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
+    ports:
+      - "9042:9042"
+    networks:
+      - janus-net
+
+  janusgraph:
+    image: janusgraph/janusgraph:latest
+    container_name: janusgraph
+    environment:
+      - JANUSGRAPH_STORAGE_BACKEND=cassandra
+      - JANUSGRAPH_STORAGE_HOSTS=cassandra1
+      - JANUSGRAPH_STORAGE_CASSANDRA_CONSISTENCY_LEVEL=QUORUM
+      - JANUSGRAPH_JVM_OPTS=-Xms256m -Xmx512m
+    healthcheck:
+      test: ["CMD-SHELL", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "8182:8182"
+    networks:
+      - janus-net
+
+networks:
+  janus-net:
+    driver: bridge
