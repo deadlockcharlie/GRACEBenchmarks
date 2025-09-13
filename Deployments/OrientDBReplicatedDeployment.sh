@@ -22,3 +22,4 @@ docker exec orientdb1 bash -c 'echo "CREATE DATABASE remote:localhost/demo root 
 
 echo "🎉 OrientDB distributed cluster is ready!"
 echo "Access the web console at http://localhost:2480 (user: root, password: rootpwd)"
+
