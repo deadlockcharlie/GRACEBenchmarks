@@ -3,639 +3,109 @@ Data integrity is enabled.
 Initializing db: site.ycsb.db.JanusGraphClient
 Using Database: site.ycsb.DBWrapper
 Starting Janusgraph client
-{deleteproportion=1, recordcount=1000000, operationcount=20000000, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=janusgraph, dotransactions=true, createproportion=1, DBURI=http://localhost:8182, maxexecutiontime=60, readallfields=true, db=site.ycsb.db.JanusGraphClient, requestdistribution=latest}
+{deleteproportion=1, recordcount=10000, operationcount=20000000, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=janusgraph, dotransactions=true, createproportion=1, DBURI=http://localhost:8182, maxexecutiontime=60, readallfields=true, db=site.ycsb.db.JanusGraphClient, requestdistribution=latest}
 DBTYPE: janusgraph
 DBURI: http://localhost:8182
 Connected to Janusgraph successfully
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in setEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in setEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-Exception in removeEdgeProperty: null
-Exception in removeVertexProperty: null
-[OVERALL], RunTime(ms), 60045
-[OVERALL], Throughput(ops/sec), 40.05329336331085
+[OVERALL], RunTime(ms), 60010
+[OVERALL], Throughput(ops/sec), 43.70938176970505
 [TOTAL_GCS_G1_Young_Generation], Count, 2
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 73
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.12157548505287702
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 46
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.07665389101816364
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
 [TOTAL_GCs], Count, 2
-[TOTAL_GC_TIME], Time(ms), 73
-[TOTAL_GC_TIME_%], Time(%), 0.12157548505287702
-[REMOVE_VERTEX], Operations, 156
-[REMOVE_VERTEX], AverageLatency(us), 51019.333333333336
-[REMOVE_VERTEX], MinLatency(us), 31712
-[REMOVE_VERTEX], MaxLatency(us), 119295
-[REMOVE_VERTEX], 50thPercentileLatency(us), 49151
-[REMOVE_VERTEX], 95thPercentileLatency(us), 73279
-[REMOVE_VERTEX], 99thPercentileLatency(us), 98879
-[REMOVE_VERTEX], Return=OK, 156
-[GET_EDGE_WITH_PROPERTY], Operations, 174
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 5790.724137931034
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 3046
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 19007
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 5055
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 9607
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 18335
-[GET_EDGE_WITH_PROPERTY], Return=OK, 174
-[ADD_EDGE], Operations, 175
-[ADD_EDGE], AverageLatency(us), 55533.165714285715
-[ADD_EDGE], MinLatency(us), 35584
-[ADD_EDGE], MaxLatency(us), 185983
-[ADD_EDGE], 50thPercentileLatency(us), 53919
-[ADD_EDGE], 95thPercentileLatency(us), 81727
-[ADD_EDGE], 99thPercentileLatency(us), 166271
-[ADD_EDGE], Return=OK, 175
-[ADD_VERTEX], Operations, 175
-[ADD_VERTEX], AverageLatency(us), 61418.37714285714
-[ADD_VERTEX], MinLatency(us), 32432
-[ADD_VERTEX], MaxLatency(us), 1157119
-[ADD_VERTEX], 50thPercentileLatency(us), 49183
-[ADD_VERTEX], 95thPercentileLatency(us), 127167
-[ADD_VERTEX], 99thPercentileLatency(us), 222847
-[ADD_VERTEX], Return=OK, 175
-[GET_VERTEX_WITH_PROPERTY], Operations, 136
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 7001.683823529412
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 3786
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 33407
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 6043
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 12087
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 20015
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 136
-[REMOVE_EDGE], Operations, 148
-[REMOVE_EDGE], AverageLatency(us), 26173.047297297297
-[REMOVE_EDGE], MinLatency(us), 3540
-[REMOVE_EDGE], MaxLatency(us), 159871
-[REMOVE_EDGE], 50thPercentileLatency(us), 6491
-[REMOVE_EDGE], 95thPercentileLatency(us), 62207
-[REMOVE_EDGE], 99thPercentileLatency(us), 143615
-[REMOVE_EDGE], Return=OK, 148
-[REMOVE_EDGE_PROPERTY], Operations, 0
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 0.0
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 0
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 0
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 0
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 0
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 0
-[REMOVE_EDGE_PROPERTY], Return=ERROR, 180
-[GET_EDGE_LABELS], Operations, 178
-[GET_EDGE_LABELS], AverageLatency(us), 9853.370786516854
-[GET_EDGE_LABELS], MinLatency(us), 3448
-[GET_EDGE_LABELS], MaxLatency(us), 775679
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 4855
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 10415
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 16735
-[GET_EDGE_LABELS], Return=OK, 178
-[GET_VERTEX_COUNT], Operations, 162
-[GET_VERTEX_COUNT], AverageLatency(us), 4785.598765432099
-[GET_VERTEX_COUNT], MinLatency(us), 2908
-[GET_VERTEX_COUNT], MaxLatency(us), 30943
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 3997
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 6891
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 26607
-[GET_VERTEX_COUNT], Return=OK, 162
-[REMOVE_VERTEX_PROPERTY], Operations, 0
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 0.0
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 0
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 0
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 0
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 0
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 0
-[REMOVE_VERTEX_PROPERTY], Return=ERROR, 172
-[SET_EDGE_PROPERTY-FAILED], Operations, 157
-[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 6498.802547770701
-[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 4232
-[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 20591
-[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 5499
-[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 12503
-[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 19551
-[GET_EDGES_WITH_LABEL], Operations, 162
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 6658.407407407408
-[GET_EDGES_WITH_LABEL], MinLatency(us), 4112
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 19711
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 6115
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 10087
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 16351
-[GET_EDGES_WITH_LABEL], Return=OK, 162
-[REMOVE_EDGE_PROPERTY-FAILED], Operations, 180
-[REMOVE_EDGE_PROPERTY-FAILED], AverageLatency(us), 19083.28888888889
-[REMOVE_EDGE_PROPERTY-FAILED], MinLatency(us), 4600
-[REMOVE_EDGE_PROPERTY-FAILED], MaxLatency(us), 103935
-[REMOVE_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 6027
-[REMOVE_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 57823
-[REMOVE_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 97791
-[REMOVE_VERTEX_PROPERTY-FAILED], Operations, 172
-[REMOVE_VERTEX_PROPERTY-FAILED], AverageLatency(us), 39652.11046511628
-[REMOVE_VERTEX_PROPERTY-FAILED], MinLatency(us), 3842
-[REMOVE_VERTEX_PROPERTY-FAILED], MaxLatency(us), 194431
-[REMOVE_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 44383
-[REMOVE_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 70463
-[REMOVE_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 177407
+[TOTAL_GC_TIME], Time(ms), 46
+[TOTAL_GC_TIME_%], Time(%), 0.07665389101816364
+[REMOVE_VERTEX], Operations, 179
+[REMOVE_VERTEX], AverageLatency(us), 54778.99441340782
+[REMOVE_VERTEX], MinLatency(us), 33248
+[REMOVE_VERTEX], MaxLatency(us), 167167
+[REMOVE_VERTEX], 50thPercentileLatency(us), 51775
+[REMOVE_VERTEX], 95thPercentileLatency(us), 77887
+[REMOVE_VERTEX], 99thPercentileLatency(us), 166527
+[REMOVE_VERTEX], Return=OK, 179
+[GET_EDGE_WITH_PROPERTY], Operations, 179
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 6391.128491620112
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 2978
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 15367
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 5739
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 11287
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 13167
+[GET_EDGE_WITH_PROPERTY], Return=OK, 179
+[ADD_EDGE], Operations, 154
+[ADD_EDGE], AverageLatency(us), 57500.155844155845
+[ADD_EDGE], MinLatency(us), 39360
+[ADD_EDGE], MaxLatency(us), 154751
+[ADD_EDGE], 50thPercentileLatency(us), 55551
+[ADD_EDGE], 95thPercentileLatency(us), 87999
+[ADD_EDGE], 99thPercentileLatency(us), 113983
+[ADD_EDGE], Return=OK, 154
+[ADD_VERTEX], Operations, 180
+[ADD_VERTEX], AverageLatency(us), 61009.02222222222
+[ADD_VERTEX], MinLatency(us), 32608
+[ADD_VERTEX], MaxLatency(us), 829951
+[ADD_VERTEX], 50thPercentileLatency(us), 49407
+[ADD_VERTEX], 95thPercentileLatency(us), 143615
+[ADD_VERTEX], 99thPercentileLatency(us), 210047
+[ADD_VERTEX], Return=OK, 180
+[GET_VERTEX_WITH_PROPERTY], Operations, 180
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 8269.366666666667
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 5208
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 29295
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 6999
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 16175
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 29231
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 180
+[REMOVE_EDGE_PROPERTY], Operations, 162
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 14456.481481481482
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 3978
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 242175
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 5931
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 55103
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 99647
+[REMOVE_EDGE_PROPERTY], Return=OK, 162
+[REMOVE_EDGE], Operations, 136
+[REMOVE_EDGE], AverageLatency(us), 14094.992647058823
+[REMOVE_EDGE], MinLatency(us), 3684
+[REMOVE_EDGE], MaxLatency(us), 61663
+[REMOVE_EDGE], 50thPercentileLatency(us), 5767
+[REMOVE_EDGE], 95thPercentileLatency(us), 49439
+[REMOVE_EDGE], 99thPercentileLatency(us), 56031
+[REMOVE_EDGE], Return=OK, 136
+[GET_EDGE_LABELS], Operations, 186
+[GET_EDGE_LABELS], AverageLatency(us), 10805.516129032258
+[GET_EDGE_LABELS], MinLatency(us), 2760
+[GET_EDGE_LABELS], MaxLatency(us), 724479
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 5623
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 15199
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 30863
+[GET_EDGE_LABELS], Return=OK, 186
+[GET_VERTEX_COUNT], Operations, 192
+[GET_VERTEX_COUNT], AverageLatency(us), 5012.625
+[GET_VERTEX_COUNT], MinLatency(us), 2630
+[GET_VERTEX_COUNT], MaxLatency(us), 25631
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 4451
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 8855
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 13415
+[GET_VERTEX_COUNT], Return=OK, 192
+[REMOVE_VERTEX_PROPERTY], Operations, 160
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 37120.3875
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 5836
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 121727
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 44351
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 66303
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 93567
+[REMOVE_VERTEX_PROPERTY], Return=OK, 160
+[GET_EDGES_WITH_LABEL], Operations, 185
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 8243.059459459459
+[GET_EDGES_WITH_LABEL], MinLatency(us), 4328
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 43807
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 6791
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 16559
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 23279
+[GET_EDGES_WITH_LABEL], Return=OK, 185
 [CLEANUP], Operations, 1
 [CLEANUP], AverageLatency(us), 4.0
 [CLEANUP], MinLatency(us), 4
@@ -643,28 +113,27 @@ Exception in removeVertexProperty: null
 [CLEANUP], 50thPercentileLatency(us), 4
 [CLEANUP], 95thPercentileLatency(us), 4
 [CLEANUP], 99thPercentileLatency(us), 4
-[SET_EDGE_PROPERTY], Operations, 3
-[SET_EDGE_PROPERTY], AverageLatency(us), 52666.666666666664
-[SET_EDGE_PROPERTY], MinLatency(us), 51232
-[SET_EDGE_PROPERTY], MaxLatency(us), 55167
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 51615
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 55167
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 55167
-[SET_EDGE_PROPERTY], Return=OK, 3
-[SET_EDGE_PROPERTY], Return=ERROR, 157
-[SET_VERTEX_PROPERTY], Operations, 165
-[SET_VERTEX_PROPERTY], AverageLatency(us), 55668.94545454546
-[SET_VERTEX_PROPERTY], MinLatency(us), 33248
-[SET_VERTEX_PROPERTY], MaxLatency(us), 277503
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 50143
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 83583
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 166271
-[SET_VERTEX_PROPERTY], Return=OK, 165
-[GET_EDGE_COUNT], Operations, 184
-[GET_EDGE_COUNT], AverageLatency(us), 5208.853260869565
-[GET_EDGE_COUNT], MinLatency(us), 2526
-[GET_EDGE_COUNT], MaxLatency(us), 23247
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 4455
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 8863
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 19199
-[GET_EDGE_COUNT], Return=OK, 184
+[SET_EDGE_PROPERTY], Operations, 158
+[SET_EDGE_PROPERTY], AverageLatency(us), 16493.58860759494
+[SET_EDGE_PROPERTY], MinLatency(us), 4010
+[SET_EDGE_PROPERTY], MaxLatency(us), 230015
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 6731
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 56319
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 66495
+[SET_EDGE_PROPERTY], Return=OK, 158
+[SET_VERTEX_PROPERTY], Operations, 161
+[SET_VERTEX_PROPERTY], AverageLatency(us), 54442.63354037267
+[SET_VERTEX_PROPERTY], MinLatency(us), 34368
+[SET_VERTEX_PROPERTY], MaxLatency(us), 164351
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 51167
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 73471
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 163839
+[SET_VERTEX_PROPERTY], Return=OK, 161
+[GET_EDGE_COUNT], Operations, 178
+[GET_EDGE_COUNT], AverageLatency(us), 6099.101123595506
+[GET_EDGE_COUNT], MinLatency(us), 2676
+[GET_EDGE_COUNT], MaxLatency(us), 20559
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 4995
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 11535
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 18687
+[GET_EDGE_COUNT], Return=OK, 178
