@@ -1,4 +1,4 @@
-/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/GRACE/YCSB/conf:/Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/conf:/Users/pandey/work/GRACE/YCSB/janusgraph/target/janusgraph-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/antlr4-runtime-4.9.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-beanutils-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-collections-3.2.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-configuration2-2.9.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-lang3-3.12.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-logging-1.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-text-1.10.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/exp4j-0.4.8.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-core-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-driver-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-language-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-shaded-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-util-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/hppc-0.7.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-core-asl-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-mapper-asl-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/javapoet-1.13.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/javatuples-1.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jcl-over-slf4j-1.7.33.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-all-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-buffer-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-http-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-http2-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-redis-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-socks-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-xml-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-handler-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-udt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/slf4j-api-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/snakeyaml-2.0.jar site.ycsb.Client -t -db site.ycsb.db.JanusGraphClient -P workloads/workload_grace -p DBTYPE=janusgraph -p DBURI=http://localhost:8182 -p maxexecutiontime=60 -p threadcount=1
+/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/conf:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/janusgraph-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/antlr4-runtime-4.9.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/caffeine-2.3.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-beanutils-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-collections-3.2.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-configuration2-2.9.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-lang3-3.12.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-logging-1.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-text-1.12.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/error_prone_annotations-2.28.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/exp4j-0.4.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/failureaccess-1.0.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-core-3.7.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-driver-3.7.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-groovy-3.7.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-language-3.7.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-shaded-3.7.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-util-3.7.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-console-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-groovysh-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-json-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-jsr223-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-swing-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-templates-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-xml-4.0.23.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/guava-33.3.0-jre.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/hppc-0.7.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/ivy-2.5.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/j2objc-annotations-3.0.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/janusgraph-driver-1.1.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javaparser-core-3.26.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javapoet-1.13.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javatuples-1.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jbcrypt-0.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jcl-over-slf4j-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jline-2.14.6.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jsr305-3.0.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jts-core-1.17.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-all-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-buffer-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-dns-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-haproxy-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-http-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-http2-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-memcache-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-mqtt-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-redis-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-smtp-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-socks-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-stomp-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-xml-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-common-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-handler-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-handler-proxy-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-handler-ssl-ocsp-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-classes-macos-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.101.Final-osx-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.101.Final-osx-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-classes-epoll-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-classes-kqueue-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.101.Final-linux-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.101.Final-linux-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.101.Final-osx-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.101.Final-osx-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-unix-common-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-rxtx-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-sctp-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-udt-4.1.101.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/noggit-0.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/org.abego.treelayout.core-1.0.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/slf4j-api-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/snakeyaml-2.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/janusgraph/target/dependency/spatial4j-0.8.jar site.ycsb.Client -t -db site.ycsb.db.JanusGraphClient -P workloads/workload_grace -p DBTYPE=janusgraph -p DBURI=http://localhost:8182 -p maxexecutiontime=60 -p threadcount=1
 Data integrity is enabled.
 Initializing db: site.ycsb.db.JanusGraphClient
 Using Database: site.ycsb.DBWrapper
@@ -7,154 +7,635 @@ Starting Janusgraph client
 DBTYPE: janusgraph
 DBURI: http://localhost:8182
 Connected to Janusgraph successfully
-Exception in getVertexWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeLabels: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeLabels: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeLabels: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeCount: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgesWithLabel: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getVertexWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeWithProperty: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-Exception in getEdgeLabels: java.util.concurrent.ExecutionException: io.netty.channel.StacklessClosedChannelException
-[OVERALL], RunTime(ms), 60007
-[OVERALL], Throughput(ops/sec), 512.9568217041345
-[TOTAL_GCS_G1_Young_Generation], Count, 5
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 38
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.06332594530638092
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in setEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in setEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+Exception in removeEdgeProperty: null
+Exception in removeVertexProperty: null
+[OVERALL], RunTime(ms), 60045
+[OVERALL], Throughput(ops/sec), 40.05329336331085
+[TOTAL_GCS_G1_Young_Generation], Count, 2
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 73
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.12157548505287702
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 5
-[TOTAL_GC_TIME], Time(ms), 38
-[TOTAL_GC_TIME_%], Time(%), 0.06332594530638092
-[GET_EDGE_LABELS-FAILED], Operations, 4
-[GET_EDGE_LABELS-FAILED], AverageLatency(us), 516.25
-[GET_EDGE_LABELS-FAILED], MinLatency(us), 267
-[GET_EDGE_LABELS-FAILED], MaxLatency(us), 804
-[GET_EDGE_LABELS-FAILED], 50thPercentileLatency(us), 348
-[GET_EDGE_LABELS-FAILED], 95thPercentileLatency(us), 804
-[GET_EDGE_LABELS-FAILED], 99thPercentileLatency(us), 804
-[ADD_EDGE-FAILED], Operations, 37
-[ADD_EDGE-FAILED], AverageLatency(us), 1713.5945945945946
-[ADD_EDGE-FAILED], MinLatency(us), 145
-[ADD_EDGE-FAILED], MaxLatency(us), 8999
-[ADD_EDGE-FAILED], 50thPercentileLatency(us), 1281
-[ADD_EDGE-FAILED], 95thPercentileLatency(us), 4407
-[ADD_EDGE-FAILED], 99thPercentileLatency(us), 8999
-[ADD_EDGE], Operations, 1712
-[ADD_EDGE], AverageLatency(us), 14540.251168224298
-[ADD_EDGE], MinLatency(us), 5352
-[ADD_EDGE], MaxLatency(us), 181375
-[ADD_EDGE], 50thPercentileLatency(us), 12287
-[ADD_EDGE], 95thPercentileLatency(us), 28303
-[ADD_EDGE], 99thPercentileLatency(us), 49055
-[ADD_EDGE], Return=OK, 1712
-[ADD_EDGE], Return=ERROR, 37
-[GET_VERTEX_WITH_PROPERTY], Operations, 2015
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 161.98709677419356
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 30
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 11487
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 109
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 325
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 1121
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 2015
-[GET_VERTEX_WITH_PROPERTY], Return=ERROR, 6
-[GET_EDGE_WITH_PROPERTY-FAILED], Operations, 3
-[GET_EDGE_WITH_PROPERTY-FAILED], AverageLatency(us), 451.3333333333333
-[GET_EDGE_WITH_PROPERTY-FAILED], MinLatency(us), 246
-[GET_EDGE_WITH_PROPERTY-FAILED], MaxLatency(us), 703
-[GET_EDGE_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 405
-[GET_EDGE_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 703
-[GET_EDGE_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 703
-[REMOVE_EDGE_PROPERTY], Operations, 1569
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 1623.0796685787125
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 501
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 25295
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 1217
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 3593
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 7679
-[REMOVE_EDGE_PROPERTY], Return=OK, 1569
-[REMOVE_EDGE_PROPERTY], Return=ERROR, 20
-[REMOVE_EDGE], Operations, 1650
-[REMOVE_EDGE], AverageLatency(us), 1628.0357575757575
-[REMOVE_EDGE], MinLatency(us), 490
-[REMOVE_EDGE], MaxLatency(us), 40543
-[REMOVE_EDGE], 50thPercentileLatency(us), 1161
-[REMOVE_EDGE], 95thPercentileLatency(us), 3801
-[REMOVE_EDGE], 99thPercentileLatency(us), 7999
-[REMOVE_EDGE], Return=OK, 1650
-[REMOVE_EDGE], Return=ERROR, 21
-[GET_EDGE_LABELS], Operations, 2235
-[GET_EDGE_LABELS], AverageLatency(us), 151.21073825503356
-[GET_EDGE_LABELS], MinLatency(us), 25
-[GET_EDGE_LABELS], MaxLatency(us), 9127
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 93
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 317
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 1026
-[GET_EDGE_LABELS], Return=OK, 2235
-[GET_EDGE_LABELS], Return=ERROR, 4
-[SET_EDGE_PROPERTY-FAILED], Operations, 20
-[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 1069.45
-[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 132
-[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 4315
-[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 761
-[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 2375
-[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 4315
-[GET_EDGES_WITH_LABEL], Operations, 2216
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 140.3443140794224
-[GET_EDGES_WITH_LABEL], MinLatency(us), 28
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 5407
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 95
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 311
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 953
-[GET_EDGES_WITH_LABEL], Return=OK, 2216
-[GET_EDGES_WITH_LABEL], Return=ERROR, 7
-[SET_VERTEX_PROPERTY-FAILED], Operations, 2011
-[SET_VERTEX_PROPERTY-FAILED], AverageLatency(us), 3300.3858776728
-[SET_VERTEX_PROPERTY-FAILED], MinLatency(us), 135
-[SET_VERTEX_PROPERTY-FAILED], MaxLatency(us), 94911
-[SET_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 2587
-[SET_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 7015
-[SET_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 12335
-[REMOVE_EDGE_PROPERTY-FAILED], Operations, 20
-[REMOVE_EDGE_PROPERTY-FAILED], AverageLatency(us), 1396.6
-[REMOVE_EDGE_PROPERTY-FAILED], MinLatency(us), 202
-[REMOVE_EDGE_PROPERTY-FAILED], MaxLatency(us), 4955
-[REMOVE_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 904
-[REMOVE_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 4203
-[REMOVE_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 4955
-[GET_VERTEX_WITH_PROPERTY-FAILED], Operations, 6
-[GET_VERTEX_WITH_PROPERTY-FAILED], AverageLatency(us), 748.5
-[GET_VERTEX_WITH_PROPERTY-FAILED], MinLatency(us), 288
-[GET_VERTEX_WITH_PROPERTY-FAILED], MaxLatency(us), 2159
-[GET_VERTEX_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 364
-[GET_VERTEX_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 2159
-[GET_VERTEX_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 2159
-[GET_EDGES_WITH_LABEL-FAILED], Operations, 7
-[GET_EDGES_WITH_LABEL-FAILED], AverageLatency(us), 2024.4285714285713
-[GET_EDGES_WITH_LABEL-FAILED], MinLatency(us), 266
-[GET_EDGES_WITH_LABEL-FAILED], MaxLatency(us), 7431
-[GET_EDGES_WITH_LABEL-FAILED], 50thPercentileLatency(us), 904
-[GET_EDGES_WITH_LABEL-FAILED], 95thPercentileLatency(us), 7431
-[GET_EDGES_WITH_LABEL-FAILED], 99thPercentileLatency(us), 7431
+[TOTAL_GCs], Count, 2
+[TOTAL_GC_TIME], Time(ms), 73
+[TOTAL_GC_TIME_%], Time(%), 0.12157548505287702
+[REMOVE_VERTEX], Operations, 156
+[REMOVE_VERTEX], AverageLatency(us), 51019.333333333336
+[REMOVE_VERTEX], MinLatency(us), 31712
+[REMOVE_VERTEX], MaxLatency(us), 119295
+[REMOVE_VERTEX], 50thPercentileLatency(us), 49151
+[REMOVE_VERTEX], 95thPercentileLatency(us), 73279
+[REMOVE_VERTEX], 99thPercentileLatency(us), 98879
+[REMOVE_VERTEX], Return=OK, 156
+[GET_EDGE_WITH_PROPERTY], Operations, 174
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 5790.724137931034
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 3046
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 19007
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 5055
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 9607
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 18335
+[GET_EDGE_WITH_PROPERTY], Return=OK, 174
+[ADD_EDGE], Operations, 175
+[ADD_EDGE], AverageLatency(us), 55533.165714285715
+[ADD_EDGE], MinLatency(us), 35584
+[ADD_EDGE], MaxLatency(us), 185983
+[ADD_EDGE], 50thPercentileLatency(us), 53919
+[ADD_EDGE], 95thPercentileLatency(us), 81727
+[ADD_EDGE], 99thPercentileLatency(us), 166271
+[ADD_EDGE], Return=OK, 175
+[ADD_VERTEX], Operations, 175
+[ADD_VERTEX], AverageLatency(us), 61418.37714285714
+[ADD_VERTEX], MinLatency(us), 32432
+[ADD_VERTEX], MaxLatency(us), 1157119
+[ADD_VERTEX], 50thPercentileLatency(us), 49183
+[ADD_VERTEX], 95thPercentileLatency(us), 127167
+[ADD_VERTEX], 99thPercentileLatency(us), 222847
+[ADD_VERTEX], Return=OK, 175
+[GET_VERTEX_WITH_PROPERTY], Operations, 136
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 7001.683823529412
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 3786
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 33407
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 6043
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 12087
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 20015
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 136
+[REMOVE_EDGE], Operations, 148
+[REMOVE_EDGE], AverageLatency(us), 26173.047297297297
+[REMOVE_EDGE], MinLatency(us), 3540
+[REMOVE_EDGE], MaxLatency(us), 159871
+[REMOVE_EDGE], 50thPercentileLatency(us), 6491
+[REMOVE_EDGE], 95thPercentileLatency(us), 62207
+[REMOVE_EDGE], 99thPercentileLatency(us), 143615
+[REMOVE_EDGE], Return=OK, 148
+[REMOVE_EDGE_PROPERTY], Operations, 0
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 0.0
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 0
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 0
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 0
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 0
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 0
+[REMOVE_EDGE_PROPERTY], Return=ERROR, 180
+[GET_EDGE_LABELS], Operations, 178
+[GET_EDGE_LABELS], AverageLatency(us), 9853.370786516854
+[GET_EDGE_LABELS], MinLatency(us), 3448
+[GET_EDGE_LABELS], MaxLatency(us), 775679
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 4855
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 10415
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 16735
+[GET_EDGE_LABELS], Return=OK, 178
+[GET_VERTEX_COUNT], Operations, 162
+[GET_VERTEX_COUNT], AverageLatency(us), 4785.598765432099
+[GET_VERTEX_COUNT], MinLatency(us), 2908
+[GET_VERTEX_COUNT], MaxLatency(us), 30943
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 3997
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 6891
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 26607
+[GET_VERTEX_COUNT], Return=OK, 162
+[REMOVE_VERTEX_PROPERTY], Operations, 0
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 0.0
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 0
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 0
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 0
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 0
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 0
+[REMOVE_VERTEX_PROPERTY], Return=ERROR, 172
+[SET_EDGE_PROPERTY-FAILED], Operations, 157
+[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 6498.802547770701
+[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 4232
+[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 20591
+[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 5499
+[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 12503
+[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 19551
+[GET_EDGES_WITH_LABEL], Operations, 162
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 6658.407407407408
+[GET_EDGES_WITH_LABEL], MinLatency(us), 4112
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 19711
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 6115
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 10087
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 16351
+[GET_EDGES_WITH_LABEL], Return=OK, 162
+[REMOVE_EDGE_PROPERTY-FAILED], Operations, 180
+[REMOVE_EDGE_PROPERTY-FAILED], AverageLatency(us), 19083.28888888889
+[REMOVE_EDGE_PROPERTY-FAILED], MinLatency(us), 4600
+[REMOVE_EDGE_PROPERTY-FAILED], MaxLatency(us), 103935
+[REMOVE_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 6027
+[REMOVE_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 57823
+[REMOVE_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 97791
+[REMOVE_VERTEX_PROPERTY-FAILED], Operations, 172
+[REMOVE_VERTEX_PROPERTY-FAILED], AverageLatency(us), 39652.11046511628
+[REMOVE_VERTEX_PROPERTY-FAILED], MinLatency(us), 3842
+[REMOVE_VERTEX_PROPERTY-FAILED], MaxLatency(us), 194431
+[REMOVE_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 44383
+[REMOVE_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 70463
+[REMOVE_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 177407
 [CLEANUP], Operations, 1
 [CLEANUP], AverageLatency(us), 4.0
 [CLEANUP], MinLatency(us), 4
@@ -162,116 +643,28 @@ Exception in getEdgeLabels: java.util.concurrent.ExecutionException: io.netty.ch
 [CLEANUP], 50thPercentileLatency(us), 4
 [CLEANUP], 95thPercentileLatency(us), 4
 [CLEANUP], 99thPercentileLatency(us), 4
-[SET_EDGE_PROPERTY], Operations, 1723
-[SET_EDGE_PROPERTY], AverageLatency(us), 1625.8734764944863
-[SET_EDGE_PROPERTY], MinLatency(us), 486
-[SET_EDGE_PROPERTY], MaxLatency(us), 31775
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 1199
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 3713
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 8471
-[SET_EDGE_PROPERTY], Return=OK, 1723
-[SET_EDGE_PROPERTY], Return=ERROR, 20
-[REMOVE_EDGE-FAILED], Operations, 21
-[REMOVE_EDGE-FAILED], AverageLatency(us), 2019.2857142857142
-[REMOVE_EDGE-FAILED], MinLatency(us), 122
-[REMOVE_EDGE-FAILED], MaxLatency(us), 17071
-[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 1064
-[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 4231
-[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 17071
-[REMOVE_VERTEX], Operations, 2012
-[REMOVE_VERTEX], AverageLatency(us), 3327.514910536779
-[REMOVE_VERTEX], MinLatency(us), 756
-[REMOVE_VERTEX], MaxLatency(us), 538623
-[REMOVE_VERTEX], 50thPercentileLatency(us), 2369
-[REMOVE_VERTEX], 95thPercentileLatency(us), 6691
-[REMOVE_VERTEX], 99thPercentileLatency(us), 12551
-[REMOVE_VERTEX], Return=OK, 2012
-[REMOVE_VERTEX], Return=ERROR, 38
-[GET_EDGE_WITH_PROPERTY], Operations, 1698
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 195.0441696113074
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 30
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 29679
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 110
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 337
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 1520
-[GET_EDGE_WITH_PROPERTY], Return=OK, 1698
-[GET_EDGE_WITH_PROPERTY], Return=ERROR, 3
-[ADD_VERTEX], Operations, 0
-[ADD_VERTEX], AverageLatency(us), 0.0
-[ADD_VERTEX], MinLatency(us), 0
-[ADD_VERTEX], MaxLatency(us), 0
-[ADD_VERTEX], 50thPercentileLatency(us), 0
-[ADD_VERTEX], 95thPercentileLatency(us), 0
-[ADD_VERTEX], 99thPercentileLatency(us), 0
-[ADD_VERTEX], Return=ERROR, 2058
-[GET_EDGE_COUNT-FAILED], Operations, 4
-[GET_EDGE_COUNT-FAILED], AverageLatency(us), 463.0
-[GET_EDGE_COUNT-FAILED], MinLatency(us), 319
-[GET_EDGE_COUNT-FAILED], MaxLatency(us), 812
-[GET_EDGE_COUNT-FAILED], 50thPercentileLatency(us), 344
-[GET_EDGE_COUNT-FAILED], 95thPercentileLatency(us), 812
-[GET_EDGE_COUNT-FAILED], 99thPercentileLatency(us), 812
-[GET_VERTEX_COUNT], Operations, 2156
-[GET_VERTEX_COUNT], AverageLatency(us), 146.96660482374767
-[GET_VERTEX_COUNT], MinLatency(us), 24
-[GET_VERTEX_COUNT], MaxLatency(us), 8003
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 91
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 305
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 1214
-[GET_VERTEX_COUNT], Return=OK, 2156
-[GET_VERTEX_COUNT], Return=ERROR, 3
-[REMOVE_VERTEX_PROPERTY], Operations, 2003
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 2137.749875187219
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 548
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 32399
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 1641
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 4971
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 10007
-[REMOVE_VERTEX_PROPERTY], Return=OK, 2003
-[REMOVE_VERTEX_PROPERTY], Return=ERROR, 55
-[REMOVE_VERTEX_PROPERTY-FAILED], Operations, 55
-[REMOVE_VERTEX_PROPERTY-FAILED], AverageLatency(us), 1792.3090909090909
-[REMOVE_VERTEX_PROPERTY-FAILED], MinLatency(us), 114
-[REMOVE_VERTEX_PROPERTY-FAILED], MaxLatency(us), 6859
-[REMOVE_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 1270
-[REMOVE_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 6103
-[REMOVE_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 6859
-[REMOVE_VERTEX-FAILED], Operations, 38
-[REMOVE_VERTEX-FAILED], AverageLatency(us), 2859.0526315789475
-[REMOVE_VERTEX-FAILED], MinLatency(us), 170
-[REMOVE_VERTEX-FAILED], MaxLatency(us), 36927
-[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 1279
-[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 8359
-[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 36927
-[ADD_VERTEX-FAILED], Operations, 2058
-[ADD_VERTEX-FAILED], AverageLatency(us), 2857.958211856171
-[ADD_VERTEX-FAILED], MinLatency(us), 117
-[ADD_VERTEX-FAILED], MaxLatency(us), 429311
-[ADD_VERTEX-FAILED], 50thPercentileLatency(us), 1984
-[ADD_VERTEX-FAILED], 95thPercentileLatency(us), 6575
-[ADD_VERTEX-FAILED], 99thPercentileLatency(us), 12815
-[SET_VERTEX_PROPERTY], Operations, 6
-[SET_VERTEX_PROPERTY], AverageLatency(us), 1787.3333333333333
-[SET_VERTEX_PROPERTY], MinLatency(us), 1231
-[SET_VERTEX_PROPERTY], MaxLatency(us), 2557
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 1460
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 2557
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 2557
-[SET_VERTEX_PROPERTY], Return=OK, 6
-[SET_VERTEX_PROPERTY], Return=ERROR, 2011
-[GET_EDGE_COUNT], Operations, 2197
-[GET_EDGE_COUNT], AverageLatency(us), 296.45289030496133
-[GET_EDGE_COUNT], MinLatency(us), 28
-[GET_EDGE_COUNT], MaxLatency(us), 327679
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 91
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 284
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 1158
-[GET_EDGE_COUNT], Return=OK, 2197
-[GET_EDGE_COUNT], Return=ERROR, 4
-[GET_VERTEX_COUNT-FAILED], Operations, 3
-[GET_VERTEX_COUNT-FAILED], AverageLatency(us), 602.3333333333334
-[GET_VERTEX_COUNT-FAILED], MinLatency(us), 347
-[GET_VERTEX_COUNT-FAILED], MaxLatency(us), 972
-[GET_VERTEX_COUNT-FAILED], 50thPercentileLatency(us), 488
-[GET_VERTEX_COUNT-FAILED], 95thPercentileLatency(us), 972
-[GET_VERTEX_COUNT-FAILED], 99thPercentileLatency(us), 972
+[SET_EDGE_PROPERTY], Operations, 3
+[SET_EDGE_PROPERTY], AverageLatency(us), 52666.666666666664
+[SET_EDGE_PROPERTY], MinLatency(us), 51232
+[SET_EDGE_PROPERTY], MaxLatency(us), 55167
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 51615
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 55167
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 55167
+[SET_EDGE_PROPERTY], Return=OK, 3
+[SET_EDGE_PROPERTY], Return=ERROR, 157
+[SET_VERTEX_PROPERTY], Operations, 165
+[SET_VERTEX_PROPERTY], AverageLatency(us), 55668.94545454546
+[SET_VERTEX_PROPERTY], MinLatency(us), 33248
+[SET_VERTEX_PROPERTY], MaxLatency(us), 277503
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 50143
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 83583
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 166271
+[SET_VERTEX_PROPERTY], Return=OK, 165
+[GET_EDGE_COUNT], Operations, 184
+[GET_EDGE_COUNT], AverageLatency(us), 5208.853260869565
+[GET_EDGE_COUNT], MinLatency(us), 2526
+[GET_EDGE_COUNT], MaxLatency(us), 23247
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 4455
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 8863
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 19199
+[GET_EDGE_COUNT], Return=OK, 184
