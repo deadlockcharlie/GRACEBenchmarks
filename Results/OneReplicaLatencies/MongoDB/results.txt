@@ -1,203 +1,116 @@
-/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/GRACE/YCSB/conf:/Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/antlr4-runtime-4.9.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/arangodb-java-driver-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-record-codec-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/caffeine-2.3.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-beanutils-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-collections-3.2.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-configuration2-2.8.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-lang3-3.12.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-logging-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-text-1.10.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/core-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/error_prone_annotations-2.11.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/exp4j-0.4.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/failureaccess-1.0.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-core-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-driver-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-groovy-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-language-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-shaded-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-util-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-cli-picocli-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-console-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-groovysh-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-json-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-jsr223-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-swing-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-templates-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-xml-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/guava-31.1-jre.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/hppc-0.7.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/http-protocol-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/ivy-2.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/j2objc-annotations-1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-annotations-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-core-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-databind-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-serde-json-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jakarta.json-api-2.1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/janusgraph-driver-1.0.0-rc2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/javatuples-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jbcrypt-0.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-log-0.20.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-manifests-1.2.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcl-over-slf4j-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jline-2.14.6.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jsr305-3.0.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jts-core-1.17.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-core-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-sync-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-all-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-buffer-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http2-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-redis-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-socks-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-xml-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-udt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/noggit-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/picocli-4.3.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/reactive-streams-1.0.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/snakeyaml-1.32.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/spatial4j-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-auth-common-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-core-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-uri-template-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-client-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.GraceClient -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=mongodb -p DBURI=mongodb://localhost:7687 -p maxexecutiontime=60 -p threadcount=1
-Data integrity is enabled.
-GraceClient  Created
-Starting GRACE client
-{deleteproportion=1, recordcount=1000000, operationcount=20000000, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=mongodb, HOSTURI=http://localhost:3000, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:7687, maxexecutiontime=60, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
-GRACE HOSTURI: http://localhost:3000
-DBTYPE: mongodb
-DBURI: mongodb://localhost:7687
-Connected to MongoDB database successfully
-[OVERALL], RunTime(ms), 60004
-[OVERALL], Throughput(ops/sec), 638.2574495033664
-[TOTAL_GCS_G1_Young_Generation], Count, 12
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 63
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.10499300046663555
-[TOTAL_GCS_G1_Old_Generation], Count, 0
-[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
-[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 12
-[TOTAL_GC_TIME], Time(ms), 63
-[TOTAL_GC_TIME_%], Time(%), 0.10499300046663555
-[REMOVE_VERTEX], Operations, 2478
-[REMOVE_VERTEX], AverageLatency(us), 2205.363599677159
-[REMOVE_VERTEX], MinLatency(us), 1127
-[REMOVE_VERTEX], MaxLatency(us), 34271
-[REMOVE_VERTEX], 50thPercentileLatency(us), 1920
-[REMOVE_VERTEX], 95thPercentileLatency(us), 3701
-[REMOVE_VERTEX], 99thPercentileLatency(us), 6667
-[REMOVE_VERTEX], Return=OK, 2478
-[REMOVE_VERTEX], Return=ERROR, 152
-[ADD_EDGE-FAILED], Operations, 145
-[ADD_EDGE-FAILED], AverageLatency(us), 746.7172413793104
-[ADD_EDGE-FAILED], MinLatency(us), 388
-[ADD_EDGE-FAILED], MaxLatency(us), 3035
-[ADD_EDGE-FAILED], 50thPercentileLatency(us), 665
-[ADD_EDGE-FAILED], 95thPercentileLatency(us), 1292
-[ADD_EDGE-FAILED], 99thPercentileLatency(us), 2443
-[GET_EDGE_WITH_PROPERTY], Operations, 2258
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 4.987156775907883
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 0
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 185
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 4
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 10
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 21
-[GET_EDGE_WITH_PROPERTY], Return=OK, 2258
-[ADD_EDGE], Operations, 2408
-[ADD_EDGE], AverageLatency(us), 2280.4634551495014
-[ADD_EDGE], MinLatency(us), 1153
-[ADD_EDGE], MaxLatency(us), 24063
-[ADD_EDGE], 50thPercentileLatency(us), 1977
-[ADD_EDGE], 95thPercentileLatency(us), 3791
-[ADD_EDGE], 99thPercentileLatency(us), 7931
-[ADD_EDGE], Return=OK, 2408
-[ADD_EDGE], Return=ERROR, 145
-[ADD_VERTEX], Operations, 2477
-[ADD_VERTEX], AverageLatency(us), 2222.035930561163
-[ADD_VERTEX], MinLatency(us), 1126
-[ADD_VERTEX], MaxLatency(us), 90495
-[ADD_VERTEX], 50thPercentileLatency(us), 1874
-[ADD_VERTEX], 95thPercentileLatency(us), 3803
-[ADD_VERTEX], 99thPercentileLatency(us), 6791
-[ADD_VERTEX], Return=OK, 2477
-[ADD_VERTEX], Return=ERROR, 161
-[GET_VERTEX_WITH_PROPERTY], Operations, 2586
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 726.0193348801238
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 270
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 8743
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 630
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 1214
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 2523
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 2586
-[REMOVE_EDGE_PROPERTY], Operations, 2363
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 2697.8764282691495
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 1135
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 18095
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 2453
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 4487
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 7595
-[REMOVE_EDGE_PROPERTY], Return=OK, 2363
-[REMOVE_EDGE_PROPERTY], Return=ERROR, 111
-[REMOVE_EDGE], Operations, 2321
-[REMOVE_EDGE], AverageLatency(us), 2774.900473933649
-[REMOVE_EDGE], MinLatency(us), 1478
-[REMOVE_EDGE], MaxLatency(us), 24495
-[REMOVE_EDGE], 50thPercentileLatency(us), 2517
-[REMOVE_EDGE], 95thPercentileLatency(us), 4543
-[REMOVE_EDGE], 99thPercentileLatency(us), 7683
-[REMOVE_EDGE], Return=OK, 2321
-[REMOVE_EDGE], Return=ERROR, 123
-[GET_EDGE_LABELS], Operations, 2701
-[GET_EDGE_LABELS], AverageLatency(us), 1104.8733802295446
-[GET_EDGE_LABELS], MinLatency(us), 358
-[GET_EDGE_LABELS], MaxLatency(us), 10903
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 1012
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 1862
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 3433
-[GET_EDGE_LABELS], Return=OK, 2701
-[GET_VERTEX_COUNT], Operations, 2771
-[GET_VERTEX_COUNT], AverageLatency(us), 946.1382172500902
-[GET_VERTEX_COUNT], MinLatency(us), 301
-[GET_VERTEX_COUNT], MaxLatency(us), 20991
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 828
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 1543
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 3501
-[GET_VERTEX_COUNT], Return=OK, 2771
-[SET_EDGE_PROPERTY-FAILED], Operations, 123
-[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 660.8048780487804
-[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 354
-[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 1931
-[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 627
-[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 950
-[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 1712
-[REMOVE_VERTEX_PROPERTY], Operations, 2484
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 2389.5253623188405
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 1127
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 145279
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 1967
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 4167
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 8511
-[REMOVE_VERTEX_PROPERTY], Return=OK, 2484
-[REMOVE_VERTEX_PROPERTY], Return=ERROR, 125
-[SET_VERTEX_PROPERTY-FAILED], Operations, 160
-[SET_VERTEX_PROPERTY-FAILED], AverageLatency(us), 756.55625
-[SET_VERTEX_PROPERTY-FAILED], MinLatency(us), 372
-[SET_VERTEX_PROPERTY-FAILED], MaxLatency(us), 5919
-[SET_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 684
-[SET_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 1293
-[SET_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 1999
-[GET_EDGES_WITH_LABEL], Operations, 2674
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 6.399401645474944
-[GET_EDGES_WITH_LABEL], MinLatency(us), 0
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 1484
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 4
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 11
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 29
-[GET_EDGES_WITH_LABEL], Return=OK, 2674
-[REMOVE_EDGE_PROPERTY-FAILED], Operations, 111
-[REMOVE_EDGE_PROPERTY-FAILED], AverageLatency(us), 736.3963963963964
-[REMOVE_EDGE_PROPERTY-FAILED], MinLatency(us), 374
-[REMOVE_EDGE_PROPERTY-FAILED], MaxLatency(us), 3621
-[REMOVE_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 661
-[REMOVE_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 1327
-[REMOVE_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 1871
-[REMOVE_VERTEX_PROPERTY-FAILED], Operations, 125
-[REMOVE_VERTEX_PROPERTY-FAILED], AverageLatency(us), 716.448
-[REMOVE_VERTEX_PROPERTY-FAILED], MinLatency(us), 387
-[REMOVE_VERTEX_PROPERTY-FAILED], MaxLatency(us), 1778
-[REMOVE_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 685
-[REMOVE_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 1096
-[REMOVE_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 1633
-[REMOVE_VERTEX-FAILED], Operations, 152
-[REMOVE_VERTEX-FAILED], AverageLatency(us), 741.578947368421
-[REMOVE_VERTEX-FAILED], MinLatency(us), 356
-[REMOVE_VERTEX-FAILED], MaxLatency(us), 5043
-[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 655
-[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 1373
-[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 2177
-[CLEANUP], Operations, 1
-[CLEANUP], AverageLatency(us), 5.0
-[CLEANUP], MinLatency(us), 5
-[CLEANUP], MaxLatency(us), 5
-[CLEANUP], 50thPercentileLatency(us), 5
-[CLEANUP], 95thPercentileLatency(us), 5
-[CLEANUP], 99thPercentileLatency(us), 5
-[ADD_VERTEX-FAILED], Operations, 161
-[ADD_VERTEX-FAILED], AverageLatency(us), 999.4472049689441
-[ADD_VERTEX-FAILED], MinLatency(us), 415
-[ADD_VERTEX-FAILED], MaxLatency(us), 33343
-[ADD_VERTEX-FAILED], 50thPercentileLatency(us), 693
-[ADD_VERTEX-FAILED], 95thPercentileLatency(us), 1379
-[ADD_VERTEX-FAILED], 99thPercentileLatency(us), 7595
-[SET_EDGE_PROPERTY], Operations, 2319
-[SET_EDGE_PROPERTY], AverageLatency(us), 2656.1681759379044
-[SET_EDGE_PROPERTY], MinLatency(us), 1290
-[SET_EDGE_PROPERTY], MaxLatency(us), 31087
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 2379
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 4491
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 8527
-[SET_EDGE_PROPERTY], Return=OK, 2319
-[SET_EDGE_PROPERTY], Return=ERROR, 123
-[REMOVE_EDGE-FAILED], Operations, 123
-[REMOVE_EDGE-FAILED], AverageLatency(us), 800.3414634146342
-[REMOVE_EDGE-FAILED], MinLatency(us), 362
-[REMOVE_EDGE-FAILED], MaxLatency(us), 5755
-[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 662
-[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 1397
-[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 3945
-[SET_VERTEX_PROPERTY], Operations, 2469
-[SET_VERTEX_PROPERTY], AverageLatency(us), 2298.2280275415146
-[SET_VERTEX_PROPERTY], MinLatency(us), 1096
-[SET_VERTEX_PROPERTY], MaxLatency(us), 25615
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 1958
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 3987
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 8327
-[SET_VERTEX_PROPERTY], Return=OK, 2469
-[SET_VERTEX_PROPERTY], Return=ERROR, 160
-[GET_EDGE_COUNT], Operations, 2658
-[GET_EDGE_COUNT], AverageLatency(us), 1231.148231753198
-[GET_EDGE_COUNT], MinLatency(us), 408
-[GET_EDGE_COUNT], MaxLatency(us), 34847
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 1090
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 1959
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 4287
-[GET_EDGE_COUNT], Return=OK, 2658
+[WARN] YCSB libraries not found.  Attempting to build...
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] YCSB Root                                                          [pom]
+[INFO] Core YCSB                                                          [jar]
+[INFO] YCSB Datastore Binding Parent                                      [pom]
+[INFO] MongoDB Client                                                     [jar]
+[INFO] 
+[INFO] ---------------------------< site.ycsb:root >---------------------------
+[INFO] Building YCSB Root 0.18.0-SNAPSHOT                                 [1/4]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ root ---
+[INFO] 
+[INFO] ---------------------------< site.ycsb:core >---------------------------
+[INFO] Building Core YCSB 0.18.0-SNAPSHOT                                 [2/4]
+[INFO]   from core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ core ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ core ---
+[WARNING] File encoding has not been set, using platform encoding UTF-8. Build is platform dependent!
+[WARNING] See https://maven.apache.org/general.html#encoding-warning
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ core ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 60 source files to /home/pandey/work/GRACEBenchmarks/YCSB/core/target/classes
+[INFO] /home/pandey/work/GRACEBenchmarks/YCSB/core/src/main/java/site/ycsb/DBFactory.java: Some input files use or override a deprecated API.
+[INFO] /home/pandey/work/GRACEBenchmarks/YCSB/core/src/main/java/site/ycsb/DBFactory.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ core ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/pandey/work/GRACEBenchmarks/YCSB/core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ core ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 12 source files to /home/pandey/work/GRACEBenchmarks/YCSB/core/target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ core ---
+[INFO] Building jar: /home/pandey/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- dependency:3.7.0:copy-dependencies (stage-dependencies) @ core ---
+[INFO] Copying artifact 'org.apache.htrace:htrace-core4:jar:4.1.0-incubating:compile' (/home/pandey/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar) to /home/pandey/work/GRACEBenchmarks/YCSB/core/target/dependency/htrace-core4-4.1.0-incubating.jar
+[INFO] Copying artifact 'org.codehaus.jackson:jackson-mapper-asl:jar:1.9.4:compile' (/home/pandey/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.4/jackson-mapper-asl-1.9.4.jar) to /home/pandey/work/GRACEBenchmarks/YCSB/core/target/dependency/jackson-mapper-asl-1.9.4.jar
+[INFO] Copying artifact 'org.codehaus.jackson:jackson-core-asl:jar:1.9.4:compile' (/home/pandey/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar) to /home/pandey/work/GRACEBenchmarks/YCSB/core/target/dependency/jackson-core-asl-1.9.4.jar
+[INFO] Copying artifact 'org.hdrhistogram:HdrHistogram:jar:2.1.12:compile' (/home/pandey/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar) to /home/pandey/work/GRACEBenchmarks/YCSB/core/target/dependency/HdrHistogram-2.1.12.jar
+[INFO] 
+[INFO] ----------------------< site.ycsb:binding-parent >----------------------
+[INFO] Building YCSB Datastore Binding Parent 0.18.0-SNAPSHOT             [3/4]
+[INFO]   from binding-parent/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ binding-parent ---
+[INFO] 
+[INFO] --- dependency:2.10:copy-dependencies (stage-dependencies) @ binding-parent ---
+[INFO] 
+[INFO] ---------------------< site.ycsb:mongodb-binding >----------------------
+[INFO] Building MongoDB Client 0.18.0-SNAPSHOT                            [4/4]
+[INFO]   from MongoDB/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ mongodb-binding ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mongodb-binding ---
+[INFO] skip non existing resourceDirectory /home/pandey/work/GRACEBenchmarks/YCSB/MongoDB/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:compile (default-compile) @ mongodb-binding ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mongodb-binding ---
+[INFO] skip non existing resourceDirectory /home/pandey/work/GRACEBenchmarks/YCSB/MongoDB/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ mongodb-binding ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ mongodb-binding ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ mongodb-binding ---
+[INFO] 
+[INFO] --- dependency:2.10:copy-dependencies (stage-dependencies) @ mongodb-binding ---
+[INFO] Copying core-0.18.0-SNAPSHOT.jar to /home/pandey/work/GRACEBenchmarks/YCSB/MongoDB/target/dependency/core-0.18.0-SNAPSHOT.jar
+[INFO] org.apache.htrace:htrace-core4:jar:4.1.0-incubating already exists in destination.
+[INFO] org.hdrhistogram:HdrHistogram:jar:2.1.12 already exists in destination.
+[INFO] org.mongodb:bson:jar:5.5.1 already exists in destination.
+[INFO] org.mongodb:mongodb-driver-core:jar:5.5.1 already exists in destination.
+[INFO] org.codehaus.jackson:jackson-mapper-asl:jar:1.9.4 already exists in destination.
+[INFO] org.mongodb:bson-record-codec:jar:5.5.1 already exists in destination.
+[INFO] org.codehaus.jackson:jackson-core-asl:jar:1.9.4 already exists in destination.
+[INFO] org.mongodb:mongodb-driver-sync:jar:5.5.1 already exists in destination.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for YCSB Root 0.18.0-SNAPSHOT:
+[INFO] 
+[INFO] YCSB Root .......................................... SUCCESS [  0.305 s]
+[INFO] Core YCSB .......................................... SUCCESS [  3.214 s]
+[INFO] YCSB Datastore Binding Parent ...................... SUCCESS [  0.368 s]
+[INFO] MongoDB Client ..................................... SUCCESS [  0.047 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.072 s
+[INFO] Finished at: 2025-09-13T19:42:43+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Error trying to build project. Exiting.

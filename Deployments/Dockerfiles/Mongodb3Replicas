@@ -12,7 +12,9 @@ services:
     network_mode: "service:mongo1"   # share net namespace with mongo1
     cap_add:
       - NET_ADMIN
-    command: sleep infinity
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
 
   mongo2:
     image: mongo:latest
@@ -26,7 +28,9 @@ services:
     network_mode: "service:mongo2"   # share net namespace with mongo2
     cap_add:
       - NET_ADMIN
-    command: sleep infinity
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
 
   mongo3:
     image: mongo:latest
@@ -40,5 +44,7 @@ services:
     network_mode: "service:mongo3"   # share net namespace with mongo1
     cap_add:
       - NET_ADMIN
-    command: sleep infinity
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
     
