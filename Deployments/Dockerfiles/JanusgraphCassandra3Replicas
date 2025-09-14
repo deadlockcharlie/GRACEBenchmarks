@@ -4,14 +4,13 @@ services:
     container_name: cassandra1
     environment:
       - CASSANDRA_CLUSTER_NAME=JanusGraphCluster
-      - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - CASSANDRA_SEEDS=cassandra1
       - CASSANDRA_ENDPOINT_SWITCH=GossipingPropertyFileSnitch
       - CASSANDRA_NUM_TOKENS:128
     ports:
       - "9042:9042"
     networks:
       - janus-net
-
   cassandra1-netem:
     image: gaiadocker/iproute2
     container_name: cassandra1-netem
@@ -73,17 +72,13 @@ services:
   janusgraph:
     image: janusgraph/janusgraph:latest
     container_name: janusgraph
-    environment:
-      - JANUSGRAPH_STORAGE_BACKEND=cassandra
-      - JANUSGRAPH_STORAGE_HOSTS=cassandra1,cassandra2,cassandra3
-      - JANUSGRAPH_STORAGE_CASSANDRA_CONSISTENCY_LEVEL=QUORUM
     ports:
       - "8182:8182"
     networks:
       - janus-net
-    depends_on:
-      cassandra3:
-        condition: service_started
+    environment:
+      janusgraph.storage.backend: cql
+      janusgraph.storage.hostname: cassandra1
 
 networks:
   janus-net:
