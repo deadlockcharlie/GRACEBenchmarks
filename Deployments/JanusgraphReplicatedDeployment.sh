@@ -8,7 +8,7 @@ docker compose -f $COMPOSE_FILE up -d
 
 # Step 1: Wait for Cassandra nodes to be ready
 echo "⏳ Waiting for Cassandra cluster to be ready..."
-for node in cassandra1; do
+for node in cassandra1;cassandra2;cassandra3; do
   until docker exec $node cqlsh -e "DESCRIBE KEYSPACES;" >/dev/null 2>&1; do
     echo "Waiting for $node..."
     sleep 5
@@ -20,6 +20,14 @@ docker exec cassandra1 cqlsh -e "
 CREATE KEYSPACE janusgraph
 WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':1}
 "
+
+docker run -d \
+  --name janusgraph \
+  --network dockerfiles_janus-net \
+  -p 8182:8182 \
+  -e JANUSGRAPH_STORAGE_BACKEND=cql \
+  -e JANUSGRAPH_STORAGE_HOSTS=cassandra1 \
+  janusgraph/janusgraph:latest
 
 echo "✅ Cassandra cluster is ready."
 

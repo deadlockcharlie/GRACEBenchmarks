@@ -272,7 +272,7 @@ bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" 
 
 cd $DEPLOYMENTS_DIR
 docker compose -f ./Dockerfiles/JanusgraphCassandra3Replicas down
-
+docker rm -f janusgraph
 
 echo "Benchmarking completed. Results are stored in the Results directory."
 
