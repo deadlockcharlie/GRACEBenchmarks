@@ -37,21 +37,35 @@
 SELF=$1
 shift
 
+echo "[$SELF] Resetting existing latency configuration..."
+tc qdisc del dev eth0 root 2>/dev/null || true
+
 # Ensure prio qdisc exists
 tc qdisc del dev eth0 root 2>/dev/null || true
 tc qdisc add dev eth0 root handle 1: prio
+
+
+# Create root priority qdisc
+tc qdisc add dev eth0 root handle 1: prio
+
+COUNT=10
 
 while [ $# -gt 0 ]; do
   PEER=$1
   DELAY=$2
   shift 2
 
-  # Get peer IP from Docker
   PEER_IP=$(getent hosts "$PEER" | awk '{ print $1 }')
 
   echo "[$SELF] Adding $DELAY ms latency to $PEER ($PEER_IP)"
 
-  # Match only traffic going to that peer IP
-  tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip dst "$PEER_IP" flowid 1:1
-  tc qdisc add dev eth0 parent 1:1 handle 10: netem delay "${DELAY}ms"
+  # Each peer gets its own class + qdisc
+  tc filter add dev eth0 protocol ip parent 1:0 prio 1 \
+    u32 match ip dst "$PEER_IP" flowid 1:$COUNT
+
+  tc qdisc add dev eth0 parent 1:$COUNT handle ${COUNT}0: netem delay "${DELAY}ms"
+
+  COUNT=$((COUNT+1))
 done
+
+echo "[$SELF] ✅ Latency configuration applied."
