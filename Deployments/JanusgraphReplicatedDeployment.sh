@@ -14,6 +14,13 @@ for node in cassandra1 cassandra2 cassandra3; do
     sleep 5
   done
 done
+
+
+docker exec cassandra1 cqlsh -e "
+CREATE KEYSPACE IF NOT EXISTS janusgraph
+WITH REPLICATION = {'class':'SimpleStrategy','replication_factor':3};
+"
+
 echo "✅ Cassandra cluster is ready."
 
 

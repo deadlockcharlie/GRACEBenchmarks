@@ -30,7 +30,7 @@ done
 echo "Configuring majority write concern..."
 docker exec mongo1 mongosh --eval '
 db.adminCommand({
-  setDefaultRWConcern: 1,
+  setDefaultRWConcern: {level:"local"},
   defaultWriteConcern: { w: "majority" }
 })
 '
