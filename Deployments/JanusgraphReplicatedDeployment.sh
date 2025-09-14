@@ -18,25 +18,10 @@ done
 
 docker exec cassandra1 cqlsh -e "
 CREATE KEYSPACE IF NOT EXISTS janusgraph
-WITH REPLICATION = {'class':'SimpleStrategy','replication_factor':3};
+WITH REPLICATION = {'class':'SimpleStrategy','replication_factor':3}
 "
 
 echo "✅ Cassandra cluster is ready."
-
-
-# Step 3: Optional - Create a sample graph
-echo "📦 Creating a sample graph 'graph' in JanusGraph..."
-docker exec janusgraph bin/gremlin.sh <<'GREMLIN'
-:remote connect tinkerpop.server conf/remote.yaml
-:remote console
-graph = JanusGraphFactory.open("conf/janusgraph-cassandra.properties")
-g = graph.traversal()
-if (!graph.openManagement().containsGraphIndex("sampleIndex")) {
-    println("Sample graph created")
-} else {
-    println("Sample graph already exists")
-}
-GREMLIN
 
 
 # cassandra1 → cassandra2 = 50ms, cassandra1 → cassandra3 = 100ms
