@@ -52,7 +52,7 @@ def plot_latencies_line(root_dir: str, figure_path: str):
                     data.append({
                         "DB": db,
                         "Operation": dict_operations[operation],
-                        "Latency": float(value)
+                        "Latency": float(value)/1000
                     })
 
     # Convert to DataFrame
@@ -87,7 +87,7 @@ def plot_latencies_line(root_dir: str, figure_path: str):
         ax.plot(x, values, label=db, color=color, linestyle=linestyle, marker='o')
 
     ax.grid(axis="y", linestyle="--", alpha=0.7)
-    ax.set_ylabel("Latency (µs)", fontsize=10)
+    ax.set_ylabel("Latency (ms)", fontsize=10)
     ax.set_yscale("log")
     ax.set_xticks(x)
     ax.set_xticklabels(pivot_df.index, rotation=0, fontsize=10)

@@ -1,37 +1,4 @@
-# #!/bin/sh
-# # setup-latency.sh
-# # Usage: ./setup-latency.sh <local_name> <peer1_name> <peer1_delay> <peer2_name> <peer2_delay>
-# # Example for mongo1: ./setup-latency.sh mongo1 mongo2 50 mongo3 100
-
-# LOCAL=$1
-# PEER1=$2
-# DELAY1=$3
-# PEER2=$4
-# DELAY2=$5
-
-
-# # get container IPs of peers
-# PEER1_IP=$(getent hosts $PEER1 | awk '{print $1}')
-# PEER2_IP=$(getent hosts $PEER2 | awk '{print $1}')
-
-# echo "[$LOCAL] Setting up latency to $PEER1 ($DELAY1 ms) and $PEER2 ($DELAY2 ms)"
-
-# # create root priority qdisc
-# tc qdisc add dev eth0 root handle 1: prio
-
-# # add delay to PEER1
-# tc qdisc add dev eth0 parent 1:1 handle 10: netem delay ${DELAY1}ms
-# tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip dst $PEER1_IP flowid 1:1
-
-# # add delay to PEER2
-# tc qdisc add dev eth0 parent 1:2 handle 20: netem delay ${DELAY2}ms
-# tc filter add dev eth0 protocol ip parent 1:0 prio 2 u32 match ip dst $PEER2_IP flowid 1:2
-
-# echo "[$LOCAL] Latency setup complete"
-# tc qdisc show
-
-
-#!/bin/bash
+#!/bin/sh
 # Usage: setup-latency.sh <self> <peer1> <latency1> <peer2> <latency2> ...
 
 SELF=$1
@@ -40,15 +7,10 @@ shift
 echo "[$SELF] Resetting existing latency configuration..."
 tc qdisc del dev eth0 root 2>/dev/null || true
 
-# Ensure prio qdisc exists
-tc qdisc del dev eth0 root 2>/dev/null || true
-tc qdisc add dev eth0 root handle 1: prio
+# Root prio qdisc with 10 bands
+tc qdisc add dev eth0 root handle 1: prio bands 10
 
-
-# Create root priority qdisc
-tc qdisc add dev eth0 root handle 1: prio
-
-COUNT=10
+COUNT=1
 
 while [ $# -gt 0 ]; do
   PEER=$1
@@ -57,13 +19,14 @@ while [ $# -gt 0 ]; do
 
   PEER_IP=$(getent hosts "$PEER" | awk '{ print $1 }')
 
-  echo "[$SELF] Adding $DELAY ms latency to $PEER ($PEER_IP)"
+  echo "[$SELF] Setting up latency to $PEER ($PEER_IP) = ${DELAY}ms"
 
-  # Each peer gets its own class + qdisc
-  tc filter add dev eth0 protocol ip parent 1:0 prio 1 \
-    u32 match ip dst "$PEER_IP" flowid 1:$COUNT
-
+  # Attach a netem qdisc to this band
   tc qdisc add dev eth0 parent 1:$COUNT handle ${COUNT}0: netem delay "${DELAY}ms"
+
+  # Filter traffic for this peer into the band
+  tc filter add dev eth0 protocol ip parent 1:0 prio $COUNT u32 \
+    match ip dst "$PEER_IP"/32 flowid 1:$COUNT
 
   COUNT=$((COUNT+1))
 done

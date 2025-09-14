@@ -144,10 +144,10 @@ python3 Deployment.py up $DIST_CONF
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 100"
 
 # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 75"
+docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 75"
 
 # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 100 Replica2 75"
+docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 100 Replica2 75"
 
 
 # Switch to the YCSB directory
@@ -209,10 +209,10 @@ python3 Deployment.py up $DIST_CONF
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 100"
 
 # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 75"
+docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 75"
 
 # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 100 Replica2 75"
+docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 100 Replica2 75"
 
 
 

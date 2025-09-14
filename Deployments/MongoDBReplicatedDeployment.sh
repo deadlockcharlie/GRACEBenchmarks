@@ -27,13 +27,7 @@ until docker exec mongo1 mongosh --quiet --eval 'db.hello().isWritablePrimary' |
   sleep 2
 done
 
-echo "Configuring majority write concern..."
-docker exec mongo1 mongosh --eval '
-db.adminCommand({
-  setDefaultRWConcern: {level:"local"},
-  defaultWriteConcern: { w: "majority" }
-})
-'
+
 
 echo "Setting mongo1 as preferred primary..."
 docker exec mongo1 mongosh --eval '
@@ -43,15 +37,23 @@ cfg.members[1].priority = 1; // mongo2
 cfg.m
 '
 
+echo "Configuring majority write concern..."
+docker exec mongo1 mongosh --eval '
+db.adminCommand({
+  setDefaultRWConcern: {level:"local"},
+  defaultWriteConcern: { w: "majority" }
+})
+'
+
 
 # mongo1 → mongo2 = 50ms, mongo1 → mongo3 = 100ms
-docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo2 50 mongo3 100"
+# docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo2 100 mongo3 200"
 
-# mongo2 → mongo1 = 50ms, mongo2 → mongo3 = 75ms
-docker exec -it mongo2-netem sh -c "/usr/local/bin/setup-latency.sh mongo2 mongo1 50 mongo3 75"
+# # mongo2 → mongo1 = 50ms, mongo2 → mongo3 = 75ms
+docker exec -it mongo2-netem sh -c "/usr/local/bin/setup-latency.sh mongo2 mongo1 100"
 
-# mongo3 → mongo1 = 100ms, mongo3 → mongo2 = 75ms
-docker exec -it mongo3-netem sh -c "/usr/local/bin/setup-latency.sh mongo3 mongo1 100 mongo2 75"
+# # mongo3 → mongo1 = 100ms, mongo3 → mongo2 = 75ms
+docker exec -it mongo3-netem sh -c "/usr/local/bin/setup-latency.sh mongo3 mongo1 200"
 
 
 echo "✅ MongoDB replica set is ready with quorum writes, mongo1 preferred as primary."
