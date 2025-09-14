@@ -5,6 +5,9 @@ services:
     environment:
       - CASSANDRA_CLUSTER_NAME=JanusGraphCluster
       - CASSANDRA_SEEDS=cassandra1
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
+
     ports:
       - "9042:9042"
     networks:
@@ -27,6 +30,8 @@ services:
     environment:
       - CASSANDRA_CLUSTER_NAME=JanusGraphCluster
       - CASSANDRA_SEEDS=cassandra1
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
     networks:
       - janus-net
 
@@ -46,6 +51,8 @@ services:
     environment:
       - CASSANDRA_CLUSTER_NAME=JanusGraphCluster
       - CASSANDRA_SEEDS=cassandra1
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
     networks:
       - janus-net
   cassandra3-netem:

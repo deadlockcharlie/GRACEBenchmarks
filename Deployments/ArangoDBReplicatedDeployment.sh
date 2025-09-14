@@ -46,14 +46,14 @@ docker exec -it agent2-netem sh -c "/usr/local/bin/setup-latency.sh agent2 agent
 docker exec -it agent3-netem sh -c "/usr/local/bin/setup-latency.sh agent3 agent1 100 agent2 75"
 
 
-# dbsserver1 → dbsserver2 = 50ms, dbsserver1 → dbsserver3 = 100ms
-docker exec -it dbsserver1-netem sh -c "/usr/local/bin/setup-latency.sh dbsserver1 dbsserver2 50 dbsserver3 100"
+# dbserver1 → dbserver2 = 50ms, dbserver1 → dbserver3 = 100ms
+docker exec -it dbserver1-netem sh -c "/usr/local/bin/setup-latency.sh dbserver1 dbserver2 50 dbserver3 100"
 
-# dbsserver2 → dbsserver1 = 50ms, dbsserver2 → dbsserver3 = 75ms
-docker exec -it dbsserver2-netem sh -c "/usr/local/bin/setup-latency.sh dbsserver2 dbsserver1 50 dbsserver3 75"
+# dbserver2 → dbserver1 = 50ms, dbserver2 → dbserver3 = 75ms
+docker exec -it dbserver2-netem sh -c "/usr/local/bin/setup-latency.sh dbserver2 dbserver1 50 dbserver3 75"
 
-# dbsserver3 → dbsserver1 = 100ms, dbsserver3 → dbsserver2 = 75ms
-docker exec -it dbsserver3-netem sh -c "/usr/local/bin/setup-latency.sh dbsserver3 agent1 100 dbsserver2 75"
+# dbserver3 → dbserver1 = 100ms, dbserver3 → dbserver2 = 75ms
+docker exec -it dbserver3-netem sh -c "/usr/local/bin/setup-latency.sh dbserver3 agent1 100 dbserver2 75"
 
 
 
