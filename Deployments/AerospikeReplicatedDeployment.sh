@@ -28,24 +28,6 @@ done
 echo "✅ All nodes are up!"
 
 
-# # Wait for Aerospike1 to be ready
-# echo "⏳ Waiting for aerospike1..."
-# until docker run --rm --network=aerospike-net aerospike/aerospike-tools:latest aql -h $(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' aerospike1) >/dev/null 2>&1; do
-#   echo "⏳ Waiting for aerospike1..."
-#   sleep 3
-# done
-# echo "✅ aerospike1 is up!"
-
-# # Cluster check
-# docker run --rm --network=aerospike-net aerospike/aerospike-tools:latest \
-#     aql -h aerospike1 -c "show namespaces;"
-
-# docker run --rm --network=aerospike-net aerospike/aerospike-tools:latest \
-#     asadm -h aerospike1 -e "show stat like cluster_size;"
-
-# echo "🎉 Aerospike cluster is ready with replication!"
-
-
 
 # Use aerospike-tools container for AQL
 TOOLS="aerospike/aerospike-tools:latest"

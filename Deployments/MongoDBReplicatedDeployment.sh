@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-COMPOSE_FILE="./Deployments/Dockerfiles/Mongodb3Replicas"
+COMPOSE_FILE="./Dockerfiles/Mongodb3Replicas"
 
 echo "Starting MongoDB replica set..."
 docker compose -f $COMPOSE_FILE up -d

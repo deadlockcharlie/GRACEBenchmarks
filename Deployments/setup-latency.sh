@@ -11,8 +11,8 @@ DELAY2=$5
 
 
 # get container IPs of peers
-PEER1_IP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $PEER1)
-PEER2_IP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $PEER2)
+PEER1_IP=$(getent hosts $PEER1 | awk '{print $1}')
+PEER2_IP=$(getent hosts $PEER2 | awk '{print $1}')
 
 echo "[$LOCAL] Setting up latency to $PEER1 ($DELAY1 ms) and $PEER2 ($DELAY2 ms)"
 

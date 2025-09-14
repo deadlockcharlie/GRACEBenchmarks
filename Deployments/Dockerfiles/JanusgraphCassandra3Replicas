@@ -10,6 +10,17 @@ services:
     networks:
       - janus-net
 
+
+  cassandra1-netem:
+    image: gaiadocker/iproute2
+    container_name: cassandra1-netem
+    network_mode: "service:cassandra1"   # share net namespace with cassandra1
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+
   cassandra2:
     image: cassandra:latest
     container_name: cassandra2
@@ -19,6 +30,16 @@ services:
     networks:
       - janus-net
 
+  cassandra2-netem:
+    image: gaiadocker/iproute2
+    container_name: cassandra2-netem
+    network_mode: "service:cassandra2"   # share net namespace with cassandra2
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+
   cassandra3:
     image: cassandra:latest
     container_name: cassandra3
@@ -27,6 +48,15 @@ services:
       - CASSANDRA_SEEDS=cassandra1
     networks:
       - janus-net
+  cassandra3-netem:
+    image: gaiadocker/iproute2
+    container_name: cassandra3-netem
+    network_mode: "service:cassandra3"   # share net namespace with cassandra3
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
 
   janusgraph:
     image: janusgraph/janusgraph:latest

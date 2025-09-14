@@ -43,6 +43,7 @@ services:
     command: ["asd", "--config-file", "/aerospike.conf"]
     networks:
       - aerospike-net
+      
   aerospike-tools:
     image: aerospike/aerospike-tools:latest
     container_name: aerospike-tools

@@ -69,7 +69,7 @@ def plot_latencies_line(root_dir: str, figure_path: str):
         "Neo4j":   {"color": "tab:blue",   "linestyle": "-"},
         "JanusGraph":   {"color": "tab:orange", "linestyle": "--"},
         "ArangoDB":  {"color": "tab:green",  "linestyle": "-."},
-        "Memgraph": {"color": "tab:purple","linestyle": ":"},
+        "MemGraph": {"color": "tab:purple","linestyle": ":"},
         "MongoDB":  {"color": "tab:brown",  "linestyle": "-"},
         "GRACE":   {"color": "tab:red",    "linestyle": "--"},
     }
