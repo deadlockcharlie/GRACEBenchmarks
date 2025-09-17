@@ -66,6 +66,8 @@ services:
     environment:
       JANUS_PROPS_TEMPLATE: cql
       janusgraph.storage.hostname: scylla1
+      storage.lock.retries: 10
+      storage.lock.wait-time: 20000
     depends_on:
       scylla3:
         condition : service_healthy

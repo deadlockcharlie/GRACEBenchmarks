@@ -21,17 +21,18 @@ docker exec scylla1 cqlsh -e " CREATE KEYSPACE janusgraph WITH REPLICATION = {'c
 
 # docker exec scylla1 cqlsh -e "CONSISTENCY QUORUM"
 
-until docker exec scylla1 cqlsh -e "CONSISTENCY" | grep QUORUM >/dev/null 2>&1; do
-  echo "Waiting for consistency level to be set to QUORUM..."
-  sleep 5
+# until docker exec scylla1 cqlsh -e "CONSISTENCY" | grep QUORUM >/dev/null 2>&1; do
+#   echo "Waiting for consistency level to be set to QUORUM..."
+#   sleep 5
+# done
+
+#Wait until JanusGraph is ready
+echo "⏳ Waiting for JanusGraph to be ready..."
+while ! docker logs janusgraph 2>&1 | grep -q "Channel started at port 8182"; do
+    echo "Waiting for JanusGraph to start..."
+    sleep 5
 done
 
-# Wait until JanusGraph is ready
-echo "⏳ Waiting for JanusGraph to be ready..."
-until docker exec janusgraph curl -s http://localhost:8182 >/dev/null 2>&1; do
-  echo "Waiting for JanusGraph..."
-  sleep 5
-done
 
 echo "✅ scylla cluster is ready."
 

@@ -267,10 +267,10 @@ cd $DEPLOYMENTS_DIR
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
 #Run the benchmark with graphdb workload
-bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="http://localhost:8182" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/JanusGraph/results.txt
+bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/JanusGraph/results.txt
 
 cd $DEPLOYMENTS_DIR
-docker compose -f ./Dockerfiles/JanusgraphCassandra3Replicas down
+docker compose -f ./Dockerfiles/JanusgraphScyllaDB3Replicas down
 docker rm -f janusgraph
 
 echo "Benchmarking completed. Results are stored in the Results directory."

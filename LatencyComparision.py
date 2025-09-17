@@ -57,7 +57,7 @@ def plot_latencies_line(root_dir: str, figure_path: str):
 
     # Convert to DataFrame
     plot_df = pd.DataFrame(data)
-    pivot_df = plot_df.pivot(index="Operation", columns="DB", values="Latency").fillna(0)
+    pivot_df = plot_df.pivot(index="Operation", columns="DB", values="Latency").fillna(np.inf)
 
     # Reorder columns: put GRACE last
     if "GRACE" in pivot_df.columns:
