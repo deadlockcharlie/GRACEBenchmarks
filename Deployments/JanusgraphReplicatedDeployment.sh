@@ -15,10 +15,14 @@ for node in cassandra1 cassandra2 cassandra3; do
   done
 done
 
-
+# Set replication factor to 3
 docker exec cassandra1 cqlsh -e "
 CREATE KEYSPACE janusgraph
 WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':3}
+"
+# Set consistency level to QUORUM
+docker exec cassandra1 cqlsh -e "
+CONSISTENCY QUORUM
 "
 
 docker run -d \
