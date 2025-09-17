@@ -35,10 +35,10 @@ mkdir -p $RESULTS_DIRECTORY/JanusGraph
 # pip3 install ./requirements.txt
 
 
-#Compile YCSB
-echo "Compiling YCSB"
-cd $YCSB_DIRECTORY
-sudo mvn -q clean install -DskipTests
+# # Compile YCSB
+# echo "Compiling YCSB"
+# cd $YCSB_DIRECTORY
+# sudo mvn -q clean install -DskipTests
 
 # # Benchmark with GRACE
 # echo "Benchmarking with GRACE"
@@ -259,13 +259,12 @@ sudo mvn -q clean install -DskipTests
 # docker compose -f ./Dockerfiles/Mongodb3Replicas down
 
 
-
 # Benchmark with Janusgraph
 echo "Running YCSB benchmark with Janusgraph workload"
 cd $DEPLOYMENTS_DIR
 ./JanusgraphReplicatedDeployment.sh #Replication latencies set in this script
 
- Switch to the YCSB directory
+# Switch to the YCSB directory
 cd $YCSB_DIRECTORY
 #Run the benchmark with graphdb workload
 bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="http://localhost:8182" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/JanusGraph/results.txt

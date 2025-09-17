@@ -1,14 +1,14 @@
 #!/bin/bash
 set -e
 
-COMPOSE_FILE="./Dockerfiles/JanusgraphCassandra3Replicas"
+COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB3Replicas"
 
-echo "🚀 Starting Cassandra and JanusGraph containers..."
+echo "🚀 Starting scylla and JanusGraph containers..."
 docker compose -f $COMPOSE_FILE up -d
 
-# Step 1: Wait for Cassandra nodes to be ready
-echo "⏳ Waiting for Cassandra cluster to be ready..."
-for node in cassandra1 cassandra2 cassandra3; do
+# Step 1: Wait for scylla nodes to be ready
+echo "⏳ Waiting for scylla cluster to be ready..."
+for node in scylla1 scylla2 scylla3; do
   until docker exec $node cqlsh -e "DESCRIBE KEYSPACES;" >/dev/null 2>&1; do
     echo "Waiting for $node..."
     sleep 5
@@ -16,34 +16,34 @@ for node in cassandra1 cassandra2 cassandra3; do
 done
 
 # Set replication factor to 3
-docker exec cassandra1 cqlsh -e " CREATE KEYSPACE janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':3}"
-# Set consistency level to QUORUM
-docker exec cassandra1 cqlsh -e "CONSISTENCY QUORUM"
+docker exec scylla1 cqlsh -e " CREATE KEYSPACE janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':3}" || exit 1
+# # Set consistency level to QUORUM
 
-until docker exec cassandra1 cqlsh -e "CONSISTENCY" | grep QUORUM >/dev/null 2>&1; do
+# docker exec scylla1 cqlsh -e "CONSISTENCY QUORUM"
+
+until docker exec scylla1 cqlsh -e "CONSISTENCY" | grep QUORUM >/dev/null 2>&1; do
   echo "Waiting for consistency level to be set to QUORUM..."
   sleep 5
 done
 
-docker run -d \
-  --name janusgraph \
-  --network dockerfiles_janus-net \
-  -p 8182:8182 \
-  -e JANUSGRAPH_STORAGE_BACKEND=cql \
-  -e JANUSGRAPH_STORAGE_HOSTS=cassandra1 \
-  janusgraph/janusgraph:latest
+# Wait until JanusGraph is ready
+echo "⏳ Waiting for JanusGraph to be ready..."
+until docker exec janusgraph curl -s http://localhost:8182 >/dev/null 2>&1; do
+  echo "Waiting for JanusGraph..."
+  sleep 5
+done
 
-echo "✅ Cassandra cluster is ready."
+echo "✅ scylla cluster is ready."
 
 
-# cassandra1 → cassandra2 = 50ms, cassandra1 → cassandra3 = 100ms
- docker exec -it cassandra1-netem sh -c "/usr/local/bin/setup-latency.sh cassandra1 cassandra2 50 cassandra3 50"
+# scylla1 → scylla2 = 50ms, scylla1 → scylla3 = 100ms
+ docker exec -it scylla1-netem sh -c "/usr/local/bin/setup-latency.sh scylla1 scylla2 50 scylla3 50"
 
-# cassandra2 → cassandra1 = 50ms, cassandra2 → cassandra3 = 75ms
-docker exec -it cassandra2-netem sh -c "/usr/local/bin/setup-latency.sh cassandra2 cassandra1 50 cassandra3 75"
+# scylla2 → scylla1 = 50ms, scylla2 → scylla3 = 75ms
+docker exec -it scylla2-netem sh -c "/usr/local/bin/setup-latency.sh scylla2 scylla1 50 scylla3 75"
 
-# cassandra3 → cassandra1 = 100ms, cassandra3 → cassandra2 = 75ms
-docker exec -it cassandra3-netem sh -c "/usr/local/bin/setup-latency.sh cassandra3 cassandra1 100 cassandra2 75"
+# scylla3 → scylla1 = 100ms, scylla3 → scylla2 = 75ms
+docker exec -it scylla3-netem sh -c "/usr/local/bin/setup-latency.sh scylla3 scylla1 100 scylla2 75"
 
 
 

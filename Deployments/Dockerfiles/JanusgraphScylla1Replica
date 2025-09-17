@@ -1,0 +1,29 @@
+services:
+  scylla1:
+    container_name: scylla1
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  
+
+  janusgraph:
+    image: janusgraph/janusgraph:latest
+    container_name: janusgraph
+    environment:
+      JANUS_PROPS_TEMPLATE: cql
+      janusgraph.storage.hostname: scylla1
+    depends_on:
+      scylla3:
+        condition : service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "8182:8182"
