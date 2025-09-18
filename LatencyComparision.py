@@ -3,8 +3,6 @@ import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
-
 def plot_latencies_line(root_dir: str, figure_path: str):
     data = []
 
@@ -27,6 +25,9 @@ def plot_latencies_line(root_dir: str, figure_path: str):
 
     operations = list(dict_operations.keys())
 
+    # Temporary store failed latencies
+    failed_latencies = {}
+
     for db in os.listdir(root_dir):
         db_path = os.path.join(root_dir, db)
         if not os.path.isdir(db_path):
@@ -47,18 +48,29 @@ def plot_latencies_line(root_dir: str, figure_path: str):
                 operation, metric, value = parts
                 operation = operation.strip("[]")
                 metric = metric.strip()
-                value = value.strip()
+                value = float(value.strip())
+                # Check for failed operations
+                if operation.endswith("-FAILED"):
+                    base_op = operation.replace("-FAILED", "")
+                    failed_latencies[(db, dict_operations[base_op])] = value
+
                 if metric == "AverageLatency(us)" and operation in operations:
+                    # If latency is zero, try to replace with failed latency
+                    if value == float(0) and (db, operation) in failed_latencies:
+                        value = failed_latencies[(db, operation)]
                     data.append({
                         "DB": db,
                         "Operation": dict_operations[operation],
-                        "Latency": float(value)
+                        "Latency": value
                     })
+    # print(failed_latencies)
 
+    
     # Convert to DataFrame
     plot_df = pd.DataFrame(data)
-    pivot_df = plot_df.pivot(index="Operation", columns="DB", values="Latency").fillna(np.inf)
-
+    # plot_df.where(plot_df == 0, other=np.nan, inplace=True)
+    pivot_df = plot_df.pivot(index="Operation", columns="DB", values="Latency").fillna(0)
+    # print(pivot_df)
     # Reorder columns: put GRACE last
     if "GRACE" in pivot_df.columns:
         cols = [c for c in pivot_df.columns if c != "GRACE"] + ["GRACE"]
@@ -73,6 +85,12 @@ def plot_latencies_line(root_dir: str, figure_path: str):
         "MongoDB":  {"color": "tab:brown",  "linestyle": "-"},
         "GRACE":   {"color": "tab:red",    "linestyle": "--"},
     }
+
+    # Example: your DataFrame is df
+    for (db, op), val in failed_latencies.items():
+        # Only replace if current value is 0
+        if pivot_df.loc[op, db] == 0:
+            pivot_df.loc[op, db] = val
 
     dbs = pivot_df.columns
     x = np.arange(len(pivot_df.index))  # positions for operations

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-COMPOSE_FILE="./Dockerfiles/JanusgraphScylla1Replica"
+COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB1Replica"
 
 echo "🚀 Starting Scylla and JanusGraph containers..."
 docker compose -f $COMPOSE_FILE up -d
@@ -15,5 +15,11 @@ for node in scylla1; do
   done
 done
 echo "✅ Scylla cluster is ready."
+#Wait until JanusGraph is ready
+echo "⏳ Waiting for JanusGraph to be ready..."
+while ! docker logs janusgraph 2>&1 | grep -q "Channel started at port 8182"; do
+    echo "Waiting for JanusGraph to start..."
+    sleep 5
+done
 
 echo "🎉 JanusGraph cluster with replication is ready!"

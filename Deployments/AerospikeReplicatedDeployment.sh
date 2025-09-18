@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-COMPOSE_FILE="./Deployments/Dockerfiles/Aerospike3Replicas"
+
+COMPOSE_FILE="./Dockerfiles/Aerospike3Replicas"
 
 NETWORK_NAME="aerospike-net"
 
@@ -17,9 +18,9 @@ echo "🚀 Starting Aerospike 3-node cluster..."
 docker compose -f $COMPOSE_FILE up -d
 
 
-Wait until all nodes are up
+# Wait until all nodes are up
 echo "⏳ Waiting for nodes to start..."
-for NODE in aerospike1 aerospike2 aerospike3; do
+for NODE in aerospike1; do
     until docker exec "$NODE" grep -q "quorum" /var/log/aerospike/aerospike.log 2>/dev/null; do
         echo "Waiting for $NODE..."
         sleep 3

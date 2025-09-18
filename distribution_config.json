@@ -9,19 +9,7 @@
   "preload_data": false,
   "dbs" : [
     {
-     "database": "janusgraph", 
-      "password": "verysecretpassword",
-      "user": "pandey",
-      "app_log_level": "error"
-    },
-    {
-     "database": "janusgraph", 
-      "password": "verysecretpassword",
-      "user": "pandey",
-      "app_log_level": "error"
-    },
-    {
-     "database": "janusgraph", 
+     "database": "memgraph", 
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"

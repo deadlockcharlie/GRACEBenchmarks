@@ -9,19 +9,28 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-  
+
 
   janusgraph:
     image: janusgraph/janusgraph:latest
     container_name: janusgraph
     environment:
-      JANUS_PROPS_TEMPLATE: cql
+      JANUS_PROPS_TEMPLATE: cql-es
       janusgraph.storage.hostname: scylla1
+      janusgraph.index.search.hostname: elasticsearch
+      storage.lock.retries: 10
+      storage.lock.wait-time: 20000
+      janusgraph.graph.set-vertex-id: true
+      janusgraph.graph.set-edge-id: true
+      janusgraph.graph.allow-custom-vid-types: true
+      janusgraph.graph.allow-custom-eid-types: true
+
     depends_on:
-      scylla3:
+      scylla1:
         condition : service_healthy
+
     healthcheck:
-      test: ["CMD-SHELL", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/8182' || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 10

@@ -23,11 +23,12 @@ mkdir -p $RESULTS_DIRECTORY/MemGraph
 mkdir -p $RESULTS_DIRECTORY/Neo4j
 mkdir -p $RESULTS_DIRECTORY/ArangoDB
 mkdir -p $RESULTS_DIRECTORY/MongoDB
+mkdir -p $RESULTS_DIRECTORY/JanusGraph
 
 #Compile YCSB
 echo "Compiling YCSB"
 cd $YCSB_DIRECTORY
-mvn -q clean install -DskipTests
+sudo mvn -q clean install -DskipTests
 
 # Benchmark with GRACE
 echo "Benchmarking with GRACE"
@@ -103,9 +104,6 @@ cd $LF_DIRECTORY
 python3 Deployment.py down $DIST_CONF
 # Remove the distribution configuration file
 rm $DIST_CONF
-
-
-
 
 
 # Benchmark with Neo4j
@@ -215,6 +213,21 @@ cd $LF_DIRECTORY
 python3 Deployment.py down $DIST_CONF
 # Remove the distribution configuration file
 rm $DIST_CONF
+
+
+
+# Benchmark with Janusgraph
+echo "Running YCSB benchmark with Janusgraph workload"
+cd $DEPLOYMENTS_DIR
+./JanusgraphDeployment.sh #Replication latencies set in this script
+
+# Switch to the YCSB directory
+cd $YCSB_DIRECTORY
+#Run the benchmark with graphdb workload
+bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/JanusGraph/results.txt
+
+cd $DEPLOYMENTS_DIR
+docker compose -f ./Dockerfiles/JanusgraphScyllaDB3Replicas down
 
 
 echo "Benchmarking completed. Results are stored in the Results directory."
