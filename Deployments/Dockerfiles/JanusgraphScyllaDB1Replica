@@ -15,9 +15,8 @@ services:
     image: janusgraph/janusgraph:latest
     container_name: janusgraph
     environment:
-      JANUS_PROPS_TEMPLATE: cql-es
+      JANUS_PROPS_TEMPLATE: cql
       janusgraph.storage.hostname: scylla1
-      janusgraph.index.search.hostname: elasticsearch
       storage.lock.retries: 10
       storage.lock.wait-time: 20000
       janusgraph.graph.set-vertex-id: true

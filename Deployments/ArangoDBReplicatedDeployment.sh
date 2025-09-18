@@ -36,26 +36,6 @@ if (!db._collection("testCollection")) {
 '
 
 
-# agent1 → agent2 = 50ms, agent1 → agent3 = 100ms
-# docker exec -it agent1-netem sh -c "/usr/local/bin/setup-latency.sh agent1 agent2 50 agent3 100"
-
-# agent2 → agent1 = 50ms, agent2 → agent3 = 75ms
-docker exec -it agent2-netem sh -c "/usr/local/bin/setup-latency.sh agent2 agent1 100 agent3 150"
-
-# agent3 → agent1 = 100ms, agent3 → agent2 = 75ms
-docker exec -it agent3-netem sh -c "/usr/local/bin/setup-latency.sh agent3 agent1 200 agent2 150"
-
-
-# dbserver1 → dbserver2 = 50ms, dbserver1 → dbserver3 = 100ms
-# docker exec -it dbserver1-netem sh -c "/usr/local/bin/setup-latency.sh dbserver1 dbserver2 50 dbserver3 100"
-
-# dbserver2 → dbserver1 = 50ms, dbserver2 → dbserver3 = 75ms
-docker exec -it dbserver2-netem sh -c "/usr/local/bin/setup-latency.sh dbserver2 dbserver1 100 dbserver3 150"
-
-# dbserver3 → dbserver1 = 100ms, dbserver3 → dbserver2 = 75ms
-docker exec -it dbserver3-netem sh -c "/usr/local/bin/setup-latency.sh dbserver3 agent1 200 dbserver2 150"
-
-
 
 
 echo "🎉 ArangoDB cluster is ready with quorum writes enabled."

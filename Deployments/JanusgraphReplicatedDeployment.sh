@@ -37,15 +37,5 @@ done
 echo "✅ scylla cluster is ready."
 
 
-# scylla1 → scylla2 = 50ms, scylla1 → scylla3 = 100ms
- docker exec -it scylla1-netem sh -c "/usr/local/bin/setup-latency.sh scylla1 scylla2 50 scylla3 50"
-
-# scylla2 → scylla1 = 50ms, scylla2 → scylla3 = 75ms
-docker exec -it scylla2-netem sh -c "/usr/local/bin/setup-latency.sh scylla2 scylla1 50 scylla3 75"
-
-# scylla3 → scylla1 = 100ms, scylla3 → scylla2 = 75ms
-docker exec -it scylla3-netem sh -c "/usr/local/bin/setup-latency.sh scylla3 scylla1 100 scylla2 75"
-
-
 
 echo "🎉 JanusGraph cluster with replication is ready!"

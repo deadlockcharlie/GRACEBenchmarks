@@ -46,14 +46,4 @@ db.adminCommand({
 '
 
 
-# mongo1 → mongo2 = 50ms, mongo1 → mongo3 = 100ms
-# docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo2 100 mongo3 200"
-
-# # mongo2 → mongo1 = 50ms, mongo2 → mongo3 = 75ms
-docker exec -it mongo2-netem sh -c "/usr/local/bin/setup-latency.sh mongo2 mongo1 100"
-
-# # mongo3 → mongo1 = 100ms, mongo3 → mongo2 = 75ms
-docker exec -it mongo3-netem sh -c "/usr/local/bin/setup-latency.sh mongo3 mongo1 200"
-
-
 echo "✅ MongoDB replica set is ready with quorum writes, mongo1 preferred as primary."
