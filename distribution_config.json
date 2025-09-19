@@ -5,7 +5,7 @@
   "base_prometheus_port": 9090,
   "base_grafana_port": 5000,
   "provider_port": 1234,
-  "provider": true,
+  "provider": false,
   "preload_data": false,
   "dbs" : [
     {

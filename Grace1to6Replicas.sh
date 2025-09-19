@@ -28,7 +28,7 @@ EOL
 
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
-
+sleep 5
 
 cd $ROOT_DIRECTORY
 
@@ -82,7 +82,7 @@ EOL
 
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
-
+sleep 5
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
@@ -148,7 +148,7 @@ EOL
 
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
-
+sleep 5
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
@@ -217,7 +217,7 @@ EOL
 
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
-
+sleep 5
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
@@ -292,7 +292,7 @@ EOL
 
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
-
+sleep 5
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
