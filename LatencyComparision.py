@@ -90,11 +90,13 @@ def build_pivot_for_dataset(dataset_path):
     return pivot_df
 
 
-def plot_latencies_line(root_dir: str, figure_path: str):
+# SOLUTION 1: Fixed legend with better positioning
+def plot_latencies_line_v1(root_dir: str, figure_path: str):
     datasets = [d for d in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, d))]
     datasets.sort()
 
-    fig, axes = plt.subplots(1, len(datasets), figsize=(4*len(datasets), 4))
+    # Increase figure height to accommodate legend
+    fig, axes = plt.subplots(1, len(datasets), figsize=(4*len(datasets), 5))
 
     if len(datasets) == 1:
         axes = [axes]
@@ -123,21 +125,137 @@ def plot_latencies_line(root_dir: str, figure_path: str):
         ax.grid(axis="y", linestyle="--", alpha=0.7)
 
     # Common y-label
-    fig.text(0, 0.5, "Latency (µs)", va="center", rotation="vertical")
+    fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical")
 
-    # Shared legend
+    # Get legend from first axis and position it better
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=3, fontsize=8)
+    fig.legend(handles, labels, 
+               loc="upper center", 
+               bbox_to_anchor=(0.5, 0.95),  # Explicit positioning
+               ncol=3, 
+               fontsize=9,
+               frameon=True)
 
-    fig.tight_layout(rect=[0, 0, 1, 0.95])
-    fig.savefig(figure_path, dpi=500)
+    # Adjust layout with more space for legend
+    fig.tight_layout(rect=[0.03, 0.03, 1, 0.88])
+    fig.savefig(figure_path, dpi=500, bbox_inches='tight')
     plt.close(fig)
+
+
+# SOLUTION 2: Legend below the plots
+def plot_latencies_line_v2(root_dir: str, figure_path: str):
+    datasets = [d for d in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, d))]
+    datasets.sort()
+
+    fig, axes = plt.subplots(1, len(datasets), figsize=(4*len(datasets), 5))
+
+    if len(datasets) == 1:
+        axes = [axes]
+
+    for i, dataset in enumerate(datasets):
+        ax = axes[i]
+        pivot_df = build_pivot_for_dataset(os.path.join(root_dir, dataset))
+        if pivot_df is None:
+            continue
+
+        x = np.arange(len(pivot_df.index))
+        for db in pivot_df.columns:
+            style = db_styles.get(db, {})
+            ax.plot(x, pivot_df[db].values, label=db,
+                    color=style.get("color", None),
+                    linestyle=style.get("linestyle", "-"),
+                    marker=style.get("marker", "o"),
+                    markersize=3,
+                    linewidth=1
+                    )
+
+        ax.set_title(dataset, fontsize=10)
+        ax.set_xticks(x)
+        ax.set_xticklabels(pivot_df.index, fontsize=8)
+        ax.set_yscale("log")
+        ax.grid(axis="y", linestyle="--", alpha=0.7)
+
+    # Common y-label
+    fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical")
+
+    # Legend below the plots
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, 
+               loc="lower center", 
+               bbox_to_anchor=(0.5, -0.05),
+               ncol=len(labels), 
+               fontsize=9)
+
+    fig.tight_layout(rect=[0.03, 0.08, 1, 1])
+    fig.savefig(figure_path, dpi=500, bbox_inches='tight')
+    plt.close(fig)
+
+
+# SOLUTION 3: Legend on the right side
+def plot_latencies_line_v3(root_dir: str, figure_path: str):
+    datasets = [d for d in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, d))]
+    datasets.sort()
+
+    fig, axes = plt.subplots(1, len(datasets), figsize=(4*len(datasets) + 1.5, 4))
+
+    if len(datasets) == 1:
+        axes = [axes]
+
+    for i, dataset in enumerate(datasets):
+        ax = axes[i]
+        pivot_df = build_pivot_for_dataset(os.path.join(root_dir, dataset))
+        if pivot_df is None:
+            continue
+
+        x = np.arange(len(pivot_df.index))
+        for db in pivot_df.columns:
+            style = db_styles.get(db, {})
+            ax.plot(x, pivot_df[db].values, label=db,
+                    color=style.get("color", None),
+                    linestyle=style.get("linestyle", "-"),
+                    marker=style.get("marker", "o"),
+                    markersize=3,
+                    linewidth=1
+                    )
+
+        ax.set_title(dataset, fontsize=10)
+        ax.set_xticks(x)
+        ax.set_xticklabels(pivot_df.index, fontsize=8)
+        ax.set_yscale("log")
+        ax.grid(axis="y", linestyle="--", alpha=0.7)
+
+    # Common y-label
+    fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical")
+
+    # Legend on the right
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, 
+               loc="center left", 
+               bbox_to_anchor=(1.02, 0.5),
+               fontsize=9)
+
+    fig.tight_layout(rect=[0.03, 0, 0.85, 1])
+    fig.savefig(figure_path, dpi=500, bbox_inches='tight')
+    plt.close(fig)
+
+
+# Use the original function name but with the fixed version
+def plot_latencies_line(root_dir: str, figure_path: str):
+    """Default implementation using solution 1 (legend on top)"""
+    plot_latencies_line_v1(root_dir, figure_path)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Plot benchmark latencies across datasets.")
     parser.add_argument("root_dir", help="Path to the root results directory")
     parser.add_argument("figure_path", help="Path to save the output figure (with extension, e.g., .png)")
+    parser.add_argument("--legend-pos", choices=['top', 'bottom', 'right'], default='top',
+                       help="Legend position (default: top)")
     args = parser.parse_args()
 
-    plot_latencies_line(args.root_dir, args.figure_path)
+    if args.legend_pos == 'top':
+        plot_latencies_line_v1(args.root_dir, args.figure_path)
+    elif args.legend_pos == 'bottom':
+        plot_latencies_line_v2(args.root_dir, args.figure_path)
+    elif args.legend_pos == 'right':
+        plot_latencies_line_v3(args.root_dir, args.figure_path)
