@@ -13,7 +13,7 @@ LF_DIRECTORY="$ROOT_DIRECTORY/ReplicatedGDBLF"
 YCSB_DIRECTORY="$ROOT_DIRECTORY/YCSB"
 
 DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
-latencies=(0 50 150 150 100 125)
+latencies=(0 50 50 75 50 67.5 50 50 50)
 
 
 
@@ -22,7 +22,7 @@ latencies=(0 50 150 150 100 125)
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
-datasets=(yeast mico ldbc frbo frbs frbm)
+datasets=(yeast mico ldbc frbs frbm frbo)
 
 for dataset in "${datasets[@]}"; do
     echo "Starting benchmarks for dataset: $dataset"

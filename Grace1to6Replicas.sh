@@ -35,7 +35,7 @@ cd $ROOT_DIRECTORY
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
- bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+ bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/1.txt
 
 
 #Run the benchmark with grace workload
@@ -86,12 +86,12 @@ python3 Deployment.py up $DIST_CONF
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
-docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50"
+docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]}"
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
 
-bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/2.txt
 
 #Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
@@ -152,11 +152,11 @@ python3 Deployment.py up $DIST_CONF
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
-docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50 Grace3 50"
+docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]} Grace3 ${latencies[2]}"
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
-bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/3.txt
 
 #Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
@@ -221,12 +221,12 @@ python3 Deployment.py up $DIST_CONF
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
-docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50 Grace3 50 GRACE4 50"
+docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]} Grace3 ${latencies[2]} Grace4 ${latencies[3]}"
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
 
-bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/4.txt
 
 #Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
@@ -296,11 +296,11 @@ python3 Deployment.py up $DIST_CONF
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
-docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50 Grace3 50 Grace4 50 Grace5 50"
+docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]} Grace3 ${latencies[2]} Grace4 ${latencies[3]} Grace5 ${latencies[4]}"
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
-bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/5.txt
 
 #Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
@@ -376,12 +376,12 @@ python3 Deployment.py up $DIST_CONF
 cd $ROOT_DIRECTORY
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
-docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50 Grace3 50 Grace4 50 Grace5 50 Grace6 50"
+docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]} Grace3 ${latencies[2]} Grace4 ${latencies[3]} Grace5 ${latencies[4]} Grace6 ${latencies[5]}"
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
 
-bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/6.txt
 
 #Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
