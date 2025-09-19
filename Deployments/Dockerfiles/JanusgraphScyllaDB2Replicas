@@ -48,7 +48,7 @@ services:
       storage.lock.retries: 10
       storage.lock.wait-time: 20000
     depends_on:
-      scylla3:
+      scylla2:
         condition : service_healthy
     healthcheck:
       test: ["CMD-SHELL", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]

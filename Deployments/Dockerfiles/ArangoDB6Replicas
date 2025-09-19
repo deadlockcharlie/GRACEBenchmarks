@@ -9,7 +9,7 @@ services:
       arangod --server.endpoint tcp://0.0.0.0:8531
               --agency.activate true
               --agency.my-address tcp://agent1:8531
-              --agency.size 3
+              --agency.size 1
               --agency.supervision true
               --log.output -
     networks:

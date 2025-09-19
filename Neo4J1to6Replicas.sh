@@ -34,9 +34,12 @@ cd $ROOT_DIRECTORY
 
 # Switch to the YCSB directory
 cd $YCSB_DIRECTORY
+
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+
 #Run the benchmark with neo4j workload
 echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4J/1.txt
+bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/Neo4J/1.txt
 # Switch to GRACE directory
 cd $LF_DIRECTORY
 # Tear down the deployment
@@ -80,6 +83,10 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 
+# Switch to the YCSB directory
+cd $YCSB_DIRECTORY
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50"
@@ -88,12 +95,11 @@ docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica
 docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50"
 
 
-cd $ROOT_DIRECTORY
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
+
+
 #Run the benchmark with neo4j workload
 echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4J/2.txt
+bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/Neo4J/2.txt
 # Switch to GRACE directory
 cd $LF_DIRECTORY
 # Tear down the deployment
@@ -144,6 +150,13 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 
+
+# Switch to the YCSB directory
+cd $YCSB_DIRECTORY
+
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+
+
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50"
@@ -154,12 +167,9 @@ docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica
 # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
 docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 50 Replica2 50"
 
-cd $ROOT_DIRECTORY
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
 #Run the benchmark with neo4j workload
 echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4J/3.txt
+bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/Neo4J/3.txt
 # Switch to GRACE directory
 cd $LF_DIRECTORY
 # Tear down the deployment
@@ -216,6 +226,12 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 
+
+# Switch to the YCSB directory
+cd $YCSB_DIRECTORY
+
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50 Replica4 50"
@@ -229,12 +245,10 @@ docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica
 # Replica4 → Replica1 = 150ms, Replica4 → Replica2 = 100ms, Replica4 → Replica3 = 50ms
 docker exec -it Replica4 sh -c "/usr/local/bin/setup-latency.sh Replica4 Replica1 50 Replica2 50 Replica3 50"
 
-cd $ROOT_DIRECTORY
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
+
 #Run the benchmark with neo4j workload
 echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4J/4.txt
+bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/Neo4J/4.txt
 # Switch to GRACE directory
 cd $LF_DIRECTORY
 # Tear down the deployment
@@ -291,6 +305,11 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 
+# Switch to the YCSB directory
+cd $YCSB_DIRECTORY
+
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50 Replica4 50 Replica5 50"
@@ -303,12 +322,9 @@ docker exec -it Replica4 sh -c "/usr/local/bin/setup-latency.sh Replica4 Replica
 # Replica5 → Replica1 = 150ms, Replica5 → Replica2 = 150
 docker exec -it Replica5 sh -c "/usr/local/bin/setup-latency.sh Replica5 Replica1 50 Replica2 50 Replica3 50 Replica4 50"
 
-cd $ROOT_DIRECTORY
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
 #Run the benchmark with neo4j workload
 echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4J/5.txt
+bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/Neo4J/5.txt
 # Switch to GRACE directory
 cd $LF_DIRECTORY   
 # Tear down the deployment
@@ -369,6 +385,12 @@ cat > $DIST_CONF <<EOL
 EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
+
+# Switch to the YCSB directory
+cd $YCSB_DIRECTORY
+
+bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json
+
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50 Replica4 50 Replica5 50 Replica6 50"
@@ -381,12 +403,10 @@ docker exec -it Replica4 sh -c "/usr/local/bin/setup-latency.sh Replica4 Replica
 # Replica5 → Replica1 = 150ms, Replica5 → Replica2 = 150
 docker exec -it Replica5 sh -c "/usr/local/bin/setup-latency.sh Replica5 Replica1 50 Replica2 50 Replica3 50 Replica4 50 Replica6 50"
 
-cd $ROOT_DIRECTORY
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
+
 #Run the benchmark with neo4j workload
 echo "Running YCSB benchmark with Grace workload"
-bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 > $RESULTS_DIRECTORY/Neo4J/6.txt
+bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/Neo4J/6.txt
 # Switch to GRACE directory
 cd $LF_DIRECTORY  
 # Tear down the deployment

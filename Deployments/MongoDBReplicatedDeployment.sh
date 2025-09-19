@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-COMPOSE_FILE="./Dockerfiles/Mongodb3Replicas"
 
 echo "Starting MongoDB replica set..."
 docker compose -f $COMPOSE_FILE up -d
@@ -9,17 +8,38 @@ docker compose -f $COMPOSE_FILE up -d
 echo "Waiting for MongoDB containers to start..."
 sleep 10
 
-echo "Initializing replica set..."
+# Initialize the replica set based on the number of replicas
+
+replicaset=""
+
+if [ $i -gt 1 ]; then
+  
+for (( j=1; j<=$i; j++ ))
+do
+  if [ $j -eq 1 ]; then
+    replicaset+="{ _id: 0, host: \"mongo1:27017\", \"priority\": 10 },"
+    continue
+  fi
+  replicaset+="{ _id: $((j-1)), host: \"mongo$j:27017\", priority:0 },"
+done
+replicaset=${replicaset%,} # Remove trailing comma
+
+echo "Initializing replica set..." $replicaset
 docker exec mongo1 mongosh --eval '
 rs.initiate({
   _id: "rs0",
   members: [
-    { _id: 0, host: "mongo1:27017" },
-    { _id: 1, host: "mongo2:27017" },
-    { _id: 2, host: "mongo3:27017" }
+    '"$replicaset"'
   ]
 })
 '
+
+echo "Setting mongo1 as preferred primary..."
+docker exec mongo1 mongosh --eval '
+cfg = rs.conf();
+cfg.members[0].priority = 10; // mongo1
+'
+
 
 # 🔑 Wait until mongo1 is elected PRIMARY
 echo "Waiting for mongo1 to become PRIMARY..."
@@ -29,14 +49,6 @@ done
 
 
 
-echo "Setting mongo1 as preferred primary..."
-docker exec mongo1 mongosh --eval '
-cfg = rs.conf();
-cfg.members[0].priority = 2; // mongo1
-cfg.members[1].priority = 1; // mongo2
-cfg.m
-'
-
 echo "Configuring majority write concern..."
 docker exec mongo1 mongosh --eval '
 db.adminCommand({
@@ -44,6 +56,8 @@ db.adminCommand({
   defaultWriteConcern: { w: "majority" }
 })
 '
+fi
+
 
 
 echo "✅ MongoDB replica set is ready with quorum writes, mongo1 preferred as primary."

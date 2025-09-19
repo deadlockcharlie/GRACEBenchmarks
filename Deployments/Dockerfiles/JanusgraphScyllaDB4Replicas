@@ -68,10 +68,10 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
-  scylla3-netem:
+  scylla4-netem:
     image: gaiadocker/iproute2
-    container_name: scylla3-netem
-    network_mode: "service:scylla3"   # share net namespace with scylla3
+    container_name: scylla4-netem
+    network_mode: "service:scylla4"   # share net namespace with scylla4
     cap_add:
       - NET_ADMIN
     volumes:
@@ -89,7 +89,7 @@ services:
       storage.lock.retries: 10
       storage.lock.wait-time: 20000
     depends_on:
-      scylla3:
+      scylla4:
         condition : service_healthy
     healthcheck:
       test: ["CMD-SHELL", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]

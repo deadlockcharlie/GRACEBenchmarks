@@ -9,7 +9,7 @@ services:
       arangod --server.endpoint tcp://0.0.0.0:8531
               --agency.activate true
               --agency.my-address tcp://agent1:8531
-              --agency.size 3
+              --agency.size 1
               --agency.supervision true
               --log.output -
     networks:
@@ -37,7 +37,6 @@ services:
               --cluster.my-role DBSERVER
               --cluster.my-address tcp://dbserver1:8530
               --cluster.agency-endpoint tcp://agent1:8531
-              --cluster.agency-endpoint tcp://agent2:8531
               --log.output -
     networks:
       - arango-net

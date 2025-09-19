@@ -1,0 +1,33 @@
+services:
+  mongo1:
+    image: mongo:latest
+    container_name: mongo1
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    ports:
+      - "27017:27017"
+
+  mongo1-netem:
+    image: gaiadocker/iproute2
+    container_name: mongo1-netem
+    network_mode: "service:mongo1"   # share net namespace with mongo1
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+
+  mongo2:
+    image: mongo:latest
+    container_name: mongo2
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    ports:
+      - "27018:27017"
+  mongo2-netem:
+    image: gaiadocker/iproute2
+    container_name: mongo2-netem
+    network_mode: "service:mongo2"   # share net namespace with mongo2
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
