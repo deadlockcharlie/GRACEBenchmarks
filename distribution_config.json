@@ -13,6 +13,12 @@
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"
+    },
+    {
+     "database": "memgraph", 
+      "password": "verysecretpassword",
+      "user": "pandey",
+      "app_log_level": "error"
     }
   ]
 }
