@@ -1,0 +1,139 @@
+services:
+  scylla1:
+    container_name: scylla1
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  scylla1-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla1-netem
+    network_mode: "service:scylla1"   # share net namespace with scylla1
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+
+  scylla2:
+    container_name: scylla2
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  scylla2-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla2-netem
+    network_mode: "service:scylla2"   # share net namespace with scylla2
+    cap_add:
+      - NET_ADMIN
+    volumes:  
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+
+  scylla3:
+    container_name: scylla3
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  scylla3-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla3-netem
+    network_mode: "service:scylla3"   # share net namespace with scylla3
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]  
+  scylla4:
+    container_name: scylla4
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  scylla4-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla4-netem
+    network_mode: "service:scylla4"   # share net namespace with scylla4
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]  
+
+  scylla5:
+    container_name: scylla5
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  scylla5-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla5-netem
+    network_mode: "service:scylla5"   # share net namespace with scylla5
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]  
+
+  scylla6:
+    container_name: scylla6
+    image: scylladb/scylla:2025.3
+    restart: always
+    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  scylla6-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla6-netem
+    network_mode: "service:scylla6"   # share net namespace with scylla6
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]  
+
+  
+  janusgraph:
+    image: janusgraph/janusgraph:latest
+    container_name: janusgraph
+    environment:
+      JANUS_PROPS_TEMPLATE: cql
+      janusgraph.storage.hostname: scylla1
+      storage.lock.retries: 10
+      storage.lock.wait-time: 20000
+    depends_on:
+      scylla3:
+        condition : service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "8182:8182"
