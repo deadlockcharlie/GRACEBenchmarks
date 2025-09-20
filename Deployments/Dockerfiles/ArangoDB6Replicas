@@ -9,7 +9,10 @@ services:
       arangod --server.endpoint tcp://0.0.0.0:8531
               --agency.activate true
               --agency.my-address tcp://agent1:8531
-              --agency.size 1
+              --agency.endpoint tcp://agent1:8531
+              --agency.endpoint tcp://agent2:8531
+              --agency.endpoint tcp://agent3:8531
+              --agency.size 3
               --agency.supervision true
               --log.output -
     networks:
@@ -37,6 +40,8 @@ services:
               --cluster.my-role DBSERVER
               --cluster.my-address tcp://dbserver1:8530
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
     networks:
       - arango-net
@@ -54,6 +59,35 @@ services:
       - dbserver1
 
   # --- SITE B ---
+  agent2:
+    image: arangodb:3.11
+    container_name: agent2
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8531
+              --agency.activate true
+              --agency.my-address tcp://agent2:8531
+              --agency.endpoint tcp://agent1:8531
+              --agency.endpoint tcp://agent2:8531
+              --agency.endpoint tcp://agent3:8531
+              --agency.size 3
+              --agency.supervision true
+              --log.output -
+    networks:
+      - arango-net
+
+  agent2-netem:
+    image: gaiadocker/iproute2
+    container_name: agent2-netem
+    cap_add:
+      - NET_ADMIN
+    network_mode: "service:agent2"
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+    depends_on:
+      - agent2
 
   dbserver2:
     image: arangodb:3.11
@@ -65,6 +99,8 @@ services:
               --cluster.my-role DBSERVER
               --cluster.my-address tcp://dbserver2:8530
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
     networks:
       - arango-net
@@ -82,6 +118,35 @@ services:
       - dbserver2
 
   # --- SITE C ---
+  agent3:
+    image: arangodb:3.11
+    container_name: agent3
+    environment:
+      - ARANGO_NO_AUTH=1
+    command: >
+      arangod --server.endpoint tcp://0.0.0.0:8531
+              --agency.activate true
+              --agency.my-address tcp://agent3:8531
+              --agency.endpoint tcp://agent1:8531
+              --agency.endpoint tcp://agent2:8531
+              --agency.endpoint tcp://agent3:8531
+              --agency.size 3
+              --agency.supervision true
+              --log.output -
+    networks:
+      - arango-net
+
+  agent3-netem:
+    image: gaiadocker/iproute2
+    container_name: agent3-netem
+    cap_add:
+      - NET_ADMIN
+    network_mode: "service:agent3"
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+    depends_on:
+      - agent3
 
   dbserver3:
     image: arangodb:3.11
@@ -93,6 +158,8 @@ services:
               --cluster.my-role DBSERVER
               --cluster.my-address tcp://dbserver3:8530
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
     networks:
       - arango-net
@@ -111,6 +178,7 @@ services:
 
 
   # --- Site D ---
+
   dbserver4:
     image: arangodb:3.11
     container_name: dbserver4
@@ -121,6 +189,9 @@ services:
               --cluster.my-role DBSERVER
               --cluster.my-address tcp://dbserver4:8530
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
+
               --log.output -
     networks:
       - arango-net
@@ -138,7 +209,6 @@ services:
       - dbserver4
   
   # --- Site E  ---
-
   dbserver5:
     image: arangodb:3.11
     container_name: dbserver5
@@ -147,8 +217,10 @@ services:
     command: >
       arangod --server.endpoint tcp://0.0.0.0:8530
               --cluster.my-role DBSERVER
-              --cluster.my-address tcp://dbserver4:8530
+              --cluster.my-address tcp://dbserver5:8530
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
     networks:
       - arango-net
@@ -164,7 +236,9 @@ services:
     entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
     depends_on:
       - dbserver5
-  
+
+
+
   # --- Site F  ---
   dbserver6:
     image: arangodb:3.11
@@ -174,8 +248,10 @@ services:
     command: >
       arangod --server.endpoint tcp://0.0.0.0:8530
               --cluster.my-role DBSERVER
-              --cluster.my-address tcp://dbserver4:8530
+              --cluster.my-address tcp://dbserver6:8530
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
     networks:
       - arango-net
@@ -190,7 +266,7 @@ services:
       - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
     entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
     depends_on:
-      - dbserver5
+      - dbserver6
 
   coordinator1:
     image: arangodb:3.11
@@ -202,6 +278,8 @@ services:
               --cluster.my-role COORDINATOR
               --cluster.my-address tcp://coordinator1:8529
               --cluster.agency-endpoint tcp://agent1:8531
+              --cluster.agency-endpoint tcp://agent2:8531
+              --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
     ports:
       - "8529:8529"

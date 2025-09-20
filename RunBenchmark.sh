@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT_DIRECTORY=$(pwd)
-DURATION=60 #Benchmark duration in seconds
+DURATION=10 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -50,8 +50,8 @@ for db in "${DATABASES[@]}"; do
     done
 done
 
-cd $YCSB_DIRECTORY
-sudo mvn clean package -DskipTests -q
+# cd $YCSB_DIRECTORY
+# sudo mvn clean package -DskipTests -q
 
 cd $ROOT_DIRECTORY
 . ./ReplicaCountAndLatency.sh
