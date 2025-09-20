@@ -4,7 +4,7 @@
 for i in {1..6}
 do
     echo "Running benchmark with $i replicas..."
-    COMPOSE_FILE="./Dockerfiles/MongoDB${i}Replicas"
+    COMPOSE_FILE="./Dockerfiles/Mongodb${i}Replicas"
 
     cd $DEPLOYMENTS_DIR
 
@@ -13,7 +13,7 @@ do
     cd $YCSB_DIRECTORY
     # Load the initial data in the DB
     bin/ycsb.sh load mongodb  -P workloads/workload_grace  -p DBTYPE="mongodb" -p DBURI="mongodb://localhost:27017" -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/MongoDB/${i}.txt
-    Add latencies between replicas
+#    Add latencies between replicas
 
 
     # Add latency between replicas if more than 1 replica

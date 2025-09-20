@@ -26,37 +26,39 @@ Still waiting for thread Thread-1 to complete. Workload status: true
 Still waiting for thread Thread-1 to complete. Workload status: true
 Still waiting for thread Thread-1 to complete. Workload status: true
 Still waiting for thread Thread-1 to complete. Workload status: true
-[OVERALL], RunTime(ms), 89558
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+[OVERALL], RunTime(ms), 92208
 [OVERALL], Throughput(ops/sec), 0.0
 [TOTAL_GCS_G1_Young_Generation], Count, 4
 [TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 64
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0714620692735434
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0694082942911678
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
 [TOTAL_GCs], Count, 4
 [TOTAL_GC_TIME], Time(ms), 64
-[TOTAL_GC_TIME_%], Time(%), 0.0714620692735434
+[TOTAL_GC_TIME_%], Time(%), 0.0694082942911678
 [ADD_EDGE], Operations, 7391
-[ADD_EDGE], AverageLatency(us), 10480.386145311866
-[ADD_EDGE], MinLatency(us), 4512
-[ADD_EDGE], MaxLatency(us), 68543
-[ADD_EDGE], 50thPercentileLatency(us), 10815
-[ADD_EDGE], 95thPercentileLatency(us), 12263
-[ADD_EDGE], 99thPercentileLatency(us), 14519
+[ADD_EDGE], AverageLatency(us), 10814.975510756325
+[ADD_EDGE], MinLatency(us), 4608
+[ADD_EDGE], MaxLatency(us), 70911
+[ADD_EDGE], 50thPercentileLatency(us), 10807
+[ADD_EDGE], 95thPercentileLatency(us), 12215
+[ADD_EDGE], 99thPercentileLatency(us), 13599
 [ADD_EDGE], Return=OK, 7391
 [ADD_VERTEX], Operations, 1866
-[ADD_VERTEX], AverageLatency(us), 5910.81243301179
-[ADD_VERTEX], MinLatency(us), 3516
-[ADD_VERTEX], MaxLatency(us), 239231
-[ADD_VERTEX], 50thPercentileLatency(us), 5327
-[ADD_VERTEX], 95thPercentileLatency(us), 8799
-[ADD_VERTEX], 99thPercentileLatency(us), 14671
+[ADD_VERTEX], AverageLatency(us), 6016.540192926045
+[ADD_VERTEX], MinLatency(us), 3472
+[ADD_VERTEX], MaxLatency(us), 243711
+[ADD_VERTEX], 50thPercentileLatency(us), 5483
+[ADD_VERTEX], 95thPercentileLatency(us), 9623
+[ADD_VERTEX], 99thPercentileLatency(us), 14103
 [ADD_VERTEX], Return=OK, 1866
 [CLEANUP], Operations, 1
-[CLEANUP], AverageLatency(us), 4.0
-[CLEANUP], MinLatency(us), 4
-[CLEANUP], MaxLatency(us), 4
-[CLEANUP], 50thPercentileLatency(us), 4
-[CLEANUP], 95thPercentileLatency(us), 4
-[CLEANUP], 99thPercentileLatency(us), 4
+[CLEANUP], AverageLatency(us), 5.0
+[CLEANUP], MinLatency(us), 5
+[CLEANUP], MaxLatency(us), 5
+[CLEANUP], 50thPercentileLatency(us), 5
+[CLEANUP], 95thPercentileLatency(us), 5
+[CLEANUP], 99thPercentileLatency(us), 5

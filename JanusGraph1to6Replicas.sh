@@ -1,7 +1,7 @@
 #loop over 1 to 6 replicas for MongoDB
 #!/bin/bash
 
-for i in {4..6}
+for i in {1..6}
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB${i}Replicas"

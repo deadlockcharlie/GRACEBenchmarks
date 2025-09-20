@@ -8,65 +8,7 @@ DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 ArangoDB client initialized successfully
-Failed to initialize ArangoDB client: Response: 500, Error: 1457 - timeout in cluster operation
-site.ycsb.DBException: com.arangodb.ArangoDBException: Response: 500, Error: 1457 - timeout in cluster operation
-	at site.ycsb.db.ArangoDBClient.init(ArangoDBClient.java:69)
-	at site.ycsb.DBWrapper.init(DBWrapper.java:126)
-	at site.ycsb.ClientThread.run(ClientThread.java:92)
-	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: com.arangodb.ArangoDBException: Response: 500, Error: 1457 - timeout in cluster operation
-	at com.arangodb.ArangoDBException.of(ArangoDBException.java:137)
-	at com.arangodb.ArangoDBException.of(ArangoDBException.java:111)
-	at com.arangodb.ArangoDBException.of(ArangoDBException.java:107)
-	at com.arangodb.internal.net.CommunicationProtocol.execute(CommunicationProtocol.java:45)
-	at com.arangodb.internal.ArangoExecutorSync.execute(ArangoExecutorSync.java:55)
-	at com.arangodb.internal.ArangoExecutorSync.execute(ArangoExecutorSync.java:43)
-	at com.arangodb.internal.ArangoExecutorSync.execute(ArangoExecutorSync.java:39)
-	at com.arangodb.internal.ArangoDatabaseImpl.createCollection(ArangoDatabaseImpl.java:97)
-	at site.ycsb.db.ArangoDBClient.init(ArangoDBClient.java:63)
-	... 3 more
-Caused by: com.arangodb.ArangoDBException: Response: 500, Error: 1457 - timeout in cluster operation
-	at com.arangodb.internal.util.ResponseUtils.translateError(ResponseUtils.java:83)
-	at com.arangodb.internal.net.Communication.lambda$doExecuteAsync$2(Communication.java:90)
-	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:859)
-	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:837)
-	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
-	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2079)
-	at io.vertx.core.impl.future.FutureImpl$1.onSuccess(FutureImpl.java:91)
-	at io.vertx.core.impl.future.FutureImpl$ListenerArray.onSuccess(FutureImpl.java:310)
-	at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:66)
-	at io.vertx.core.impl.future.FutureImpl.tryComplete(FutureImpl.java:259)
-	at io.vertx.core.impl.future.Mapping.onSuccess(Mapping.java:40)
-	at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:66)
-	at io.vertx.core.impl.future.FutureImpl.tryComplete(FutureImpl.java:259)
-	at io.vertx.core.impl.future.PromiseImpl.onSuccess(PromiseImpl.java:49)
-	at io.vertx.core.impl.future.PromiseImpl.handle(PromiseImpl.java:41)
-	at io.vertx.core.impl.future.PromiseImpl.handle(PromiseImpl.java:23)
-	at io.vertx.ext.web.client.impl.HttpContext.handleDispatchResponse(HttpContext.java:397)
-	at io.vertx.ext.web.client.impl.HttpContext.execute(HttpContext.java:384)
-	at io.vertx.ext.web.client.impl.HttpContext.next(HttpContext.java:362)
-	at io.vertx.ext.web.client.impl.HttpContext.fire(HttpContext.java:329)
-	at io.vertx.ext.web.client.impl.HttpContext.dispatchResponse(HttpContext.java:291)
-	at io.vertx.ext.web.client.impl.HttpContext.lambda$null$7(HttpContext.java:507)
-	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:279)
-	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:261)
-	at io.vertx.core.impl.ContextInternal.lambda$runOnContext$0(ContextInternal.java:59)
-	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
-	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	... 1 more
-[OVERALL], RunTime(ms), 244949
-[OVERALL], Throughput(ops/sec), 0.0
-[TOTAL_GCS_G1_Young_Generation], Count, 0
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
-[TOTAL_GCS_G1_Old_Generation], Count, 0
-[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
-[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 0
-[TOTAL_GC_TIME], Time(ms), 0
-[TOTAL_GC_TIME_%], Time(%), 0.0
+Connected to ArangoDB database successfully
+Load parameter is true. Loading data from the vertex and edge files.
+Called load data in core workload. Loading data
+Loading vertex data from: /home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json
