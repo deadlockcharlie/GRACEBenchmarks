@@ -12,3 +12,37 @@ Load parameter is true. Loading data from the vertex and edge files.
 Called load data in core workload. Loading data
 Loading vertex data from: /home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json
 Loading edge data from: /home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json
+[OVERALL], RunTime(ms), 197807
+[OVERALL], Throughput(ops/sec), 0.0
+[TOTAL_GCS_G1_Young_Generation], Count, 4
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 74
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.037410202874519106
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 4
+[TOTAL_GC_TIME], Time(ms), 74
+[TOTAL_GC_TIME_%], Time(%), 0.037410202874519106
+[ADD_EDGE], Operations, 7391
+[ADD_EDGE], AverageLatency(us), 22919.28561764308
+[ADD_EDGE], MinLatency(us), 15584
+[ADD_EDGE], MaxLatency(us), 109887
+[ADD_EDGE], 50thPercentileLatency(us), 22767
+[ADD_EDGE], 95thPercentileLatency(us), 24671
+[ADD_EDGE], 99thPercentileLatency(us), 27631
+[ADD_EDGE], Return=OK, 7391
+[ADD_VERTEX], Operations, 1866
+[ADD_VERTEX], AverageLatency(us), 14641.993569131833
+[ADD_VERTEX], MinLatency(us), 10808
+[ADD_VERTEX], MaxLatency(us), 294911
+[ADD_VERTEX], 50thPercentileLatency(us), 13583
+[ADD_VERTEX], 95thPercentileLatency(us), 20655
+[ADD_VERTEX], 99thPercentileLatency(us), 26879
+[ADD_VERTEX], Return=OK, 1866
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 5.0
+[CLEANUP], MinLatency(us), 5
+[CLEANUP], MaxLatency(us), 5
+[CLEANUP], 50thPercentileLatency(us), 5
+[CLEANUP], 95thPercentileLatency(us), 5
+[CLEANUP], 99thPercentileLatency(us), 5
