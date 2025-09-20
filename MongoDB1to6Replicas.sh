@@ -1,7 +1,7 @@
 #loop over 1 to 6 replicas for MongoDB
 #!/bin/bash
 
-for i in {1..6}
+for i in $(seq 6 -1 1);
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/Mongodb${i}Replicas"
@@ -13,22 +13,42 @@ do
     cd $YCSB_DIRECTORY
     # Load the initial data in the DB
     bin/ycsb.sh load mongodb  -P workloads/workload_grace  -p DBTYPE="mongodb" -p DBURI="mongodb://localhost:27017" -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/MongoDB/${i}.txt
-#    Add latencies between replicas
-
-
+    
     # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
         echo "Adding network latency between replicas..."
-        # Introduce network latency between the replicas using netem
+        echo "Using latency values: ${latencies[*]}"
+        
+        # Configure latencies for each container (all peers at once)
         for (( j=1; j<=i; j++ )); do
-            for (( k=j+1; k<=i; k++ )); do
-                latency_index=$(( (j + k - 2) % ${#latencies[@]} ))
-                latency_value=${latencies[$latency_index]}
-                echo "Setting latency of ${latency_value}ms between mongo${j} and mongo${k}"
-                docker exec -it mongo${j}-netem sh -c "/usr/local/bin/setup-latency.sh mongo${j} mongo${k} ${latency_value}"
-                docker exec -it mongo${k}-netem sh -c "/usr/local/bin/setup-latency.sh mongo${k} mongo${j} ${latency_value}"
+            # Build arguments for all peers of container j
+            latency_args=""
+            
+            for (( k=1; k<=i; k++ )); do
+                if [ $j -ne $k ]; then
+                    # Use the same latency calculation as before
+                    if [ $j -lt $k ]; then
+                        latency_index=$(( (j + k - 2) % ${#latencies[@]} ))
+                    else
+                        latency_index=$(( (k + j - 2) % ${#latencies[@]} ))
+                    fi
+                    latency_value=${latencies[$latency_index]}
+                    latency_args="$latency_args mongo${k} ${latency_value}"
+                    echo "  mongo${j} -> mongo${k}: ${latency_value}ms"
+                fi
             done
+            
+            echo "Configuring all latencies for mongo${j}..."
+            if ! docker exec mongo${j}-netem sh -c "/usr/local/bin/setup-latency.sh mongo${j} $latency_args"; then
+                echo "❌ Failed to configure latencies for mongo${j}"
+            else
+                echo "✅ Configured latencies for mongo${j}"
+            fi
         done
+        
+        echo "✅ Network latency configuration completed"
+    else
+        echo "Only 1 replica, skipping latency configuration"
     fi
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY

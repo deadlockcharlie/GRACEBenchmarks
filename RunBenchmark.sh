@@ -13,7 +13,7 @@ LF_DIRECTORY="$ROOT_DIRECTORY/replicatedGDBLF"
 YCSB_DIRECTORY="$ROOT_DIRECTORY/YCSB"
 
 DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
-latencies=(0 50 50 75 50 67.5 50 50 50)
+latencies=(50 50 75 50 67.5 50 50 50)
 
 
 
@@ -22,7 +22,7 @@ latencies=(0 50 50 75 50 67.5 50 50 50)
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
-datasets=(yeast mico ldbc frbs frbm frbo)
+datasets=(yeast mico ldbc fbrs fbrm fbro)
 
 for dataset in "${datasets[@]}"; do
     echo "Starting benchmarks for dataset: $dataset"
@@ -36,22 +36,14 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 mkdir -p $RESULTS_DIRECTORY
 for db in "${DATABASES[@]}"; do
     mkdir -p $RESULTS_DIRECTORY/$db
-    for i in {1..6}
-    do
-        echo "" > $RESULTS_DIRECTORY/$db/${i}.txt   
-    done
 done
 
 for db in "${DATABASES[@]}"; do
     mkdir -p $LOAD_TIME_DIRECTORY/$db
-    for i in {1..6}
-    do
-        echo "" > $LOAD_TIME_DIRECTORY/$db/${i}.txt
-    done
 done
 
-# cd $YCSB_DIRECTORY
-# sudo mvn clean package -DskipTests -q
+cd $YCSB_DIRECTORY
+ sudo mvn clean package -DskipTests -q
 
 cd $ROOT_DIRECTORY
 . ./ReplicaCountAndLatency.sh

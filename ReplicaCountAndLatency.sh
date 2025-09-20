@@ -1,6 +1,6 @@
 
 cd $ROOT_DIRECTORY
-#. ./Grace1to6Replicas.sh
+. ./Grace1to6Replicas.sh
 
 cd $ROOT_DIRECTORY
 . ./ArangoDB1to6Replicas.sh

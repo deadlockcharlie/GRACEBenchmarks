@@ -1,7 +1,7 @@
 #loop over 1 to 6 replicas for MongoDB
 #!/bin/bash
 
-for i in {1..6}
+for i in $(seq 6 -1 1);
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB${i}Replicas"
@@ -14,22 +14,41 @@ do
     # Load the initial data in the DB
     bin/ycsb.sh load janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/JanusGraph/${i}.txt
 
-    # Add latency between replicas if more than 1 replica
+        # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
         echo "Adding network latency between replicas..."
-        # Introduce network latency between the replicas using netem
-        # scylla1-netem, scylla2-netem, ... 
-        # The latency values are just examples and can be adjusted as needed
-        # Latency pattern:
+        echo "Using latency values: ${latencies[*]}"
+        
+        # Configure latencies for each container (all peers at once)
         for (( j=1; j<=i; j++ )); do
-            for (( k=j+1; k<=i; k++ )); do
-                latency_index=$(( (j + k - 2) % ${#latencies[@]} ))
-                latency_value=${latencies[$latency_index]}
-                echo "Setting latency of ${latency_value}ms between scylla${j} and scylla${k}"
-                docker exec -it scylla${j}-netem sh -c "/usr/local/bin/setup-latency.sh scylla${j} scylla${k} ${latency_value}"
-                docker exec -it scylla${k}-netem sh -c "/usr/local/bin/setup-latency.sh scylla${k} scylla${j} ${latency_value}"
+            # Build arguments for all peers of container j
+            latency_args=""
+            
+            for (( k=1; k<=i; k++ )); do
+                if [ $j -ne $k ]; then
+                    # Use the same latency calculation as before
+                    if [ $j -lt $k ]; then
+                        latency_index=$(( (j + k - 2) % ${#latencies[@]} ))
+                    else
+                        latency_index=$(( (k + j - 2) % ${#latencies[@]} ))
+                    fi
+                    latency_value=${latencies[$latency_index]}
+                    latency_args="$latency_args scylla${k} ${latency_value}"
+                    echo "  scylla${j} -> scylla${k}: ${latency_value}ms"
+                fi
             done
+            
+            echo "Configuring all latencies for scylla${j}..."
+            if ! docker exec scylla${j}-netem sh -c "/usr/local/bin/setup-latency.sh scylla${j} $latency_args"; then
+                echo "❌ Failed to configure latencies for scylla${j}"
+            else
+                echo "✅ Configured latencies for scylla${j}"
+            fi
         done
+        
+        echo "✅ Network latency configuration completed"
+    else
+        echo "Only 1 replica, skipping latency configuration"
     fi
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
