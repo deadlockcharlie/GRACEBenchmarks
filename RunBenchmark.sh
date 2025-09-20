@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT_DIRECTORY=$(pwd)
-DURATION=10 #Benchmark duration in seconds
+DURATION=90 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 
 echo "Root Directory: $ROOT_DIRECTORY"
