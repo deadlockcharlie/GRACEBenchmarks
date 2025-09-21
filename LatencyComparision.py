@@ -33,7 +33,9 @@ DB_STYLES = {
     "GRACE": {"color": "tab:red", "linestyle": "-", "marker": "x"},
 }
 
-DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC", "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"}
+#, "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"
+
+DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC"}
 
 
 def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]:

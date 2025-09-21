@@ -88,6 +88,10 @@ services:
       janusgraph.storage.hostname: scylla1
       storage.lock.retries: 10
       storage.lock.wait-time: 20000
+      janusgraph.graph.set-vertex-id: true
+      janusgraph.graph.set-edge-id: true
+      janusgraph.graph.allow-custom-vid-types: true
+      janusgraph.graph.allow-custom-eid-types: true
     depends_on:
       scylla4:
         condition : service_healthy

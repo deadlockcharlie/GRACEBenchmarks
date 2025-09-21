@@ -3,7 +3,7 @@
 
 
 
-for i in $(seq 6 -1 1);
+for i in 1 3;
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/ArangoDB${i}Replicas"

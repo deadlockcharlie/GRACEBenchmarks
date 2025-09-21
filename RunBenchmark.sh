@@ -20,9 +20,9 @@ latencies=(50 50 75 50 67.5 50 50 50)
 # Eventually this set of commands will be in a loop and potentially parallel?
 
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
+# mico ldbc fbrs fbrm fbro
 
-
-datasets=(yeast mico ldbc fbrs fbrm fbro)
+datasets=(mico)
 
 for dataset in "${datasets[@]}"; do
     echo "Starting benchmarks for dataset: $dataset"
@@ -43,7 +43,7 @@ for db in "${DATABASES[@]}"; do
 done
 
 cd $YCSB_DIRECTORY
- sudo mvn clean package -DskipTests -q
+sudo mvn clean package -DskipTests -q
 
 cd $ROOT_DIRECTORY
 . ./ReplicaCountAndLatency.sh
