@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ROOT_DIRECTORY=$(pwd)
-DURATION=90 #Benchmark duration in seconds
+PRELOAD=false
+DURATION=30 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -16,37 +17,46 @@ DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
 latencies=(50 50 75 50 67.5 50 50 50)
 
 
+DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
+
+
+# yeast mico ldbc frbs frbm frbo
+datasets=(frbs frbm frbo)
 
 # Eventually this set of commands will be in a loop and potentially parallel?
 
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
-# mico ldbc fbrs fbrm fbro
 
-datasets=(mico)
+
+. ./PrepareDatasets.sh
+
+
+
 
 for dataset in "${datasets[@]}"; do
     echo "Starting benchmarks for dataset: $dataset"
-DATASET_NAME=$dataset
-RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ReplicaCountAndLatency/$DATASET_NAME"
-LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/ReplicaCountAndLatency/$DATASET_NAME"
+    DATASET_NAME=$dataset
+    RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ReplicaCountAndLatency/$DATASET_NAME"
+    LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/ReplicaCountAndLatency/$DATASET_NAME"
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.loaded $YCSB_DIRECTORY/Vertices.loaded
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded
 
-DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
-# Create results directory if it doesn't exist
-mkdir -p $RESULTS_DIRECTORY
-for db in "${DATABASES[@]}"; do
-    mkdir -p $RESULTS_DIRECTORY/$db
-done
+    # Create results directory if it doesn't exist
+    mkdir -p $RESULTS_DIRECTORY
+    for db in "${DATABASES[@]}"; do
+        mkdir -p $RESULTS_DIRECTORY/$db
+    done
 
-for db in "${DATABASES[@]}"; do
-    mkdir -p $LOAD_TIME_DIRECTORY/$db
-done
+    for db in "${DATABASES[@]}"; do
+        mkdir -p $LOAD_TIME_DIRECTORY/$db
+    done
 
-cd $YCSB_DIRECTORY
-sudo mvn clean package -DskipTests -q
+    # cd $YCSB_DIRECTORY
+    # sudo mvn clean package -DskipTests -q
 
-cd $ROOT_DIRECTORY
-. ./ReplicaCountAndLatency.sh
+    cd $ROOT_DIRECTORY
+    . ./ReplicaCountAndLatency.sh
 
 done
 

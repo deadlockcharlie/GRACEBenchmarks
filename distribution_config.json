@@ -5,14 +5,11 @@
   "base_prometheus_port": 9090,
   "base_grafana_port": 5000,
   "provider_port": 1234,
-  "provider": true,
-  "preload_data": true,
-  "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json",
-  "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json",
-  "dataset_name": "mico",
+  "provider": false,
+  "preload_data": false,
   "dbs" : [
     {
-     "database": "memgraph", 
+     "database": "neo4j", 
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"

@@ -27,7 +27,7 @@ DB_STYLES = {
     "GRACE": {"color": "tab:red", "linestyle": "-", "marker": "x"},
 }
 
-DATASETS = ["yeast", "mico", "LDBC", "Freebase-S", "Freebase-O", "Freebase-M"]
+DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC", "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"}
 
 def parse_result_file(filepath: Path, db_name: str) -> List[Dict]:
     """Parse a single results file and return operation latencies."""

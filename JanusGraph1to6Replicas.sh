@@ -9,11 +9,11 @@ do
     cd $DEPLOYMENTS_DIR
 
     . ./JanusgraphReplicatedDeployment.sh
-
+if [ $PRELOAD = true ] ; then 
     cd $YCSB_DIRECTORY
     # Load the initial data in the DB
     bin/ycsb.sh load janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/JanusGraph/${i}.txt
-
+fi
         # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
         echo "Adding network latency between replicas..."

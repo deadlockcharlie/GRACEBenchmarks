@@ -35,7 +35,7 @@ DB_STYLES = {
 
 #, "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"
 
-DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC"}
+DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC", "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"}
 
 
 def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]:
