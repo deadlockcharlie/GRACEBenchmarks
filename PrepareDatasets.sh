@@ -25,7 +25,10 @@ cd $DATA_DIRECTORY
 
 # Prepare preloading and workload data
 for dataset in "${datasets[@]}"; do
-    python3 workloadGenerator.py --input $dataset.json --out-prefix $dataset --split 0.8 --shards $(nproc --all)
+    if [ ! -f ${dataset}_load_vertices.json ] || [ ! -f ${dataset}_load_edges.json ]; then 
+        python3 workloadGenerator.py --input $dataset.json --out-prefix $dataset --split 0.8 --shards $(nproc --all)
+    fi
+    
     python3 jsontoCSV.py ${dataset}_load_vertices.json ${dataset}_load_edges.json 
 done
 

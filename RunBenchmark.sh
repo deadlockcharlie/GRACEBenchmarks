@@ -21,7 +21,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(frbs frbm frbo)
+datasets=(yeast)
 
 # Eventually this set of commands will be in a loop and potentially parallel?
 
@@ -40,6 +40,10 @@ for dataset in "${datasets[@]}"; do
     LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/ReplicaCountAndLatency/$DATASET_NAME"
     cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.loaded $YCSB_DIRECTORY/Vertices.loaded
     cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded
+
+
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $LF_DIRECTORY/Dockerfiles/PreloadData/vertices.csv
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $YCSB_DIRECTORY/Dockerfiles/PreloadData/edges.csv
 
 
     # Create results directory if it doesn't exist
