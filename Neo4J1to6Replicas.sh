@@ -3,8 +3,7 @@
 echo "Benchmarking Neo4j with 1 Replica"
 # Deploy the replicas
 cd $LF_DIRECTORY
-cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv ./Dockerfiles/PreloadData/vertices.csv
-cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv ./Dockerfiles/PreloadData/edges.csv
+
 #Create a distribution configuration
 cat > $DIST_CONF <<EOL
 {

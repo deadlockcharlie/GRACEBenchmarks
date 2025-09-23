@@ -19,8 +19,3 @@ cd $ROOT_DIRECTORY
 
 
 # echo "Benchmarking completed. Results are stored in the Results directory."
-
-
-# Plotting the results
-cd $ROOT_DIRECTORY
-python3 LatencyByReplicaCount.py $ROOT_DIRECTORY/Results/ReplicaCountAndLatency $ROOT_DIRECTORY/BenchmarkPlots/ReplicaCountAndLatency.png

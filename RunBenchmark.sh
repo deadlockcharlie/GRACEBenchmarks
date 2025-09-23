@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=30 #Benchmark duration in seconds
+DURATION=60 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -12,6 +12,9 @@ DEPLOYMENTS_DIR="$ROOT_DIRECTORY/Deployments"
 GRACE_DIRECTORY="$ROOT_DIRECTORY/ReplicatedGDB"
 LF_DIRECTORY="$ROOT_DIRECTORY/replicatedGDBLF"
 YCSB_DIRECTORY="$ROOT_DIRECTORY/YCSB"
+# PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
+export PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
+
 
 DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
 latencies=(50 50 75 50 67.5 50 50 50)
@@ -42,8 +45,12 @@ for dataset in "${datasets[@]}"; do
     cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded
 
 
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $LF_DIRECTORY/Dockerfiles/PreloadData/vertices.csv
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $YCSB_DIRECTORY/Dockerfiles/PreloadData/edges.csv
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $PRELOAD_DATA/vertices.csv
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $PRELOAD_DATA/edges.csv
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json $PRELOAD_DATA/vertices.json
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.json $PRELOAD_DATA/edges.json
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.keys $PRELOAD_DATA/vertices.keys
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.keys $PRELOAD_DATA/edges.keys
 
 
     # Create results directory if it doesn't exist
@@ -56,8 +63,8 @@ for dataset in "${datasets[@]}"; do
         mkdir -p $LOAD_TIME_DIRECTORY/$db
     done
 
-    # cd $YCSB_DIRECTORY
-    # sudo mvn clean package -DskipTests -q
+    cd $YCSB_DIRECTORY
+    sudo mvn clean package -DskipTests -q
 
     cd $ROOT_DIRECTORY
     . ./ReplicaCountAndLatency.sh

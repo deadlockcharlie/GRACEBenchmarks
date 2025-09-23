@@ -1,10 +1,11 @@
 services:
-
   arangodb1:
     image: arangodb:latest
     container_name: arangodb1
     environment:
       - ARANGO_NO_AUTH=1
+    volumes:
+      - ../../PreloadData:/var/lib/arangodb/import
     healthcheck:
       test: ["CMD-SHELL", "arangosh --server.endpoint tcp://127.0.0.1:8529 --server.authentication false --javascript.execute-string 'quit(0)'"]
       interval: 5s
@@ -12,3 +13,16 @@ services:
       retries: 5
     ports:
       - "8529:8529"
+      
+  preload1:
+    image: arangodb:latest
+    container_name: preload1
+    depends_on:
+      arangodb1:
+        condition: service_healthy
+    volumes:
+      - ../../PreloadData:/var/lib/arangodb/import
+    entrypoint:
+      [
+        "sh", "/var/lib/arangodb/import/arangoDBImport.sh", "tcp://arangodb1:8529"
+      ]

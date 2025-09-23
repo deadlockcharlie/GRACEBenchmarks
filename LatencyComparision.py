@@ -33,8 +33,6 @@ DB_STYLES = {
     "GRACE": {"color": "tab:red", "linestyle": "-", "marker": "x"},
 }
 
-#, "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"
-
 DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC", "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"}
 
 
@@ -57,7 +55,7 @@ def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]
 
         operation, metric, value = [p.strip() for p in parts]
         operation = operation.strip("[]")
-        value = float(value)
+        value = float(value)/1000
 
         # Store failed values
         if operation.endswith("-FAILED"):
@@ -97,13 +95,38 @@ def build_pivot_for_dataset(replica_count: int, dataset_path: Path) -> Optional[
     return pivot_df
 
 
+def find_global_y_range(all_pivot_dfs: List[pd.DataFrame]) -> tuple:
+    """Find the global minimum and maximum values across all datasets."""
+    all_values = []
+    
+    for pivot_df in all_pivot_dfs:
+        # Get all non-zero values for min calculation
+        non_zero_values = pivot_df.values[pivot_df.values > 0]
+        if len(non_zero_values) > 0:
+            all_values.extend(non_zero_values)
+    
+    if not all_values:
+        return 1, 1000  # Default range if no data
+    
+    global_min = min(all_values)
+    global_max = max(all_values)
+    
+    # Add some padding to the range
+    log_min = np.log10(global_min)
+    log_max = np.log10(global_max)
+    
+    # Extend range slightly for better visualization
+    padded_min = 10 ** (log_min - 1)
+    padded_max = 10 ** (log_max + 1)
+    
+    return global_min, global_max
+
+
 def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 'top') -> None:
     """Create a single legend for the entire figure."""
     legend_elements = []
     ## Sort DBs according to the order in DB_STYLES, with GRACE last
     all_dbs = [db for db in DB_STYLES.keys() if db in all_dbs] + [db for db in all_dbs if db not in DB_STYLES]
-    # all_dbs = sorted(all_dbs, key=lambda x: x != "GRACE")  # GRACE last
-    
     
     for db in all_dbs:
         style = DB_STYLES.get(db, {})
@@ -124,12 +147,18 @@ def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 
                   bbox_to_anchor=(1.02, 0.5), fontsize=9)
 
 
-def plot_dataset_operations(ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str) -> None:
-    """Plot operations for a single dataset."""
+def plot_dataset_operations(ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, y_range: tuple) -> None:
+    """Plot operations for a single dataset with consistent y-axis range."""
     x = np.arange(len(pivot_df.index))
     for db in pivot_df.columns:
         style = DB_STYLES.get(db, {})
-        ax.plot(x, pivot_df[db].values, label=db,
+        y_values = pivot_df[db].values
+        # print(y_values)
+        
+        # Replace zeros with NaN for log scale plotting (they won't be plotted)
+        y_values_plot = np.where(y_values > 0, y_values, y_range[1])
+        
+        ax.plot(x, y_values_plot, label=db,
                 color=style.get("color"),
                 linestyle=style.get("linestyle", "-"),
                 marker=style.get("marker", "o"),
@@ -138,18 +167,42 @@ def plot_dataset_operations(ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str) 
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)
     ax.set_xticklabels(pivot_df.index, fontsize=10, rotation=90, ha="right")
-    ax.set_yscale("log")
+    # ax.set_yscale("log")
+    # ax.set_ylim(y_range[0], y_range[1])  # Set consistent y-axis range
     ax.grid(axis="y", linestyle="--", alpha=0.7)
 
 
 def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: str, legend_pos: str = 'top') -> None:
-    """Create operations comparison plot with single legend."""
+    """Create operations comparison plot with single legend and consistent y-axis."""
     root_path = Path(root_dir)
-    datasets = sorted([d.name for d in root_path.iterdir() if d.is_dir()])
+    datasets = [d.name for d in root_path.iterdir() if d.is_dir()]
+    print(datasets)
     
     if not datasets:
         print("No datasets found")
         return
+
+    # Sort datasets according to DATASETS order and if a dataset is not present, then ignore it
+    datasets = [d for d in DATASETS.keys() if d in datasets]
+    
+    # First pass: collect all pivot DataFrames to determine global y-range
+    all_pivot_dfs = []
+    dataset_pivot_pairs = []
+    
+    for dataset in datasets:
+        dataset_path = root_path / dataset
+        pivot_df = build_pivot_for_dataset(replica_count, dataset_path)
+        if pivot_df is not None:
+            all_pivot_dfs.append(pivot_df)
+            dataset_pivot_pairs.append((dataset, pivot_df))
+    
+    if not all_pivot_dfs:
+        print("No valid data found in any dataset")
+        return
+    
+    # Calculate global y-axis range
+    y_range = find_global_y_range(all_pivot_dfs)
+    print(f"Global y-axis range: {y_range[0]:.2e} to {y_range[1]:.2e}")
 
     # Determine figure size and layout based on legend position
     base_width = 12
@@ -164,24 +217,17 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
         layout_rect = [0.03, 0.03, 1, 0.88]
 
     fig, axes = plt.subplots(2, 3, figsize=fig_size)
-    # if len(datasets) == 1:
-    #     axes = [axes]
 
     all_dbs = set()
     
-    #Sort datsets according to DATASETS order and if a dataset is not present, then ignore it
-    datasets = [d for d in DATASETS.keys() if d in datasets]
-    # datasets.sort(key=lambda x: DATASETS.index(x) if x in DATASETS else len(DATASETS))
-    for i, dataset in enumerate(datasets):
-        dataset_path = root_path / dataset
-        pivot_df = build_pivot_for_dataset(replica_count, dataset_path)
-        
-        if pivot_df is not None:
-            plot_dataset_operations(axes[i // 3, i % 3], pivot_df, dataset)
-            all_dbs.update(pivot_df.columns)
+    # Second pass: create plots with consistent y-axis
+    for i, (dataset, pivot_df) in enumerate(dataset_pivot_pairs):
+        plot_dataset_operations(axes[i // 3, i % 3], pivot_df, dataset, y_range)
+        all_dbs.update(pivot_df.columns)
 
     # Add common y-label
-    fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
+    # fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
+    fig.text(0.02, 0.5, "Latency (ms)", va="center", rotation="vertical", fontsize=12)
 
     # Create single legend
     if all_dbs:
@@ -194,7 +240,7 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Plot benchmark latencies across datasets with single legend.")
+    parser = argparse.ArgumentParser(description="Plot benchmark latencies across datasets with consistent y-axis range.")
     parser.add_argument("replica_count", type=int, choices=[1, 3], help="Number of replicas (1 or 3)")
     parser.add_argument("root_dir", help="Path to the root results directory")
     parser.add_argument("figure_path", help="Path to save the output figure (with extension, e.g., .png)")

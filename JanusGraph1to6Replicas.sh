@@ -1,7 +1,7 @@
 #loop over 1 to 6 replicas for MongoDB
 #!/bin/bash
 
-for i in 3;
+for i in 1;
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB${i}Replicas"
@@ -9,11 +9,9 @@ do
     cd $DEPLOYMENTS_DIR
 
     . ./JanusgraphReplicatedDeployment.sh
-if [ $PRELOAD = true ] ; then 
-    cd $YCSB_DIRECTORY
-    # Load the initial data in the DB
-    bin/ycsb.sh load janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/JanusGraph/${i}.txt
-fi
+
+    docker exec janusgraph bin/gremlin.sh -e /var/lib/janusgraph/import/janusgraphImport.groovy 
+
         # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
         echo "Adding network latency between replicas..."
@@ -53,7 +51,7 @@ fi
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
     #Run the benchmark with graphdb workload
-    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=120 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
+    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=240 -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
 
     #Shutdown replicas
     cd $DEPLOYMENTS_DIR

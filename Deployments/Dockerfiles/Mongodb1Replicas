@@ -2,5 +2,12 @@ services:
   mongo1:
     image: mongo:latest
     container_name: mongo1
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand({ ping: 1 }).ok"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
     ports:
       - "27017:27017"
+    volumes:
+      - ../../PreloadData:/var/lib/mongodb/import

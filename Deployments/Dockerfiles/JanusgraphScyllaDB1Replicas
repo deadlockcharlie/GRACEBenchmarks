@@ -15,14 +15,19 @@ services:
     image: janusgraph/janusgraph:latest
     container_name: janusgraph
     environment:
-      JANUS_PROPS_TEMPLATE: cql
+      # JANUS_PROPS_TEMPLATE: cql
+      janusgraph.storage.backend: cql
       janusgraph.storage.hostname: scylla1
-      storage.lock.retries: 10
-      storage.lock.wait-time: 20000
+      janusgraph.storage.cql.keyspace: janusgraph
+      janusgraph.storage.lock.retries: 10
+      janusgraph.storage.lock.wait-time: 20000
       janusgraph.graph.set-vertex-id: true
       janusgraph.graph.set-edge-id: true
       janusgraph.graph.allow-custom-vid-types: true
       janusgraph.graph.allow-custom-eid-types: true
+      janusgraph.storage.batch-loading: true
+    volumes:
+      - ../../PreloadData:/var/lib/janusgraph/import
 
     depends_on:
       scylla1:

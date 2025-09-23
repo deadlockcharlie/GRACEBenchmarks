@@ -33,18 +33,12 @@ EOL
 python3 Deployment.py up $DIST_CONF
 sleep 5
 
-cd $ROOT_DIRECTORY
 
-if $PRELOAD; then 
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
- bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/1.txt
-fi
 cd $YCSB_DIRECTORY
 # Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
 bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/GRACE/1.txt
-# Switch to GRACE directory
+Switch to GRACE directory
 cd $GRACE_DIRECTORY
 # Tear down the deployment
 python3 Deployment.py down $DIST_CONF
@@ -154,13 +148,6 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 sleep 5
-cd $ROOT_DIRECTORY
-
-if $PRELOAD; then
-# Switch to the YCSB directory
-cd $YCSB_DIRECTORY
-bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/3.txt
-fi
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
 docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]} Grace3 ${latencies[2]}"
