@@ -1,4 +1,9 @@
 .vscode/
 GraphDBData/
 pythonvenv
-PreloadData
+PreloadData/edges.csv
+PreloadData/vertices.csv
+PreloadData/edges.json
+PreloadData/vertices.json
+
+
