@@ -150,7 +150,7 @@ python3 Deployment.py up $DIST_CONF
 
 sleep 5
 cd $ROOT_DIRECTORY
-. ./waitForPreload
+. ./waitForPreload.sh
 
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms

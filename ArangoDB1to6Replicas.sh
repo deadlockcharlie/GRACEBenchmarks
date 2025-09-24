@@ -13,7 +13,7 @@ do
     . ./ArangoDBReplicatedDeployment.sh
 
     cd $ROOT_DIRECTORY
-    . ./waitForPreload
+    . ./waitForPreload.sh
 
             # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
