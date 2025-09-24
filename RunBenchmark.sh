@@ -12,7 +12,7 @@ DEPLOYMENTS_DIR="$ROOT_DIRECTORY/Deployments"
 GRACE_DIRECTORY="$ROOT_DIRECTORY/ReplicatedGDB"
 LF_DIRECTORY="$ROOT_DIRECTORY/replicatedGDBLF"
 YCSB_DIRECTORY="$ROOT_DIRECTORY/YCSB"
-# PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
+PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
 export PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
 
 
@@ -24,12 +24,12 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(mico)
+datasets=(yeast mico ldbc frbs frbo frbm)
+
 
 # Eventually this set of commands will be in a loop and potentially parallel?
 
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
-
 
 . ./PrepareDatasets.sh
 
@@ -64,7 +64,7 @@ for dataset in "${datasets[@]}"; do
     done
 
     cd $YCSB_DIRECTORY
-    sudo mvn clean package -DskipTests -q
+    mvn clean package -DskipTests -q
 
     cd $ROOT_DIRECTORY
     . ./ReplicaCountAndLatency.sh
