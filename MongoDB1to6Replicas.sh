@@ -11,6 +11,7 @@ do
     . ./MongoDBReplicatedDeployment.sh
     docker exec mongo1 /var/lib/mongodb/import/mongoDBImport.sh mongo1:27017
 
+    
 
     # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then

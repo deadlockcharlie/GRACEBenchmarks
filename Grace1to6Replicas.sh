@@ -33,12 +33,23 @@ EOL
 python3 Deployment.py up $DIST_CONF
 sleep 5
 
+cd $ROOT_DIRECTORY
+. ./waitForPreload
+
+
+# Wait for server to be ready
+until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
+    echo "Waiting for server preload to finish..."
+    sleep 5
+done
+
+
 
 cd $YCSB_DIRECTORY
 # Run the benchmark with grace workload
 echo "Running YCSB benchmark with Grace workload"
 bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/GRACE/1.txt
-Switch to GRACE directory
+#Switch to GRACE directory
 cd $GRACE_DIRECTORY
 # Tear down the deployment
 python3 Deployment.py down $DIST_CONF
@@ -148,6 +159,16 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 sleep 5
+
+cd $ROOT_DIRECTORY
+. ./waitForPreload
+
+
+# Wait for server to be ready
+until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
+    echo "Waiting for server preload to finish..."
+    sleep 1
+done
 
 # Provider → Grace2 = 100ms, provider → Grace3 = 150ms
 docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 ${latencies[1]} Grace3 ${latencies[2]}"

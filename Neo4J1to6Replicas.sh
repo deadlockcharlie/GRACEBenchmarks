@@ -29,6 +29,8 @@ EOL
 # Start the replicas
 python3 Deployment.py up $DIST_CONF
 sleep 5
+cd $ROOT_DIRECTORY
+. ./waitForPreload
 
 cd $YCSB_DIRECTORY
 #Run the benchmark with neo4j workload
@@ -146,7 +148,8 @@ EOL
 python3 Deployment.py up $DIST_CONF
 
 sleep 5
-
+cd $ROOT_DIRECTORY
+. ./waitForPreload
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
 docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50"

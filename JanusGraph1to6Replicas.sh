@@ -35,7 +35,7 @@ do
                     echo "  scylla${j} -> scylla${k}: ${latency_value}ms"
                 fi
             done
-            
+
             echo "Configuring all latencies for scylla${j}..."
             if ! docker exec scylla${j}-netem sh -c "/usr/local/bin/setup-latency.sh scylla${j} $latency_args"; then
                 echo "❌ Failed to configure latencies for scylla${j}"

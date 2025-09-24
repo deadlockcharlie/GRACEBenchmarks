@@ -3,7 +3,7 @@
 
 
 
-for i in 1 3;
+for i in 3;
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/ArangoDB${i}Replicas"
@@ -12,6 +12,8 @@ do
 
     . ./ArangoDBReplicatedDeployment.sh
 
+    cd $ROOT_DIRECTORY
+    . ./waitForPreload
 
             # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
