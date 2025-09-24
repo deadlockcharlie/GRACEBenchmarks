@@ -3,7 +3,7 @@
 
 
 
-for i in 3;
+for i in 1 3;
 do
     echo "Running benchmark with $i replicas..."
     COMPOSE_FILE="./Dockerfiles/ArangoDB${i}Replicas"

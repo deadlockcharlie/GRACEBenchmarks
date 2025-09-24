@@ -31,7 +31,7 @@ python3 Deployment.py up $DIST_CONF
 sleep 5
 
 cd $ROOT_DIRECTORY
-. ./waitForPreload
+. ./waitForPreload.sh
 
 #Run the benchmark with memgraph workload
 cd $YCSB_DIRECTORY

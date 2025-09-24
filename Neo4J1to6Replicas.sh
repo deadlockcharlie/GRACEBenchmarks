@@ -30,7 +30,7 @@ EOL
 python3 Deployment.py up $DIST_CONF
 sleep 5
 cd $ROOT_DIRECTORY
-. ./waitForPreload
+. ./waitForPreload.sh
 
 cd $YCSB_DIRECTORY
 #Run the benchmark with neo4j workload
