@@ -33,7 +33,7 @@ DB_STYLES = {
     "GRACE": {"color": "tab:red", "linestyle": "-", "marker": "x"},
 }
 
-DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC", "frbs":"Freebase-S", "frbo":"Freebase-O", "frbm":"Freebase-M"}
+DATASETS = {"yeast":"yeast", "mico":"mico", "ldbc":"LDBC", "frbs":"Freebase-S", "frbm":"Freebase-M","frbo":"Freebase-O"}
 
 
 def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]:
@@ -55,7 +55,7 @@ def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]
 
         operation, metric, value = [p.strip() for p in parts]
         operation = operation.strip("[]")
-        value = float(value)/1000
+        value = float(value)
 
         # Store failed values
         if operation.endswith("-FAILED"):
@@ -116,10 +116,10 @@ def find_global_y_range(all_pivot_dfs: List[pd.DataFrame]) -> tuple:
     log_max = np.log10(global_max)
     
     # Extend range slightly for better visualization
-    padded_min = 10 ** (log_min - 1)
+    padded_min = 10 ** (log_min -1)
     padded_max = 10 ** (log_max + 1)
     
-    return global_min, global_max
+    return padded_min, padded_max
 
 
 def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 'top') -> None:
@@ -167,8 +167,8 @@ def plot_dataset_operations(ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, 
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)
     ax.set_xticklabels(pivot_df.index, fontsize=10, rotation=90, ha="right")
-    # ax.set_yscale("log")
-    # ax.set_ylim(y_range[0], y_range[1])  # Set consistent y-axis range
+    ax.set_yscale("log")
+    ax.set_ylim(y_range[0], y_range[1])  # Set consistent y-axis range
     ax.grid(axis="y", linestyle="--", alpha=0.7)
 
 
@@ -226,8 +226,8 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
         all_dbs.update(pivot_df.columns)
 
     # Add common y-label
-    # fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
-    fig.text(0.02, 0.5, "Latency (ms)", va="center", rotation="vertical", fontsize=12)
+    fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
+    # fig.text(0.02, 0.5, "Latency (ms)", va="center", rotation="vertical", fontsize=12)
 
     # Create single legend
     if all_dbs:

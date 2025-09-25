@@ -9,7 +9,13 @@ DROP INDEX ON :YCSBEdge ;
 
 // Create fresh indexes
 CREATE INDEX ON :YCSBVertex(id);
+CREATE INDEX ON :YCSBVertex(searchKey);
 CREATE INDEX ON :YCSBEdge(id);
+CREATE INDEX ON :YCSBEdge(_outV);
+CREATE INDEX ON :YCSBEdge(_inV);
+CREATE INDEX on :YCSBEdge(searchKey);
+
+
 
 
 // 2️⃣ Load vertices

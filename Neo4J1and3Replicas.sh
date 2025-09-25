@@ -152,13 +152,13 @@ cd $ROOT_DIRECTORY
 . ./waitForPreload.sh
 #Setup Latencies
 # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
-docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50"
+docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 100 Replica3 300"
 
-# Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 50"
+# # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
+# docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 50"
 
-# Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 50 Replica2 50"
+# # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
+# docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 50 Replica2 50"
 
 cd $YCSB_DIRECTORY
 #Run the benchmark with neo4j workload
