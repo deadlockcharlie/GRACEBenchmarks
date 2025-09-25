@@ -1,60 +1,60 @@
 
-# # Benchmark with GRACE
-# echo "Benchmarking GRACE with 1 Replica"
-# # Deploy the replicas
-# cd $GRACE_DIRECTORY
+ # Benchmark with GRACE
+ echo "Benchmarking GRACE with 1 Replica"
+ # Deploy the replicas
+ cd $GRACE_DIRECTORY
 
-# #Create a distribution configuration
-# cat > $DIST_CONF <<EOL
-# {
-#   "base_website_port": 7474,
-#   "base_protocol_port": 7687,
-#   "base_app_port": 3000,
-#   "base_prometheus_port": 9090,
-#   "base_grafana_port": 5000,
-#   "provider_port": 1234,
-#   "provider": true,
-#   "preload_data": true,
-#   "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json",
-#   "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json",
-#   "dataset_name": "${DATASET_NAME}",
-#   "dbs" : [
-#     {
-#      "database": "memgraph", 
-#       "password": "verysecretpassword",
-#       "user": "pandey",
-#       "app_log_level": "error"
-#     }
-#   ]
-# }
-# EOL
+ #Create a distribution configuration
+ cat > $DIST_CONF <<EOL
+ {
+   "base_website_port": 7474,
+   "base_protocol_port": 7687,
+   "base_app_port": 3000,
+   "base_prometheus_port": 9090,
+   "base_grafana_port": 5000,
+   "provider_port": 1234,
+   "provider": true,
+   "preload_data": true,
+   "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json",
+   "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json",
+   "dataset_name": "${DATASET_NAME}",
+   "dbs" : [
+     {
+      "database": "memgraph", 
+       "password": "verysecretpassword",
+       "user": "pandey",
+       "app_log_level": "error"
+     }
+   ]
+ }
+EOL
 
-# # Start the replicas
-# python3 Deployment.py up $DIST_CONF
-# sleep 5
+ # Start the replicas
+ python3 Deployment.py up $DIST_CONF
+ sleep 5
 
 # cd $ROOT_DIRECTORY
 # . ./waitForPreload.sh
 
 
-# # Wait for server to be ready
-# until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
-#     echo "Waiting for server preload to finish..."
-#     sleep 5
-# done
+ # Wait for server to be ready
+ until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
+     echo "Waiting for server preload to finish..."
+     sleep 5
+ done
 
 
 
-# cd $YCSB_DIRECTORY
-# # Run the benchmark with grace workload
-# echo "Running YCSB benchmark with Grace workload"
-# bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/GRACE/1.txt
-# #Switch to GRACE directory
-# cd $GRACE_DIRECTORY
-# # Tear down the deployment
-# python3 Deployment.py down $DIST_CONF
-# # Remove the distribution configuration file
-# rm $DIST_CONF
+ cd $YCSB_DIRECTORY
+ # Run the benchmark with grace workload
+ echo "Running YCSB benchmark with Grace workload"
+ bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/GRACE/1.txt
+ #Switch to GRACE directory
+ cd $GRACE_DIRECTORY
+ # Tear down the deployment
+ python3 Deployment.py down $DIST_CONF
+ # Remove the distribution configuration file
+ rm $DIST_CONF
 
 # echo "Benchmarking GRACE with 2 Replicas "
 # # Deploy the replicas
