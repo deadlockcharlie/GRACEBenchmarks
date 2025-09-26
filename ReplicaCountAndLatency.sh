@@ -3,7 +3,7 @@
 # . ./Grace1and3Replicas.sh
 
 #  cd $ROOT_DIRECTORY
- . ./ArangoDB1and3Replicas.sh
+# . ./ArangoDB1and3Replicas.sh
 
 #  cd $ROOT_DIRECTORY
 #  . ./MongoDB1and3Replicas.sh
@@ -15,7 +15,7 @@
 # . ./MemGraph1and3Replicas.sh
 
 #  cd $ROOT_DIRECTORY
-#. ./JanusGraph1and3Replicas.sh
+. ./JanusGraph1and3Replicas.sh
 
 
  echo "Benchmarking completed. Results are stored in the Results directory."

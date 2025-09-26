@@ -24,7 +24,8 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(yeast mico ldbc frbs frbm frbo)
+datasets=(yeast)
+
 
 
 # Eventually this set of commands will be in a loop and potentially parallel?
@@ -63,8 +64,8 @@ for dataset in "${datasets[@]}"; do
         mkdir -p $LOAD_TIME_DIRECTORY/$db
     done
 
-    cd $YCSB_DIRECTORY
-    mvn clean package -DskipTests -q
+#    cd $YCSB_DIRECTORY
+#    mvn clean package -DskipTests -q
 
     cd $ROOT_DIRECTORY
     . ./ReplicaCountAndLatency.sh
