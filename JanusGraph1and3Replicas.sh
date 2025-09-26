@@ -1,6 +1,9 @@
 #loop over 1 to 6 replicas for MongoDB
 #!/bin/bash
 
+export UID=$(id -u)
+export GID=$(id -g)
+
 for i in 1 3;
 do
     echo "Running benchmark with $i replicas..."
@@ -9,8 +12,10 @@ do
     cd $DEPLOYMENTS_DIR
 
     . ./JanusgraphReplicatedDeployment.sh
+    cd $ROOT_DIRECTORY
+    docker cp ./PreloadData/janusgraphImport.groovy janusgraph:/tmp/janusgraphImport.groovy
 
-    docker exec janusgraph bin/gremlin.sh -e /var/lib/janusgraph/import/janusgraphImport.groovy 
+    docker exec janusgraph bin/gremlin.sh -e /tmp/janusgraphImport.groovy 
 
         # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then

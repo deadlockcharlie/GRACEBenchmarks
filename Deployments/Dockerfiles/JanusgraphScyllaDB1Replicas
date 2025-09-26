@@ -26,9 +26,6 @@ services:
       janusgraph.graph.allow-custom-vid-types: true
       janusgraph.graph.allow-custom-eid-types: true
       janusgraph.storage.batch-loading: true
-    volumes:
-      - ../../PreloadData:/var/lib/janusgraph/import
-
     depends_on:
       scylla1:
         condition : service_healthy
