@@ -93,16 +93,42 @@ EOL
     cd $ROOT_DIRECTORY
   . ./waitForPreload.sh
 
-    # Setup latencies for multi-replica configurations
-    if [ $num_replicas -gt 1 ]; then
-        latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
-        for ((i=2; i<=num_replicas; i++)); do
-            latency_cmd="$latency_cmd Grace$i \${latencies[$((i-1))]}"
+# Add latency between replicas if more than 1 replica
+    if [ $i -gt 1 ]; then
+        echo "Adding network latency between replicas..."
+        echo "Using latency values: ${latencies[*]}"
+        
+        # Configure latencies for each container (all peers at once)
+        for (( j=1; j<=i; j++ )); do
+            # Build arguments for all peers of container j
+            latency_args=""
+            
+            for (( k=1; k<=i; k++ )); do
+                if [ $j -ne $k ]; then
+                    # Use the same latency calculation as before
+                    if [ $j -lt $k ]; then
+                        latency_index=$(( (j + k - 2) % ${#latencies[@]} ))
+                    else
+                        latency_index=$(( (k + j - 2) % ${#latencies[@]} ))
+                    fi
+                    latency_value=${latencies[$latency_index]}
+                    latency_args="$latency_args Replica${k} ${latency_value}"
+                    echo "  Replica${j} -> Replica${k}: ${latency_value}ms"
+                fi
+            done
+            
+            echo "Configuring all latencies for Replica${j}..."
+            if ! docker exec mongo${j}-netem sh -c "/usr/local/bin/setup-latency.sh Replica${j} $latency_args"; then
+                echo "❌ Failed to configure latencies for Replica${j}"
+            else
+                echo "✅ Configured latencies for Replica${j}"
+            fi
         done
-        latency_cmd="$latency_cmd\""
-        eval $latency_cmd
+        
+        echo "✅ Network latency configuration completed"
+    else
+        echo "Only 1 replica, skipping latency configuration"
     fi
-
 
 
     # Run the benchmark with grace workload

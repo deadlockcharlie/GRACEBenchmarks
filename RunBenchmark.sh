@@ -85,7 +85,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 # 3 replica throughput 
 REPLICAS=(3)
 
-    DATASET_NAME=yeast
+    DATASET_NAME=ldbc
     echo "Starting benchmarks for dataset: $DATASET_NAME"
     cd $ROOT_DIRECTORY
     . ./PrepareDatasets.sh
@@ -103,7 +103,7 @@ REPLICAS=(3)
 
 
 
-for i in {0..8}; do
+for i in {0..7}; do
     YCSB_THREADS=$((2**i))
     RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ThroughputLatency/$YCSB_THREADS"
     # echo "Results Directory: $RESULTS_DIRECTORY"
