@@ -24,7 +24,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(yeast mico ldbc frbm frbo)
+datasets=(frbs)
 
 
 # Eventually this set of commands will be in a loop and potentially parallel?
