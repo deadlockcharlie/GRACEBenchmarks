@@ -9,3 +9,38 @@ DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 ArangoDB client initialized successfully
 Connected to ArangoDB database successfully
+Still waiting for thread Thread-1 to complete. Workload status: true
+[OVERALL], RunTime(ms), 62843
+[OVERALL], Throughput(ops/sec), 0.03182534252024887
+[TOTAL_GCS_G1_Young_Generation], Count, 7
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 627
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.9977244880098022
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 7
+[TOTAL_GC_TIME], Time(ms), 627
+[TOTAL_GC_TIME_%], Time(%), 0.9977244880098022
+[ADD_VERTEX], Operations, 1
+[ADD_VERTEX], AverageLatency(us), 143680.0
+[ADD_VERTEX], MinLatency(us), 143616
+[ADD_VERTEX], MaxLatency(us), 143743
+[ADD_VERTEX], 50thPercentileLatency(us), 143743
+[ADD_VERTEX], 95thPercentileLatency(us), 143743
+[ADD_VERTEX], 99thPercentileLatency(us), 143743
+[ADD_VERTEX], Return=OK, 1
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 4.0
+[CLEANUP], MinLatency(us), 4
+[CLEANUP], MaxLatency(us), 4
+[CLEANUP], 50thPercentileLatency(us), 4
+[CLEANUP], 95thPercentileLatency(us), 4
+[CLEANUP], 99thPercentileLatency(us), 4
+[GET_EDGE_LABELS], Operations, 1
+[GET_EDGE_LABELS], AverageLatency(us), 6.135808E7
+[GET_EDGE_LABELS], MinLatency(us), 61341696
+[GET_EDGE_LABELS], MaxLatency(us), 61374463
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 61374463
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 61374463
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 61374463
+[GET_EDGE_LABELS], Return=OK, 1
