@@ -1,0 +1,843 @@
+/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/antlr4-runtime-4.9.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/arangodb-java-driver-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/bson-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/bson-record-codec-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/caffeine-2.3.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-beanutils-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-collections-3.2.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-configuration2-2.8.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-lang3-3.12.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-logging-1.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-text-1.10.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/core-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/error_prone_annotations-2.11.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/exp4j-0.4.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/failureaccess-1.0.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-core-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-driver-3.7.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-groovy-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-language-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-shaded-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-util-3.7.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-cli-picocli-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-console-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-groovysh-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-json-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-jsr223-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-swing-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-templates-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-xml-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/guava-31.1-jre.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/hppc-0.7.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/http-protocol-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/ivy-2.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/j2objc-annotations-1.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-annotations-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-core-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-databind-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-serde-json-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jakarta.json-api-2.1.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/janusgraph-driver-1.0.0-rc2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/javatuples-1.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jbcrypt-0.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jcabi-log-0.20.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jcabi-manifests-1.2.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jcl-over-slf4j-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jline-2.14.6.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jsr305-3.0.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jts-core-1.17.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/mongodb-driver-core-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/mongodb-driver-sync-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-all-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-buffer-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-dns-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-http-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-http2-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-redis-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-socks-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-xml-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-common-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-handler-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-udt-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/noggit-0.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/picocli-4.3.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/reactive-streams-1.0.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/snakeyaml-1.32.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/spatial4j-0.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-auth-common-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-core-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-uri-template-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-web-client-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.GraceClient -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=60 -p threadcount=64 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json
+Loaded 147023 vertices and 387329 edges
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next vertex from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in getEdgesWithLabel: Existing open connection detected
+Exception in getEdgeWithProperty: Existing open connection detected
+Exception in getEdgeCount: Existing open connection detected
+Exception in getEdgeCount: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getEdgeCount: Existing open connection detected
+Exception in getVertexCount: Existing open connection detected
+Error fetching next edge from the update workload
+Exception in getEdgeWithProperty: Existing open connection detected
+Error fetching next vertex from the update workload
+Exception in getVertexCount: Existing open connection detected
+Exception in getEdgeWithProperty: Existing open connection detected
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Exception in getEdgeCount: Existing open connection detected
+Error fetching next edge from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in getEdgeWithProperty: Existing open connection detected
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in getEdgeCount: Existing open connection detected
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in getEdgeCount: Existing open connection detected
+Exception in getVertexWithProperty: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getEdgesWithLabel: Existing open connection detected
+Exception in getEdgeWithProperty: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getVertexWithProperty: Existing open connection detected
+Exception in getVertexCount: Existing open connection detected
+Exception in getVertexWithProperty: Existing open connection detected
+Exception in getVertexWithProperty: Existing open connection detected
+Exception in getEdgeWithProperty: Existing open connection detected
+Exception in getEdgesWithLabel: Existing open connection detected
+Exception in getVertexWithProperty: Existing open connection detected
+Exception in getEdgeWithProperty: Existing open connection detected
+Exception in getEdgesWithLabel: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getEdgesWithLabel: Existing open connection detected
+Error fetching next vertex from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getVertexCount: Existing open connection detected
+Exception in getEdgeWithProperty: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getVertexCount: Existing open connection detected
+Exception in getVertexCount: Existing open connection detected
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in getEdgeWithProperty: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getEdgeLabels: Existing open connection detected
+Exception in getEdgesWithLabel: Existing open connection detected
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+[OVERALL], RunTime(ms), 61309
+[OVERALL], Throughput(ops/sec), 1091.2753429349689
+[TOTAL_GCS_G1_Young_Generation], Count, 11
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 827
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.3489047285064182
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 11
+[TOTAL_GC_TIME], Time(ms), 827
+[TOTAL_GC_TIME_%], Time(%), 1.3489047285064182
+[REMOVE_VERTEX], Operations, 4767
+[REMOVE_VERTEX], AverageLatency(us), 121591.92552968324
+[REMOVE_VERTEX], MinLatency(us), 2572
+[REMOVE_VERTEX], MaxLatency(us), 1266687
+[REMOVE_VERTEX], 50thPercentileLatency(us), 10983
+[REMOVE_VERTEX], 95thPercentileLatency(us), 1003519
+[REMOVE_VERTEX], 99thPercentileLatency(us), 1176575
+[REMOVE_VERTEX], Return=OK, 4767
+[GET_EDGE_LABELS-FAILED], Operations, 8
+[GET_EDGE_LABELS-FAILED], AverageLatency(us), 106982.5
+[GET_EDGE_LABELS-FAILED], MinLatency(us), 10832
+[GET_EDGE_LABELS-FAILED], MaxLatency(us), 293375
+[GET_EDGE_LABELS-FAILED], 50thPercentileLatency(us), 84927
+[GET_EDGE_LABELS-FAILED], 95thPercentileLatency(us), 293375
+[GET_EDGE_LABELS-FAILED], 99thPercentileLatency(us), 293375
+[GET_EDGE_WITH_PROPERTY], Operations, 4724
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 79823.38653683319
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 482
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 635903
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 95935
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 137599
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 187519
+[GET_EDGE_WITH_PROPERTY], Return=OK, 4724
+[GET_EDGE_WITH_PROPERTY], Return=ERROR, 9
+[ADD_EDGE-FAILED], Operations, 1
+[ADD_EDGE-FAILED], AverageLatency(us), 206.0
+[ADD_EDGE-FAILED], MinLatency(us), 206
+[ADD_EDGE-FAILED], MaxLatency(us), 206
+[ADD_EDGE-FAILED], 50thPercentileLatency(us), 206
+[ADD_EDGE-FAILED], 95thPercentileLatency(us), 206
+[ADD_EDGE-FAILED], 99thPercentileLatency(us), 206
+[ADD_EDGE], Operations, 4715
+[ADD_EDGE], AverageLatency(us), 23942.0638388123
+[ADD_EDGE], MinLatency(us), 2586
+[ADD_EDGE], MaxLatency(us), 435967
+[ADD_EDGE], 50thPercentileLatency(us), 10071
+[ADD_EDGE], 95thPercentileLatency(us), 70975
+[ADD_EDGE], 99thPercentileLatency(us), 103615
+[ADD_EDGE], Return=OK, 4715
+[ADD_EDGE], Return=ERROR, 1
+[GET_VERTEX_WITH_PROPERTY], Operations, 4823
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 80375.22392701638
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 479
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 658431
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 96127
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 137343
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 200447
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 4823
+[GET_VERTEX_WITH_PROPERTY], Return=ERROR, 5
+[ADD_VERTEX], Operations, 4654
+[ADD_VERTEX], AverageLatency(us), 23474.488611946712
+[ADD_VERTEX], MinLatency(us), 2019
+[ADD_VERTEX], MaxLatency(us), 434943
+[ADD_VERTEX], 50thPercentileLatency(us), 7987
+[ADD_VERTEX], 95thPercentileLatency(us), 71807
+[ADD_VERTEX], 99thPercentileLatency(us), 103935
+[ADD_VERTEX], Return=OK, 4654
+[GET_EDGE_WITH_PROPERTY-FAILED], Operations, 9
+[GET_EDGE_WITH_PROPERTY-FAILED], AverageLatency(us), 62279.555555555555
+[GET_EDGE_WITH_PROPERTY-FAILED], MinLatency(us), 11648
+[GET_EDGE_WITH_PROPERTY-FAILED], MaxLatency(us), 269823
+[GET_EDGE_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 30479
+[GET_EDGE_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 269823
+[GET_EDGE_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 269823
+[GET_EDGE_COUNT-FAILED], Operations, 6
+[GET_EDGE_COUNT-FAILED], AverageLatency(us), 168986.0
+[GET_EDGE_COUNT-FAILED], MinLatency(us), 10008
+[GET_EDGE_COUNT-FAILED], MaxLatency(us), 355839
+[GET_EDGE_COUNT-FAILED], 50thPercentileLatency(us), 59935
+[GET_EDGE_COUNT-FAILED], 95thPercentileLatency(us), 355839
+[GET_EDGE_COUNT-FAILED], 99thPercentileLatency(us), 355839
+[REMOVE_EDGE_PROPERTY], Operations, 4751
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 25429.966322879394
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 2060
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 1337343
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 8991
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 70783
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 106175
+[REMOVE_EDGE_PROPERTY], Return=OK, 4751
+[REMOVE_EDGE], Operations, 4727
+[REMOVE_EDGE], AverageLatency(us), 22481.986883858684
+[REMOVE_EDGE], MinLatency(us), 1013
+[REMOVE_EDGE], MaxLatency(us), 427263
+[REMOVE_EDGE], 50thPercentileLatency(us), 8663
+[REMOVE_EDGE], 95thPercentileLatency(us), 68799
+[REMOVE_EDGE], 99thPercentileLatency(us), 100223
+[REMOVE_EDGE], Return=OK, 4727
+[GET_EDGE_LABELS], Operations, 4799
+[GET_EDGE_LABELS], AverageLatency(us), 77443.30673056887
+[GET_EDGE_LABELS], MinLatency(us), 394
+[GET_EDGE_LABELS], MaxLatency(us), 655871
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 93375
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 136063
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 177791
+[GET_EDGE_LABELS], Return=OK, 4799
+[GET_EDGE_LABELS], Return=ERROR, 8
+[GET_VERTEX_COUNT], Operations, 4724
+[GET_VERTEX_COUNT], AverageLatency(us), 78299.08763759526
+[GET_VERTEX_COUNT], MinLatency(us), 369
+[GET_VERTEX_COUNT], MaxLatency(us), 339199
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 95423
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 137215
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 161919
+[GET_VERTEX_COUNT], Return=OK, 4724
+[GET_VERTEX_COUNT], Return=ERROR, 6
+[REMOVE_VERTEX_PROPERTY], Operations, 4754
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 27842.26840555322
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 2458
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 1386495
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 9871
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 73343
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 110975
+[REMOVE_VERTEX_PROPERTY], Return=OK, 4754
+[GET_EDGES_WITH_LABEL], Operations, 4758
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 79452.74190836486
+[GET_EDGES_WITH_LABEL], MinLatency(us), 439
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 654847
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 95615
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 135679
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 183935
+[GET_EDGES_WITH_LABEL], Return=OK, 4758
+[GET_EDGES_WITH_LABEL], Return=ERROR, 6
+[GET_VERTEX_WITH_PROPERTY-FAILED], Operations, 5
+[GET_VERTEX_WITH_PROPERTY-FAILED], AverageLatency(us), 38064.0
+[GET_VERTEX_WITH_PROPERTY-FAILED], MinLatency(us), 24080
+[GET_VERTEX_WITH_PROPERTY-FAILED], MaxLatency(us), 55071
+[GET_VERTEX_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 40767
+[GET_VERTEX_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 55071
+[GET_VERTEX_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 55071
+[GET_EDGES_WITH_LABEL-FAILED], Operations, 6
+[GET_EDGES_WITH_LABEL-FAILED], AverageLatency(us), 131645.33333333334
+[GET_EDGES_WITH_LABEL-FAILED], MinLatency(us), 25760
+[GET_EDGES_WITH_LABEL-FAILED], MaxLatency(us), 475903
+[GET_EDGES_WITH_LABEL-FAILED], 50thPercentileLatency(us), 55711
+[GET_EDGES_WITH_LABEL-FAILED], 95thPercentileLatency(us), 475903
+[GET_EDGES_WITH_LABEL-FAILED], 99thPercentileLatency(us), 475903
+[CLEANUP], Operations, 64
+[CLEANUP], AverageLatency(us), 0.9375
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 4
+[CLEANUP], 50thPercentileLatency(us), 1
+[CLEANUP], 95thPercentileLatency(us), 1
+[CLEANUP], 99thPercentileLatency(us), 4
+[SET_EDGE_PROPERTY], Operations, 4823
+[SET_EDGE_PROPERTY], AverageLatency(us), 25303.55774414265
+[SET_EDGE_PROPERTY], MinLatency(us), 2282
+[SET_EDGE_PROPERTY], MaxLatency(us), 1372159
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 8871
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 70911
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 106303
+[SET_EDGE_PROPERTY], Return=OK, 4823
+[SET_VERTEX_PROPERTY], Operations, 4728
+[SET_VERTEX_PROPERTY], AverageLatency(us), 26899.054145516075
+[SET_VERTEX_PROPERTY], MinLatency(us), 2276
+[SET_VERTEX_PROPERTY], MaxLatency(us), 1402879
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 9815
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 71295
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 109887
+[SET_VERTEX_PROPERTY], Return=OK, 4728
+[GET_EDGE_COUNT], Operations, 4882
+[GET_EDGE_COUNT], AverageLatency(us), 78184.98463744367
+[GET_EDGE_COUNT], MinLatency(us), 436
+[GET_EDGE_COUNT], MaxLatency(us), 611327
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 94655
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 137727
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 199935
+[GET_EDGE_COUNT], Return=OK, 4882
+[GET_EDGE_COUNT], Return=ERROR, 6
+[GET_VERTEX_COUNT-FAILED], Operations, 6
+[GET_VERTEX_COUNT-FAILED], AverageLatency(us), 104540.0
+[GET_VERTEX_COUNT-FAILED], MinLatency(us), 23056
+[GET_VERTEX_COUNT-FAILED], MaxLatency(us), 255103
+[GET_VERTEX_COUNT-FAILED], 50thPercentileLatency(us), 85759
+[GET_VERTEX_COUNT-FAILED], 95thPercentileLatency(us), 255103
+[GET_VERTEX_COUNT-FAILED], 99thPercentileLatency(us), 255103
