@@ -1,0 +1,197 @@
+/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/GRACE/YCSB/conf:/Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/antlr4-runtime-4.9.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/arangodb-java-driver-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-record-codec-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/caffeine-2.3.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-beanutils-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-collections-3.2.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-configuration2-2.8.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-lang3-3.12.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-logging-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-text-1.10.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/core-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/error_prone_annotations-2.11.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/exp4j-0.4.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/failureaccess-1.0.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-core-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-driver-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-groovy-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-language-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-shaded-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-util-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-cli-picocli-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-console-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-groovysh-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-json-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-jsr223-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-swing-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-templates-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-xml-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/guava-31.1-jre.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/hppc-0.7.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/http-protocol-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/ivy-2.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/j2objc-annotations-1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-annotations-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-core-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-databind-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-serde-json-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jakarta.json-api-2.1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/janusgraph-driver-1.0.0-rc2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/javatuples-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jbcrypt-0.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-log-0.20.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-manifests-1.2.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcl-over-slf4j-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jline-2.14.6.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jsr305-3.0.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jts-core-1.17.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-core-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-sync-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-all-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-buffer-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http2-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-redis-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-socks-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-xml-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-udt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/noggit-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/picocli-4.3.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/reactive-streams-1.0.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/snakeyaml-1.32.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/spatial4j-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-auth-common-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-core-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-uri-template-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-client-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.GraceClient -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=10 -p threadcount=8 -p loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json -p vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json
+Loaded 1901 vertices and 7479 edges
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=10, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+Still waiting for thread Thread-8 to complete. Workload status: true
+[OVERALL], RunTime(ms), 12274
+[OVERALL], Throughput(ops/sec), 293.954700993971
+[TOTAL_GCS_G1_Young_Generation], Count, 3
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 16
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.13035685188202706
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 3
+[TOTAL_GC_TIME], Time(ms), 16
+[TOTAL_GC_TIME_%], Time(%), 0.13035685188202706
+[REMOVE_VERTEX], Operations, 245
+[REMOVE_VERTEX], AverageLatency(us), 14786.24081632653
+[REMOVE_VERTEX], MinLatency(us), 2140
+[REMOVE_VERTEX], MaxLatency(us), 905727
+[REMOVE_VERTEX], 50thPercentileLatency(us), 3023
+[REMOVE_VERTEX], 95thPercentileLatency(us), 9543
+[REMOVE_VERTEX], 99thPercentileLatency(us), 826367
+[REMOVE_VERTEX], Return=OK, 245
+[GET_EDGE_WITH_PROPERTY], Operations, 259
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 2485.131274131274
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 415
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 90239
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 926
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 5471
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 50175
+[GET_EDGE_WITH_PROPERTY], Return=OK, 259
+[ADD_EDGE], Operations, 244
+[ADD_EDGE], AverageLatency(us), 4848.016393442623
+[ADD_EDGE], MinLatency(us), 2724
+[ADD_EDGE], MaxLatency(us), 130623
+[ADD_EDGE], 50thPercentileLatency(us), 3475
+[ADD_EDGE], 95thPercentileLatency(us), 8255
+[ADD_EDGE], 99thPercentileLatency(us), 28559
+[ADD_EDGE], Return=OK, 244
+[GET_VERTEX_WITH_PROPERTY], Operations, 249
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 1407.1927710843374
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 420
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 16127
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 810
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 3889
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 9743
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 249
+[ADD_VERTEX], Operations, 263
+[ADD_VERTEX], AverageLatency(us), 4186.1596958174905
+[ADD_VERTEX], MinLatency(us), 2005
+[ADD_VERTEX], MaxLatency(us), 28223
+[ADD_VERTEX], 50thPercentileLatency(us), 2833
+[ADD_VERTEX], 95thPercentileLatency(us), 11895
+[ADD_VERTEX], 99thPercentileLatency(us), 24735
+[ADD_VERTEX], Return=OK, 263
+[REMOVE_EDGE_PROPERTY], Operations, 277
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 85109.78700361011
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 3170
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 3207167
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 4287
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 859647
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 3100671
+[REMOVE_EDGE_PROPERTY], Return=OK, 277
+[REMOVE_EDGE], Operations, 239
+[REMOVE_EDGE], AverageLatency(us), 39147.17991631799
+[REMOVE_EDGE], MinLatency(us), 1866
+[REMOVE_EDGE], MaxLatency(us), 1191935
+[REMOVE_EDGE], 50thPercentileLatency(us), 5495
+[REMOVE_EDGE], 95thPercentileLatency(us), 22223
+[REMOVE_EDGE], 99thPercentileLatency(us), 1045503
+[REMOVE_EDGE], Return=OK, 239
+[GET_EDGE_LABELS], Operations, 247
+[GET_EDGE_LABELS], AverageLatency(us), 1451.7854251012145
+[GET_EDGE_LABELS], MinLatency(us), 430
+[GET_EDGE_LABELS], MaxLatency(us), 38751
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 785
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 4459
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 6699
+[GET_EDGE_LABELS], Return=OK, 247
+[GET_VERTEX_COUNT], Operations, 268
+[GET_VERTEX_COUNT], AverageLatency(us), 1860.294776119403
+[GET_VERTEX_COUNT], MinLatency(us), 393
+[GET_VERTEX_COUNT], MaxLatency(us), 91583
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 883
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 4567
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 13087
+[GET_VERTEX_COUNT], Return=OK, 268
+[REMOVE_VERTEX_PROPERTY], Operations, 277
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 57055.06859205776
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 2072
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 1201151
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 3123
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 875007
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 1157119
+[REMOVE_VERTEX_PROPERTY], Return=OK, 277
+[GET_EDGES_WITH_LABEL], Operations, 266
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 1978.7781954887218
+[GET_EDGES_WITH_LABEL], MinLatency(us), 460
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 50079
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 1002
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 6195
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 19263
+[GET_EDGES_WITH_LABEL], Return=OK, 266
+[CLEANUP], Operations, 8
+[CLEANUP], AverageLatency(us), 0.125
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 1
+[CLEANUP], 50thPercentileLatency(us), 0
+[CLEANUP], 95thPercentileLatency(us), 1
+[CLEANUP], 99thPercentileLatency(us), 1
+[SET_EDGE_PROPERTY], Operations, 267
+[SET_EDGE_PROPERTY], AverageLatency(us), 60262.86142322097
+[SET_EDGE_PROPERTY], MinLatency(us), 3258
+[SET_EDGE_PROPERTY], MaxLatency(us), 3018751
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 4247
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 24511
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 1186815
+[SET_EDGE_PROPERTY], Return=OK, 267
+[SET_VERTEX_PROPERTY], Operations, 250
+[SET_VERTEX_PROPERTY], AverageLatency(us), 25549.96
+[SET_VERTEX_PROPERTY], MinLatency(us), 2162
+[SET_VERTEX_PROPERTY], MaxLatency(us), 1195007
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 3061
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 16655
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 1064959
+[SET_VERTEX_PROPERTY], Return=OK, 250
+[GET_EDGE_COUNT], Operations, 239
+[GET_EDGE_COUNT], AverageLatency(us), 1415.7573221757323
+[GET_EDGE_COUNT], MinLatency(us), 431
+[GET_EDGE_COUNT], MaxLatency(us), 30623
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 763
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 3113
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 9967
+[GET_EDGE_COUNT], Return=OK, 239

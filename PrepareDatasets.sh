@@ -23,13 +23,9 @@ cp $ROOT_DIRECTORY/jsontoCSV.py $DATA_DIRECTORY/
 cd $DATA_DIRECTORY 
 
 
-# Prepare preloading and workload data
-for dataset in "${datasets[@]}"; do
-    if [ ! -f ${dataset}_load_vertices.json ] || [ ! -f ${dataset}_load_edges.json ]; then 
-        python3 workloadGenerator.py --input $dataset.json --out-prefix $dataset --split 0.8 --shards $(nproc --all)
-    fi
-    
-    python3 jsontoCSV.py ${dataset}_load_vertices.json ${dataset}_load_edges.json 
-done
+if [ ! -f ${DATASET_NAME}_load_vertices.json ] || [ ! -f ${DATASET_NAME}_load_edges.json ]; then 
+    python3 workloadGenerator.py --input $DATASET_NAME.json --out-prefix $DATASET_NAME --split 0.8 --shards $(nproc --all)
+fi
 
+python3 jsontoCSV.py ${DATASET_NAME}_load_vertices.json ${DATASET_NAME}_load_edges.json 
 
