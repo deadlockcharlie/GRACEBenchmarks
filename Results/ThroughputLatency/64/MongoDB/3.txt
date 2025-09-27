@@ -1,4 +1,4 @@
-/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/mongodb-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/bson-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/bson-record-codec-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/mongodb-driver-core-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/mongodb-driver-sync-5.5.1.jar site.ycsb.Client -t -db site.ycsb.db.MongoDBClient -P workloads/workload_grace -p DBTYPE=mongodb -p DBURI=mongodb://localhost:27017 -p maxexecutiontime=60 -p threadcount=64 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json
+/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/mongodb-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/bson-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/bson-record-codec-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/mongodb-driver-core-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/mongodb-driver-sync-5.5.1.jar site.ycsb.Client -t -db site.ycsb.db.MongoDBClient -P workloads/workload_grace -p DBTYPE=mongodb -p DBURI=mongodb://localhost:27017 -p maxexecutiontime=30 -p threadcount=64 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json
 Loaded 147023 vertices and 387329 edges
 Initializing db: site.ycsb.db.MongoDBClient
 Initializing db: site.ycsb.db.MongoDBClient
@@ -65,217 +65,211 @@ Initializing db: site.ycsb.db.MongoDBClient
 Initializing db: site.ycsb.db.MongoDBClient
 Initializing db: site.ycsb.db.MongoDBClient
 Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
 Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
 Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
 Starting Mongodb client
 Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Starting Mongodb client
 Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Using Database: site.ycsb.DBWrapper
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Starting Mongodb client
-Starting Mongodb client
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Starting Mongodb client
 Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+Starting Mongodb client
+Starting Mongodb client
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+Starting Mongodb client
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=30, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
-DBURI: mongodb://localhost:27017
-DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
-DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
@@ -283,24 +277,35 @@ DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
-DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBTYPE: mongodb
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
@@ -312,68 +317,63 @@ DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBTYPE: mongodb
-DBURI: mongodb://localhost:27017
-DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
+DBTYPE: mongodb
+DBTYPE: mongodb
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
+DBTYPE: mongodb
+DBTYPE: mongodb
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
+DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
-DBTYPE: mongodb
-DBTYPE: mongodb
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
-DBTYPE: mongodb
-DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
@@ -384,6 +384,11 @@ DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
@@ -412,6 +417,9 @@ Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
@@ -420,7 +428,16 @@ Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
-Error fetching next edge from the update workload
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
+Connected to MongoDB database successfully
 Error fetching next vertex from the update workload
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
@@ -436,50 +453,149 @@ Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
 Error fetching next vertex from the update workload
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Error fetching next vertex from the update workload
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Connected to MongoDB database successfully
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-java.util.NoSuchElementException
-	at java.base/java.util.LinkedList.getFirst(LinkedList.java:248)
-	at site.ycsb.workloads.CoreWorkload.doTransactionRemoveVertex(CoreWorkload.java:498)
-	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:411)
-	at site.ycsb.ClientThread.run(ClientThread.java:123)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+Still waiting for thread Thread-20 to complete. Workload status: true
+[OVERALL], RunTime(ms), 32599
+[OVERALL], Throughput(ops/sec), 31.994846467683058
+[TOTAL_GCS_G1_Young_Generation], Count, 3
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 559
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.7147765268873276
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 3
+[TOTAL_GC_TIME], Time(ms), 559
+[TOTAL_GC_TIME_%], Time(%), 1.7147765268873276
+[REMOVE_VERTEX], Operations, 45
+[REMOVE_VERTEX], AverageLatency(us), 2138874.311111111
+[REMOVE_VERTEX], MinLatency(us), 1115136
+[REMOVE_VERTEX], MaxLatency(us), 3407871
+[REMOVE_VERTEX], 50thPercentileLatency(us), 2000895
+[REMOVE_VERTEX], 95thPercentileLatency(us), 3301375
+[REMOVE_VERTEX], 99thPercentileLatency(us), 3407871
+[REMOVE_VERTEX], Return=OK, 45
+[GET_EDGE_WITH_PROPERTY], Operations, 79
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 3446981.670886076
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 870400
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 6230015
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 3426303
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 5222399
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 6230015
+[GET_EDGE_WITH_PROPERTY], Return=OK, 79
+[ADD_EDGE], Operations, 57
+[ADD_EDGE], AverageLatency(us), 794785.6842105263
+[ADD_EDGE], MinLatency(us), 548864
+[ADD_EDGE], MaxLatency(us), 1969151
+[ADD_EDGE], 50thPercentileLatency(us), 716287
+[ADD_EDGE], 95thPercentileLatency(us), 1128447
+[ADD_EDGE], 99thPercentileLatency(us), 1969151
+[ADD_EDGE], Return=OK, 57
+[GET_VERTEX_WITH_PROPERTY], Operations, 79
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 1476183.4936708861
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 174464
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 2957311
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 1434623
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 2525183
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 2957311
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 79
+[ADD_VERTEX], Operations, 51
+[ADD_VERTEX], AverageLatency(us), 752213.3333333334
+[ADD_VERTEX], MinLatency(us), 555520
+[ADD_VERTEX], MaxLatency(us), 2111487
+[ADD_VERTEX], 50thPercentileLatency(us), 706559
+[ADD_VERTEX], 95thPercentileLatency(us), 1079295
+[ADD_VERTEX], 99thPercentileLatency(us), 2111487
+[ADD_VERTEX], Return=OK, 51
+[REMOVE_EDGE_PROPERTY], Operations, 63
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 3452611.0476190476
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 764928
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 5353471
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 3424255
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 5148671
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 5353471
+[REMOVE_EDGE_PROPERTY], Return=OK, 63
+[REMOVE_EDGE], Operations, 90
+[REMOVE_EDGE], AverageLatency(us), 3771153.066666667
+[REMOVE_EDGE], MinLatency(us), 1403904
+[REMOVE_EDGE], MaxLatency(us), 5988351
+[REMOVE_EDGE], 50thPercentileLatency(us), 3948543
+[REMOVE_EDGE], 95thPercentileLatency(us), 5300223
+[REMOVE_EDGE], 99thPercentileLatency(us), 5988351
+[REMOVE_EDGE], Return=OK, 90
+[GET_EDGE_LABELS], Operations, 72
+[GET_EDGE_LABELS], AverageLatency(us), 310675.55555555556
+[GET_EDGE_LABELS], MinLatency(us), 219904
+[GET_EDGE_LABELS], MaxLatency(us), 551935
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 304127
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 417023
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 551935
+[GET_EDGE_LABELS], Return=OK, 72
+[GET_VERTEX_COUNT], Operations, 81
+[GET_VERTEX_COUNT], AverageLatency(us), 170356.14814814815
+[GET_VERTEX_COUNT], MinLatency(us), 142976
+[GET_VERTEX_COUNT], MaxLatency(us), 300031
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 158975
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 243327
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 300031
+[GET_VERTEX_COUNT], Return=OK, 81
+[REMOVE_VERTEX_PROPERTY], Operations, 79
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 1403428.4556962026
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 247808
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 2795519
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 1359871
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 2144255
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 2795519
+[REMOVE_VERTEX_PROPERTY], Return=OK, 79
+[SET_EDGE_PROPERTY-FAILED], Operations, 80
+[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 3110398.4
+[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 365312
+[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 5595135
+[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 3371007
+[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 5017599
+[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 5595135
+[SET_VERTEX_PROPERTY-FAILED], Operations, 64
+[SET_VERTEX_PROPERTY-FAILED], AverageLatency(us), 1500546.0
+[SET_VERTEX_PROPERTY-FAILED], MinLatency(us), 509184
+[SET_VERTEX_PROPERTY-FAILED], MaxLatency(us), 2963455
+[SET_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 1404927
+[SET_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 2406399
+[SET_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 2963455
+[GET_EDGES_WITH_LABEL], Operations, 69
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 3235276.0579710146
+[GET_EDGES_WITH_LABEL], MinLatency(us), 830976
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 5832703
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 3274751
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 5263359
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 5832703
+[GET_EDGES_WITH_LABEL], Return=OK, 69
+[CLEANUP], Operations, 64
+[CLEANUP], AverageLatency(us), 0.140625
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 1
+[CLEANUP], 50thPercentileLatency(us), 0
+[CLEANUP], 95thPercentileLatency(us), 1
+[CLEANUP], 99thPercentileLatency(us), 1
+[SET_EDGE_PROPERTY], Operations, 0
+[SET_EDGE_PROPERTY], AverageLatency(us), 0.0
+[SET_EDGE_PROPERTY], MinLatency(us), 0
+[SET_EDGE_PROPERTY], MaxLatency(us), 0
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 0
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 0
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 0
+[SET_EDGE_PROPERTY], Return=ERROR, 80
+[SET_VERTEX_PROPERTY], Operations, 0
+[SET_VERTEX_PROPERTY], AverageLatency(us), 0.0
+[SET_VERTEX_PROPERTY], MinLatency(us), 0
+[SET_VERTEX_PROPERTY], MaxLatency(us), 0
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 0
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 0
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 0
+[SET_VERTEX_PROPERTY], Return=ERROR, 64
+[GET_EDGE_COUNT], Operations, 83
+[GET_EDGE_COUNT], AverageLatency(us), 235848.48192771085
+[GET_EDGE_COUNT], MinLatency(us), 179968
+[GET_EDGE_COUNT], MaxLatency(us), 497663
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 212863
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 380415
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 497663
+[GET_EDGE_COUNT], Return=OK, 83
