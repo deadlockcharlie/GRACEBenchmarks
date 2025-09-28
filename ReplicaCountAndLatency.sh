@@ -6,13 +6,13 @@
 # . ./ArangoDB1and3Replicas.sh
 
 # cd $ROOT_DIRECTORY
-# . ./MongoDB1and3Replicas.sh
+ . ./MongoDB1and3Replicas.sh
 
 # cd $ROOT_DIRECTORY
  . ./Neo4J1and3Replicas.sh
 
 # cd $ROOT_DIRECTORY
-# . ./MemGraph1and3Replicas.sh
+ . ./MemGraph1and3Replicas.sh
 
 #  cd $ROOT_DIRECTORY
 # . ./JanusGraph1and3Replicas.sh

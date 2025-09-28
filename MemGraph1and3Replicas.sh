@@ -118,7 +118,7 @@ EOL
             done
             
             echo "Configuring all latencies for Replica${j}..."
-            if ! docker exec mongo${j}-netem sh -c "/usr/local/bin/setup-latency.sh Replica${j} $latency_args"; then
+            if ! docker exec Replica${j} sh -c "/usr/local/bin/setup-latency.sh Replica${j} $latency_args"; then
                 echo "❌ Failed to configure latencies for Replica${j}"
             else
                 echo "✅ Configured latencies for Replica${j}"

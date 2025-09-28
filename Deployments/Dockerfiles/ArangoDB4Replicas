@@ -223,8 +223,29 @@ services:
               --cluster.agency-endpoint tcp://agent2:8531
               --cluster.agency-endpoint tcp://agent3:8531
               --log.output -
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'RETURN 0;' | arangosh || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
     ports:
       - "8529:8529"
+    networks:
+      - arango-net
+  
+  preload1:
+    image: arangodb:latest
+    container_name: prelaod1
+    depends_on:
+      coordinator1:
+       condition: service_healthy
+    volumes:
+      - ../../PreloadData:/var/lib/arangodb/import
+    entrypoint:
+      [
+        "sh", "/var/lib/arangodb/import/arangoDBImport.sh", "tcp://coordinator1:8529"
+      ]
     networks:
       - arango-net
 
