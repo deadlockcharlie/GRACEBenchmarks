@@ -287,9 +287,9 @@ services:
               --log.output -
     healthcheck:
       test: ["CMD-SHELL", "echo 'RETURN 0;' | arangosh || exit 1"]
-      interval: 5s
+      interval: 1s
       timeout: 10s
-      retries: 10
+      retries: 40
 
     ports:
       - "8529:8529"

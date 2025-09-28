@@ -24,7 +24,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(yeast mico ldbc)
+datasets=(frbm frbo)
 
 
 
@@ -43,6 +43,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
     
      echo "Starting benchmarks for dataset: $dataset"
      DATASET_NAME=$dataset
+     cd $ROOT_DIRECTORY
  . ./PrepareDatasets.sh
      RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ReplicaCountAndLatency/$DATASET_NAME"
      LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/ReplicaCountAndLatency/$DATASET_NAME"
