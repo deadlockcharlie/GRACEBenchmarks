@@ -1,49 +1,29 @@
 services:
-  aerospike1:
-    image: aerospike/aerospike-server:latest
-    container_name: aerospike1
-    hostname: aerospike1
+  aerospike:
+    image: container.aerospike.com/aerospike/aerospike-server
+    container_name: aerospike-single
+    hostname: aerospike
     ports:
-      - "3000:3000"
-      - "3001:3001"
-      - "3002:3002"
-      - "3003:3003"
-    # volumes:
-    #   - ./conf/aerospike1.conf:/aerospike.conf:ro
-    #   - ./aerospikeData:/run/work/
-    command: ["asd", "--config-file", "/aerospike.conf"]
+      - "3000:3000"   # Client port
+      - "3001:3001"   # Fabric port
+      - "3002:3002"   # Heartbeat port
+      - "3003:3003"   # Info port
+    volumes:
+      - ./aerospike1.conf:/etc/aerospike/aerospike.conf
+    restart: unless-stopped
+    ulimits:
+      nofile: 65536
+  aerospike-tools:
+    image: container.aerospike.com/aerospike/aerospike-tools
+    container_name: aerospike-tools
+    depends_on:
+      - aerospike
+    environment:
+      - AS_HOST=aerospike-single
+      - AS_PORT=3000
+    entrypoint: tail -f /dev/null  # Keep the container running
+    restart: unless-stopped
 
-  # aerospike2:
-  #   image: aerospike/aerospike-server:latest
-  #   container_name: aerospike2
-  #   hostname: aerospike2
-  #   ports:
-  #     - "3010:3000"
-  #     - "3011:3001"
-  #     - "3012:3002"
-  #     - "3013:3003"
-  #   volumes:
-  #     - ./conf/aerospike2.conf:/aerospike.conf:ro
-  #   command: ["asd", "--config-file", "/aerospike.conf"]
-  #   networks:
-  #     - aerospike-net
-
-  # aerospike3:
-  #   image: aerospike/aerospike-server:latest
-  #   container_name: aerospike3
-  #   hostname: aerospike3
-  #   ports:
-  #     - "3020:3000"
-  #     - "3021:3001"
-  #     - "3022:3002"
-  #     - "3023:3003"
-  #   volumes:
-  #     - ./conf/aerospike3.conf:/aerospike.conf:ro
-  #   command: ["asd", "--config-file", "/aerospike.conf"]
-  #   networks:
-  #     - aerospike-net
-
-networks:
-  aerospike-net:
-    driver: bridge
-    external: true
+volumes:
+  aerospike_data:
+  aerospike_logs:

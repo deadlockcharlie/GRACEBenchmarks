@@ -153,6 +153,10 @@ services:
     container_name: coordinator1
     environment:
       - ARANGO_NO_AUTH=1
+      - ARANGO_DEFAULT_REPLICATION_FACTOR=2
+      - ARANGO_MIN_REPLICATION_FACTOR=2
+    volumes:
+      - ../../PreloadData:/var/lib/arangodb/import
     command: >
       arangod --server.endpoint tcp://0.0.0.0:8529
               --cluster.my-role COORDINATOR
@@ -175,7 +179,7 @@ services:
 
   preload1:
     image: arangodb:latest
-    container_name: prelaod1
+    container_name: preload1
     depends_on:
       coordinator1:
        condition: service_healthy

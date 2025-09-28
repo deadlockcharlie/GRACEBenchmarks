@@ -66,117 +66,95 @@ def collect_data(root_dir: str) -> pd.DataFrame:
     results = []
     root_path = Path(root_dir)
     
-    for dataset_path in root_path.iterdir():
-        if not dataset_path.is_dir():
+    for threadCount_dir in root_path.iterdir():
+        if not threadCount_dir.is_dir():
+            continue
+        
+        # Thread count is the directory name
+        try:
+            thread_count = int(threadCount_dir.name)
+        except ValueError:
             continue
             
-        for db_path in dataset_path.iterdir():
+        for db_path in threadCount_dir.iterdir():
             if not db_path.is_dir():
                 continue
+            
+            # Look for 3.txt file in each database directory
+            result_file = db_path / "3.txt"
+            if not result_file.exists():
+                continue
                 
-            for result_file in db_path.glob("*.txt"):
-                try:
-                    replica_count = int(result_file.stem)
-                except ValueError:
-                    continue
-                
-                operations = parse_result_file(result_file, db_path.name)
-                if not operations:
-                    continue
-                
-                df = pd.DataFrame(operations)
-                
-                # Calculate average latencies by operation type
-                for op_type, op_set in [("Read", READ_OPS), ("Write", WRITE_OPS)]:
-                    type_ops = df[df["Operation"].isin(op_set)]
-                    if not type_ops.empty:
-                        results.append({
-                            "Dataset": dataset_path.name,
-                            "ReplicaCount": replica_count,
-                            "DB": db_path.name,
-                            "Type": op_type,
-                            "Latency": type_ops["Latency"].mean()
-                        })
+            operations = parse_result_file(result_file, db_path.name)
+            if not operations:
+                continue
+            
+            df = pd.DataFrame(operations)
+            
+            # Calculate average latencies by operation type
+            for op_type, op_set in [("Read", READ_OPS), ("Write", WRITE_OPS)]:
+                type_ops = df[df["Operation"].isin(op_set)]
+                if not type_ops.empty:
+                    results.append({
+                        "ThreadCount": thread_count,
+                        "ReplicaCount": 3,  # Fixed replica count since file is always 3.txt
+                        "DB": db_path.name,
+                        "Type": op_type,
+                        "Latency": type_ops["Latency"].mean()
+                    })
     
     return pd.DataFrame(results)
 
 
-def create_subplots(datasets: List[str]) -> Tuple[plt.Figure, List[plt.Axes]]:
-    """Create optimally arranged subplots for datasets."""
-    n_datasets = len(datasets)
-    cols = min(3, n_datasets)
-    rows = math.ceil(n_datasets / cols)
-    
-    fig, axes = plt.subplots(rows, cols, figsize=(cols * 2, rows * 2))
-    axes = [axes] if n_datasets == 1 else axes.flatten() if rows > 1 else list(axes)
-    
-    # Hide unused subplots
-    for ax in axes[n_datasets:]:
-        ax.set_visible(False)
-    
-    return fig, axes[:n_datasets]
-
-
-def plot_dataset(ax: plt.Axes, data: pd.DataFrame, dataset: str, op_type: str, show_legend: bool = False) -> None:
-    """Plot data for a single dataset on given axes."""
-    dataset_data = data[(data["Dataset"] == dataset) & (data["Type"] == op_type)]
+def plot_ldbc_dataset(ax: plt.Axes, data: pd.DataFrame, op_type: str) -> None:
+    """Plot data for LDBC dataset on given axes."""
+    dataset_data = data[data["Type"] == op_type]
+    thread_counts = sorted(dataset_data["ThreadCount"].unique())
     
     for db in dataset_data["DB"].unique():
-        db_data = dataset_data[dataset_data["DB"] == db].sort_values("ReplicaCount")
+        db_data = dataset_data[dataset_data["DB"] == db].sort_values("ThreadCount")
         if db_data.empty:
             continue
+        
+        # Map thread counts to regular intervals (0, 1, 2, ...)
+        x_positions = [thread_counts.index(tc) for tc in db_data["ThreadCount"]]
             
         style = DB_STYLES.get(db, {})
-        ax.plot(db_data["ReplicaCount"], db_data["Latency"], label=db,
+        ax.plot(x_positions, db_data["Latency"], label=db,
                 color=style.get("color"), linestyle=style.get("linestyle", "-"),
-                marker=style.get("marker", "o"), markersize=4, linewidth=1)
+                marker=style.get("marker", "o"), markersize=6, linewidth=2)
     
-    ax.set_title(dataset)
-    ax.set_xticks(sorted(data["ReplicaCount"].unique()))
-    # ax.set_xlabel("Replica Count")
-    # ax.set_ylabel("Latency (µs)")
+    ax.set_title(f"LDBC Dataset - {op_type} Operations")
+    thread_counts = sorted(data["ThreadCount"].unique())
+    ax.set_xticks(range(len(thread_counts)))
+    ax.set_xticklabels(thread_counts)
+    ax.set_xlabel("Thread Count")
+    ax.set_ylabel("Latency (µs)")
     ax.set_yscale("log")
     ax.grid(axis="y", linestyle="--", alpha=0.7)
+    ax.legend()
 
 
 def create_plot(data: pd.DataFrame, op_type: str, output_path: str) -> None:
-    """Create and save multi-dataset plot for given operation type."""
+    """Create and save single plot for LDBC dataset and given operation type."""
     type_data = data[data["Type"] == op_type]
     if type_data.empty:
         print(f"No data for {op_type} operations")
         return
     
-    datasets = sorted(type_data["Dataset"].unique())
-    datasets.sort(key=lambda x: DATASETS.index(x) if x in DATASETS else len(DATASETS))
-    fig, axes = create_subplots(datasets)
+    # Create single plot
+    fig, ax = plt.subplots(1, 1, figsize=(8, 6))
     
-    # Plot all datasets
-    for ax, dataset in zip(axes, datasets):
-        plot_dataset(ax, data, dataset, op_type)
+    # Plot data across all thread counts
+    plot_ldbc_dataset(ax, type_data, op_type)
     
-    # Create single legend for entire figure
-    all_dbs = sorted(type_data["DB"].unique())
-    legend_elements = []
-    for db in all_dbs:
-        style = DB_STYLES.get(db, {})
-        legend_elements.append(plt.Line2D([0], [0], 
-                                        color=style.get("color"),
-                                        linestyle=style.get("linestyle", "-"),
-                                        marker=style.get("marker", "o"),
-                                        markersize=6, linewidth=2, label=db))
-    
-    fig.legend(handles=legend_elements, loc="upper center", 
-               bbox_to_anchor=(0.5, 0.95), ncol=len(all_dbs), fontsize=10)
-    fig.text(0, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
-    fig.text(0.5, 0.01, "Replica Count", ha="center", fontsize=12)
-    # fig.suptitle(f"{op_type} Operations - All Datasets", fontsize=14, y=0.99)
-    fig.tight_layout(rect=[0, 0, 1, 0.88])
+    fig.tight_layout()
     fig.savefig(output_path, dpi=500, bbox_inches='tight')
     plt.close(fig)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate latency plots with subplots per dataset")
+    parser = argparse.ArgumentParser(description="Generate latency plots for LDBC dataset only")
     parser.add_argument("root_dir", help="Root directory containing dataset folders")
     parser.add_argument("figure_base", help="Base path for output figures (e.g., results.png)")
     args = parser.parse_args()

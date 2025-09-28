@@ -236,7 +236,7 @@ services:
   
   preload1:
     image: arangodb:latest
-    container_name: prelaod1
+    container_name: preload1
     depends_on:
       coordinator1:
        condition: service_healthy

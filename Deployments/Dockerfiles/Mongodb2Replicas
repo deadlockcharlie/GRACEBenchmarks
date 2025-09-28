@@ -3,6 +3,8 @@ services:
     image: mongo:latest
     container_name: mongo1
     command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    volumes:
+      - ../../PreloadData:/var/lib/mongodb/import
     ports:
       - "27017:27017"
 
