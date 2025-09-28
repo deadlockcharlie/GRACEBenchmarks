@@ -37,22 +37,22 @@ try {
     int batchSize = 100000 // commit every 10k records
 
     // --- Validate input files ---
-    def vertexFileObj = new File("/var/lib/janusgraph/import/vertices.json")
-    def edgeFileObj = new File("/var/lib/janusgraph/import/edges.json")
-    def vertexKeysFileObj = new File("/var/lib/janusgraph/import/vertices.keys")
-    def edgeKeysFileObj = new File("/var/lib/janusgraph/import/edges.keys")
+    def vertexFileObj = new File("/tmp/PreloadData/vertices.json")
+    def edgeFileObj = new File("/tmp/PreloadData/edges.json")
+    def vertexKeysFileObj = new File("/tmp/PreloadData/vertices.keys")
+    def edgeKeysFileObj = new File("/tmp/PreloadData/edges.keys")
 
     if (!vertexFileObj.exists()) {
-        throw new FileNotFoundException("Vertex file not found: ${vertexFile}")
+        throw new FileNotFoundException("Vertex file not found: ${vertexFileObj}")
     }
     if (!edgeFileObj.exists()) {
-        throw new FileNotFoundException("Edge file not found: ${edgeFile}")
+        throw new FileNotFoundException("Edge file not found: ${edgeFileObj}")
     }
     if (!vertexKeysFileObj.exists()) {
-        throw new FileNotFoundException("Vertex keys file not found: ${vertexKeysFile}")
+        throw new FileNotFoundException("Vertex keys file not found: ${vertexKeysFileObj}")
     }
     if (!edgeKeysFileObj.exists()) {
-        throw new FileNotFoundException("Edge keys file not found: ${edgeKeysFile}")
+        throw new FileNotFoundException("Edge keys file not found: ${edgeKeysFileObj}")
     }
     println "✅ Input files found"
     println "📊 File sizes - Vertices: ${vertexFileObj.length() / 1024 / 1024} MB, Edges: ${edgeFileObj.length() / 1024 / 1024} MB"

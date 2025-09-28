@@ -13,9 +13,9 @@ do
 
     . ./JanusgraphReplicatedDeployment.sh
     cd $ROOT_DIRECTORY
-    docker cp ./PreloadData/janusgraphImport.groovy janusgraph:/tmp/janusgraphImport.groovy
+    docker cp ./PreloadData/ janusgraph:/tmp/
 
-    docker exec janusgraph bin/gremlin.sh -e /tmp/janusgraphImport.groovy 
+    docker exec janusgraph bin/gremlin.sh -e /tmp/PreloadData/janusgraphImport.groovy
 
         # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
