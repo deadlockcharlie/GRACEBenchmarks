@@ -307,7 +307,7 @@ services:
       - ../../PreloadData:/var/lib/arangodb/import
     entrypoint:
       [
-        "sh", "/var/lib/arangodb/import/arangoDBImport.sh", "tcp://coordinator1:8529"
+        "sh", "/var/lib/arangodb/import/arangoDBImport.sh", "tcp://coordinator1:8529", "6"
       ]
     networks:
       - arango-net
