@@ -147,7 +147,7 @@ def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 
                   bbox_to_anchor=(1.02, 0.5), fontsize=9)
 
 
-def plot_dataset_operations(ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, y_range: tuple) -> None:
+def plot_dataset_operations(replica_count: int, ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, y_range: tuple) -> None:
     """Plot operations for a single dataset with consistent y-axis range."""
     x = np.arange(len(pivot_df.index))
     for db in pivot_df.columns:
@@ -163,7 +163,10 @@ def plot_dataset_operations(ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, 
                 linestyle=style.get("linestyle", "-"),
                 marker=style.get("marker", "o"),
                 markersize=3, linewidth=1)
-
+    
+    #For charts more than 1 replica
+    if replica_count>1:
+        ax.axhline(y=600000, color='red', linestyle=':', linewidth=1.5, alpha=0.8, label='300ms threshold')
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)
     ax.set_xticklabels(pivot_df.index, fontsize=10, rotation=90, ha="right")
@@ -222,7 +225,7 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
     
     # Second pass: create plots with consistent y-axis
     for i, (dataset, pivot_df) in enumerate(dataset_pivot_pairs):
-        plot_dataset_operations(axes[i // 3, i % 3], pivot_df, dataset, y_range)
+        plot_dataset_operations(replica_count, axes[i // 3, i % 3], pivot_df, dataset, y_range)
         all_dbs.update(pivot_df.columns)
 
     # Add common y-label

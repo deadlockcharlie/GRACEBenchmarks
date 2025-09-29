@@ -37,7 +37,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
 ## Replication and Latency Benchmarks
- REPLICAS=(2 4 5 6)
+ REPLICAS=(2)
  YCSB_THREADS=1
  for dataset in "${datasets[@]}"; do
     
