@@ -65,6 +65,10 @@ Initializing db: site.ycsb.db.ArangoDBClient
 Initializing db: site.ycsb.db.ArangoDBClient
 Initializing db: site.ycsb.db.ArangoDBClient
 Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Starting ArangoDB client
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
@@ -83,113 +87,45 @@ Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
-Using Database: site.ycsb.DBWrapper
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Connecting to ArangoDB database with params: localhost:8529
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
 Connecting to ArangoDB database with params: localhost:8529
 Starting ArangoDB client
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
-Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
@@ -200,62 +136,89 @@ Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
 Connecting to ArangoDB database with params: localhost:8529
-Starting ArangoDB client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Starting ArangoDB client
-DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-Starting ArangoDB client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Starting ArangoDB client
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Starting ArangoDB client
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
 Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
@@ -264,50 +227,129 @@ Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Starting ArangoDB client
 Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+DBTYPE: arangodb
+DBTYPE: arangodb
+Connecting to ArangoDB database with params: localhost:8529
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+Starting ArangoDB client
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
 Starting ArangoDB client
 Starting ArangoDB client
 Starting ArangoDB client
 Starting ArangoDB client
 Starting ArangoDB client
-Starting ArangoDB client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
@@ -316,93 +358,13 @@ DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Starting ArangoDB client
-Connecting to ArangoDB database with params: localhost:8529
 DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
@@ -414,6 +376,14 @@ DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
@@ -422,21 +392,30 @@ DBURI: http://localhost:8529
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
-DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
 Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=64, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
@@ -444,10 +423,31 @@ DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
+DBURI: http://localhost:8529
+DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
 ArangoDB client initialized successfully
 ArangoDB client initialized successfully
 ArangoDB client initialized successfully
@@ -512,6 +512,7 @@ ArangoDB client initialized successfully
 ArangoDB client initialized successfully
 ArangoDB client initialized successfully
 ArangoDB client initialized successfully
+Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
@@ -537,22 +538,12 @@ Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Connected to ArangoDB database successfully
-Error fetching next vertex from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
 Error fetching next edge from the update workload
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
-Error fetching next edge from the update workload
+Connected to ArangoDB database successfully
+Connected to ArangoDB database successfully
+Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Error fetching next edge from the update workload
 Connected to ArangoDB database successfully
@@ -573,7 +564,8 @@ Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
-Error fetching next edge from the update workload
+Connected to ArangoDB database successfully
+Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
@@ -588,210 +580,501 @@ Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Error fetching next edge from the update workload
 Error fetching next vertex from the update workload
+Error fetching next edge from the update workload
+Error fetching next vertex from the update workload
+Connected to ArangoDB database successfully
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next edge from the update workload
+Error fetching next vertex from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Error fetching next edge from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Error fetching next vertex from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Error fetching next edge from the update workload
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Error fetching next vertex from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Error fetching next vertex from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
 Error fetching next vertex from the update workload
 Error fetching next vertex from the update workload
 Error fetching next vertex from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Error fetching next edge from the update workload
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-63 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-Still waiting for thread Thread-18 to complete. Workload status: true
-[OVERALL], RunTime(ms), 222183
-[OVERALL], Throughput(ops/sec), 17.760134663768156
-[TOTAL_GCS_G1_Young_Generation], Count, 40
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 3996
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.7985174383278648
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setEdgeProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 1359679
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-62 to complete. Workload status: true
+Still waiting for thread Thread-15 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+Still waiting for thread Thread-49 to complete. Workload status: true
+[OVERALL], RunTime(ms), 222644
+[OVERALL], Throughput(ops/sec), 15.244066761287078
+[TOTAL_GCS_G1_Young_Generation], Count, 42
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 4286
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.9250462621943552
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 40
-[TOTAL_GC_TIME], Time(ms), 3996
-[TOTAL_GC_TIME_%], Time(%), 1.7985174383278648
-[REMOVE_VERTEX], Operations, 160
-[REMOVE_VERTEX], AverageLatency(us), 105830.4
-[REMOVE_VERTEX], MinLatency(us), 101824
-[REMOVE_VERTEX], MaxLatency(us), 200831
-[REMOVE_VERTEX], 50thPercentileLatency(us), 102591
-[REMOVE_VERTEX], 95thPercentileLatency(us), 123839
-[REMOVE_VERTEX], 99thPercentileLatency(us), 180095
-[REMOVE_VERTEX], Return=OK, 160
-[REMOVE_VERTEX], Return=ERROR, 95
-[GET_EDGE_WITH_PROPERTY], Operations, 325
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 518019.93846153846
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 385024
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 1424383
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 482815
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 947199
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 1226751
-[GET_EDGE_WITH_PROPERTY], Return=OK, 325
-[ADD_EDGE], Operations, 236
-[ADD_EDGE], AverageLatency(us), 106939.52542372882
-[ADD_EDGE], MinLatency(us), 101824
-[ADD_EDGE], MaxLatency(us), 253183
-[ADD_EDGE], 50thPercentileLatency(us), 103103
-[ADD_EDGE], 95thPercentileLatency(us), 135167
-[ADD_EDGE], 99thPercentileLatency(us), 191615
-[ADD_EDGE], Return=OK, 236
-[GET_VERTEX_WITH_PROPERTY], Operations, 288
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 424504.0
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 352512
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 1217535
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 395007
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 781311
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 1192959
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 288
-[ADD_VERTEX], Operations, 250
-[ADD_VERTEX], AverageLatency(us), 105727.616
-[ADD_VERTEX], MinLatency(us), 101632
-[ADD_VERTEX], MaxLatency(us), 306431
-[ADD_VERTEX], 50thPercentileLatency(us), 102655
-[ADD_VERTEX], 95thPercentileLatency(us), 106175
-[ADD_VERTEX], 99thPercentileLatency(us), 151551
-[ADD_VERTEX], Return=OK, 250
-[REMOVE_EDGE_PROPERTY], Operations, 256
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 113787.75
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 101568
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 356095
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 102591
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 204927
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 334079
-[REMOVE_EDGE_PROPERTY], Return=OK, 256
-[REMOVE_EDGE], Operations, 150
-[REMOVE_EDGE], AverageLatency(us), 106677.33333333333
-[REMOVE_EDGE], MinLatency(us), 101952
-[REMOVE_EDGE], MaxLatency(us), 214655
-[REMOVE_EDGE], 50thPercentileLatency(us), 103039
-[REMOVE_EDGE], 95thPercentileLatency(us), 118719
-[REMOVE_EDGE], 99thPercentileLatency(us), 212479
-[REMOVE_EDGE], Return=OK, 150
-[REMOVE_EDGE], Return=ERROR, 74
-[GET_EDGE_LABELS], Operations, 260
-[GET_EDGE_LABELS], AverageLatency(us), 4.2049914092307694E7
-[GET_EDGE_LABELS], MinLatency(us), 41549824
-[GET_EDGE_LABELS], MaxLatency(us), 43778047
+[TOTAL_GCs], Count, 42
+[TOTAL_GC_TIME], Time(ms), 4286
+[TOTAL_GC_TIME_%], Time(%), 1.9250462621943552
+[REMOVE_VERTEX], Operations, 102
+[REMOVE_VERTEX], AverageLatency(us), 737992.7843137255
+[REMOVE_VERTEX], MinLatency(us), 702976
+[REMOVE_VERTEX], MaxLatency(us), 1728511
+[REMOVE_VERTEX], 50thPercentileLatency(us), 704511
+[REMOVE_VERTEX], 95thPercentileLatency(us), 905727
+[REMOVE_VERTEX], 99thPercentileLatency(us), 1375231
+[REMOVE_VERTEX], Return=OK, 102
+[REMOVE_VERTEX], Return=ERROR, 103
+[GET_EDGE_WITH_PROPERTY], Operations, 248
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 536404.1290322581
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 413184
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 2032639
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 489471
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 560127
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 1935359
+[GET_EDGE_WITH_PROPERTY], Return=OK, 248
+[ADD_EDGE], Operations, 219
+[ADD_EDGE], AverageLatency(us), 741552.5114155251
+[ADD_EDGE], MinLatency(us), 702976
+[ADD_EDGE], MaxLatency(us), 1728511
+[ADD_EDGE], 50thPercentileLatency(us), 705535
+[ADD_EDGE], 95thPercentileLatency(us), 1023999
+[ADD_EDGE], 99thPercentileLatency(us), 1309695
+[ADD_EDGE], Return=OK, 219
+[GET_VERTEX_WITH_PROPERTY], Operations, 259
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 437718.4864864865
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 357376
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 2022399
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 393727
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 438271
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 1904639
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 259
+[ADD_VERTEX], Operations, 134
+[ADD_VERTEX], AverageLatency(us), 721127.1641791045
+[ADD_VERTEX], MinLatency(us), 702976
+[ADD_VERTEX], MaxLatency(us), 1728511
+[ADD_VERTEX], 50thPercentileLatency(us), 704511
+[ADD_VERTEX], 95thPercentileLatency(us), 778239
+[ADD_VERTEX], 99thPercentileLatency(us), 889343
+[ADD_VERTEX], Return=OK, 134
+[REMOVE_EDGE_PROPERTY], Operations, 108
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 1224135.111111111
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 805376
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 2574335
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 1240063
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 1786879
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 2185215
+[REMOVE_EDGE_PROPERTY], Return=OK, 108
+[REMOVE_EDGE_PROPERTY], Return=ERROR, 118
+[REMOVE_EDGE], Operations, 96
+[REMOVE_EDGE], AverageLatency(us), 717181.3333333334
+[REMOVE_EDGE], MinLatency(us), 702976
+[REMOVE_EDGE], MaxLatency(us), 1246207
+[REMOVE_EDGE], 50thPercentileLatency(us), 705535
+[REMOVE_EDGE], 95thPercentileLatency(us), 756735
+[REMOVE_EDGE], 99thPercentileLatency(us), 1246207
+[REMOVE_EDGE], Return=OK, 96
+[REMOVE_EDGE], Return=ERROR, 115
+[GET_EDGE_LABELS], Operations, 243
+[GET_EDGE_LABELS], AverageLatency(us), 4.1978842074074075E7
+[GET_EDGE_LABELS], MinLatency(us), 41680896
+[GET_EDGE_LABELS], MaxLatency(us), 44302335
 [GET_EDGE_LABELS], 50thPercentileLatency(us), 41910271
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 42631167
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 43581439
-[GET_EDGE_LABELS], Return=OK, 260
-[SET_EDGE_PROPERTY-FAILED], Operations, 263
-[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 116658.25095057035
-[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 101504
-[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 630271
-[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 102719
-[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 205695
-[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 348927
-[GET_VERTEX_COUNT], Operations, 271
-[GET_VERTEX_COUNT], AverageLatency(us), 117004.0442804428
-[GET_VERTEX_COUNT], MinLatency(us), 101760
-[GET_VERTEX_COUNT], MaxLatency(us), 639999
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 102783
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 137215
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 483839
-[GET_VERTEX_COUNT], Return=OK, 271
-[REMOVE_VERTEX_PROPERTY], Operations, 292
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 219521.75342465754
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 203392
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 715775
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 205183
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 272383
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 587263
-[REMOVE_VERTEX_PROPERTY], Return=OK, 292
-[GET_EDGES_WITH_LABEL], Operations, 307
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 507461.62866449513
-[GET_EDGES_WITH_LABEL], MinLatency(us), 387840
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 1371135
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 484863
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 632319
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 1140735
-[GET_EDGES_WITH_LABEL], Return=OK, 307
-[REMOVE_VERTEX-FAILED], Operations, 95
-[REMOVE_VERTEX-FAILED], AverageLatency(us), 104373.55789473685
-[REMOVE_VERTEX-FAILED], MinLatency(us), 101824
-[REMOVE_VERTEX-FAILED], MaxLatency(us), 176383
-[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 102463
-[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 105407
-[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 176383
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 42270719
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 44105727
+[GET_EDGE_LABELS], Return=OK, 243
+[GET_VERTEX_COUNT], Operations, 229
+[GET_VERTEX_COUNT], AverageLatency(us), 134777.57205240175
+[GET_VERTEX_COUNT], MinLatency(us), 102144
+[GET_VERTEX_COUNT], MaxLatency(us), 1287167
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 103231
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 196223
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 1284095
+[GET_VERTEX_COUNT], Return=OK, 229
+[SET_EDGE_PROPERTY-FAILED], Operations, 127
+[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 1243797.1653543308
+[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 1204224
+[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 2410495
+[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 1207295
+[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 1542143
+[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 1902591
+[REMOVE_VERTEX_PROPERTY], Operations, 114
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 1273611.2280701755
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 805376
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 2568191
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 1204223
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 1810431
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 2355199
+[REMOVE_VERTEX_PROPERTY], Return=OK, 114
+[REMOVE_VERTEX_PROPERTY], Return=ERROR, 114
+[SET_VERTEX_PROPERTY-FAILED], Operations, 144
+[SET_VERTEX_PROPERTY-FAILED], AverageLatency(us), 1267047.111111111
+[SET_VERTEX_PROPERTY-FAILED], MinLatency(us), 1204224
+[SET_VERTEX_PROPERTY-FAILED], MaxLatency(us), 2435071
+[SET_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 1207295
+[SET_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 1803263
+[SET_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 2414591
+[GET_EDGES_WITH_LABEL], Operations, 258
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 530425.550387597
+[GET_EDGES_WITH_LABEL], MinLatency(us), 416768
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 2009087
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 491519
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 563711
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 1912831
+[GET_EDGES_WITH_LABEL], Return=OK, 258
+[REMOVE_EDGE_PROPERTY-FAILED], Operations, 118
+[REMOVE_EDGE_PROPERTY-FAILED], AverageLatency(us), 1243205.4237288137
+[REMOVE_EDGE_PROPERTY-FAILED], MinLatency(us), 1205248
+[REMOVE_EDGE_PROPERTY-FAILED], MaxLatency(us), 2437119
+[REMOVE_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 1208319
+[REMOVE_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 1417215
+[REMOVE_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 2412543
+[REMOVE_VERTEX_PROPERTY-FAILED], Operations, 114
+[REMOVE_VERTEX_PROPERTY-FAILED], AverageLatency(us), 1268331.7894736843
+[REMOVE_VERTEX_PROPERTY-FAILED], MinLatency(us), 1204224
+[REMOVE_VERTEX_PROPERTY-FAILED], MaxLatency(us), 2445311
+[REMOVE_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 1207295
+[REMOVE_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 1700863
+[REMOVE_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 2369535
+[REMOVE_VERTEX-FAILED], Operations, 103
+[REMOVE_VERTEX-FAILED], AverageLatency(us), 403511.92233009706
+[REMOVE_VERTEX-FAILED], MinLatency(us), 102144
+[REMOVE_VERTEX-FAILED], MaxLatency(us), 1104895
+[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 418815
+[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 703999
+[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 1103871
 [CLEANUP], Operations, 64
-[CLEANUP], AverageLatency(us), 1.265625
+[CLEANUP], AverageLatency(us), 1.421875
 [CLEANUP], MinLatency(us), 0
 [CLEANUP], MaxLatency(us), 6
 [CLEANUP], 50thPercentileLatency(us), 1
 [CLEANUP], 95thPercentileLatency(us), 2
 [CLEANUP], 99thPercentileLatency(us), 6
-[SET_EDGE_PROPERTY], Operations, 0
-[SET_EDGE_PROPERTY], AverageLatency(us), 0.0
-[SET_EDGE_PROPERTY], MinLatency(us), 0
-[SET_EDGE_PROPERTY], MaxLatency(us), 0
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], Return=ERROR, 263
-[REMOVE_EDGE-FAILED], Operations, 74
-[REMOVE_EDGE-FAILED], AverageLatency(us), 106376.21621621621
-[REMOVE_EDGE-FAILED], MinLatency(us), 101696
-[REMOVE_EDGE-FAILED], MaxLatency(us), 212479
-[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 102527
-[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 119807
-[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 212479
-[SET_VERTEX_PROPERTY], Operations, 295
-[SET_VERTEX_PROPERTY], AverageLatency(us), 228971.38983050847
-[SET_VERTEX_PROPERTY], MinLatency(us), 203392
-[SET_VERTEX_PROPERTY], MaxLatency(us), 735743
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 205311
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 324607
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 724991
-[SET_VERTEX_PROPERTY], Return=OK, 295
-[GET_EDGE_COUNT], Operations, 255
-[GET_EDGE_COUNT], AverageLatency(us), 120020.58039215686
-[GET_EDGE_COUNT], MinLatency(us), 101504
-[GET_EDGE_COUNT], MaxLatency(us), 650751
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 102655
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 171391
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 560127
-[GET_EDGE_COUNT], Return=OK, 255
+[SET_EDGE_PROPERTY], Operations, 120
+[SET_EDGE_PROPERTY], AverageLatency(us), 1307829.3333333333
+[SET_EDGE_PROPERTY], MinLatency(us), 805376
+[SET_EDGE_PROPERTY], MaxLatency(us), 2230271
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 1328127
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 1802239
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 1948671
+[SET_EDGE_PROPERTY], Return=OK, 120
+[SET_EDGE_PROPERTY], Return=ERROR, 127
+[REMOVE_EDGE-FAILED], Operations, 115
+[REMOVE_EDGE-FAILED], AverageLatency(us), 417979.2695652174
+[REMOVE_EDGE-FAILED], MinLatency(us), 102208
+[REMOVE_EDGE-FAILED], MaxLatency(us), 1103871
+[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 415743
+[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 736767
+[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 1103871
+[SET_VERTEX_PROPERTY], Operations, 117
+[SET_VERTEX_PROPERTY], AverageLatency(us), 1241818.8034188035
+[SET_VERTEX_PROPERTY], MinLatency(us), 805888
+[SET_VERTEX_PROPERTY], MaxLatency(us), 2365439
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 1204223
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 1758207
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 1827839
+[SET_VERTEX_PROPERTY], Return=OK, 117
+[SET_VERTEX_PROPERTY], Return=ERROR, 144
+[GET_EDGE_COUNT], Operations, 234
+[GET_EDGE_COUNT], AverageLatency(us), 113115.62393162394
+[GET_EDGE_COUNT], MinLatency(us), 102016
+[GET_EDGE_COUNT], MaxLatency(us), 410623
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 103103
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 133119
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 399615
+[GET_EDGE_COUNT], Return=OK, 234

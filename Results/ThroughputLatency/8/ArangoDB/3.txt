@@ -9,10 +9,8 @@ Initializing db: site.ycsb.db.ArangoDBClient
 Initializing db: site.ycsb.db.ArangoDBClient
 Initializing db: site.ycsb.db.ArangoDBClient
 Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
-Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
@@ -25,33 +23,35 @@ Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBTYPE: arangodb
-DBURI: http://localhost:8529
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
 DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBURI: http://localhost:8529
-DBTYPE: arangodb
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
 Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Connecting to ArangoDB database with params: localhost:8529
 DBTYPE: arangodb
 DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
+DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+DBURI: http://localhost:8529
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
@@ -72,174 +72,181 @@ Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
+Still waiting for thread Thread-4 to complete. Workload status: true
 Still waiting for thread Thread-4 to complete. Workload status: true
 Still waiting for thread Thread-4 to complete. Workload status: true
 Still waiting for thread Thread-4 to complete. Workload status: true
 Still waiting for thread Thread-5 to complete. Workload status: true
-Still waiting for thread Thread-5 to complete. Workload status: true
-Still waiting for thread Thread-5 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-3 to complete. Workload status: true
-Still waiting for thread Thread-8 to complete. Workload status: true
-Still waiting for thread Thread-6 to complete. Workload status: true
-[OVERALL], RunTime(ms), 220682
-[OVERALL], Throughput(ops/sec), 2.14788700483048
+[OVERALL], RunTime(ms), 212865
+[OVERALL], Throughput(ops/sec), 1.8368449486763911
 [TOTAL_GCS_G1_Young_Generation], Count, 23
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 1492
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.6760859517314507
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 1490
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.6999741620275761
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
 [TOTAL_GCs], Count, 23
-[TOTAL_GC_TIME], Time(ms), 1492
-[TOTAL_GC_TIME_%], Time(%), 0.6760859517314507
-[REMOVE_VERTEX], Operations, 27
-[REMOVE_VERTEX], AverageLatency(us), 113861.92592592593
-[REMOVE_VERTEX], MinLatency(us), 102528
-[REMOVE_VERTEX], MaxLatency(us), 254591
-[REMOVE_VERTEX], 50thPercentileLatency(us), 103039
-[REMOVE_VERTEX], 95thPercentileLatency(us), 149375
-[REMOVE_VERTEX], 99thPercentileLatency(us), 254591
-[REMOVE_VERTEX], Return=OK, 27
-[REMOVE_VERTEX], Return=ERROR, 1
-[GET_EDGE_WITH_PROPERTY], Operations, 33
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 502287.51515151514
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 397056
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 705535
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 491263
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 703999
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 705535
-[GET_EDGE_WITH_PROPERTY], Return=OK, 33
-[ADD_EDGE], Operations, 27
-[ADD_EDGE], AverageLatency(us), 107012.74074074074
-[ADD_EDGE], MinLatency(us), 103168
-[ADD_EDGE], MaxLatency(us), 142719
-[ADD_EDGE], 50thPercentileLatency(us), 105087
-[ADD_EDGE], 95thPercentileLatency(us), 110847
-[ADD_EDGE], 99thPercentileLatency(us), 142719
-[ADD_EDGE], Return=OK, 27
-[ADD_VERTEX], Operations, 32
-[ADD_VERTEX], AverageLatency(us), 105827.0
-[ADD_VERTEX], MinLatency(us), 102592
-[ADD_VERTEX], MaxLatency(us), 136575
-[ADD_VERTEX], 50thPercentileLatency(us), 103231
-[ADD_VERTEX], 95thPercentileLatency(us), 130623
-[ADD_VERTEX], 99thPercentileLatency(us), 136575
-[ADD_VERTEX], Return=OK, 32
-[GET_VERTEX_WITH_PROPERTY], Operations, 46
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 404232.347826087
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 371712
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 754687
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 396031
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 408063
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 754687
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 46
-[REMOVE_EDGE_PROPERTY], Operations, 29
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 109126.62068965517
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 103616
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 238335
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 104127
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 107263
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 238335
-[REMOVE_EDGE_PROPERTY], Return=OK, 29
-[REMOVE_EDGE], Operations, 22
-[REMOVE_EDGE], AverageLatency(us), 104517.81818181818
-[REMOVE_EDGE], MinLatency(us), 102784
-[REMOVE_EDGE], MaxLatency(us), 115583
-[REMOVE_EDGE], 50thPercentileLatency(us), 103295
-[REMOVE_EDGE], 95thPercentileLatency(us), 108223
-[REMOVE_EDGE], 99thPercentileLatency(us), 115583
-[REMOVE_EDGE], Return=OK, 22
-[REMOVE_EDGE], Return=ERROR, 2
-[GET_EDGE_LABELS], Operations, 35
-[GET_EDGE_LABELS], AverageLatency(us), 4.202027885714286E7
-[GET_EDGE_LABELS], MinLatency(us), 41779200
-[GET_EDGE_LABELS], MaxLatency(us), 42958847
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 41975807
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 42598399
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 42958847
-[GET_EDGE_LABELS], Return=OK, 35
-[SET_EDGE_PROPERTY-FAILED], Operations, 39
-[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 108984.61538461539
-[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 103296
-[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 211583
-[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 104319
-[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 131711
-[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 211583
-[REMOVE_VERTEX_PROPERTY], Operations, 34
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 210776.4705882353
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 205312
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 305151
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 206335
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 217599
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 305151
-[REMOVE_VERTEX_PROPERTY], Return=OK, 34
-[GET_VERTEX_COUNT], Operations, 43
-[GET_VERTEX_COUNT], AverageLatency(us), 105989.20930232559
-[GET_VERTEX_COUNT], MinLatency(us), 102656
-[GET_VERTEX_COUNT], MaxLatency(us), 126015
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 103295
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 123071
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 126015
-[GET_VERTEX_COUNT], Return=OK, 43
-[GET_EDGES_WITH_LABEL], Operations, 36
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 491811.55555555556
-[GET_EDGES_WITH_LABEL], MinLatency(us), 457472
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 509183
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 493311
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 503807
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 509183
-[GET_EDGES_WITH_LABEL], Return=OK, 36
-[REMOVE_VERTEX-FAILED], Operations, 1
-[REMOVE_VERTEX-FAILED], AverageLatency(us), 104160.0
-[REMOVE_VERTEX-FAILED], MinLatency(us), 104128
-[REMOVE_VERTEX-FAILED], MaxLatency(us), 104191
-[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 104191
-[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 104191
-[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 104191
+[TOTAL_GC_TIME], Time(ms), 1490
+[TOTAL_GC_TIME_%], Time(%), 0.6999741620275761
+[REMOVE_VERTEX], Operations, 20
+[REMOVE_VERTEX], AverageLatency(us), 712422.4
+[REMOVE_VERTEX], MinLatency(us), 703488
+[REMOVE_VERTEX], MaxLatency(us), 825343
+[REMOVE_VERTEX], 50thPercentileLatency(us), 706559
+[REMOVE_VERTEX], 95thPercentileLatency(us), 711167
+[REMOVE_VERTEX], 99thPercentileLatency(us), 825343
+[REMOVE_VERTEX], Return=OK, 20
+[REMOVE_VERTEX], Return=ERROR, 3
+[GET_EDGE_WITH_PROPERTY], Operations, 23
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 513652.8695652174
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 488192
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 873983
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 494847
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 534015
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 873983
+[GET_EDGE_WITH_PROPERTY], Return=OK, 23
+[ADD_EDGE], Operations, 30
+[ADD_EDGE], AverageLatency(us), 882278.4
+[ADD_EDGE], MinLatency(us), 704000
+[ADD_EDGE], MaxLatency(us), 4141055
+[ADD_EDGE], 50thPercentileLatency(us), 706559
+[ADD_EDGE], 95thPercentileLatency(us), 2516991
+[ADD_EDGE], 99thPercentileLatency(us), 4141055
+[ADD_EDGE], Return=OK, 30
+[GET_VERTEX_WITH_PROPERTY], Operations, 34
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 411463.5294117647
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 380672
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 703999
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 401663
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 450303
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 703999
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 34
+[ADD_VERTEX], Operations, 21
+[ADD_VERTEX], AverageLatency(us), 956623.2380952381
+[ADD_VERTEX], MinLatency(us), 704000
+[ADD_VERTEX], MaxLatency(us), 3500031
+[ADD_VERTEX], 50thPercentileLatency(us), 708095
+[ADD_VERTEX], 95thPercentileLatency(us), 2732031
+[ADD_VERTEX], 99thPercentileLatency(us), 3500031
+[ADD_VERTEX], Return=OK, 21
+[REMOVE_EDGE_PROPERTY], Operations, 28
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 867337.1428571428
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 806400
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 1337343
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 812031
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 1241087
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 1337343
+[REMOVE_EDGE_PROPERTY], Return=OK, 28
+[REMOVE_EDGE_PROPERTY], Return=ERROR, 2
+[REMOVE_EDGE], Operations, 25
+[REMOVE_EDGE], AverageLatency(us), 710379.52
+[REMOVE_EDGE], MinLatency(us), 703488
+[REMOVE_EDGE], MaxLatency(us), 760319
+[REMOVE_EDGE], 50thPercentileLatency(us), 706559
+[REMOVE_EDGE], 95thPercentileLatency(us), 732159
+[REMOVE_EDGE], 99thPercentileLatency(us), 760319
+[REMOVE_EDGE], Return=OK, 25
+[REMOVE_EDGE], Return=ERROR, 3
+[GET_EDGE_LABELS], Operations, 32
+[GET_EDGE_LABELS], AverageLatency(us), 4.2059776E7
+[GET_EDGE_LABELS], MinLatency(us), 41877504
+[GET_EDGE_LABELS], MaxLatency(us), 43253759
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 42008575
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 42303487
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 43253759
+[GET_EDGE_LABELS], Return=OK, 32
+[GET_VERTEX_COUNT], Operations, 31
+[GET_VERTEX_COUNT], AverageLatency(us), 111303.2258064516
+[GET_VERTEX_COUNT], MinLatency(us), 102720
+[GET_VERTEX_COUNT], MaxLatency(us), 212479
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 103359
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 177919
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 212479
+[GET_VERTEX_COUNT], Return=OK, 31
+[REMOVE_VERTEX_PROPERTY], Operations, 24
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 843125.3333333334
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 806400
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 1215487
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 808959
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 1043967
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 1215487
+[REMOVE_VERTEX_PROPERTY], Return=OK, 24
+[SET_VERTEX_PROPERTY-FAILED], Operations, 1
+[SET_VERTEX_PROPERTY-FAILED], AverageLatency(us), 1217024.0
+[SET_VERTEX_PROPERTY-FAILED], MinLatency(us), 1216512
+[SET_VERTEX_PROPERTY-FAILED], MaxLatency(us), 1217535
+[SET_VERTEX_PROPERTY-FAILED], 50thPercentileLatency(us), 1217535
+[SET_VERTEX_PROPERTY-FAILED], 95thPercentileLatency(us), 1217535
+[SET_VERTEX_PROPERTY-FAILED], 99thPercentileLatency(us), 1217535
+[GET_EDGES_WITH_LABEL], Operations, 19
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 506671.15789473685
+[GET_EDGES_WITH_LABEL], MinLatency(us), 492800
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 540671
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 500223
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 540671
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 540671
+[GET_EDGES_WITH_LABEL], Return=OK, 19
+[REMOVE_EDGE_PROPERTY-FAILED], Operations, 2
+[REMOVE_EDGE_PROPERTY-FAILED], AverageLatency(us), 1252864.0
+[REMOVE_EDGE_PROPERTY-FAILED], MinLatency(us), 1227776
+[REMOVE_EDGE_PROPERTY-FAILED], MaxLatency(us), 1277951
+[REMOVE_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 1228799
+[REMOVE_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 1277951
+[REMOVE_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 1277951
+[REMOVE_VERTEX-FAILED], Operations, 3
+[REMOVE_VERTEX-FAILED], AverageLatency(us), 349546.6666666667
+[REMOVE_VERTEX-FAILED], MinLatency(us), 173568
+[REMOVE_VERTEX-FAILED], MaxLatency(us), 499455
+[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 375807
+[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 499455
+[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 499455
 [CLEANUP], Operations, 8
 [CLEANUP], AverageLatency(us), 1.875
 [CLEANUP], MinLatency(us), 1
-[CLEANUP], MaxLatency(us), 5
-[CLEANUP], 50thPercentileLatency(us), 1
-[CLEANUP], 95thPercentileLatency(us), 5
-[CLEANUP], 99thPercentileLatency(us), 5
-[SET_EDGE_PROPERTY], Operations, 0
-[SET_EDGE_PROPERTY], AverageLatency(us), 0.0
-[SET_EDGE_PROPERTY], MinLatency(us), 0
-[SET_EDGE_PROPERTY], MaxLatency(us), 0
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], Return=ERROR, 39
-[REMOVE_EDGE-FAILED], Operations, 2
-[REMOVE_EDGE-FAILED], AverageLatency(us), 158928.0
-[REMOVE_EDGE-FAILED], MinLatency(us), 107072
-[REMOVE_EDGE-FAILED], MaxLatency(us), 210815
-[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 107135
-[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 210815
-[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 210815
-[SET_VERTEX_PROPERTY], Operations, 38
-[SET_VERTEX_PROPERTY], AverageLatency(us), 211488.0
-[SET_VERTEX_PROPERTY], MinLatency(us), 205184
-[SET_VERTEX_PROPERTY], MaxLatency(us), 305663
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 206335
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 243967
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 305663
-[SET_VERTEX_PROPERTY], Return=OK, 38
-[GET_EDGE_COUNT], Operations, 22
-[GET_EDGE_COUNT], AverageLatency(us), 113239.27272727272
-[GET_EDGE_COUNT], MinLatency(us), 102464
-[GET_EDGE_COUNT], MaxLatency(us), 215295
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 103295
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 184319
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 215295
-[GET_EDGE_COUNT], Return=OK, 22
+[CLEANUP], MaxLatency(us), 3
+[CLEANUP], 50thPercentileLatency(us), 2
+[CLEANUP], 95thPercentileLatency(us), 3
+[CLEANUP], 99thPercentileLatency(us), 3
+[REMOVE_EDGE-FAILED], Operations, 3
+[REMOVE_EDGE-FAILED], AverageLatency(us), 459936.0
+[REMOVE_EDGE-FAILED], MinLatency(us), 110976
+[REMOVE_EDGE-FAILED], MaxLatency(us), 1115135
+[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 154239
+[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 1115135
+[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 1115135
+[SET_EDGE_PROPERTY], Operations, 26
+[SET_EDGE_PROPERTY], AverageLatency(us), 1009348.9230769231
+[SET_EDGE_PROPERTY], MinLatency(us), 806400
+[SET_EDGE_PROPERTY], MaxLatency(us), 4669439
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 812543
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 1298431
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 4669439
+[SET_EDGE_PROPERTY], Return=OK, 26
+[SET_VERTEX_PROPERTY], Operations, 24
+[SET_VERTEX_PROPERTY], AverageLatency(us), 931189.3333333334
+[SET_VERTEX_PROPERTY], MinLatency(us), 806912
+[SET_VERTEX_PROPERTY], MaxLatency(us), 3622911
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 809471
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 887807
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 3622911
+[SET_VERTEX_PROPERTY], Return=OK, 24
+[SET_VERTEX_PROPERTY], Return=ERROR, 1
+[GET_EDGE_COUNT], Operations, 32
+[GET_EDGE_COUNT], AverageLatency(us), 104500.0
+[GET_EDGE_COUNT], MinLatency(us), 102720
+[GET_EDGE_COUNT], MaxLatency(us), 116671
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 103167
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 110719
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 116671
+[GET_EDGE_COUNT], Return=OK, 32

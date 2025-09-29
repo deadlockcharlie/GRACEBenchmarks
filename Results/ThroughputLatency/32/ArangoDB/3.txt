@@ -34,30 +34,14 @@ Initializing db: site.ycsb.db.ArangoDBClient
 Initializing db: site.ycsb.db.ArangoDBClient
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
+Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
@@ -70,118 +54,166 @@ Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
 Using Database: site.ycsb.DBWrapper
+Connecting to ArangoDB database with params: localhost:8529
 Starting ArangoDB client
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Starting ArangoDB client
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+Starting ArangoDB client
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Connecting to ArangoDB database with params: localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+DBTYPE: arangodb
+Connecting to ArangoDB database with params: localhost:8529
+Starting ArangoDB client
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+DBTYPE: arangodb
+DBURI: http://localhost:8529
+Connecting to ArangoDB database with params: localhost:8529
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
 Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
-Starting ArangoDB client
-Using Database: site.ycsb.DBWrapper
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
+Using Database: site.ycsb.DBWrapper
+Starting ArangoDB client
+Starting ArangoDB client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=32, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=3, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
@@ -190,38 +222,6 @@ DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBTYPE: arangodb
-DBURI: http://localhost:8529
-DBTYPE: arangodb
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-DBURI: http://localhost:8529
-DBURI: http://localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
-Connecting to ArangoDB database with params: localhost:8529
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
 ArangoDB client initialized successfully
@@ -289,175 +289,14 @@ Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Connected to ArangoDB database successfully
 Error fetching next vertex from the update workload
-Still waiting for thread Thread-15 to complete. Workload status: true
-Still waiting for thread Thread-15 to complete. Workload status: true
-Still waiting for thread Thread-15 to complete. Workload status: true
-Still waiting for thread Thread-15 to complete. Workload status: true
-Still waiting for thread Thread-15 to complete. Workload status: true
-Still waiting for thread Thread-17 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-30 to complete. Workload status: true
-Still waiting for thread Thread-32 to complete. Workload status: true
-[OVERALL], RunTime(ms), 221835
-[OVERALL], Throughput(ops/sec), 9.59271530642144
-[TOTAL_GCS_G1_Young_Generation], Count, 28
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 2714
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.223431829963712
-[TOTAL_GCS_G1_Old_Generation], Count, 0
-[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
-[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 28
-[TOTAL_GC_TIME], Time(ms), 2714
-[TOTAL_GC_TIME_%], Time(%), 1.223431829963712
-[REMOVE_VERTEX], Operations, 109
-[REMOVE_VERTEX], AverageLatency(us), 111052.33027522935
-[REMOVE_VERTEX], MinLatency(us), 101632
-[REMOVE_VERTEX], MaxLatency(us), 582143
-[REMOVE_VERTEX], 50thPercentileLatency(us), 102719
-[REMOVE_VERTEX], 95thPercentileLatency(us), 128575
-[REMOVE_VERTEX], 99thPercentileLatency(us), 242175
-[REMOVE_VERTEX], Return=OK, 109
-[REMOVE_VERTEX], Return=ERROR, 17
-[GET_EDGE_WITH_PROPERTY], Operations, 154
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 493511.48051948054
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 419328
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 845823
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 484607
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 569855
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 844799
-[GET_EDGE_WITH_PROPERTY], Return=OK, 154
-[ADD_EDGE], Operations, 133
-[ADD_EDGE], AverageLatency(us), 110656.0
-[ADD_EDGE], MinLatency(us), 101824
-[ADD_EDGE], MaxLatency(us), 291839
-[ADD_EDGE], 50thPercentileLatency(us), 104255
-[ADD_EDGE], 95thPercentileLatency(us), 157055
-[ADD_EDGE], 99thPercentileLatency(us), 222591
-[ADD_EDGE], Return=OK, 133
-[GET_VERTEX_WITH_PROPERTY], Operations, 151
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 403881.5364238411
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 352512
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 732671
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 396031
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 423679
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 732671
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 151
-[ADD_VERTEX], Operations, 146
-[ADD_VERTEX], AverageLatency(us), 111858.4109589041
-[ADD_VERTEX], MinLatency(us), 101888
-[ADD_VERTEX], MaxLatency(us), 582655
-[ADD_VERTEX], 50thPercentileLatency(us), 102911
-[ADD_VERTEX], 95thPercentileLatency(us), 138623
-[ADD_VERTEX], 99thPercentileLatency(us), 237951
-[ADD_VERTEX], Return=OK, 146
-[REMOVE_EDGE_PROPERTY], Operations, 145
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 108973.46206896551
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 101824
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 396799
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 102655
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 110527
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 279551
-[REMOVE_EDGE_PROPERTY], Return=OK, 145
-[REMOVE_EDGE], Operations, 118
-[REMOVE_EDGE], AverageLatency(us), 105913.7627118644
-[REMOVE_EDGE], MinLatency(us), 102016
-[REMOVE_EDGE], MaxLatency(us), 213247
-[REMOVE_EDGE], 50thPercentileLatency(us), 103103
-[REMOVE_EDGE], 95thPercentileLatency(us), 109759
-[REMOVE_EDGE], 99thPercentileLatency(us), 181631
-[REMOVE_EDGE], Return=OK, 118
-[REMOVE_EDGE], Return=ERROR, 36
-[GET_EDGE_LABELS], Operations, 134
-[GET_EDGE_LABELS], AverageLatency(us), 4.198779032835821E7
-[GET_EDGE_LABELS], MinLatency(us), 41713664
-[GET_EDGE_LABELS], MaxLatency(us), 43155455
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 41910271
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 42500095
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 43122687
-[GET_EDGE_LABELS], Return=OK, 134
-[SET_EDGE_PROPERTY-FAILED], Operations, 162
-[SET_EDGE_PROPERTY-FAILED], AverageLatency(us), 109855.8024691358
-[SET_EDGE_PROPERTY-FAILED], MinLatency(us), 102016
-[SET_EDGE_PROPERTY-FAILED], MaxLatency(us), 281343
-[SET_EDGE_PROPERTY-FAILED], 50thPercentileLatency(us), 102783
-[SET_EDGE_PROPERTY-FAILED], 95thPercentileLatency(us), 137215
-[SET_EDGE_PROPERTY-FAILED], 99thPercentileLatency(us), 281087
-[GET_VERTEX_COUNT], Operations, 168
-[GET_VERTEX_COUNT], AverageLatency(us), 109836.95238095238
-[GET_VERTEX_COUNT], MinLatency(us), 101952
-[GET_VERTEX_COUNT], MaxLatency(us), 291839
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 102783
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 142207
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 288511
-[GET_VERTEX_COUNT], Return=OK, 168
-[REMOVE_VERTEX_PROPERTY], Operations, 147
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 231905.95918367346
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 203904
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 875007
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 205439
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 322303
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 874495
-[REMOVE_VERTEX_PROPERTY], Return=OK, 147
-[GET_EDGES_WITH_LABEL], Operations, 194
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 497902.1855670103
-[GET_EDGES_WITH_LABEL], MinLatency(us), 425472
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 932351
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 488959
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 578559
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 847871
-[GET_EDGES_WITH_LABEL], Return=OK, 194
-[REMOVE_VERTEX-FAILED], Operations, 17
-[REMOVE_VERTEX-FAILED], AverageLatency(us), 104973.17647058824
-[REMOVE_VERTEX-FAILED], MinLatency(us), 102208
-[REMOVE_VERTEX-FAILED], MaxLatency(us), 127551
-[REMOVE_VERTEX-FAILED], 50thPercentileLatency(us), 102719
-[REMOVE_VERTEX-FAILED], 95thPercentileLatency(us), 127551
-[REMOVE_VERTEX-FAILED], 99thPercentileLatency(us), 127551
-[CLEANUP], Operations, 32
-[CLEANUP], AverageLatency(us), 1.5
-[CLEANUP], MinLatency(us), 0
-[CLEANUP], MaxLatency(us), 9
-[CLEANUP], 50thPercentileLatency(us), 1
-[CLEANUP], 95thPercentileLatency(us), 5
-[CLEANUP], 99thPercentileLatency(us), 9
-[SET_EDGE_PROPERTY], Operations, 0
-[SET_EDGE_PROPERTY], AverageLatency(us), 0.0
-[SET_EDGE_PROPERTY], MinLatency(us), 0
-[SET_EDGE_PROPERTY], MaxLatency(us), 0
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 0
-[SET_EDGE_PROPERTY], Return=ERROR, 162
-[REMOVE_EDGE-FAILED], Operations, 36
-[REMOVE_EDGE-FAILED], AverageLatency(us), 111056.0
-[REMOVE_EDGE-FAILED], MinLatency(us), 102208
-[REMOVE_EDGE-FAILED], MaxLatency(us), 212735
-[REMOVE_EDGE-FAILED], 50thPercentileLatency(us), 102911
-[REMOVE_EDGE-FAILED], 95thPercentileLatency(us), 148863
-[REMOVE_EDGE-FAILED], 99thPercentileLatency(us), 212735
-[SET_VERTEX_PROPERTY], Operations, 152
-[SET_VERTEX_PROPERTY], AverageLatency(us), 211218.52631578947
-[SET_VERTEX_PROPERTY], MinLatency(us), 204288
-[SET_VERTEX_PROPERTY], MaxLatency(us), 342271
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 205439
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 236159
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 322815
-[SET_VERTEX_PROPERTY], Return=OK, 152
-[GET_EDGE_COUNT], Operations, 154
-[GET_EDGE_COUNT], AverageLatency(us), 112294.44155844155
-[GET_EDGE_COUNT], MinLatency(us), 101824
-[GET_EDGE_COUNT], MaxLatency(us), 399871
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 102911
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 156415
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 337151
-[GET_EDGE_COUNT], Return=OK, 154
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
+java.util.NoSuchElementException
+	at java.base/java.util.LinkedList.getFirst(LinkedList.java:248)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRemoveEdge(CoreWorkload.java:507)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:414)
+	at site.ycsb.ClientThread.run(ClientThread.java:123)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Exception in setVertexProperty: Response: 409, Error: 1200 - timeout waiting to lock key Operation timed out: Timeout waiting to lock key - in index primary of type primary over '_key'; conflicting key: 0
