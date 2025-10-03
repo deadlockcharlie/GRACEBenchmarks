@@ -76,8 +76,8 @@ def parse_result_file(filepath: Path, db_name: str) -> Dict[str, Any]:
                     label = OPERATION_MAPPING[op]
                     latency = value
                     # if latency is zero, try to use matching failed latency if available
-                    if latency == 0 and label in failed_latencies:
-                        latency = failed_latencies[label]
+                    # if latency == 0 and label in failed_latencies:
+                    #     latency = failed_latencies[label]
                     op_latencies[label] = latency
 
     return {
