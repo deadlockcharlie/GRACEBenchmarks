@@ -30,7 +30,7 @@ declare -a replica_databases
 # Define replica configurations to test
 # REPLICAS array should be defined elsewhere in your script
 # Iterate through database combinations
-for db_config_idx in $(seq 3 3); do
+for db_config_idx in $(seq 0 3); do
 
     num_replicas=4
     
