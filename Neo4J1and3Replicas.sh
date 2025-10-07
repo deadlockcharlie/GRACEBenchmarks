@@ -132,35 +132,35 @@ EOL
     fi
 
 
-    # Run the benchmark with grace workload
-    echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
-    cd $YCSB_DIRECTORY
-    # Build the ycsb command
-    ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
-        -p HOSTURI=\"http://localhost:3000\" \
-        -p DBTYPE=\"neo4j\" \
-        -p DBURI=\"bolt://localhost:7687\" \
-        -p maxexecutiontime=$DURATION \
-        -p threadcount=$YCSB_THREADS \
-        -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
-        -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
-        -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
-        -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
-        > $RESULTS_DIRECTORY/Neo4j/$num_replicas.txt"
+    # # Run the benchmark with grace workload
+    # echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
+    # cd $YCSB_DIRECTORY
+    # # Build the ycsb command
+    # ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
+    #     -p HOSTURI=\"http://localhost:3000\" \
+    #     -p DBTYPE=\"neo4j\" \
+    #     -p DBURI=\"bolt://localhost:7687\" \
+    #     -p maxexecutiontime=$DURATION \
+    #     -p threadcount=$YCSB_THREADS \
+    #     -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
+    #     -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
+    #     -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
+    #     -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
+    #     > $RESULTS_DIRECTORY/Neo4j/$num_replicas.txt"
     
-    eval $ycsb_cmd
+    # eval $ycsb_cmd
 
-    # Switch to GRACE directory for cleanup
-    cd $LF_DIRECTORY
+    # # Switch to GRACE directory for cleanup
+    # cd $LF_DIRECTORY
     
-    # Tear down the deployment
-    python3 Deployment.py down $DIST_CONF
+    # # Tear down the deployment
+    # python3 Deployment.py down $DIST_CONF
     
-    # Remove the distribution configuration file
-    rm $DIST_CONF
+    # # Remove the distribution configuration file
+    # rm $DIST_CONF
     
-    echo "Completed benchmarking with $num_replicas replica(s)"
-    echo "----------------------------------------"
+    # echo "Completed benchmarking with $num_replicas replica(s)"
+    # echo "----------------------------------------"
 done
 
 echo "All Neo4J benchmarking completed!"

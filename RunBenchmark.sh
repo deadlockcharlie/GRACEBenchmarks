@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=60 #Benchmark duration in seconds
+DURATION=180 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -24,7 +24,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(frbm frbo)
+datasets=(yeast)
 
 
 
@@ -37,7 +37,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
 # ## Replication and Latency Benchmarks
-#  REPLICAS=(2)
+#  REPLICAS=(1)
 #  YCSB_THREADS=1
 #  for dataset in "${datasets[@]}"; do
     
