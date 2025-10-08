@@ -10,12 +10,14 @@ do
     COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB${i}Replicas"
 
     cd $DEPLOYMENTS_DIR
-
+    #Setup scylladb cluster
     . ./JanusgraphReplicatedDeployment.sh
-    cd $ROOT_DIRECTORY
-    docker cp ./PreloadData/ janusgraph:/tmp/
 
-    docker exec janusgraph bin/gremlin.sh -e /tmp/PreloadData/janusgraphImport.groovy
+
+    cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
+    ./bin/gremlin.sh -e $ROOT_DIRECTORY/PreloadData/janusgraphImport.groovy "$ROOT_DIRECTORY/PreloadData" "$ROOT_DIRECTORY/conf/janusgraph-scylla.properties"
+
+    cd $ROOT_DIRECTORY
 
         # Add latency between replicas if more than 1 replica
     if [ $i -gt 1 ]; then
@@ -56,9 +58,15 @@ do
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
     #Run the benchmark with graphdb workload
-    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=300 -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
+    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=180 -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
+
+    cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
+    ./bin/janusgraph-server.sh stop   
 
     #Shutdown replicas
     cd $DEPLOYMENTS_DIR
     docker compose -f $COMPOSE_FILE down
+
+    
+
 done

@@ -4,36 +4,29 @@ services:
     image: scylladb/scylla:2025.3
     restart: always
     command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    ports:
+      - "9042:9042"
     healthcheck:
       test: ["CMD-SHELL", "nodetool status | grep UN"]
       interval: 10s
       timeout: 5s
       retries: 10
 
-
-  janusgraph:
-    image: janusgraph/janusgraph:latest
-    container_name: janusgraph
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.20
+    container_name: elasticsearch
     environment:
-      # JANUS_PROPS_TEMPLATE: cql
-      janusgraph.storage.backend: cql
-      janusgraph.storage.hostname: scylla1
-      janusgraph.storage.cql.keyspace: janusgraph
-      janusgraph.storage.lock.retries: 10
-      janusgraph.storage.lock.wait-time: 20000
-      janusgraph.graph.set-vertex-id: true
-      janusgraph.graph.set-edge-id: true
-      janusgraph.graph.allow-custom-vid-types: true
-      janusgraph.graph.allow-custom-eid-types: true
-      janusgraph.storage.batch-loading: true
-    depends_on:
-      scylla1:
-        condition : service_healthy
-
-    healthcheck:
-      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/8182' || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     ports:
-      - "8182:8182"
+      - "9200:9200"
+      - "9300:9300"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"green\"'"]
+      interval: 10s
+      timeout: 10s
+      retries: 20

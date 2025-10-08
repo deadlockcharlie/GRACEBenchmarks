@@ -46,15 +46,7 @@ EOL
     echo '  "dbs" : [' >> $DIST_CONF
     
     for ((i=1; i<=num_replicas; i++)); do
-        # Set log level based on replica count
-        if [ $num_replicas -eq 1 ]; then
-            log_level="error"
-        elif [ $num_replicas -eq 2 ]; then
-            log_level="info"
-        else
-            log_level="error"
-        fi
-        
+        log_level="error"
         # Add database entry
         cat >> $DIST_CONF <<EOL
     {

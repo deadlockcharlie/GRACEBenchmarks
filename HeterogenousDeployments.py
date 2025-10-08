@@ -133,7 +133,15 @@ def collect_baseline(baseline_dir: str) -> Dict[str, float]:
                 continue
             
             df = pd.DataFrame(operations)
-            for op_type, op_set in [("Read", READ_OPS), ("Write", WRITE_OPS)]:
+            for op_type, op_set in [("Read", READ_OPS)]:
+                type_ops = df[df["Operation"].isin(op_set)]
+                if not type_ops.empty:
+                    results.append({
+                        "DB": database.name,
+                        "Type": op_type,
+                        "Latency": type_ops["Latency"].mean()
+                    })
+            for op_type, op_set in [("Write", WRITE_OPS)]:
                 type_ops = df[df["Operation"].isin(op_set)]
                 if not type_ops.empty:
                     results.append({
@@ -142,7 +150,7 @@ def collect_baseline(baseline_dir: str) -> Dict[str, float]:
                         "Latency": type_ops["Latency"].mean()
                     })
     baseline = {r1["DB"]: {r["Type"]: r["Latency"] for r in results if r["DB"] == r1["DB"]} for r1 in results}
-    # baseline = {r["Type"]: r["Latency"] for r in results}
+    print(baseline)
     return baseline
 
 
@@ -191,7 +199,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
     reads = perf_data["Read"]
     writes = perf_data["Write"]
     
-    deployments = ["0", "1", "2", "All"]
+    deployments = ["0", "1", "2", "4"]
     
     x = np.arange(len(deployments))
     bar_width = 0.12
@@ -217,12 +225,13 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
                 # print(yerr)
                 # yerr = [[abs(val)], [0]]
                 base= 0
-                if title == "Read":
+                print(title)
+                if title == "Reads":
                     base = baseline[group_replicas[idx][j]]['Read']/1000
                 else:
                     base = baseline[group_replicas[idx][j]]['Write']/1000
 
-                
+                print(base)
                 label = db if db not in labeled_dbs else ""
                 if db not in labeled_dbs:
                     labeled_dbs.add(db)
@@ -244,9 +253,9 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
                 y=base, 
                 xmin=x[idx] + offset - bar_width/2, 
                 xmax=x[idx] + offset + bar_width/2,
-                colors='red', 
-                linewidth=2,
-                linestyle='--',
+                colors='black', 
+                linewidth=1,
+                linestyle='-',
                 alpha=0.8
             )
                 
@@ -256,7 +265,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
         # ax.axhline(1.0, color="black", linestyle="--", linewidth=1)
         ax.set_title(title)
         ax.set_xticks(x)
-        # ax.set_yscale("log")
+        ax.set_yscale("log")
         ax.set_xticklabels(deployments)
     
     # Reads subplot
@@ -268,6 +277,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
     # Writes subplot
     plot_subplot(axes[1], writes, "Writes")
     fig.supylabel("Average Latency (ms)")
+    fig.supxlabel("Heterogeneous database count")
     
     plt.tight_layout()
     fig.savefig(output_path, dpi=500, bbox_inches='tight')
