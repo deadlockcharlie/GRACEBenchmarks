@@ -27,7 +27,87 @@ fi
 
 DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
 # latencies=(54 147 54 54 54 54 54 54 54)
-latencies=(0 0 0 0 0 0 0 0 0 0)
+# latencies=(0 1 2 3 4 5 6 7 0 0)
+# Use associative array for reliable cross-shell compatibility
+declare -A latency_matrix
+
+# Helper function to get/set matrix element
+get_latency() {
+  local r=$1
+  local c=$2
+  local key="${r},${c}"
+  echo "${latency_matrix[$key]}"
+}
+
+set_latency() {
+  local r=$1
+  local c=$2
+  local value=$3
+  local key="${r},${c}"
+  latency_matrix[$key]=$value
+}
+
+# AWS Region latencies from cloudping.co (in milliseconds)
+# Region mapping (index 0-5):
+# 0: us-east-1 (N. Virginia)
+# 1: us-west-2 (Oregon)
+# 2: eu-central-1 (Frankfurt)
+# 3: ap-south-1 (Mumbai)
+# 4: ap-southeast-1 (Singapore)
+# 5: sa-east-1 (São Paulo)
+
+# Initialize the symmetric latency matrix with actual AWS latencies
+# Row 0: us-east-1
+set_latency 0 0 0
+set_latency 0 1 67
+set_latency 0 2 97
+set_latency 0 3 208
+set_latency 0 4 222
+set_latency 0 5 114
+
+# Row 1: us-west-2
+set_latency 1 0 67
+set_latency 1 1 0
+set_latency 1 2 144
+set_latency 1 3 224
+set_latency 1 4 167
+set_latency 1 5 178
+
+# Row 2: eu-central-1
+set_latency 2 0 97
+set_latency 2 1 144
+set_latency 2 2 0
+set_latency 2 3 130
+set_latency 2 4 162
+set_latency 2 5 205
+
+# Row 3: ap-south-1
+set_latency 3 0 208
+set_latency 3 1 224
+set_latency 3 2 130
+set_latency 3 3 0
+set_latency 3 4 67
+set_latency 3 5 305
+
+# Row 4: ap-southeast-1
+set_latency 4 0 222
+set_latency 4 1 167
+set_latency 4 2 162
+set_latency 4 3 67
+set_latency 4 4 0
+set_latency 4 5 332
+
+# Row 5: sa-east-1
+set_latency 5 0 114
+set_latency 5 1 178
+set_latency 5 2 205
+set_latency 5 3 305
+set_latency 5 4 332
+set_latency 5 5 0
+
+# Region names and codes for display
+region_names=("US East (Virginia)" "US West (Oregon)" "EU Central (Frankfurt)" "AP South (Mumbai)" "AP Southeast (Singapore)" "SA East (São Paulo)")
+region_codes=("us-east-1" "us-west-2" "eu-central-1" "ap-south-1" "ap-southeast-1" "sa-east-1")
 
 
 DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
@@ -47,7 +127,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
 ## Replication and Latency Benchmarks
- REPLICAS=(1)
+ REPLICAS=(3)
  YCSB_THREADS=1
  for dataset in "${datasets[@]}"; do
     
@@ -79,8 +159,8 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
          mkdir -p $LOAD_TIME_DIRECTORY/$db
      done
 
-    cd $YCSB_DIRECTORY
-    mvn clean package -DskipTests -q
+    # cd $YCSB_DIRECTORY
+    # mvn clean package -DskipTests -q
 
      cd $ROOT_DIRECTORY
      . ./ReplicaCountAndLatency.sh

@@ -75,30 +75,27 @@ EOL
     echo '}' >> $DIST_CONF
 
     # Start the replicas
-    python3 Deployment.py up $DIST_CONF
+    # python3 Deployment.py up $DIST_CONF
     sleep 5
 
-    # Handle directory navigation for readiness check
-    if [ $num_replicas -eq 2 ] || [ $num_replicas -eq 4 ] || [ $num_replicas -eq 5 ] || [ $num_replicas -eq 6 ]; then
-        cd $ROOT_DIRECTORY
-    fi
+    cd $ROOT_DIRECTORY
 
     # Wait for server to be ready
     wait_interval=5
-    if [ $num_replicas -eq 3 ]; then
-        wait_interval=1
-    fi
+
     
-    until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
-        echo "Waiting for server preload to finish..."
-        sleep $wait_interval
-    done
+    # until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
+    #     echo "Waiting for server preload to finish..."
+    #     sleep $wait_interval
+    # done
 
     # Setup latencies for multi-replica configurations
     if [ $num_replicas -gt 1 ]; then
         latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
         for ((i=2; i<=num_replicas; i++)); do
-            latency_cmd="$latency_cmd Grace$i \${latencies[$((i-1))]}"
+            latency_value=$(get_latency $((0)) $((i-1)))
+            echo " wsserver(${region_codes[0]}) -> Replica${i-1} (${region_codes[$((i-1))]}): ${latency_value}ms"
+            latency_cmd="$latency_cmd Grace$i ${latency_value}"
         done
         latency_cmd="$latency_cmd\""
         eval $latency_cmd
@@ -106,29 +103,29 @@ EOL
 
 
 
-    # Run the benchmark with grace workload
-    echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
-    cd $YCSB_DIRECTORY
-    # Build the ycsb command
-    ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
-        -p HOSTURI=\"http://localhost:3000\" \
-        -p DBTYPE=\"memgraph\" \
-        -p DBURI=\"bolt://localhost:7687\" \
-        -p maxexecutiontime=$DURATION \
-        -p threadcount=$YCSB_THREADS \
-        -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
-        -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
-        -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
-        -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
-        > $RESULTS_DIRECTORY/GRACE/$num_replicas.txt"
+    # # Run the benchmark with grace workload
+    # echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
+    # cd $YCSB_DIRECTORY
+    # # Build the ycsb command
+    # ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
+    #     -p HOSTURI=\"http://localhost:3000\" \
+    #     -p DBTYPE=\"memgraph\" \
+    #     -p DBURI=\"bolt://localhost:7687\" \
+    #     -p maxexecutiontime=$DURATION \
+    #     -p threadcount=$YCSB_THREADS \
+    #     -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
+    #     -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
+    #     -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
+    #     -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
+    #     > $RESULTS_DIRECTORY/GRACE/$num_replicas.txt"
     
-    eval $ycsb_cmd
+    # eval $ycsb_cmd
 
-    # Switch to GRACE directory for cleanup
-    cd $GRACE_DIRECTORY
+    # # Switch to GRACE directory for cleanup
+    # cd $GRACE_DIRECTORY
     
-    # Tear down the deployment
-    python3 Deployment.py down $DIST_CONF
+    # # Tear down the deployment
+    # python3 Deployment.py down $DIST_CONF
     
     # Remove the distribution configuration file
     rm $DIST_CONF

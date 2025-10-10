@@ -71,17 +71,10 @@ EOL
     python3 Deployment.py up $DIST_CONF
     sleep 5
 
-    # Handle directory navigation for readiness check
-    if [ $num_replicas -eq 2 ] || [ $num_replicas -eq 4 ] || [ $num_replicas -eq 5 ] || [ $num_replicas -eq 6 ]; then
-        cd $ROOT_DIRECTORY
-    fi
-
+   cd $ROOT_DIRECTORY
     # Wait for server to be ready
     wait_interval=5
-    if [ $num_replicas -eq 3 ]; then
-        wait_interval=1
-    fi
-    
+
     cd $ROOT_DIRECTORY
   . ./waitForPreload.sh
 
