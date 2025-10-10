@@ -127,7 +127,7 @@ def collect_baseline(baseline_dir: str) -> Dict[str, float]:
         if not database.is_dir():
             continue
         db_baseline_path = database
-        for result_file in db_baseline_path.glob("1.txt"):
+        for result_file in db_baseline_path.glob("3.txt"):
             operations = parse_result_file(result_file, database.name)
             if not operations:
                 continue

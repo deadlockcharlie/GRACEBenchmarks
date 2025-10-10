@@ -150,28 +150,45 @@ def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 
 def plot_dataset_operations(replica_count: int, ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, y_range: tuple) -> None:
     """Plot operations for a single dataset with consistent y-axis range."""
     x = np.arange(len(pivot_df.index))
+    print(pivot_df)
     for db in pivot_df.columns:
         style = DB_STYLES.get(db, {})
         y_values = pivot_df[db].values
-        # print(y_values)
         
-        # Replace zeros with NaN for log scale plotting (they won't be plotted)
+        # Replace zeros with max y_range value for log scale plotting
         y_values_plot = np.where(y_values > 0, y_values, y_range[1])
         
-        ax.plot(x, y_values_plot, label=db,
+        # Plot the line
+        ax.plot(x, y_values_plot, 
                 color=style.get("color"),
                 linestyle=style.get("linestyle", "-"),
-                marker=style.get("marker", "o"),
-                markersize=3, linewidth=1)
+                linewidth=1)
+        
+        # Plot markers - red cross for missing/zero values, normal markers otherwise
+        for i, (y_val, y_plot) in enumerate(zip(y_values, y_values_plot)):
+            if y_val == 0:
+                # Plot red cross for missing/failed operations (originally zero)
+                ax.plot(x[i], y_plot, marker='x', color='gray',
+                       markersize=4, markeredgewidth=2, zorder=10)
+            elif y_val > 0:
+                # Plot normal marker for valid data
+                ax.plot(x[i], y_plot, marker=style.get("marker", "o"),
+                       color=style.get("color"), markersize=3)
     
-    #For charts more than 1 replica
-    if replica_count>1:
-        ax.axhline(y=600000, color='red', linestyle=':', linewidth=1.5, alpha=0.8, label='300ms threshold')
+    # For charts more than 1 replica
+    if replica_count > 1:
+        ax.axhline(y=590000, color='black', linestyle=':', linewidth=1, alpha=0.8, label='600ms threshold')
+    
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)
     ax.set_xticklabels(pivot_df.index, fontsize=10, rotation=90, ha="right")
+    
+    # Set yticks labels to be readable
+    yticks = [100, 1000, 10000, 100000, 1000000, 10000000]
+    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s']
     ax.set_yscale("log")
-    ax.set_ylim(y_range[0], y_range[1])  # Set consistent y-axis range
+    ax.set_yticks(yticks)
+    ax.set_yticklabels(yticklabels, fontsize=8)
     ax.grid(axis="y", linestyle="--", alpha=0.7)
 
 
@@ -219,7 +236,7 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
         fig_size = (base_width, 5)
         layout_rect = [0.03, 0.03, 1, 0.88]
 
-    fig, axes = plt.subplots(2, 3, figsize=fig_size)
+    fig, axes = plt.subplots(2, 3, figsize=fig_size, sharey=True)
 
     all_dbs = set()
     
@@ -230,7 +247,6 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
 
     # Add common y-label
     fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
-    # fig.text(0.02, 0.5, "Latency (ms)", va="center", rotation="vertical", fontsize=12)
 
     # Create single legend
     if all_dbs:

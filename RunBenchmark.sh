@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=180 #Benchmark duration in seconds
+DURATION=120 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -26,14 +26,15 @@ fi
 
 
 DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
-latencies=(100 300 100 100 100 100 100 100 100)
+# latencies=(54 147 54 54 54 54 54 54 54)
+latencies=(0 0 0 0 0 0 0 0 0 0)
 
 
 DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(mico)
+datasets=(yeast mico ldbc frbs frbm frbo)
 
 
 
@@ -113,7 +114,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
 
-# for i in {6..7}; do
+# for i in {0..7}; do
 #     YCSB_THREADS=$((2**i))
 #     RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ThroughputLatency/$YCSB_THREADS"
 #     # echo "Results Directory: $RESULTS_DIRECTORY"
