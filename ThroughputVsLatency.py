@@ -65,7 +65,7 @@ def parse_result_file(filepath: Path, db_name: str) -> Dict[str, Any]:
             continue
 
         # per-operation latencies and failed lines
-        if metric == "AverageLatency(us)":
+        if metric == "50thPercentileLatency(us)":
             # failed operations may appear as NAME-FAILED
             if op.endswith("-FAILED"):
                 base_op = op.replace("-FAILED", "")
@@ -76,10 +76,9 @@ def parse_result_file(filepath: Path, db_name: str) -> Dict[str, Any]:
                     label = OPERATION_MAPPING[op]
                     latency = value
                     # if latency is zero, try to use matching failed latency if available
-                    # if latency == 0 and label in failed_latencies:
-                    #     latency = failed_latencies[label]
+                    if latency == 0 and label in failed_latencies:
+                        latency = failed_latencies[label]
                     op_latencies[label] = latency
-
     return {
         "DB": db_name,
         "Throughput": throughput,
@@ -192,9 +191,19 @@ def create_plot(data: pd.DataFrame, output_path: str) -> None:
             )
 
     ax.set_xlabel("Throughput (ops/sec) logscale")
-    ax.set_ylabel("Latency (µs) logscale")
+    ax.set_ylabel("Latency")
+    
     ax.set_yscale("log")  # log scale on latency
     ax.set_xscale("log")  # linear scale on throughput
+    # Set yticks labels to be readable
+    yticks = [100, 1000, 10000, 100000, 1000000, 10000000]
+    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s']
+    xticks = [1, 10, 100, 1000, 10000]
+    xticklabels = ['1', '10', '100', '1k', '10k']
+    ax.set_xticks(xticks)
+    ax.set_xticklabels(xticklabels) 
+    ax.set_yticks(yticks)
+    ax.set_yticklabels(yticklabels)
     ax.grid(axis="both", linestyle="--", alpha=0.7)
     ax.legend(ncol=3 , fontsize=7, loc="upper center", frameon=True, bbox_to_anchor=(0.5, 1.35))
     fig.tight_layout()

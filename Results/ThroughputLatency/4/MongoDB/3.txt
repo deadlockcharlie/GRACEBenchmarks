@@ -6,155 +6,31 @@ Initializing db: site.ycsb.db.MongoDBClient
 Initializing db: site.ycsb.db.MongoDBClient
 Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=4, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 Starting Mongodb client
 Using Database: site.ycsb.DBWrapper
 Starting Mongodb client
-Using Database: site.ycsb.DBWrapper
-Starting Mongodb client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=4, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=4, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=4, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=4, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest}
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
+DBURI: mongodb://localhost:27017
 DBTYPE: mongodb
 DBTYPE: mongodb
 DBURI: mongodb://localhost:27017
 DBURI: mongodb://localhost:27017
-DBURI: mongodb://localhost:27017
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
 Connected to MongoDB database successfully
-[OVERALL], RunTime(ms), 60233
-[OVERALL], Throughput(ops/sec), 24.50483953978716
-[TOTAL_GCS_G1_Young_Generation], Count, 1
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 202
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.33536433516510883
-[TOTAL_GCS_G1_Old_Generation], Count, 0
-[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
-[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 1
-[TOTAL_GC_TIME], Time(ms), 202
-[TOTAL_GC_TIME_%], Time(%), 0.33536433516510883
-[REMOVE_VERTEX], Operations, 100
-[REMOVE_VERTEX], AverageLatency(us), 152186.4
-[REMOVE_VERTEX], MinLatency(us), 52032
-[REMOVE_VERTEX], MaxLatency(us), 333567
-[REMOVE_VERTEX], 50thPercentileLatency(us), 134399
-[REMOVE_VERTEX], 95thPercentileLatency(us), 246655
-[REMOVE_VERTEX], 99thPercentileLatency(us), 273663
-[REMOVE_VERTEX], Return=OK, 100
-[GET_EDGE_WITH_PROPERTY], Operations, 95
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 50119.242105263154
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 49248
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 58751
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 49855
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 51167
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 58751
-[GET_EDGE_WITH_PROPERTY], Return=OK, 95
-[ADD_EDGE], Operations, 109
-[ADD_EDGE], AverageLatency(us), 163044.11009174312
-[ADD_EDGE], MinLatency(us), 124736
-[ADD_EDGE], MaxLatency(us), 334079
-[ADD_EDGE], 50thPercentileLatency(us), 151167
-[ADD_EDGE], 95thPercentileLatency(us), 241023
-[ADD_EDGE], 99thPercentileLatency(us), 329215
-[ADD_EDGE], Return=OK, 109
-[ADD_VERTEX], Operations, 98
-[ADD_VERTEX], AverageLatency(us), 165383.83673469388
-[ADD_VERTEX], MinLatency(us), 125248
-[ADD_VERTEX], MaxLatency(us), 325119
-[ADD_VERTEX], 50thPercentileLatency(us), 155519
-[ADD_VERTEX], 95thPercentileLatency(us), 237439
-[ADD_VERTEX], 99thPercentileLatency(us), 325119
-[ADD_VERTEX], Return=OK, 98
-[GET_VERTEX_WITH_PROPERTY], Operations, 119
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 50030.65546218488
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 49056
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 53471
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 49887
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 51039
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 51935
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 119
-[REMOVE_EDGE_PROPERTY], Operations, 99
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 138477.25252525252
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 49088
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 317951
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 177279
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 256639
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 317951
-[REMOVE_EDGE_PROPERTY], Return=OK, 99
-[REMOVE_EDGE], Operations, 101
-[REMOVE_EDGE], AverageLatency(us), 146518.49504950494
-[REMOVE_EDGE], MinLatency(us), 49152
-[REMOVE_EDGE], MaxLatency(us), 382207
-[REMOVE_EDGE], 50thPercentileLatency(us), 136063
-[REMOVE_EDGE], 95thPercentileLatency(us), 216319
-[REMOVE_EDGE], 99thPercentileLatency(us), 270079
-[REMOVE_EDGE], Return=OK, 101
-[GET_EDGE_LABELS], Operations, 111
-[GET_EDGE_LABELS], AverageLatency(us), 258512.7207207207
-[GET_EDGE_LABELS], MinLatency(us), 156288
-[GET_EDGE_LABELS], MaxLatency(us), 515327
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 246527
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 370175
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 455935
-[GET_EDGE_LABELS], Return=OK, 111
-[REMOVE_VERTEX_PROPERTY], Operations, 108
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 127303.25925925926
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 49152
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 310527
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 166527
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 231935
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 306943
-[REMOVE_VERTEX_PROPERTY], Return=OK, 108
-[GET_VERTEX_COUNT], Operations, 118
-[GET_VERTEX_COUNT], AverageLatency(us), 124284.47457627118
-[GET_VERTEX_COUNT], MinLatency(us), 89984
-[GET_VERTEX_COUNT], MaxLatency(us), 191871
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 119167
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 151423
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 155007
-[GET_VERTEX_COUNT], Return=OK, 118
-[GET_EDGES_WITH_LABEL], Operations, 103
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 375071.06796116504
-[GET_EDGES_WITH_LABEL], MinLatency(us), 204800
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 771071
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 353535
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 661503
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 754175
-[GET_EDGES_WITH_LABEL], Return=OK, 103
-[CLEANUP], Operations, 4
-[CLEANUP], AverageLatency(us), 1.5
-[CLEANUP], MinLatency(us), 0
-[CLEANUP], MaxLatency(us), 3
-[CLEANUP], 50thPercentileLatency(us), 1
-[CLEANUP], 95thPercentileLatency(us), 3
-[CLEANUP], 99thPercentileLatency(us), 3
-[SET_EDGE_PROPERTY], Operations, 104
-[SET_EDGE_PROPERTY], AverageLatency(us), 163344.61538461538
-[SET_EDGE_PROPERTY], MinLatency(us), 123584
-[SET_EDGE_PROPERTY], MaxLatency(us), 460543
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 153087
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 227199
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 340479
-[SET_EDGE_PROPERTY], Return=OK, 104
-[SET_VERTEX_PROPERTY], Operations, 99
-[SET_VERTEX_PROPERTY], AverageLatency(us), 162860.9292929293
-[SET_VERTEX_PROPERTY], MinLatency(us), 123648
-[SET_VERTEX_PROPERTY], MaxLatency(us), 310783
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 153471
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 251007
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 310783
-[SET_VERTEX_PROPERTY], Return=OK, 99
-[GET_EDGE_COUNT], Operations, 108
-[GET_EDGE_COUNT], AverageLatency(us), 182233.77777777778
-[GET_EDGE_COUNT], MinLatency(us), 120000
-[GET_EDGE_COUNT], MaxLatency(us), 226431
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 180607
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 216575
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 222079
-[GET_EDGE_COUNT], Return=OK, 108
+java.util.NoSuchElementException
+	at java.base/java.util.LinkedList.getFirst(LinkedList.java:248)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRemoveEdge(CoreWorkload.java:507)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:414)
+	at site.ycsb.ClientThread.run(ClientThread.java:123)
+	at java.base/java.lang.Thread.run(Thread.java:829)

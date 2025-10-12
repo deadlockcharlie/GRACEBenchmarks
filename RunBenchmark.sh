@@ -193,7 +193,7 @@ REPLICAS=(3)
 
 
 
-for i in {0..7}; do
+for i in {3..6}; do
     YCSB_THREADS=$((2**i))
     RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ThroughputLatency/$YCSB_THREADS"
     # echo "Results Directory: $RESULTS_DIRECTORY"
