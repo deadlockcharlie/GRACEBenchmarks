@@ -125,91 +125,91 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
 
-## Replication and Latency Benchmarks
-REPLICAS=(2 4 5 6)
-YCSB_THREADS=1
-for dataset in "${datasets[@]}"; do
+# ## Replication and Latency Benchmarks
+# REPLICAS=(2 4 5 6)
+# YCSB_THREADS=1
+# for dataset in "${datasets[@]}"; do
     
-    echo "Starting benchmarks for dataset: $dataset"
-    DATASET_NAME=$dataset
-    cd $ROOT_DIRECTORY
-    . ./PrepareDatasets.sh
-    RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ReplicaCountAndLatency/$DATASET_NAME"
-    LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/ReplicaCountAndLatency/$DATASET_NAME"
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.loaded $YCSB_DIRECTORY/Vertices.loaded
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded
-    
-    
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $PRELOAD_DATA/vertices.csv
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $PRELOAD_DATA/edges.csv
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json $PRELOAD_DATA/vertices.json
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.json $PRELOAD_DATA/edges.json
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.keys $PRELOAD_DATA/vertices.keys
-    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.keys $PRELOAD_DATA/edges.keys
-    
-    
-    # Create results directory if it doesn't exist
-    mkdir -p $RESULTS_DIRECTORY
-    for db in "${DATABASES[@]}"; do
-        mkdir -p $RESULTS_DIRECTORY/$db
-    done
-    
-    for db in "${DATABASES[@]}"; do
-        mkdir -p $LOAD_TIME_DIRECTORY/$db
-    done
-    
-    # cd $YCSB_DIRECTORY
-    # mvn clean package -DskipTests -q
-    
-    cd $ROOT_DIRECTORY
-    . ./ReplicaCountAndLatency.sh
-    
-done
-
-cd $ROOT_DIRECTORY
-
-python3 LatencyComparision.py 1 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/SingleReplicaLatency.png
-
-python3 LatencyComparision.py 3 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/MultiReplicaLatency.png
-
-# # 3 replica throughput
-# REPLICAS=(3)
-
-#     DATASET_NAME=ldbc
-#     echo "Starting benchmarks for dataset: $DATASET_NAME"
+#     echo "Starting benchmarks for dataset: $dataset"
+#     DATASET_NAME=$dataset
 #     cd $ROOT_DIRECTORY
 #     . ./PrepareDatasets.sh
-
+#     RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ReplicaCountAndLatency/$DATASET_NAME"
+#     LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/ReplicaCountAndLatency/$DATASET_NAME"
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.loaded $YCSB_DIRECTORY/Vertices.loaded
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded
-
-
+    
+    
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $PRELOAD_DATA/vertices.csv
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $PRELOAD_DATA/edges.csv
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json $PRELOAD_DATA/vertices.json
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.json $PRELOAD_DATA/edges.json
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.keys $PRELOAD_DATA/vertices.keys
 #     cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.keys $PRELOAD_DATA/edges.keys
-
-
-
-# for i in {0..7}; do
-#     YCSB_THREADS=$((2**i))
-#     RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ThroughputLatency/$YCSB_THREADS"
-#     # echo "Results Directory: $RESULTS_DIRECTORY"
-
+    
+    
 #     # Create results directory if it doesn't exist
 #     mkdir -p $RESULTS_DIRECTORY
 #     for db in "${DATABASES[@]}"; do
 #         mkdir -p $RESULTS_DIRECTORY/$db
 #     done
-
-
-#     echo "Running benchmarks with $YCSB_THREADS threads"
+    
+#     for db in "${DATABASES[@]}"; do
+#         mkdir -p $LOAD_TIME_DIRECTORY/$db
+#     done
+    
+#     # cd $YCSB_DIRECTORY
+#     # mvn clean package -DskipTests -q
+    
 #     cd $ROOT_DIRECTORY
 #     . ./ReplicaCountAndLatency.sh
-
+    
 # done
+
+# cd $ROOT_DIRECTORY
+
+# python3 LatencyComparision.py 1 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/SingleReplicaLatency.png
+
+# python3 LatencyComparision.py 3 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/MultiReplicaLatency.png
+
+# 3 replica throughput
+REPLICAS=(3)
+
+    DATASET_NAME=ldbc
+    echo "Starting benchmarks for dataset: $DATASET_NAME"
+    cd $ROOT_DIRECTORY
+    . ./PrepareDatasets.sh
+
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.loaded $YCSB_DIRECTORY/Vertices.loaded
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded
+
+
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $PRELOAD_DATA/vertices.csv
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $PRELOAD_DATA/edges.csv
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json $PRELOAD_DATA/vertices.json
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.json $PRELOAD_DATA/edges.json
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.keys $PRELOAD_DATA/vertices.keys
+    cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.keys $PRELOAD_DATA/edges.keys
+
+
+
+for i in {0..7}; do
+    YCSB_THREADS=$((2**i))
+    RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/ThroughputLatency/$YCSB_THREADS"
+    # echo "Results Directory: $RESULTS_DIRECTORY"
+
+    # Create results directory if it doesn't exist
+    mkdir -p $RESULTS_DIRECTORY
+    for db in "${DATABASES[@]}"; do
+        mkdir -p $RESULTS_DIRECTORY/$db
+    done
+
+
+    echo "Running benchmarks with $YCSB_THREADS threads"
+    cd $ROOT_DIRECTORY
+    . ./ReplicaCountAndLatency.sh
+
+done
 
 
 # DATASET_NAME=yeast

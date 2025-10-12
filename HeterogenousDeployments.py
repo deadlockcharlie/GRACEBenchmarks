@@ -66,9 +66,10 @@ def parse_result_file(filepath: Path, db_name: str) -> List[Dict]:
                 failed_latencies[OPERATION_MAPPING[base_op]] = value
         
         # Process successful operations
-        elif metric == "AverageLatency(us)" and operation in OPERATION_MAPPING:
+        elif metric == "50thPercentileLatency(us)" and operation in OPERATION_MAPPING:
             op_label = OPERATION_MAPPING[operation]
             latency = failed_latencies.get(op_label, value) if value == 0 else value
+
             data.append({"DB": db_name, "Operation": op_label, "Latency": latency})
     
     return data
@@ -127,7 +128,7 @@ def collect_baseline(baseline_dir: str) -> Dict[str, float]:
         if not database.is_dir():
             continue
         db_baseline_path = database
-        for result_file in db_baseline_path.glob("3.txt"):
+        for result_file in db_baseline_path.glob("1.txt"):
             operations = parse_result_file(result_file, database.name)
             if not operations:
                 continue
@@ -150,7 +151,45 @@ def collect_baseline(baseline_dir: str) -> Dict[str, float]:
                         "Latency": type_ops["Latency"].mean()
                     })
     baseline = {r1["DB"]: {r["Type"]: r["Latency"] for r in results if r["DB"] == r1["DB"]} for r1 in results}
-    print(baseline)
+    # print(baseline)
+    return baseline
+
+
+def collect_replicated_baseline(baseline_dir: str) -> Dict[str, float]:
+    """Collect baseline read/write latencies from single-replica deployment."""
+    results = []
+    baseline_path = Path(baseline_dir)
+    if not baseline_path.exists():
+        print(f"Baseline directory not found: {baseline_path}")
+        return {"Read": None, "Write": None}
+    for database in baseline_path.iterdir():
+        if not database.is_dir():
+            continue
+        db_baseline_path = database
+        for result_file in db_baseline_path.glob("4.txt"):
+            operations = parse_result_file(result_file, database.name)
+            if not operations:
+                continue
+            
+            df = pd.DataFrame(operations)
+            for op_type, op_set in [("Read", READ_OPS)]:
+                type_ops = df[df["Operation"].isin(op_set)]
+                if not type_ops.empty:
+                    results.append({
+                        "DB": database.name,
+                        "Type": op_type,
+                        "Latency": type_ops["Latency"].mean()
+                    })
+            for op_type, op_set in [("Write", WRITE_OPS)]:
+                type_ops = df[df["Operation"].isin(op_set)]
+                if not type_ops.empty:
+                    results.append({
+                        "DB": database.name,
+                        "Type": op_type,
+                        "Latency": type_ops["Latency"].mean()
+                    })
+    baseline = {r1["DB"]: {r["Type"]: r["Latency"] for r in results if r["DB"] == r1["DB"]} for r1 in results}
+    # print(baseline)
     return baseline
 
 
@@ -185,14 +224,14 @@ def calculate_relative_performance(data: pd.DataFrame, baseline: Dict[str, float
         
         if row["Type"] == "Read":
             relative_perf = row["Latency"]
-            reads[deployment_idx][db] = relative_perf/1000
+            reads[deployment_idx][db] = relative_perf
         else:
             relative_perf = row["Latency"]
-            writes[deployment_idx][db] = relative_perf/1000
+            writes[deployment_idx][db] = relative_perf
     return {"Read": reads, "Write": writes}
 
 
-def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], output_path: str) -> None:
+def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], replicated_baseline: Dict[str, float], output_path: str) -> None:
     """Create bar chart showing relative performance across heterogeneous deployments."""
     
     perf_data = calculate_relative_performance(data, baseline)
@@ -225,18 +264,20 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
                 # print(yerr)
                 # yerr = [[abs(val)], [0]]
                 base= 0
-                print(title)
+                # print(title)
                 if title == "Reads":
-                    base = baseline[group_replicas[idx][j]]['Read']/1000
+                    base = baseline[group_replicas[idx][j]]['Read']
+                    base_rep = replicated_baseline[group_replicas[idx][j]]['Read']
                 else:
-                    base = baseline[group_replicas[idx][j]]['Write']/1000
+                    base = baseline[group_replicas[idx][j]]['Write']
+                    base_rep = replicated_baseline[group_replicas[idx][j]]['Write']
 
-                print(base)
+                # print(base)
                 label = db if db not in labeled_dbs else ""
                 if db not in labeled_dbs:
                     labeled_dbs.add(db)
                 db_label = group_replicas[idx][j]
-            
+                
                 bar = ax.bar(
                     x[idx] + offset,
                     val,
@@ -258,14 +299,28 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
                 linestyle='-',
                 alpha=0.8
             )
-                
+
+                ax.hlines(
+                y=base_rep, 
+                xmin=x[idx] + offset - bar_width/2, 
+                xmax=x[idx] + offset + bar_width/2,
+                colors='goldenrod', 
+                linewidth=1,
+                linestyle='-',
+                alpha=0.8
+            )
+
                 if db_label not in legend_elements:
                     legend_elements[db_label] = bar
-        
+        yticks = [100, 1000, 10000, 100000, 1000000, 10000000]
+        yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s']
         # ax.axhline(1.0, color="black", linestyle="--", linewidth=1)
+        
         ax.set_title(title)
         ax.set_xticks(x)
         ax.set_yscale("log")
+        ax.set_yticks(yticks)
+        ax.set_yticklabels(yticklabels)
         ax.set_xticklabels(deployments)
     
     # Reads subplot
@@ -276,7 +331,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], ou
 
     # Writes subplot
     plot_subplot(axes[1], writes, "Writes")
-    fig.supylabel("Average Latency (ms)")
+    fig.supylabel("Median Latency")
     fig.supxlabel("Heterogeneous database count")
     
     plt.tight_layout()
@@ -298,8 +353,9 @@ def main():
         return
     
     baseline = collect_baseline(args.baseline_dir)
-    
-    create_heterogeneous_plot(data, baseline, args.output_path)
+    replicatedBaseline = collect_replicated_baseline(args.baseline_dir)
+
+    create_heterogeneous_plot(data, baseline, replicatedBaseline, args.output_path)
     print(f"Plot saved to {args.output_path}")
 
 
