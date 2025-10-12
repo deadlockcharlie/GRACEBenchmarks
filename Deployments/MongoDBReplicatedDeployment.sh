@@ -53,7 +53,7 @@ echo "Configuring majority write concern..."
 docker exec mongo1 mongosh --eval "
 db.adminCommand({
  setDefaultRWConcern: {level:'local'},
- defaultWriteConcern: { w: $i, wtimeout: 5000000}
+ defaultWriteConcern: { w: 'majority' , wtimeout: 5000000}
 })
 "
 fi

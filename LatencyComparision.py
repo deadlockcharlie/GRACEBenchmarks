@@ -16,10 +16,10 @@ OPERATION_MAPPING = {
     "GET_EDGES_WITH_LABEL": "R6",
     "ADD_VERTEX": "W1", 
     "SET_VERTEX_PROPERTY": "W2", 
-    "REMOVE_VERTEX_PROPERTY": "W3",
-    "ADD_EDGE": "W4", 
-    "SET_EDGE_PROPERTY": "W5", 
-    "REMOVE_VERTEX": "W6",
+    "ADD_EDGE": "W3", 
+    "SET_EDGE_PROPERTY": "W4", 
+    "REMOVE_VERTEX": "W5",
+    "REMOVE_VERTEX_PROPERTY": "W6",
     "REMOVE_EDGE": "W7", 
     "REMOVE_EDGE_PROPERTY": "W8"
 }
@@ -56,14 +56,16 @@ def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]
         operation, metric, value = [p.strip() for p in parts]
         operation = operation.strip("[]")
         value = float(value)
-
+        # If the operation is read, and db is not grace deduct 4 micros from the latency, injected due to traffic shaping. 
+        # if operation in OPERATION_MAPPING and OPERATION_MAPPING[operation].startswith("R") and db_name != "GRACE":
+            # value = max(0, value - 2000)  # Ensure latency doesn't go negative        
         # Store failed values
         if operation.endswith("-FAILED"):
             base_op = operation.replace("-FAILED", "")
             if base_op in OPERATION_MAPPING:
                 failed_latencies[(db_name, OPERATION_MAPPING[base_op])] = value
 
-        if metric == "AverageLatency(us)" and operation in OPERATION_MAPPING:
+        if metric == "50thPercentileLatency(us)" and operation in OPERATION_MAPPING:
             op_label = OPERATION_MAPPING[operation]
             if value == 0 and (db_name, op_label) in failed_latencies:
                 value = failed_latencies[(db_name, op_label)]
@@ -150,7 +152,7 @@ def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 
 def plot_dataset_operations(replica_count: int, ax: plt.Axes, pivot_df: pd.DataFrame, dataset: str, y_range: tuple) -> None:
     """Plot operations for a single dataset with consistent y-axis range."""
     x = np.arange(len(pivot_df.index))
-    print(pivot_df)
+    # print(pivot_df)
     for db in pivot_df.columns:
         style = DB_STYLES.get(db, {})
         y_values = pivot_df[db].values
@@ -177,15 +179,15 @@ def plot_dataset_operations(replica_count: int, ax: plt.Axes, pivot_df: pd.DataF
     
     # For charts more than 1 replica
     if replica_count > 1:
-        ax.axhline(y=590000, color='black', linestyle=':', linewidth=1, alpha=0.8, label='600ms threshold')
+        ax.axhline(y=144000, color='black', linestyle=':', linewidth=1, alpha=0.8, label='600ms threshold')
     
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)
     ax.set_xticklabels(pivot_df.index, fontsize=10, rotation=90, ha="right")
     
     # Set yticks labels to be readable
-    yticks = [100, 1000, 10000, 100000, 1000000, 10000000]
-    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s']
+    yticks = [100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
+    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s', '100s']
     ax.set_yscale("log")
     ax.set_yticks(yticks)
     ax.set_yticklabels(yticklabels, fontsize=8)

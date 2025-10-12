@@ -7,7 +7,10 @@ DROP INDEX edge_id IF EXISTS;
 
 // Create fresh indexes
 CREATE INDEX vertex_id IF NOT EXISTS FOR (n:YCSBVertex) ON (n.id);
+CREATE INDEX Vsearch_key_index_id IF NOT EXISTS FOR (n:YCSBVertex) ON (n.searchKey);
 CREATE INDEX edge_id   IF NOT EXISTS FOR ()-[r:YCSBEdge]-() ON (r.id);
+CREATE INDEX Esearch_key_index FOR ()-[r:YCSBEdge]-() ON (r.searchKey);
+
 
 // Load vertices
 LOAD CSV WITH HEADERS FROM 'file:///vertices.csv' AS row

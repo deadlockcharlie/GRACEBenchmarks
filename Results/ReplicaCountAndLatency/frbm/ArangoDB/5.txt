@@ -1,9 +1,9 @@
-/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/arangodb-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/arangodb-java-driver-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/core-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/http-protocol-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-annotations-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-core-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-core-asl-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-databind-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-mapper-asl-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-serde-json-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jakarta.json-api-2.1.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-buffer-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-dns-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-http-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-http2-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-socks-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-common-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-handler-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-handler-proxy-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-resolver-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-resolver-dns-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-transport-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-transport-native-unix-common-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/slf4j-api-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-auth-common-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-core-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-uri-template-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-web-client-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.ArangoDBClient -P workloads/workload_grace -p DBTYPE=arangodb -p DBURI=http://localhost:8529 -p REPLICATION_FACTOR=5 -p maxexecutiontime=180 -p threadcount=1 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_edges.json
+/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/arangodb-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/arangodb-java-driver-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/core-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/http-protocol-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-annotations-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-core-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-core-asl-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-databind-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-mapper-asl-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jackson-serde-json-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/jakarta.json-api-2.1.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-buffer-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-dns-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-http-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-http2-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-codec-socks-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-common-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-handler-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-handler-proxy-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-resolver-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-resolver-dns-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-transport-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/netty-transport-native-unix-common-4.1.108.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/slf4j-api-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-auth-common-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-core-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-uri-template-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-web-client-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/arangodb/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.ArangoDBClient -P workloads/workload_grace -p DBTYPE=arangodb -p DBURI=http://localhost:8529 -p REPLICATION_FACTOR=5 -p maxexecutiontime=120 -p threadcount=1 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_edges.json
 Loaded 3411785 vertices and 1586645 edges
 Initializing db: site.ycsb.db.ArangoDBClient
 Using Database: site.ycsb.DBWrapper
 Starting ArangoDB client
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=5, DBURI=http://localhost:8529, maxexecutiontime=180, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=arangodb, dotransactions=true, createproportion=1, REPLICATION_FACTOR=5, DBURI=http://localhost:8529, maxexecutiontime=120, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/frbm_update_vertices.json, readallfields=true, db=site.ycsb.db.ArangoDBClient, requestdistribution=latest}
 DBTYPE: arangodb
 DBURI: http://localhost:8529
 Connecting to ArangoDB database with params: localhost:8529
@@ -22,127 +22,29 @@ Still waiting for thread Thread-1 to complete. Workload status: true
 Still waiting for thread Thread-1 to complete. Workload status: true
 Still waiting for thread Thread-1 to complete. Workload status: true
 Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-[OVERALL], RunTime(ms), 226842
-[OVERALL], Throughput(ops/sec), 0.12343393198790348
-[TOTAL_GCS_G1_Young_Generation], Count, 12
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 6131
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 2.702762275063701
+[OVERALL], RunTime(ms), 146724
+[OVERALL], Throughput(ops/sec), 0.006815517570404297
+[TOTAL_GCS_G1_Young_Generation], Count, 11
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 4825
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 3.288487227720073
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 12
-[TOTAL_GC_TIME], Time(ms), 6131
-[TOTAL_GC_TIME_%], Time(%), 2.702762275063701
-[REMOVE_VERTEX], Operations, 1
-[REMOVE_VERTEX], AverageLatency(us), 7780352.0
-[REMOVE_VERTEX], MinLatency(us), 7778304
-[REMOVE_VERTEX], MaxLatency(us), 7782399
-[REMOVE_VERTEX], 50thPercentileLatency(us), 7782399
-[REMOVE_VERTEX], 95thPercentileLatency(us), 7782399
-[REMOVE_VERTEX], 99thPercentileLatency(us), 7782399
-[REMOVE_VERTEX], Return=OK, 1
-[GET_EDGE_WITH_PROPERTY], Operations, 2
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 1178240.0
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 958976
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 1397759
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 959487
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 1397759
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 1397759
-[GET_EDGE_WITH_PROPERTY], Return=OK, 2
-[ADD_EDGE], Operations, 2
-[ADD_EDGE], AverageLatency(us), 2857088.0
-[ADD_EDGE], MinLatency(us), 538624
-[ADD_EDGE], MaxLatency(us), 5177343
-[ADD_EDGE], 50thPercentileLatency(us), 539135
-[ADD_EDGE], 95thPercentileLatency(us), 5177343
-[ADD_EDGE], 99thPercentileLatency(us), 5177343
-[ADD_EDGE], Return=OK, 2
-[ADD_VERTEX], Operations, 1
-[ADD_VERTEX], AverageLatency(us), 5269504.0
-[ADD_VERTEX], MinLatency(us), 5267456
-[ADD_VERTEX], MaxLatency(us), 5271551
-[ADD_VERTEX], 50thPercentileLatency(us), 5271551
-[ADD_VERTEX], 95thPercentileLatency(us), 5271551
-[ADD_VERTEX], 99thPercentileLatency(us), 5271551
-[ADD_VERTEX], Return=OK, 1
-[GET_VERTEX_WITH_PROPERTY], Operations, 3
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 1507840.0
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 1331200
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 1775615
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 1417215
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 1775615
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 1775615
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 3
-[REMOVE_EDGE], Operations, 2
-[REMOVE_EDGE], AverageLatency(us), 2339456.0
-[REMOVE_EDGE], MinLatency(us), 655360
-[REMOVE_EDGE], MaxLatency(us), 4024319
-[REMOVE_EDGE], 50thPercentileLatency(us), 655871
-[REMOVE_EDGE], 95thPercentileLatency(us), 4024319
-[REMOVE_EDGE], 99thPercentileLatency(us), 4024319
-[REMOVE_EDGE], Return=OK, 2
-[GET_EDGE_LABELS], Operations, 1
-[GET_EDGE_LABELS], AverageLatency(us), 1.73211648E8
-[GET_EDGE_LABELS], MinLatency(us), 173146112
-[GET_EDGE_LABELS], MaxLatency(us), 173277183
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 173277183
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 173277183
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 173277183
-[GET_EDGE_LABELS], Return=OK, 1
-[REMOVE_VERTEX_PROPERTY], Operations, 4
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 2640928.0
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 423168
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 8073215
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 797183
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 8073215
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 8073215
-[REMOVE_VERTEX_PROPERTY], Return=OK, 4
-[GET_VERTEX_COUNT], Operations, 2
-[GET_VERTEX_COUNT], AverageLatency(us), 272496.0
-[GET_VERTEX_COUNT], MinLatency(us), 107584
-[GET_VERTEX_COUNT], MaxLatency(us), 437503
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 107647
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 437503
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 437503
-[GET_VERTEX_COUNT], Return=OK, 2
-[GET_EDGES_WITH_LABEL], Operations, 4
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 798976.0
-[GET_EDGES_WITH_LABEL], MinLatency(us), 719360
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 971263
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 741375
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 971263
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 971263
-[GET_EDGES_WITH_LABEL], Return=OK, 4
+[TOTAL_GCs], Count, 11
+[TOTAL_GC_TIME], Time(ms), 4825
+[TOTAL_GC_TIME_%], Time(%), 3.288487227720073
 [CLEANUP], Operations, 1
-[CLEANUP], AverageLatency(us), 4.0
-[CLEANUP], MinLatency(us), 4
-[CLEANUP], MaxLatency(us), 4
-[CLEANUP], 50thPercentileLatency(us), 4
-[CLEANUP], 95thPercentileLatency(us), 4
-[CLEANUP], 99thPercentileLatency(us), 4
-[SET_EDGE_PROPERTY], Operations, 1
-[SET_EDGE_PROPERTY], AverageLatency(us), 7854080.0
-[SET_EDGE_PROPERTY], MinLatency(us), 7852032
-[SET_EDGE_PROPERTY], MaxLatency(us), 7856127
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 7856127
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 7856127
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 7856127
-[SET_EDGE_PROPERTY], Return=OK, 1
-[GET_EDGE_COUNT], Operations, 3
-[GET_EDGE_COUNT], AverageLatency(us), 108810.66666666667
-[GET_EDGE_COUNT], MinLatency(us), 108352
-[GET_EDGE_COUNT], MaxLatency(us), 109311
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 108799
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 109311
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 109311
-[GET_EDGE_COUNT], Return=OK, 3
+[CLEANUP], AverageLatency(us), 2.0
+[CLEANUP], MinLatency(us), 2
+[CLEANUP], MaxLatency(us), 2
+[CLEANUP], 50thPercentileLatency(us), 2
+[CLEANUP], 95thPercentileLatency(us), 2
+[CLEANUP], 99thPercentileLatency(us), 2
+[GET_EDGE_LABELS], Operations, 1
+[GET_EDGE_LABELS], AverageLatency(us), 1.45948672E8
+[GET_EDGE_LABELS], MinLatency(us), 145883136
+[GET_EDGE_LABELS], MaxLatency(us), 146014207
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 146014207
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 146014207
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 146014207
+[GET_EDGE_LABELS], Return=OK, 1

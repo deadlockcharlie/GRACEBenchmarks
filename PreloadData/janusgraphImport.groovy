@@ -72,7 +72,7 @@ try {
                 //     mgmt.buildIndex("vertexById", Vertex.class).addKey(propKey).buildCompositeIndex()
                 //     println "📊 Composite index created for _id"
                 // }
-                if(key =="_id") {
+                if(key =="_id" || key == "searchKey") {
                     mgmt.buildIndex("v_${key}_composite", Vertex.class)
                         .addKey(propKey).buildCompositeIndex()
                     // mgmt.buildIndex("v_${key}_mixed", Vertex.class)
@@ -82,6 +82,7 @@ try {
                 println "🔎 Mixed index created for vertex key: ${key}"
             }
         }
+        EK.add("searchKey")
 
         EK.each { key ->
             def propKey = mgmt.getPropertyKey(key)
@@ -92,7 +93,7 @@ try {
                 //     mgmt.buildIndex("edgeById", Edge.class).addKey(propKey).buildCompositeIndex()
                 //     println "📊 Composite index created for edge _id"
                 // }
-                if(key =="_id" && key =="_type" && key =="_inV" && key =="_outV"){
+                if(key =="_id" || key =="_type" || key =="_inV" || key =="_outV" || key == "searchKey"){
                     mgmt.buildIndex("e_${key}_composite", Edge.class)
                         .addKey(propKey).buildCompositeIndex()
                     // mgmt.buildIndex("e_${key}_mixed", Edge.class)
@@ -108,6 +109,31 @@ try {
     }
 
     createSchemaAndIndexes(vertexKeys, edgeKeys)
+
+    def enableIndexes = {
+    def mgmt = graph.openManagement()
+    def allIndexes = mgmt.getGraphIndexes(Vertex.class) + mgmt.getGraphIndexes(Edge.class)
+
+    allIndexes.each { idx ->
+        if (idx.getIndexStatus(idx.getFieldKeys()[0]) == SchemaStatus.REGISTERED) {
+            println "⏳ Enabling index: ${idx}"
+            mgmt.updateIndex(idx, SchemaAction.ENABLE).get()
+        } else {
+            println "✅ Index already enabled or in progress: ${idx}"
+        }
+    }
+    mgmt.commit()
+
+    // Wait for all indexes to become ENABLED
+    allIndexes.each { idx ->
+        ManagementSystem.awaitGraphIndexStatus(graph, idx.name())
+            .status(SchemaStatus.ENABLED)
+            .call()
+        println "✅ Index enabled: ${idx.name()}"
+    }
+}   
+
+enableIndexes()
 
     // --- Load vertices ---
     def jsonSlurper = new JsonSlurper()
@@ -171,30 +197,30 @@ try {
     println "✅ Finished loading ${edgeCounter} edges"
     if (skippedEdges > 0) println "⚠️ Skipped ${skippedEdges} edges"
 
-    // --- ⭐ FIX: Reindex everything after load ---
-    def reindex = { ->
-        def mgmt = graph.openManagement()
-        def allIndexes = mgmt.getGraphIndexes(Vertex.class) + mgmt.getGraphIndexes(Edge.class)
-        allIndexes.each { idx ->
-            try {
-                // println "🔄 Reindexing ${idx.name}..."
-                mgmt.updateIndex(idx, SchemaAction.REINDEX).get()
-            } catch (Exception e) {
-                println "⚠️ Could not reindex ${e.message}"
-            }
-        }
-        mgmt.commit()
-        println "✅ Reindex step complete"
-    }
+    // // --- ⭐ FIX: Reindex everything after load ---
+    // def reindex = { ->
+    //     def mgmt = graph.openManagement()
+    //     def allIndexes = mgmt.getGraphIndexes(Vertex.class) + mgmt.getGraphIndexes(Edge.class)
+    //     allIndexes.each { idx ->
+    //         try {
+    //             // println "🔄 Reindexing ${idx.name}..."
+    //             mgmt.updateIndex(idx, SchemaAction.REINDEX).get()
+    //         } catch (Exception e) {
+    //             println "⚠️ Could not reindex ${e.message}"
+    //         }
+    //     }
+    //     mgmt.commit()
+    //     println "✅ Reindex step complete"
+    // }
 
-    reindex()
+    // reindex()
 
     // --- Summary ---
-    def totalVertices = g.V().count().next()
-    def totalEdges = g.E().count().next()
+    // def totalVertices = g.V().count().next()
+    // def totalEdges = g.E().count().next()
     println "\n📊 === LOAD SUMMARY ==="
-    println "📈 Vertices loaded: ${vertexCounter} (total: ${totalVertices})"
-    println "🔗 Edges loaded: ${edgeCounter} (total: ${totalEdges})"
+    println "📈 Vertices loaded: ${vertexCounter}"
+    println "🔗 Edges loaded: ${edgeCounter}"
     println "⚠️ Skipped edges: ${skippedEdges}"
     println "🎉 JSON preload complete!"
 

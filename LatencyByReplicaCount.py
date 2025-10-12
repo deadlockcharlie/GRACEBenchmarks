@@ -46,7 +46,7 @@ def parse_result_file(filepath: Path, db_name: str) -> List[Dict]:
             base_op = operation.replace("-FAILED", "")
             if base_op in OPERATION_MAPPING:
                 failed_latencies[OPERATION_MAPPING[base_op]] = value
-        elif metric == "AverageLatency(us)" and operation in OPERATION_MAPPING:
+        elif metric == "50thPercentileLatency(us)" and operation in OPERATION_MAPPING:
             op_label = OPERATION_MAPPING[operation]
             latency = failed_latencies.get(op_label, value) if value == 0 else value
             data.append({"DB": db_name, "Operation": op_label, "Latency": latency})
@@ -85,10 +85,9 @@ def collect_data(root_dir: str) -> pd.DataFrame:
     return pd.DataFrame(results)
 
 
-def plot_dataset(ax: plt.Axes, data: pd.DataFrame, dataset: str, op_type: str) -> None:
+def plot_dataset(ax: plt.Axes, data: pd.DataFrame, dataset: str, op_type: str, ylim: Tuple[float, float]) -> None:
     """Plot data for a single dataset on given axes."""
     dataset_data = data[(data["Dataset"] == dataset) & (data["Type"] == op_type)]
-    print(dataset_data)
     for db in dataset_data["DB"].unique():
         db_data = dataset_data[dataset_data["DB"] == db].sort_values("ReplicaCount")
         if db_data.empty:
@@ -97,9 +96,19 @@ def plot_dataset(ax: plt.Axes, data: pd.DataFrame, dataset: str, op_type: str) -
         ax.plot(db_data["ReplicaCount"], db_data["Latency"], label=db,
                 color=style.get("color"), linestyle=style.get("linestyle", "-"),
                 marker=style.get("marker", "o"), markersize=4, linewidth=1)
+    # Set yticks labels to be readable
+    yticks = [100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
+    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s', '100s']
+
     ax.set_title(DATASETS.get(dataset, dataset), fontsize=9)
     ax.set_xticks(sorted(data["ReplicaCount"].unique()))
     ax.set_yscale("log")
+    ax.set_ylim(ylim)
+    ax.set_yticks(yticks)
+    ax.set_yticklabels(yticklabels, fontsize=8)
+    
+    # ax.set_yticklabels([f"{y/1000:.0f}ms" if y < 1_000_000 else f"{y/1_000_000:.1f}s" for y in yticks])
+    
     ax.grid(axis="y", linestyle="--", alpha=0.7)
 
 
@@ -111,17 +120,22 @@ def create_combined_plot(data: pd.DataFrame, output_path: str) -> None:
     n_datasets = len(datasets)
     cols = min(3, n_datasets)
     rows = math.ceil(2)
-    fig, axes = plt.subplots(2 * rows, cols, figsize=(cols * 1.8, rows * 4))
+    fig, axes = plt.subplots(2 * rows, cols, figsize=(cols * 1.8, rows * 4), sharey = "row")
 
     axes = np.array(axes)
     axes = axes.reshape(2, rows, cols)  # [op_type_index][row][col]
     op_types = ["Read", "Write"]
     
+    # Calculate global y-axis limits
+    y_min = data["Latency"].min()
+    y_max = data["Latency"].max()
+    ylim = (y_min * 0.5, y_max * 2)  # Add some padding
+    
     for op_idx, op_type in enumerate(op_types):
         for i, dataset in enumerate(datasets):
             row, col = divmod(i, cols)
             ax = axes[op_idx, row, col]
-            plot_dataset(ax, data, dataset, op_type)
+            plot_dataset(ax, data, dataset, op_type, ylim)
             if row == rows - 1:
                 ax.set_xlabel("Replica Count", fontsize=8)
             if col == 0:

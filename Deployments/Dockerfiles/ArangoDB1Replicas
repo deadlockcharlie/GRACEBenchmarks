@@ -7,12 +7,14 @@ services:
     volumes:
       - ../../PreloadData:/var/lib/arangodb/import
     healthcheck:
-      test: ["CMD-SHELL", "arangosh --server.endpoint tcp://127.0.0.1:8529 --server.authentication false --javascript.execute-string 'quit(0)'"]
+      test: ["CMD-SHELL", "echo 'RETURN 0;' | arangosh || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 5
     ports:
       - "8529:8529"
+    networks:
+      - arango-net
       
   preload1:
     image: arangodb:latest
@@ -26,3 +28,9 @@ services:
       [
         "sh", "/var/lib/arangodb/import/arangoDBImport.sh", "tcp://arangodb1:8529" , "1"
       ]
+    networks:
+      - arango-net
+      
+networks:
+  arango-net:
+    driver: bridge

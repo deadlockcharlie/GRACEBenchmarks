@@ -78,27 +78,52 @@ EOL
     cd $ROOT_DIRECTORY
   . ./waitForPreload.sh
 
-# Add latency between replicas if more than 1 replica
-    if [ $i -gt 1 ]; then
+    if [ $num_replicas -gt 1 ]; then
         echo "Adding network latency between replicas..."
-        echo "Using latency values: ${latencies[*]}"
+        echo "Using AWS inter-region latencies from cloudping.co"
+        echo ""
+        echo "Latency Matrix (milliseconds):"
+        echo "═══════════════════════════════════════════════════════════════════════════"
         
-        # Configure latencies for each container (all peers at once)
-        for (( j=1; j<=i; j++ )); do
+        # Print the matrix header
+        printf "%-25s " ""
+        for (( col=0; col<num_replicas; col++ )); do
+            printf "%-8s " "R$((col+1))"
+        done
+        echo
+        printf "%-25s " ""
+        for (( col=0; col<num_replicas; col++ )); do
+            printf "%-8s " "(${region_codes[$col]#*-})"
+        done
+        echo
+        echo "───────────────────────────────────────────────────────────────────────────"
+        
+        # Print the matrix with row labels
+        for (( row=0; row<num_replicas; row++ )); do
+            printf "R%-2d %-20s " $((row+1)) "${region_names[$row]}"
+            for (( col=0; col<num_replicas; col++ )); do
+                if [ $row -eq $col ]; then
+                    printf "%-8s " "-"
+                else
+                    printf "%-8d " "$(get_latency $row $col)"
+                fi
+            done
+            echo
+        done
+        echo "═══════════════════════════════════════════════════════════════════════════"
+        echo ""
+        
+        # Configure latencies for each container
+        for (( j=1; j<=num_replicas; j++ )); do
             # Build arguments for all peers of container j
             latency_args=""
-            
-            for (( k=1; k<=i; k++ )); do
+            for (( k=1; k<=num_replicas; k++ )); do
                 if [ $j -ne $k ]; then
-                    # Use the same latency calculation as before
-                    if [ $j -lt $k ]; then
-                        latency_index=$(( (j + k - 2) % ${#latencies[@]} ))
-                    else
-                        latency_index=$(( (k + j - 2) % ${#latencies[@]} ))
-                    fi
-                    latency_value=${latencies[$latency_index]}
+                    echo $j $k
+                    # Get latency from matrix (convert from 1-indexed to 0-indexed)
+                    latency_value=$(get_latency $((j-1)) $((k-1)))
                     latency_args="$latency_args Replica${k} ${latency_value}"
-                    echo "  Replica${j} -> Replica${k}: ${latency_value}ms"
+                    echo " Replica${j} (${region_codes[$((j-1))]}) -> Replica${k} (${region_codes[$((k-1))]}): ${latency_value}ms"
                 fi
             done
             
@@ -110,11 +135,16 @@ EOL
             fi
         done
         
+        echo ""
         echo "✅ Network latency configuration completed"
+        echo ""
+        echo "Region Summary:"
+        for (( idx=0; idx<num_replicas; idx++ )); do
+            echo "  R$((idx+1)): ${region_names[$idx]} (${region_codes[$idx]})"
+        done
     else
         echo "Only 1 replica, skipping latency configuration"
     fi
-
 
     # Run the benchmark with grace workload
     echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
@@ -148,420 +178,3 @@ EOL
 done
 
 echo "All MemGraph benchmarking completed!"
-
-
-#  # Benchmark with MemGraph
-#  echo "Benchmarking MemGraph with 1 Replica"
-#  # Deploy the replicas
-#  cd $LF_DIRECTORY
-
-#  #Create a distribution configuration
-#  cat > $DIST_CONF <<EOL
-#  {
-#    "base_website_port": 7474,
-#    "base_protocol_port": 7687,
-#    "base_app_port": 3000,
-#    "base_prometheus_port": 9090,
-#    "base_grafana_port": 5000,
-#    "provider_port": 1234,
-#    "provider": false,
-#    "preload_data": false,
-#    "dbs" : [
-#      {
-#       "database": "memgraph", 
-#        "password": "verysecretpassword",
-#        "user": "pandey",
-#        "app_log_level": "error"
-#      }
-#    ]
-#  }
-# EOL
-
-#  # Start the replicas
-#  python3 Deployment.py up $DIST_CONF
-#  sleep 5
-
-#  cd $ROOT_DIRECTORY
-#  . ./waitForPreload.sh
-
-#  #Run the benchmark with memgraph workload
-#  cd $YCSB_DIRECTORY
-#  echo "Running YCSB benchmark with Grace workload"
-#  bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MemGraph/1.txt
-#  # Switch to GRACE directory
-#  cd $LF_DIRECTORY
-#  # Tear down the deployment
-#  python3 Deployment.py down $DIST_CONF
-#  # Remove the distribution configuration file
-#  rm $DIST_CONF
-
-# # # Benchmark memgraph with 2 replicas
-# # cd $LF_DIRECTORY
-# # echo "Benchmarking MemGraph with 2 Replicas"
-# # #Create a distribution configuration
-# # #Create a distribution configuration
-# # cat > $DIST_CONF <<EOL
-# # {
-# #   "base_website_port": 7474,
-# #   "base_protocol_port": 7687,
-# #   "base_app_port": 3000,
-# #   "base_prometheus_port": 9090,
-# #   "base_grafana_port": 5000,
-# #   "provider_port": 1234,
-# #   "provider": false,
-# #   "preload_data": false,
-# #   "dbs" : [
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword",
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword",
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     }
-# #   ]
-# # }
-# # EOL
-
-
-# # # Start the replicas
-# # python3 Deployment.py up $DIST_CONF
-# # sleep 5
-
-# # # Switch to the YCSB directory
-# # cd $YCSB_DIRECTORY
-# # bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/GRACE/2.txt
-
-# # #Setup Latencies
-# # # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
-# # docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica2 50"
-
-# # # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-# # docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica1 50"
-
-
-
-
-# # #Run the benchmark with memgraph workload
-# # echo "Running YCSB benchmark with Grace workload"
-# # bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MemGraph/2.txt
-# # # Switch to GRACE directory
-# # cd $LF_DIRECTORY
-# # # Tear down the deployment
-# # python3 Deployment.py down $DIST_CONF
-# # # Remove the distribution configuration file
-# # rm $DIST_CONF 
-
-
-# # Benchmark memgraph with 3 replicas
-# cd $LF_DIRECTORY
-# echo "Benchmarking MemGraph with 3 Replicas"
-# #Create a distribution configuration
-
-# cat > $DIST_CONF <<EOL
-# {
-#   "base_website_port": 7474,
-#   "base_protocol_port": 7687,
-#   "base_app_port": 3000,
-#   "base_prometheus_port": 9090,
-#   "base_grafana_port": 5000,
-#   "provider_port": 1234,
-#   "provider": false,
-#   "preload_data": false,
-#   "dbs" : [
-#     {
-#      "database": "memgraph", 
-#       "password": "verysecretpassword",
-#       "user": "pandey",
-#       "app_log_level": "info"
-#     },
-#     {
-#      "database": "memgraph", 
-#       "password": "verysecretpassword",
-#       "user": "pandey",
-#       "app_log_level": "info"
-#     }
-#     ,
-#     {
-#      "database": "memgraph", 
-#       "password": "verysecretpassword",
-#       "user": "pandey",
-#       "app_log_level": "info"
-#     }
-#   ]
-# }
-# EOL
-
-# # Start the replicas
-# python3 Deployment.py up $DIST_CONF
-
-# sleep 5
-# cd $ROOT_DIRECTORY
-# . ./waitForPreload.sh
-
-# #Setup Latencies
-# # Replica1 → Replica2 = 200ms, Replica1 → Replica3 = 600ms
-# docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 100 Replica3 300"
-
-# # # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-# # docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 400 Replica3 400"
-
-# # # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-# # docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 400 Replica2 400"
-
-# cd $YCSB_DIRECTORY
-# #Run the benchmark with memgraph workload
-# echo "Running YCSB benchmark with Grace workload"
-# bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MemGraph/3.txt
-# # Switch to GRACE directory
-# cd $LF_DIRECTORY
-# # Tear down the deployment
-# python3 Deployment.py down $DIST_CONF
-# # Remove the distribution configuration file
-# rm $DIST_CONF
-
-
-# # # Benchmark neo4j with 4 replicas
-# # cd $LF_DIRECTORY
-# # echo "Benchmarking Neo4j with 4 Replicas"
-# # #Create a distribution configuration 
-# # cat > $DIST_CONF <<EOL
-# # {
-# #   "base_website_port": 7474,
-# #   "base_protocol_port": 7687,
-# #   "base_app_port": 3000,
-# #   "base_prometheus_port": 9090,
-# #   "base_grafana_port": 5000,
-# #   "provider_port": 1234,
-# #   "provider": false,
-# #   "preload_data": false,
-# #   "dbs" : [
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword",
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword",
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     }
-# #     ,
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword",
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword",
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     }
-# #   ]
-# # }
-# # EOL
-
-
-# # # Start the replicas
-# # python3 Deployment.py up $DIST_CONF
-# # sleep 5
-
-
-# # # Switch to the YCSB directory
-# # cd $YCSB_DIRECTORY
-
-# # bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="neo4j" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/MemGraph/4.txt
-
-# # #Setup Latencies
-# # # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
-# # docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50 Replica4 50"
-
-# # # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-# # docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 50 Replica4 50"
-
-# # # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-# # docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 50 Replica2 50 Replica4 50"
-
-# # # Replica4 → Replica1 = 150ms, Replica4 → Replica2 = 100ms, Replica4 → Replica3 = 50ms
-# # docker exec -it Replica4 sh -c "/usr/local/bin/setup-latency.sh Replica4 Replica1 50 Replica2 50 Replica3 50"
-
-
-# # #Run the benchmark with memgraph workload
-# # echo "Running YCSB benchmark with Grace workload"
-# # bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MemGraph/4.txt
-
-
-# # # Switch to GRACE directory
-# # cd $LF_DIRECTORY
-# # # Tear down the deployment
-# # python3 Deployment.py down $DIST_CONF
-# # # Remove the distribution configuration file
-# # rm $DIST_CONF 
-
-
-# # # Benchmark memgraph with 5 replicas
-# # cd $LF_DIRECTORY
-# # echo "Benchmarking MemgGraph with 5 Replicas"
-# # #Create a distribution configuration
-# # cat > $DIST_CONF <<EOL
-# # {
-# #   "base_website_port": 7474,
-# #   "base_protocol_port": 7687,
-# #   "base_app_port": 3000,
-# #   "base_prometheus_port": 9090,
-# #   "base_grafana_port": 5000,
-# #   "provider_port": 1234,
-# #   "provider": false,
-# #   "preload_data": false,
-# #   "dbs" : [
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     }
-# #   ]
-# # }
-# # EOL
-
-# # # Start the replicas
-# # python3 Deployment.py up $DIST_CONF
-# # sleep 5
-
-# # # Switch to the YCSB directory
-# # cd $YCSB_DIRECTORY
-
-# # bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/MemGraph/5.txt
-
-# # #Setup Latencies
-# # # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
-# # docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50 Replica4 50 Replica5 50"
-# # # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-# # docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 50 Replica4 50 Replica5 50"
-# # # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-# # docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 50 Replica2 50 Replica4 50 Replica5 50"
-# # # Replica4 → Replica1 = 150ms, Replica4 → Replica2 = 100ms, Replica4 → Replica3 = 50ms
-# # docker exec -it Replica4 sh -c "/usr/local/bin/setup-latency.sh Replica4 Replica1 50 Replica2 50 Replica3 50 Replica5 50"
-# # # Replica5 → Replica1 = 150ms, Replica5 → Replica2 = 150
-# # docker exec -it Replica5 sh -c "/usr/local/bin/setup-latency.sh Replica5 Replica1 50 Replica2 50 Replica3 50 Replica4 50"
-
-# # #Run the benchmark with memgraph workload
-# # echo "Running YCSB benchmark with Grace workload"
-# # bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MemGraph/5.txt
-# # # Switch to GRACE directory
-# # cd $LF_DIRECTORY   
-# # # Tear down the deployment
-# # python3 Deployment.py down $DIST_CONF
-# # # Remove the distribution configuration file
-# # rm $DIST_CONF
-
-
-# # # Benchmark memgraph with 6 replicas
-# # cd $LF_DIRECTORY
-# # echo "Benchmarking Memgraph with 6 Replicas"
-# # #Create a distribution configuration
-# # cat > $DIST_CONF <<EOL
-# # {
-# #   "base_website_port": 7474,
-# #   "base_protocol_port": 7687,
-# #   "base_app_port": 3000,
-# #   "base_prometheus_port": 9090,
-# #   "base_grafana_port": 5000,
-# #   "provider_port": 1234,
-# #   "provider": false,
-# #   "preload_data": false,
-# #   "dbs" : [
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },{
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     },
-# #     {
-# #      "database": "memgraph", 
-# #       "password": "verysecretpassword", 
-# #       "user": "pandey",
-# #       "app_log_level": "error"
-# #     }
-# #   ]
-# # }
-# # EOL
-# # # Start the replicas
-# # python3 Deployment.py up $DIST_CONF
-# # sleep 5
-
-# # # Switch to the YCSB directory
-# # cd $YCSB_DIRECTORY
-
-# # bin/ycsb.sh load grace  -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p threadcount=1  -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $LOAD_TIME_DIRECTORY/MemGraph/6.txt
-
-# # #Setup Latencies
-# # # Replica1 → Replica2 = 50ms, Replica1 → Replica3 = 100ms
-# # docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50 Replica3 50 Replica4 50 Replica5 50 Replica6 50"
-# # # Replica2 → Replica1 = 50ms, Replica2 → Replica3 = 75ms
-# # docker exec -it Replica2 sh -c "/usr/local/bin/setup-latency.sh Replica2 Replica1 50 Replica3 50 Replica4 50 Replica5 50 Replica6 50"
-# # # Replica3 → Replica1 = 100ms, Replica3 → Replica2 = 75ms
-# # docker exec -it Replica3 sh -c "/usr/local/bin/setup-latency.sh Replica3 Replica1 50 Replica2 50 Replica4 50 Replica5 50 Replica6 50"
-# # # Replica4 → Replica1 = 150ms, Replica4 → Replica2 = 100ms, Replica4 → Replica3 = 50ms
-# # docker exec -it Replica4 sh -c "/usr/local/bin/setup-latency.sh Replica4 Replica1 50 Replica2 50 Replica3 50 Replica5 50 Replica6 50"
-# # # Replica5 → Replica1 = 150ms, Replica5 → Replica2 = 150
-# # docker exec -it Replica5 sh -c "/usr/local/bin/setup-latency.sh Replica5 Replica1 50 Replica2 50 Replica3 50 Replica4 50 Replica6 50"
-
-
-# # #Run the benchmark with memgraph workload
-# # echo "Running YCSB benchmark with Grace workload"
-# # bin/ycsb.sh run grace -P workloads/workload_grace -p  HOSTURI="http://localhost:3000" -p DBTYPE="memgraph" -p DBURI="bolt://localhost:7687" -p maxexecutiontime=$DURATION -p threadcount=1 -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MemGraph/6.txt
-# # # Switch to GRACE directory
-# # cd $LF_DIRECTORY  
-# # # Tear down the deployment
-# # python3 Deployment.py down $DIST_CONF
-# # # Remove the distribution configuration file
-# # rm $DIST_CONF

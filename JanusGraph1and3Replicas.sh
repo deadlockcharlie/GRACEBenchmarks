@@ -1,8 +1,8 @@
 #loop over 1 to 6 replicas for MongoDB
 #!/bin/bash
 
-export UID=$(id -u)
-export GID=$(id -g)
+# export UID=$(id -u)
+# export GID=$(id -g)
 
 for i in "${REPLICAS[@]}";
 do
@@ -58,7 +58,7 @@ do
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
     #Run the benchmark with graphdb workload
-    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=180 -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
+    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=$((DURATION * 3)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
 
     cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
     ./bin/janusgraph-server.sh stop   

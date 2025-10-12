@@ -20,9 +20,12 @@ for node in $replicas; do
   done
 done
 
+MAJORITY=$((i / 2 +1))
 # Set replication factor to 3
-docker exec scylla1 cqlsh -e " CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':$i}" || exit 1
+docker exec scylla1 cqlsh -e " CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':$MAJORITY}" || exit 1
     
+rm -rf $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
+unzip -qq $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0.zip -d $JANUSGRAPH_DIRECTORY 
 cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
 cp $ROOT_DIRECTORY/conf/janusgraph-scylla.properties $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0/conf
 ./bin/janusgraph-server.sh start $ROOT_DIRECTORY/conf/janusgraph-server.yaml   
