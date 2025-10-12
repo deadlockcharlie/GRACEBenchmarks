@@ -21,41 +21,37 @@ Starting GRACE client
 Using Database: site.ycsb.DBWrapper
 Starting GRACE client
 Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+Using Database: site.ycsb.DBWrapper
+Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 Starting GRACE client
 Starting GRACE client
-Using Database: site.ycsb.DBWrapper
-Starting GRACE client
-Using Database: site.ycsb.DBWrapper
-Starting GRACE client
-Using Database: site.ycsb.DBWrapper
 Starting GRACE client
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
-{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+Using Database: site.ycsb.DBWrapper
 Using Database: site.ycsb.DBWrapper
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
 Starting GRACE client
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
 {deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=8, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/ldbc_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
 GRACE HOSTURI: http://localhost:3000
 GRACE HOSTURI: http://localhost:3000
-DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
+GRACE HOSTURI: http://localhost:3000
 GRACE HOSTURI: http://localhost:3000
 GRACE HOSTURI: http://localhost:3000
 DBTYPE: memgraph
 DBTYPE: memgraph
-DBTYPE: memgraph
-GRACE HOSTURI: http://localhost:3000
-GRACE HOSTURI: http://localhost:3000
-DBURI: bolt://localhost:7687
-GRACE HOSTURI: http://localhost:3000
 GRACE HOSTURI: http://localhost:3000
 DBTYPE: memgraph
-DBURI: bolt://localhost:7687
-DBURI: bolt://localhost:7687
+DBTYPE: memgraph
+GRACE HOSTURI: http://localhost:3000
 DBTYPE: memgraph
 DBTYPE: memgraph
 DBURI: bolt://localhost:7687
@@ -63,211 +59,235 @@ DBURI: bolt://localhost:7687
 DBTYPE: memgraph
 DBURI: bolt://localhost:7687
 DBURI: bolt://localhost:7687
+DBTYPE: memgraph
 DBURI: bolt://localhost:7687
-Exception in getEdgeWithProperty: Existing open connection detected
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+DBURI: bolt://localhost:7687
+Error fetching next edge from the update workload
+Exception in getEdgesWithLabel: Existing open connection detected
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Exception in getEdgeCount: Existing open connection detected
+Exception in getEdgeCount: Existing open connection detected
 Exception in getVertexCount: Existing open connection detected
-Exception in getEdgeWithProperty: Existing open connection detected
-Exception in getEdgeWithProperty: Existing open connection detected
-Exception in getEdgesWithLabel: Existing open connection detected
-Exception in getEdgesWithLabel: Existing open connection detected
-Exception in getEdgesWithLabel: Existing open connection detected
 Exception in getEdgeCount: Existing open connection detected
 Exception in getVertexWithProperty: Existing open connection detected
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Error fetching next vertex from the update workload
-Exception in getEdgeWithProperty: Existing open connection detected
 Exception in getVertexCount: Existing open connection detected
-[OVERALL], RunTime(ms), 60745
-[OVERALL], Throughput(ops/sec), 989.5629269898757
-[TOTAL_GCS_G1_Young_Generation], Count, 9
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 421
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.6930611572968969
+Exception in getEdgeLabels: Existing open connection detected
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next edge from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Error fetching next vertex from the update workload
+Exception in getEdgeLabels: Existing open connection detected
+[OVERALL], RunTime(ms), 60766
+[OVERALL], Throughput(ops/sec), 1006.0724747391633
+[TOTAL_GCS_G1_Young_Generation], Count, 10
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 350
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.5759799888095316
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 9
-[TOTAL_GC_TIME], Time(ms), 421
-[TOTAL_GC_TIME_%], Time(%), 0.6930611572968969
-[REMOVE_VERTEX], Operations, 4276
-[REMOVE_VERTEX], AverageLatency(us), 72160.53040224509
-[REMOVE_VERTEX], MinLatency(us), 2156
-[REMOVE_VERTEX], MaxLatency(us), 1211391
-[REMOVE_VERTEX], 50thPercentileLatency(us), 3403
-[REMOVE_VERTEX], 95thPercentileLatency(us), 920063
-[REMOVE_VERTEX], 99thPercentileLatency(us), 1137663
-[REMOVE_VERTEX], Return=OK, 4276
-[GET_EDGE_WITH_PROPERTY], Operations, 4276
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 1690.8884471468662
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 451
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 120575
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 1276
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 3575
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 7155
-[GET_EDGE_WITH_PROPERTY], Return=OK, 4276
-[GET_EDGE_WITH_PROPERTY], Return=ERROR, 4
-[ADD_EDGE], Operations, 4301
-[ADD_EDGE], AverageLatency(us), 4237.072076261335
-[ADD_EDGE], MinLatency(us), 2084
-[ADD_EDGE], MaxLatency(us), 157439
-[ADD_EDGE], 50thPercentileLatency(us), 3547
-[ADD_EDGE], 95thPercentileLatency(us), 8171
-[ADD_EDGE], 99thPercentileLatency(us), 13127
-[ADD_EDGE], Return=OK, 4301
-[GET_VERTEX_WITH_PROPERTY], Operations, 4338
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 1688.0195942830799
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 395
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 118911
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 1244
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 3365
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 6911
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 4338
+[TOTAL_GCs], Count, 10
+[TOTAL_GC_TIME], Time(ms), 350
+[TOTAL_GC_TIME_%], Time(%), 0.5759799888095316
+[REMOVE_VERTEX], Operations, 4339
+[REMOVE_VERTEX], AverageLatency(us), 68765.18253053699
+[REMOVE_VERTEX], MinLatency(us), 2030
+[REMOVE_VERTEX], MaxLatency(us), 1202175
+[REMOVE_VERTEX], 50thPercentileLatency(us), 3477
+[REMOVE_VERTEX], 95thPercentileLatency(us), 899583
+[REMOVE_VERTEX], 99thPercentileLatency(us), 1143807
+[REMOVE_VERTEX], Return=OK, 4339
+[GET_EDGE_LABELS-FAILED], Operations, 2
+[GET_EDGE_LABELS-FAILED], AverageLatency(us), 6692.0
+[GET_EDGE_LABELS-FAILED], MinLatency(us), 5468
+[GET_EDGE_LABELS-FAILED], MaxLatency(us), 7915
+[GET_EDGE_LABELS-FAILED], 50thPercentileLatency(us), 5471
+[GET_EDGE_LABELS-FAILED], 95thPercentileLatency(us), 7915
+[GET_EDGE_LABELS-FAILED], 99thPercentileLatency(us), 7915
+[GET_EDGE_WITH_PROPERTY], Operations, 4470
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 1926.8628635346756
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 434
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 115199
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 1445
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 4231
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 7019
+[GET_EDGE_WITH_PROPERTY], Return=OK, 4470
+[ADD_EDGE], Operations, 4298
+[ADD_EDGE], AverageLatency(us), 4217.648906468125
+[ADD_EDGE], MinLatency(us), 2206
+[ADD_EDGE], MaxLatency(us), 30591
+[ADD_EDGE], 50thPercentileLatency(us), 3643
+[ADD_EDGE], 95thPercentileLatency(us), 8103
+[ADD_EDGE], 99thPercentileLatency(us), 13119
+[ADD_EDGE], Return=OK, 4298
+[GET_VERTEX_WITH_PROPERTY], Operations, 4347
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 1863.2081895560157
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 374
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 40863
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 1395
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 4023
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 6975
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 4347
 [GET_VERTEX_WITH_PROPERTY], Return=ERROR, 1
-[ADD_VERTEX], Operations, 4160
-[ADD_VERTEX], AverageLatency(us), 3838.8625
-[ADD_VERTEX], MinLatency(us), 1861
-[ADD_VERTEX], MaxLatency(us), 125823
-[ADD_VERTEX], 50thPercentileLatency(us), 3245
-[ADD_VERTEX], 95thPercentileLatency(us), 7499
-[ADD_VERTEX], 99thPercentileLatency(us), 10903
-[ADD_VERTEX], Return=OK, 4160
-[GET_EDGE_WITH_PROPERTY-FAILED], Operations, 4
-[GET_EDGE_WITH_PROPERTY-FAILED], AverageLatency(us), 22552.5
-[GET_EDGE_WITH_PROPERTY-FAILED], MinLatency(us), 5212
-[GET_EDGE_WITH_PROPERTY-FAILED], MaxLatency(us), 73727
-[GET_EDGE_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 5539
-[GET_EDGE_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 73727
-[GET_EDGE_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 73727
-[GET_EDGE_COUNT-FAILED], Operations, 1
-[GET_EDGE_COUNT-FAILED], AverageLatency(us), 6586.0
-[GET_EDGE_COUNT-FAILED], MinLatency(us), 6584
-[GET_EDGE_COUNT-FAILED], MaxLatency(us), 6587
-[GET_EDGE_COUNT-FAILED], 50thPercentileLatency(us), 6587
-[GET_EDGE_COUNT-FAILED], 95thPercentileLatency(us), 6587
-[GET_EDGE_COUNT-FAILED], 99thPercentileLatency(us), 6587
-[REMOVE_EDGE_PROPERTY], Operations, 4328
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 3911.9997689463958
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 1669
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 156415
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 3189
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 7835
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 13959
-[REMOVE_EDGE_PROPERTY], Return=OK, 4328
-[REMOVE_EDGE], Operations, 4279
-[REMOVE_EDGE], AverageLatency(us), 3644.7674690348213
-[REMOVE_EDGE], MinLatency(us), 1039
-[REMOVE_EDGE], MaxLatency(us), 134015
-[REMOVE_EDGE], 50thPercentileLatency(us), 3117
-[REMOVE_EDGE], 95thPercentileLatency(us), 7571
-[REMOVE_EDGE], 99thPercentileLatency(us), 12087
-[REMOVE_EDGE], Return=OK, 4279
-[GET_EDGE_LABELS], Operations, 4284
-[GET_EDGE_LABELS], AverageLatency(us), 1759.8937908496732
-[GET_EDGE_LABELS], MinLatency(us), 378
-[GET_EDGE_LABELS], MaxLatency(us), 115583
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 1261
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 3553
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 6819
-[GET_EDGE_LABELS], Return=OK, 4284
-[REMOVE_VERTEX_PROPERTY], Operations, 4384
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 3965.682481751825
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 1878
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 278271
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 3305
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 7795
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 13895
-[REMOVE_VERTEX_PROPERTY], Return=OK, 4384
-[GET_VERTEX_COUNT], Operations, 4289
-[GET_VERTEX_COUNT], AverageLatency(us), 1612.1354628118443
-[GET_VERTEX_COUNT], MinLatency(us), 398
-[GET_VERTEX_COUNT], MaxLatency(us), 51967
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 1192
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 3427
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 6255
-[GET_VERTEX_COUNT], Return=OK, 4289
+[ADD_VERTEX], Operations, 4277
+[ADD_VERTEX], AverageLatency(us), 4039.7993920972644
+[ADD_VERTEX], MinLatency(us), 2150
+[ADD_VERTEX], MaxLatency(us), 144895
+[ADD_VERTEX], 50thPercentileLatency(us), 3291
+[ADD_VERTEX], 95thPercentileLatency(us), 8075
+[ADD_VERTEX], 99thPercentileLatency(us), 13079
+[ADD_VERTEX], Return=OK, 4277
+[GET_EDGE_COUNT-FAILED], Operations, 3
+[GET_EDGE_COUNT-FAILED], AverageLatency(us), 6371.333333333333
+[GET_EDGE_COUNT-FAILED], MinLatency(us), 4804
+[GET_EDGE_COUNT-FAILED], MaxLatency(us), 7951
+[GET_EDGE_COUNT-FAILED], 50thPercentileLatency(us), 6359
+[GET_EDGE_COUNT-FAILED], 95thPercentileLatency(us), 7951
+[GET_EDGE_COUNT-FAILED], 99thPercentileLatency(us), 7951
+[REMOVE_EDGE_PROPERTY], Operations, 4416
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 3931.970108695652
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 1922
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 161279
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 3231
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 7879
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 14167
+[REMOVE_EDGE_PROPERTY], Return=OK, 4416
+[REMOVE_EDGE], Operations, 4440
+[REMOVE_EDGE], AverageLatency(us), 3609.375
+[REMOVE_EDGE], MinLatency(us), 1080
+[REMOVE_EDGE], MaxLatency(us), 30751
+[REMOVE_EDGE], 50thPercentileLatency(us), 3145
+[REMOVE_EDGE], 95thPercentileLatency(us), 7339
+[REMOVE_EDGE], 99thPercentileLatency(us), 11423
+[REMOVE_EDGE], Return=OK, 4440
+[GET_EDGE_LABELS], Operations, 4345
+[GET_EDGE_LABELS], AverageLatency(us), 1907.6271576524741
+[GET_EDGE_LABELS], MinLatency(us), 438
+[GET_EDGE_LABELS], MaxLatency(us), 90431
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 1409
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 4005
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 6343
+[GET_EDGE_LABELS], Return=OK, 4345
+[GET_EDGE_LABELS], Return=ERROR, 2
+[REMOVE_VERTEX_PROPERTY], Operations, 4280
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 4157.342990654206
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 2110
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 287487
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 3391
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 7999
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 13351
+[REMOVE_VERTEX_PROPERTY], Return=OK, 4280
+[GET_VERTEX_COUNT], Operations, 4311
+[GET_VERTEX_COUNT], AverageLatency(us), 1893.9791231732777
+[GET_VERTEX_COUNT], MinLatency(us), 382
+[GET_VERTEX_COUNT], MaxLatency(us), 79743
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 1366
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 4111
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 6823
+[GET_VERTEX_COUNT], Return=OK, 4311
 [GET_VERTEX_COUNT], Return=ERROR, 2
-[GET_EDGES_WITH_LABEL], Operations, 4314
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 1864.3878071395457
-[GET_EDGES_WITH_LABEL], MinLatency(us), 392
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 89791
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 1504
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 3637
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 6075
-[GET_EDGES_WITH_LABEL], Return=OK, 4314
-[GET_EDGES_WITH_LABEL], Return=ERROR, 3
+[GET_EDGES_WITH_LABEL], Operations, 4391
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 2132.917558642678
+[GET_EDGES_WITH_LABEL], MinLatency(us), 465
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 91647
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 1744
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 4331
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 7463
+[GET_EDGES_WITH_LABEL], Return=OK, 4391
+[GET_EDGES_WITH_LABEL], Return=ERROR, 1
 [GET_VERTEX_WITH_PROPERTY-FAILED], Operations, 1
-[GET_VERTEX_WITH_PROPERTY-FAILED], AverageLatency(us), 5714.0
-[GET_VERTEX_WITH_PROPERTY-FAILED], MinLatency(us), 5712
-[GET_VERTEX_WITH_PROPERTY-FAILED], MaxLatency(us), 5715
-[GET_VERTEX_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 5715
-[GET_VERTEX_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 5715
-[GET_VERTEX_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 5715
-[GET_EDGES_WITH_LABEL-FAILED], Operations, 3
-[GET_EDGES_WITH_LABEL-FAILED], AverageLatency(us), 5210.0
-[GET_EDGES_WITH_LABEL-FAILED], MinLatency(us), 4800
-[GET_EDGES_WITH_LABEL-FAILED], MaxLatency(us), 5671
-[GET_EDGES_WITH_LABEL-FAILED], 50thPercentileLatency(us), 5159
-[GET_EDGES_WITH_LABEL-FAILED], 95thPercentileLatency(us), 5671
-[GET_EDGES_WITH_LABEL-FAILED], 99thPercentileLatency(us), 5671
+[GET_VERTEX_WITH_PROPERTY-FAILED], AverageLatency(us), 7022.0
+[GET_VERTEX_WITH_PROPERTY-FAILED], MinLatency(us), 7020
+[GET_VERTEX_WITH_PROPERTY-FAILED], MaxLatency(us), 7023
+[GET_VERTEX_WITH_PROPERTY-FAILED], 50thPercentileLatency(us), 7023
+[GET_VERTEX_WITH_PROPERTY-FAILED], 95thPercentileLatency(us), 7023
+[GET_VERTEX_WITH_PROPERTY-FAILED], 99thPercentileLatency(us), 7023
+[GET_EDGES_WITH_LABEL-FAILED], Operations, 1
+[GET_EDGES_WITH_LABEL-FAILED], AverageLatency(us), 75424.0
+[GET_EDGES_WITH_LABEL-FAILED], MinLatency(us), 75392
+[GET_EDGES_WITH_LABEL-FAILED], MaxLatency(us), 75455
+[GET_EDGES_WITH_LABEL-FAILED], 50thPercentileLatency(us), 75455
+[GET_EDGES_WITH_LABEL-FAILED], 95thPercentileLatency(us), 75455
+[GET_EDGES_WITH_LABEL-FAILED], 99thPercentileLatency(us), 75455
 [CLEANUP], Operations, 8
-[CLEANUP], AverageLatency(us), 1.75
-[CLEANUP], MinLatency(us), 1
-[CLEANUP], MaxLatency(us), 6
+[CLEANUP], AverageLatency(us), 2.125
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 10
 [CLEANUP], 50thPercentileLatency(us), 1
-[CLEANUP], 95thPercentileLatency(us), 6
-[CLEANUP], 99thPercentileLatency(us), 6
-[SET_EDGE_PROPERTY], Operations, 4246
-[SET_EDGE_PROPERTY], AverageLatency(us), 3842.960668864814
-[SET_EDGE_PROPERTY], MinLatency(us), 1929
-[SET_EDGE_PROPERTY], MaxLatency(us), 124351
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 3201
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 7787
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 13263
-[SET_EDGE_PROPERTY], Return=OK, 4246
-[SET_VERTEX_PROPERTY], Operations, 4293
-[SET_VERTEX_PROPERTY], AverageLatency(us), 4026.3265781504774
-[SET_VERTEX_PROPERTY], MinLatency(us), 2082
-[SET_VERTEX_PROPERTY], MaxLatency(us), 273151
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 3339
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 7811
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 13015
-[SET_VERTEX_PROPERTY], Return=OK, 4293
-[GET_EDGE_COUNT], Operations, 4214
-[GET_EDGE_COUNT], AverageLatency(us), 1667.704081632653
-[GET_EDGE_COUNT], MinLatency(us), 388
-[GET_EDGE_COUNT], MaxLatency(us), 63359
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 1253
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 3375
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 6563
-[GET_EDGE_COUNT], Return=OK, 4214
-[GET_EDGE_COUNT], Return=ERROR, 1
+[CLEANUP], 95thPercentileLatency(us), 10
+[CLEANUP], 99thPercentileLatency(us), 10
+[SET_EDGE_PROPERTY], Operations, 4353
+[SET_EDGE_PROPERTY], AverageLatency(us), 3964.700436480588
+[SET_EDGE_PROPERTY], MinLatency(us), 1931
+[SET_EDGE_PROPERTY], MaxLatency(us), 157439
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 3245
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 8295
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 14759
+[SET_EDGE_PROPERTY], Return=OK, 4353
+[SET_VERTEX_PROPERTY], Operations, 4255
+[SET_VERTEX_PROPERTY], AverageLatency(us), 4210.917508813161
+[SET_VERTEX_PROPERTY], MinLatency(us), 2098
+[SET_VERTEX_PROPERTY], MaxLatency(us), 286207
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 3409
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 8167
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 15223
+[SET_VERTEX_PROPERTY], Return=OK, 4255
+[GET_EDGE_COUNT], Operations, 4472
+[GET_EDGE_COUNT], AverageLatency(us), 1934.5053667262969
+[GET_EDGE_COUNT], MinLatency(us), 430
+[GET_EDGE_COUNT], MaxLatency(us), 73535
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 1424
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 4175
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 6831
+[GET_EDGE_COUNT], Return=OK, 4472
+[GET_EDGE_COUNT], Return=ERROR, 3
 [GET_VERTEX_COUNT-FAILED], Operations, 2
-[GET_VERTEX_COUNT-FAILED], AverageLatency(us), 10180.0
-[GET_VERTEX_COUNT-FAILED], MinLatency(us), 9120
-[GET_VERTEX_COUNT-FAILED], MaxLatency(us), 11239
-[GET_VERTEX_COUNT-FAILED], 50thPercentileLatency(us), 9127
-[GET_VERTEX_COUNT-FAILED], 95thPercentileLatency(us), 11239
-[GET_VERTEX_COUNT-FAILED], 99thPercentileLatency(us), 11239
+[GET_VERTEX_COUNT-FAILED], AverageLatency(us), 6855.0
+[GET_VERTEX_COUNT-FAILED], MinLatency(us), 5472
+[GET_VERTEX_COUNT-FAILED], MaxLatency(us), 8239
+[GET_VERTEX_COUNT-FAILED], 50thPercentileLatency(us), 5475
+[GET_VERTEX_COUNT-FAILED], 95thPercentileLatency(us), 8239
+[GET_VERTEX_COUNT-FAILED], 99thPercentileLatency(us), 8239

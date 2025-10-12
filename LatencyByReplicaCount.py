@@ -139,7 +139,7 @@ def create_combined_plot(data: pd.DataFrame, output_path: str) -> None:
             if row == rows - 1:
                 ax.set_xlabel("Replica Count", fontsize=8)
             if col == 0:
-                ax.set_ylabel("Latency (µs)", fontsize=8)
+                ax.set_ylabel("Median Latency", fontsize=8)
         # Hide unused subplots if datasets < rows*cols
         for j in range(n_datasets, rows * cols):
             row, col = divmod(j, cols)

@@ -179,7 +179,7 @@ def plot_dataset_operations(replica_count: int, ax: plt.Axes, pivot_df: pd.DataF
     
     # For charts more than 1 replica
     if replica_count > 1:
-        ax.axhline(y=144000, color='black', linestyle=':', linewidth=1, alpha=0.8, label='600ms threshold')
+        ax.axhline(y=96000, color='black', linestyle=':', linewidth=1, alpha=0.8, label='600ms threshold')
     
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)

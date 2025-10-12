@@ -304,7 +304,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], re
                 y=base_rep, 
                 xmin=x[idx] + offset - bar_width/2, 
                 xmax=x[idx] + offset + bar_width/2,
-                colors='goldenrod', 
+                colors='firebrick', 
                 linewidth=1,
                 linestyle='-',
                 alpha=0.8
