@@ -6,5 +6,4 @@ PreloadData/vertices.csv
 PreloadData/edges.json
 PreloadData/vertices.json
 JanusgraphServer/
-
-
+distribution_config.json
