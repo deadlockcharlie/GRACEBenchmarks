@@ -81,12 +81,42 @@ do
     else
         echo "Only 1 replica, skipping latency configuration"
     fi
-    
+
+    STATUS_STRING=''
+    if [ $INJECT_FAULTS=true ]; then
+        STATUS_STRING='-s'
+    fi
+
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
+    # set dburi containing all replicas
+    for j in $(seq 1 $i); do
+        if [ $j -eq 1 ]; then
+            DBURI="mongodb://localhost:27017"
+        else
+            DBURI="${DBURI},localhost:$((27017 + j - 1))"
+        fi
+    done
+    echo "Using DBURI: $DBURI"
     #Run the benchmark with graphdb workload
-    bin/ycsb.sh run mongodb  -P workloads/workload_grace  -p DBTYPE="mongodb" -p DBURI="mongodb://localhost:27017" -p maxexecutiontime=${DURATION} -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/MongoDB/${i}.txt
-    
+    ycsb_cmd="bin/ycsb.sh run mongodb $STATUS_STRING -P workloads/workload_grace  -p DBTYPE=\"mongodb\" -p DBURI=\"$DBURI/?replicaSet=rs0\" -p maxexecutiontime=${DURATION} -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json &> $RESULTS_DIRECTORY/MongoDB/${i}.txt"
+
+    eval $ycsb_cmd & YCSB_PID=$!
+
+    sleep $((DURATION/2))
+    if [ $INJECT_FAULTS=true ]; then
+        echo "Injecting faults by stopping the primary replica..."
+        #simulate a network partition by adding a large latency between R1 and one of the replicas. 
+        docker container stop mongo1
+        # Wait for some time to let the system stabilize
+        sleep 60
+        # Restore normal latency
+        # docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo3 50"
+        # echo "Network partition resolved."
+    fi
+
+    wait $YCSB_PID
+
     #Shutdown replicas
     cd $DEPLOYMENTS_DIR
     docker compose -f $COMPOSE_FILE down

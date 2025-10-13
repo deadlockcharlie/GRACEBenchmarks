@@ -146,11 +146,16 @@ EOL
         echo "Only 1 replica, skipping latency configuration"
     fi
 
+    STATUS_STRING=''
+    if [ $INJECT_FAULTS=true ]; then
+        STATUS_STRING='-s'
+    fi
+
     # Run the benchmark with grace workload
     echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
     cd $YCSB_DIRECTORY
     # Build the ycsb command
-    ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
+    ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace $STATUS_STRING\
         -p HOSTURI=\"http://localhost:3000\" \
         -p DBTYPE=\"memgraph\" \
         -p DBURI=\"bolt://localhost:7687\" \
@@ -160,9 +165,21 @@ EOL
         -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
         -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
         -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
-        > $RESULTS_DIRECTORY/MemGraph/$num_replicas.txt"
+        &> $RESULTS_DIRECTORY/MemGraph/$num_replicas.txt"
     
-    eval $ycsb_cmd
+    eval $ycsb_cmd & YCSB_PID=$! 
+    sleep $((DURATION/2))
+    if [ $INJECT_FAULTS=true ]; then
+        echo "Injecting faults by stopping the primary replica..."
+        #simulate a network partition by adding a large latency between R1 and one of the replicas. 
+        docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 100000"
+        sleep 60
+        # Restore normal latency
+        docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50"
+        echo "Network partition resolved."
+        
+    fi
+    wait $YCSB_PID
 
     # Switch to GRACE directory for cleanup
     cd $LF_DIRECTORY

@@ -3,7 +3,7 @@ services:
     container_name: scylla1
     image: scylladb/scylla:2025.3
     restart: always
-    command: --seeds=scylla1 --smp 1 --memory 1G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
     ports:
       - "9042:9042"
     healthcheck:
@@ -17,7 +17,7 @@ services:
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - ES_JAVA_OPTS=-Xms20g -Xmx20g
     ulimits:
       memlock:
         soft: -1

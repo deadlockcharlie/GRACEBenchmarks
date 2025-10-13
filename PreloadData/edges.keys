@@ -2,8 +2,5 @@ _id
 _inV
 _label
 _outV
-classYear
-creationDate
+_type
 item
-joinDate
-workFrom

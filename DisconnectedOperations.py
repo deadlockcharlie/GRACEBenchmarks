@@ -68,7 +68,7 @@ def parse_ycsb_file(file_path: Path, db_name: str) -> pd.DataFrame:
                 if op in OPERATION_MAPPING:  # consider only mapped ops
                     cnt = int(count)
                     if cnt > 0:
-                        success_counts.append(cnt)
+                        success_counts.append(cnt/10)
                         latencies.append(float(avg))
 
             # Compute "real throughput" (successes per sec)
@@ -124,23 +124,37 @@ def plot_results(duration: int, db_results: Dict[str, pd.DataFrame], figure_path
             linestyle=style["linestyle"], marker=style["marker"], markevery=1, markersize=3, linewidth=1
         )
 
-        # Mark high-latency region (from halfway point to end)
-    halfway = (df["time"].max() / 2) -5
-    ax1.axvspan(halfway, df["time"].max(), color="grey", alpha=0.4)
-    ax2.axvspan(halfway, df["time"].max(), color="grey", alpha=0.4)
+        # Mark high-latency region (from halfway point for 60 seconds)
+    halfway = (duration / 2)
+    ax1.axvspan(halfway, halfway + 60, color="grey", alpha=0.4)
+    ax2.axvspan(halfway, halfway + 60, color="grey", alpha=0.4)
+    # ax1.axvspan(halfway, df["time"].max(), color="grey", alpha=0.4)
+    # ax2.axvspan(halfway, df["time"].max(), color="grey", alpha=0.4)
 
     # Labels and titles
+    yticks= [0, 0.1, 1, 10, 100, 1000, 10000]
+    yticksLabels=['0', '0.1', '1', '10', '100', '1K', '10K']
     ax1.set_ylabel("Throughput (ops/sec)")
     ax1.set_yscale("log")
+    ax1.set_yticks(yticks)
+    ax1.set_yticklabels(yticksLabels)
+    ax1.set_ylim(0, None)
     ax1.grid(True, linestyle="--", linewidth=0.5)
     ax1.set_xlim(0, duration)
 
+    yticks=[100, 1000, 10000, 100000, 1000000]
+    yticksLabels=['0ms', '1ms', '10ms', '100ms', '1s']
+    xticks = list(range(0, duration + 1, 30))
+    ax2.set_xticks(xticks)
     ax2.set_ylabel("Avg Latency (ms)")
     ax2.set_yscale("log")
+    ax2.set_yticks(yticks)
+    ax2.set_yticklabels(yticksLabels)
+    
     ax2.set_xlabel("Time (sec)")
     ax2.grid(True, linestyle="--", linewidth=0.5)
     ax2.set_xlim(0, duration)
-
+    ax2.set_ylim(100, None)
     ax1.legend(ncols=6, loc="upper center", bbox_to_anchor=(0.5, 1.25), fontsize=8)
 
 

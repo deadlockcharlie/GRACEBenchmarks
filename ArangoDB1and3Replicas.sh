@@ -86,11 +86,29 @@ do
         echo "Only 1 replica, skipping latency configuration"
     fi
     
+    STATUS_STRING=''
+    if [ $INJECT_FAULTS=true ]; then
+        STATUS_STRING='-s'
+    fi
+    
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
     #Run the benchmark with graphdb workload
-    bin/ycsb.sh run arangodb  -P workloads/workload_grace  -p DBTYPE="arangodb" -p DBURI="http://localhost:8529"  -p REPLICATION_FACTOR=$i -p maxexecutiontime=$((DURATION * 2)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/ArangoDB/${i}.txt
+    ycsb_cmd="bin/ycsb.sh run arangodb  -P workloads/workload_grace  -p DBTYPE=\"arangodb\" -p DBURI=\"http://localhost:8529\"  -p REPLICATION_FACTOR=$i -p maxexecutiontime=$((DURATION * 2)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json &> $RESULTS_DIRECTORY/ArangoDB/${i}.txt"
+    eval $ycsb_cmd & YCSB_PID=$!
+    sleep $((DURATION/2))
+    if [ $INJECT_FAULTS=true ]; then
+        echo "Injecting faults by stopping the primary replica..."
+        #simulate a network partition by adding a large latency between R1 and one of the replicas. 
+        docker exec -it dbserver1 sh -c "/usr/local/bin/setup-latency.sh dbserver1 dbserver2 100000"
+        sleep 60
+        # Restore normal latency
+        docker exec -it dbserver1 sh -c "/usr/local/bin/setup-latency.sh dbserver1 dbserver2 50"
+        echo "Network partition resolved."
+    fi
     
+    wait $YCSB_PID
+
     #Shutdown replicas
     cd $DEPLOYMENTS_DIR
     docker compose -f $COMPOSE_FILE down

@@ -16,7 +16,7 @@ echo "⏳ Waiting for scylla cluster to be ready..."
 for node in $replicas; do
   until docker exec $node cqlsh -e "DESCRIBE KEYSPACES;" >/dev/null 2>&1; do
     echo "Waiting for $node..."
-    sleep 5
+    sleep 10
   done
 done
 

@@ -1,0 +1,92 @@
+/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/mongodb-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/bson-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/bson-record-codec-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/mongodb-driver-core-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/mongodb/target/dependency/mongodb-driver-sync-5.5.1.jar site.ycsb.Client -t -db site.ycsb.db.MongoDBClient -s -P workloads/workload_grace -p DBTYPE=mongodb -p DBURI=mongodb://localhost:27017,localhost:27018,localhost:27019/?replicaSet=rs0 -p maxexecutiontime=300 -p threadcount=1 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_edges.json
+Command line: -t -db site.ycsb.db.MongoDBClient -s -P workloads/workload_grace -p DBTYPE=mongodb -p DBURI=mongodb://localhost:27017,localhost:27018,localhost:27019/?replicaSet=rs0 -p maxexecutiontime=300 -p threadcount=1 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_edges.json
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+Loaded 1867 vertices and 7737 edges
+Starting test.
+Initializing db: site.ycsb.db.MongoDBClient
+Maximum execution time specified as: 300 secs
+Using Database: site.ycsb.DBWrapper
+Starting Mongodb client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=mongodb, dotransactions=true, createproportion=1, DBURI=mongodb://localhost:27017,localhost:27018,localhost:27019/?replicaSet=rs0, maxexecutiontime=300, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.MongoDBClient, requestdistribution=latest, status=true}
+DBTYPE: mongodb
+DBURI: mongodb://localhost:27017,localhost:27018,localhost:27019/?replicaSet=rs0
+2025-10-13 01:35:48:380 0 sec: 0 operations; est completion in 0 second 
+Oct 13, 2025 1:35:48 AM com.mongodb.internal.diagnostics.logging.Loggers shouldUseSLF4J
+WARNING: SLF4J not found on the classpath.  Logging is disabled for the 'org.mongodb.driver' component
+2025-10-13 01:35:58:345 10 sec: 0 operations; est completion in 106751991167300 days 15 hours 
+2025-10-13 01:36:08:344 20 sec: 0 operations; est completion in 106751991167300 days 15 hours 
+2025-10-13 01:36:18:345 30 sec: 0 operations; est completion in 106751991167300 days 15 hours 
+Failed to connect to MongoDB database: Timed out while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=REPLICA_SET, servers=[{address=mongo3:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo3}, caused by {java.net.UnknownHostException: mongo3}}, {address=mongo2:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo2}, caused by {java.net.UnknownHostException: mongo2}}, {address=mongo1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo1}, caused by {java.net.UnknownHostException: mongo1}}]
+site.ycsb.DBException: com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=REPLICA_SET, servers=[{address=mongo3:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo3}, caused by {java.net.UnknownHostException: mongo3}}, {address=mongo2:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo2}, caused by {java.net.UnknownHostException: mongo2}}, {address=mongo1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo1}, caused by {java.net.UnknownHostException: mongo1}}]
+	at site.ycsb.db.MongoDBClient.init(MongoDBClient.java:67)
+	at site.ycsb.DBWrapper.init(DBWrapper.java:126)
+	at site.ycsb.ClientThread.run(ClientThread.java:92)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=REPLICA_SET, servers=[{address=mongo3:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo3}, caused by {java.net.UnknownHostException: mongo3}}, {address=mongo2:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo2}, caused by {java.net.UnknownHostException: mongo2}}, {address=mongo1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo1}, caused by {java.net.UnknownHostException: mongo1}}]
+	at com.mongodb.internal.connection.BaseCluster.logAndThrowTimeoutException(BaseCluster.java:427)
+	at com.mongodb.internal.connection.BaseCluster.lambda$selectServer$0(BaseCluster.java:154)
+	at com.mongodb.internal.time.Timeout.lambda$onExistsAndExpired$16(Timeout.java:236)
+	at com.mongodb.internal.time.Timeout.lambda$run$10(Timeout.java:201)
+	at com.mongodb.internal.time.TimePoint.checkedCall(TimePoint.java:99)
+	at com.mongodb.internal.time.Timeout.call(Timeout.java:174)
+	at com.mongodb.internal.time.Timeout.run(Timeout.java:194)
+	at com.mongodb.internal.time.Timeout.onExistsAndExpired(Timeout.java:233)
+	at com.mongodb.internal.time.Timeout.onExpired(Timeout.java:226)
+	at com.mongodb.internal.connection.BaseCluster.selectServer(BaseCluster.java:153)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.selectServer(AbstractMultiServerCluster.java:59)
+	at com.mongodb.internal.binding.ClusterBinding.getWriteConnectionSource(ClusterBinding.java:100)
+	at com.mongodb.client.internal.ClientSessionBinding.getConnectionSource(ClientSessionBinding.java:108)
+	at com.mongodb.client.internal.ClientSessionBinding.getWriteConnectionSource(ClientSessionBinding.java:98)
+	at com.mongodb.internal.operation.SyncOperationHelper.withConnection(SyncOperationHelper.java:110)
+	at com.mongodb.internal.operation.CreateCollectionOperation.execute(CreateCollectionOperation.java:236)
+	at com.mongodb.internal.operation.CreateCollectionOperation.execute(CreateCollectionOperation.java:69)
+	at com.mongodb.client.internal.MongoClusterImpl$OperationExecutorImpl.execute(MongoClusterImpl.java:446)
+	at com.mongodb.client.internal.MongoDatabaseImpl.executeCreateCollection(MongoDatabaseImpl.java:300)
+	at com.mongodb.client.internal.MongoDatabaseImpl.createCollection(MongoDatabaseImpl.java:283)
+	at com.mongodb.client.internal.MongoDatabaseImpl.createCollection(MongoDatabaseImpl.java:278)
+	at site.ycsb.db.MongoDBClient.init(MongoDBClient.java:58)
+	... 3 more
+site.ycsb.DBException: com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=REPLICA_SET, servers=[{address=mongo3:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo3}, caused by {java.net.UnknownHostException: mongo3}}, {address=mongo2:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo2}, caused by {java.net.UnknownHostException: mongo2}}, {address=mongo1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo1}, caused by {java.net.UnknownHostException: mongo1}}]
+	at site.ycsb.db.MongoDBClient.init(MongoDBClient.java:67)
+	at site.ycsb.DBWrapper.init(DBWrapper.java:126)
+	at site.ycsb.ClientThread.run(ClientThread.java:92)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type=REPLICA_SET, servers=[{address=mongo3:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo3}, caused by {java.net.UnknownHostException: mongo3}}, {address=mongo2:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo2}, caused by {java.net.UnknownHostException: mongo2}}, {address=mongo1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketException: mongo1}, caused by {java.net.UnknownHostException: mongo1}}]
+	at com.mongodb.internal.connection.BaseCluster.logAndThrowTimeoutException(BaseCluster.java:427)
+	at com.mongodb.internal.connection.BaseCluster.lambda$selectServer$0(BaseCluster.java:154)
+	at com.mongodb.internal.time.Timeout.lambda$onExistsAndExpired$16(Timeout.java:236)
+	at com.mongodb.internal.time.Timeout.lambda$run$10(Timeout.java:201)
+	at com.mongodb.internal.time.TimePoint.checkedCall(TimePoint.java:99)
+	at com.mongodb.internal.time.Timeout.call(Timeout.java:174)
+	at com.mongodb.internal.time.Timeout.run(Timeout.java:194)
+	at com.mongodb.internal.time.Timeout.onExistsAndExpired(Timeout.java:233)
+	at com.mongodb.internal.time.Timeout.onExpired(Timeout.java:226)
+	at com.mongodb.internal.connection.BaseCluster.selectServer(BaseCluster.java:153)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.selectServer(AbstractMultiServerCluster.java:59)
+	at com.mongodb.internal.binding.ClusterBinding.getWriteConnectionSource(ClusterBinding.java:100)
+	at com.mongodb.client.internal.ClientSessionBinding.getConnectionSource(ClientSessionBinding.java:108)
+	at com.mongodb.client.internal.ClientSessionBinding.getWriteConnectionSource(ClientSessionBinding.java:98)
+	at com.mongodb.internal.operation.SyncOperationHelper.withConnection(SyncOperationHelper.java:110)
+	at com.mongodb.internal.operation.CreateCollectionOperation.execute(CreateCollectionOperation.java:236)
+	at com.mongodb.internal.operation.CreateCollectionOperation.execute(CreateCollectionOperation.java:69)
+	at com.mongodb.client.internal.MongoClusterImpl$OperationExecutorImpl.execute(MongoClusterImpl.java:446)
+	at com.mongodb.client.internal.MongoDatabaseImpl.executeCreateCollection(MongoDatabaseImpl.java:300)
+	at com.mongodb.client.internal.MongoDatabaseImpl.createCollection(MongoDatabaseImpl.java:283)
+	at com.mongodb.client.internal.MongoDatabaseImpl.createCollection(MongoDatabaseImpl.java:278)
+	at site.ycsb.db.MongoDBClient.init(MongoDBClient.java:58)
+	... 3 more
+Could not wait until max specified time, TerminatorThread interrupted.
+2025-10-13 01:36:18:619 30 sec: 0 operations; est completion in 106751991167300 days 15 hours 
+[OVERALL], RunTime(ms), 30274
+[OVERALL], Throughput(ops/sec), 0.0
+[TOTAL_GCS_G1_Young_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 0
+[TOTAL_GC_TIME], Time(ms), 0
+[TOTAL_GC_TIME_%], Time(%), 0.0

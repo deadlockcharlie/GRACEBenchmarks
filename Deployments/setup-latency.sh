@@ -1,34 +1,78 @@
 #!/bin/sh
-# Usage: setup-latency.sh <self> <peer1> <latency1> <peer2> <latency2> ...
+# setup-latency.sh
+# Usage: ./setup-latency.sh <local_name> <peer1_name> <peer1_delay> <peer2_name> <peer2_delay>
+# Example for mongo1: ./setup-latency.sh mongo1 mongo2 50 mongo3 100
 
-SELF=$1
-shift
+LOCAL=$1
+PEER1=$2
+DELAY1=$3
+PEER2=$4
+DELAY2=$5
 
-echo "[$SELF] Resetting existing latency configuration..."
-tc qdisc del dev eth0 root 2>/dev/null || true
+# get container IPs of peers
+PEER1_IP=$(getent hosts $PEER1 | awk '{print $1}')
+PEER2_IP=$(getent hosts $PEER2 | awk '{print $1}')
 
-# Root prio qdisc with 10 bands
-tc qdisc add dev eth0 root handle 1: prio bands 10
+echo "[$LOCAL] Setting up latency to $PEER1 ($DELAY1 ms) and $PEER2 ($DELAY2 ms)"
 
-COUNT=1
+# Check if root qdisc already exists
+if tc qdisc show dev eth0 | grep -q "qdisc prio 1:"; then
+    echo "[$LOCAL] Root qdisc already exists, modifying existing rules"
+    
+    # Modify existing delay for PEER1
+    tc qdisc change dev eth0 parent 1:1 handle 10: netem delay ${DELAY1}ms
+    
+    # Modify existing delay for PEER2
+    tc qdisc change dev eth0 parent 1:2 handle 20: netem delay ${DELAY2}ms
+    
+else
+    echo "[$LOCAL] Creating new latency rules"
+    
+    # create root priority qdisc
+    tc qdisc add dev eth0 root handle 1: prio
+    
+    # add delay to PEER1
+    tc qdisc add dev eth0 parent 1:1 handle 10: netem delay ${DELAY1}ms
+    tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip dst $PEER1_IP flowid 1:1
+    
+    # add delay to PEER2
+    tc qdisc add dev eth0 parent 1:2 handle 20: netem delay ${DELAY2}ms
+    tc filter add dev eth0 protocol ip parent 1:0 prio 2 u32 match ip dst $PEER2_IP flowid 1:2
+fi
 
-while [ $# -gt 0 ]; do
-  PEER=$1
-  DELAY=$2
-  shift 2
+echo "[$LOCAL] Latency setup complete"
+tc qdisc show
 
-  PEER_IP=$(getent hosts "$PEER" | awk '{ print $1 }')
 
-  echo "[$SELF] Setting up latency to $PEER ($PEER_IP) = ${DELAY}ms"
 
-  # Attach a netem qdisc to this band
-  tc qdisc add dev eth0 parent 1:$COUNT handle ${COUNT}0: netem delay "${DELAY}ms"
 
-  # Filter traffic for this peer into the band
-  tc filter add dev eth0 protocol ip parent 1:0 prio $COUNT u32 \
-    match ip dst "$PEER_IP"/32 flowid 1:$COUNT
+# # setup-latency.sh
+# # Usage: ./setup-latency.sh <local_name> <peer1_name> <peer1_delay> <peer2_name> <peer2_delay>
+# # Example for mongo1: ./setup-latency.sh mongo1 mongo2 50 mongo3 100
 
-  COUNT=$((COUNT+1))
-done
+# LOCAL=$1
+# PEER1=$2
+# DELAY1=$3
+# PEER2=$4
+# DELAY2=$5
 
-echo "[$SELF] ✅ Latency configuration applied."
+
+# # get container IPs of peers
+# PEER1_IP=$(getent hosts $PEER1 | awk '{print $1}')
+# PEER2_IP=$(getent hosts $PEER2 | awk '{print $1}')
+
+# echo "[$LOCAL] Setting up latency to $PEER1 ($DELAY1 ms) and $PEER2 ($DELAY2 ms)"
+
+# # create root priority qdisc
+# tc qdisc add dev eth0 root handle 1: prio
+
+# # add delay to PEER1
+# tc qdisc add dev eth0 parent 1:1 handle 10: netem delay ${DELAY1}ms
+# tc filter add dev eth0 protocol ip parent 1:0 prio 1 u32 match ip dst $PEER1_IP flowid 1:1
+
+# # add delay to PEER2
+# tc qdisc add dev eth0 parent 1:2 handle 20: netem delay ${DELAY2}ms
+# tc filter add dev eth0 protocol ip parent 1:0 prio 2 u32 match ip dst $PEER2_IP flowid 1:2
+
+# echo "[$LOCAL] Latency setup complete"
+# tc qdisc show
