@@ -212,12 +212,14 @@ The `workloadGenerator.py` script uses a parallel, streaming approach to handle 
 ### Basic Benchmark Execution
 
 ```bash
-# Run full benchmark suite
+# Run full benchmark suite (takes 2-3 hours to complete)
 ./RunBenchmark.sh
 
 # Customize benchmark parameters
 DURATION=180 INJECT_FAULTS=true ./RunBenchmark.sh
 ```
+
+> **Note**: A complete benchmark run takes approximately 2-3 hours to execute, depending on the number of databases tested, replica configurations, and workload sizes.
 
 ### Individual Benchmark Scripts
 
