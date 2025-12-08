@@ -26,15 +26,15 @@ EOL
     if [ $num_replicas -eq 1 ]; then
         cat >> $DIST_CONF <<EOL
   "preload_data": true,
-  "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json",
-  "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json",
+  "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/yeast_load_vertices.json",
+  "preload_edges": "$ROOT_DIRECTORY/GraphDBData/yeast_load_edges.json",
   "dataset_name": "${DATASET_NAME}",
 EOL
         elif [ $num_replicas -eq 2 ]; then
         cat >> $DIST_CONF <<EOL
   "preload_data": true,
-  "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/${DATASET_NAME}_load_vertices.json",
-  "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/${DATASET_NAME}_load_edges.json",
+  "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_vertices.json",
+  "preload_edges": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_edges.json",
 EOL
     else
         cat >> $DIST_CONF <<EOL
