@@ -12,7 +12,6 @@ This repository contains the complete benchmarking suite used to evaluate GRACE'
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Project Structure](#project-structure)
-- [Git Submodules](#git-submodules)
 - [Datasets](#datasets)
 - [Running Benchmarks](#running-benchmarks)
 - [Benchmark Types](#benchmark-types)
@@ -41,17 +40,11 @@ The benchmarking framework is built on three main components:
 
 ## Installation
 
-### 1. Clone the repository with submodules
+### 1. Clone the repository
 
 ```bash
-git clone --recursive <repository-url>
+git clone <repository-url>
 cd GRACEBenchmarks
-```
-
-If you already cloned without `--recursive`, initialize the submodules:
-
-```bash
-git submodule update --init --recursive
 ```
 
 ### 2. Build YCSB
@@ -92,9 +85,9 @@ GRACE/
 ├── workloadGenerator.py                # Splits datasets into load/update workloads
 ├── jsontoCSV.py                        # Converts JSON data to CSV format
 │
-├── ReplicatedGDB/                      # [SUBMODULE] GRACE implementation
-├── replicatedGDBLF/                    # [SUBMODULE] GRACE with leader-follower
-├── YCSB/                               # [SUBMODULE] Modified YCSB benchmark
+├── ReplicatedGDB/                      # GRACE middleware implementation
+├── replicatedGDBLF/                    # Reference implementation with primary-backup
+├── YCSB/                               # Modified YCSB benchmark
 │
 ├── Deployments/                        # Database deployment scripts
 │   ├── ArangoDBReplicatedDeployment.sh
@@ -147,36 +140,6 @@ GRACE/
 ├── DisconnectedOperations.py           # Disconnected operations analysis
 ├── HeterogenousDeployments.py          # Heterogeneous deployment analysis
 └── waitForPreload.sh                   # Wait for data preloading completion
-```
-
-## Git Submodules
-
-This project uses three git submodules for the core database and benchmarking components:
-
-### 1. ReplicatedGDB
-**Purpose**: Core GRACE graph database implementation with causal consistency and multi-master replication support.
-
-### 2. replicatedGDBLF  
-**Purpose**: GRACE implementation using leader-follower replication pattern for comparison with traditional replication approaches.
-
-### 3. YCSB
-**Purpose**: Modified Yahoo! Cloud Serving Benchmark adapted for graph database workloads with custom graph operations (vertex/edge CRUD, traversals, property operations).
-
-### Managing Submodules
-
-```bash
-# Update all submodules to latest commit
-git submodule update --remote --merge
-
-# Pull latest changes for a specific submodule
-cd ReplicatedGDB
-git pull origin main
-cd ..
-git add ReplicatedGDB
-git commit -m "Update ReplicatedGDB submodule"
-
-# Check submodule status
-git submodule status
 ```
 
 ## Datasets
