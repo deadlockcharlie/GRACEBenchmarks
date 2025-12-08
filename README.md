@@ -25,7 +25,7 @@ This repository contains the complete benchmarking suite used to evaluate GRACE'
 The benchmarking framework is built on three main components:
 
 1. **ReplicatedGDB**: Core implementation of GRACE middleware
-2. **replicatedGDBLF**: GRACE implementation with primary-backup replication
+2. **replicatedGDBLF**: Reference implementation with primary-backup replication
 3. **YCSB**: Modified Yahoo! Cloud Serving Benchmark for graph database workloads
 
 ## Prerequisites
