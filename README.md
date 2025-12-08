@@ -40,40 +40,17 @@ The benchmarking framework is built on three main components:
 
 ## Installation
 
-### 1. Clone the repository
+### 1. Download the repository
 
-```bash
-git clone <repository-url>
-cd GRACEBenchmarks
-```
+Download and extract the repository to your local machine.
 
-### 2. Build YCSB
-
-```bash
-cd YCSB
-mvn clean package -DskipTests
-cd ..
-```
-
-### 3. Build GRACE components
-
-```bash
-# Build ReplicatedGDB
-cd ReplicatedGDB
-mvn clean package
-cd ..
-
-# Build replicatedGDBLF
-cd replicatedGDBLF
-mvn clean package
-cd ..
-```
-
-### 4. Install Python dependencies
+### 2. Install Python dependencies
 
 ```bash
 pip3 install pandas matplotlib numpy ijson
 ```
+
+All Java components (YCSB, ReplicatedGDB, replicatedGDBLF) are included in the distribution.
 
 ## Project Structure
 
