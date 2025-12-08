@@ -1,6 +1,6 @@
 # GRACE Benchmarks
 
-A comprehensive benchmarking framework for evaluating GRACE (Graph Replicated Architecture with Causal and Eventual consistency) against traditional graph databases in distributed, geo-replicated environments.
+A comprehensive benchmarking framework for evaluating GRACE against traditional graph databases in distributed, geo-replicated environments.
 
 ## Overview
 
@@ -24,8 +24,8 @@ This repository contains the complete benchmarking suite used to evaluate GRACE'
 
 The benchmarking framework is built on three main components:
 
-1. **ReplicatedGDB**: Core implementation of GRACE database system
-2. **replicatedGDBLF**: GRACE implementation with leader-follower replication
+1. **ReplicatedGDB**: Core implementation of GRACE middleware
+2. **replicatedGDBLF**: GRACE implementation with primary-backup replication
 3. **YCSB**: Modified Yahoo! Cloud Serving Benchmark for graph database workloads
 
 ## Prerequisites
@@ -184,7 +184,7 @@ git submodule status
 The benchmark supports multiple graph datasets from various domains:
 
 - **LDBC**: Social network benchmark dataset
-- **MICO**: Microbiome interaction network
+- **MICO**: Microsoft co-authorship network
 - **Yeast**: Protein-protein interaction network
 - **Freebase** (small/medium/large): Knowledge graph subsets
 
@@ -220,6 +220,8 @@ DURATION=180 INJECT_FAULTS=true ./RunBenchmark.sh
 ```
 
 > **Note**: A complete benchmark run takes approximately 2-3 hours to execute, depending on the number of databases tested, replica configurations, and workload sizes.
+
+> **For most use cases, running `RunBenchmark.sh` is sufficient.** While individual benchmark scripts are available for specific testing scenarios, the main script orchestrates the complete benchmark suite including deployment, data loading, execution, and result collection.
 
 ### Individual Benchmark Scripts
 

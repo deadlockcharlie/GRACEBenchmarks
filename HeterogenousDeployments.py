@@ -245,7 +245,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], re
     spacing = 0.02
     group_width = bar_width * 4 + spacing * 3
     
-    fig, axes = plt.subplots(1, 2, figsize=(6, 2.5), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(5, 2.3), sharey=True)
     legend_elements = {}
 
     def plot_subplot(ax, data, title):
@@ -331,7 +331,7 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], re
 
     # Writes subplot
     plot_subplot(axes[1], writes, "Writes")
-    fig.supylabel("Median Latency")
+    fig.supylabel("Latency")
     fig.supxlabel("Heterogeneous database count")
     
     plt.tight_layout()

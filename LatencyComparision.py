@@ -183,7 +183,7 @@ def plot_dataset_operations(replica_count: int, ax: plt.Axes, pivot_df: pd.DataF
     
     ax.set_title(DATASETS[dataset], fontsize=10)
     ax.set_xticks(x)
-    ax.set_xticklabels(pivot_df.index, fontsize=10, rotation=90, ha="right")
+    ax.set_xticklabels(pivot_df.index, fontsize=8)
     
     # Set yticks labels to be readable
     yticks = [100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
@@ -229,13 +229,13 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
     # Determine figure size and layout based on legend position
     base_width = 12
     if legend_pos == 'right':
-        fig_size = (base_width + 1.5, 4)
+        fig_size = (base_width + 1.5, 3)
         layout_rect = [0.03, 0, 0.85, 1]
     elif legend_pos == 'bottom':
         fig_size = (base_width, 5)
         layout_rect = [0.03, 0.08, 1, 1]
     else:  # top
-        fig_size = (base_width, 5)
+        fig_size = (base_width, 3.7)
         layout_rect = [0.03, 0.03, 1, 0.88]
 
     fig, axes = plt.subplots(2, 3, figsize=fig_size, sharey=True)
@@ -256,7 +256,7 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
         create_single_legend(fig, all_dbs_sorted, legend_pos)
 
     fig.tight_layout(rect=layout_rect)
-    fig.savefig(figure_path, dpi=500, bbox_inches='tight')
+    fig.savefig(figure_path, dpi=800, bbox_inches='tight')
     plt.close(fig)
 
 

@@ -61,7 +61,7 @@ def collect_data(root_dir: str) -> pd.DataFrame:
         if not dataset_path.is_dir():
             continue
         for db_path in dataset_path.iterdir():
-            if not db_path.is_dir():
+            if not db_path.is_dir() or "janus" in db_path.name.lower():
                 continue
             for result_file in db_path.glob("*.txt"):
                 try:
@@ -120,7 +120,7 @@ def create_combined_plot(data: pd.DataFrame, output_path: str) -> None:
     n_datasets = len(datasets)
     cols = min(3, n_datasets)
     rows = math.ceil(2)
-    fig, axes = plt.subplots(2 * rows, cols, figsize=(cols * 1.8, rows * 4), sharey = "row")
+    fig, axes = plt.subplots(2 * rows, cols, figsize=(cols * 1.8, rows * 3.2), sharey = "row")
 
     axes = np.array(axes)
     axes = axes.reshape(2, rows, cols)  # [op_type_index][row][col]

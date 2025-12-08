@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import re
 from pathlib import Path
 from typing import Dict
+import numpy as np
 
 # Configuration
 DB_STYLES = {
@@ -75,7 +76,13 @@ def parse_ycsb_file(file_path: Path, db_name: str) -> pd.DataFrame:
             throughput = sum(success_counts)  # 1-second snapshot, already per sec
 
             # Compute average latency across successful ops
-            avg_latency = sum(latencies) / len(latencies) if latencies else float("nan")
+            # If no latencies or avg is 0, set to 120 seconds (120000000 microseconds)
+            if not latencies:
+                avg_latency = 120000000
+            else:
+                avg_latency = sum(latencies) / len(latencies)
+                if avg_latency == 0:
+                    avg_latency = 120000000
 
             times.append(sec)
             throughputs.append(throughput)
@@ -101,69 +108,85 @@ def collect_db_results(root_dir: Path) -> Dict[str, pd.DataFrame]:
                 db_results[db_name] = df
     return db_results
 
+def interpolate_missing_values(df: pd.DataFrame, duration: int) -> tuple:
+    """
+    Interpolate missing time points with 120s latency value.
+    Returns: (times, latencies, interpolated_times, interpolated_latencies)
+    """
+    # Get all expected time points (every 10 seconds)
+    all_times = set(range(0, duration + 1, 10))
+    existing_times = set(df["time"].values)
+    missing_times = sorted(all_times - existing_times)
+    
+    # Fill with 120 seconds (120000000 microseconds)
+    interpolation_value = 120000000
+    
+    # Create interpolated points
+    interpolated_times = missing_times
+    interpolated_latencies = [interpolation_value] * len(missing_times)
+    
+    return (df["time"].values, df["avg_latency"].values, 
+            np.array(interpolated_times), np.array(interpolated_latencies))
+
 def plot_results(duration: int, db_results: Dict[str, pd.DataFrame], figure_path: str):
     """Plot throughput and avg latency across mapped ops, mark high-latency region."""
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(5, 4), sharex=True)
-    #sort db_results by DB_STYLES keys
-
+    fig, ax = plt.subplots(figsize=(4.5, 2.7))
+    
+    # Sort db_results by DB_STYLES keys
     db_results = {k: db_results[k] for k in DB_STYLES.keys() if k in db_results}
+    
     for db_name, df in db_results.items():
         style = DB_STYLES.get(db_name, {"color": "black", "linestyle": "-", "marker": None})
 
-        # Plot throughput
-        ax1.plot(
-            df["time"], df["throughput"],
+        # Get original and interpolated data
+        times, latencies, interp_times, interp_latencies = interpolate_missing_values(df, duration)
+        
+        # Plot average latency (lines only, no markers) for legend
+        ax.plot(
+            times, latencies,
             label=db_name, color=style["color"],
-            linestyle=style["linestyle"], marker=style["marker"], markevery=1, markersize=3, linewidth=1
+            linestyle=style["linestyle"], marker=style["marker"], markevery=10000, markersize=3, linewidth=1
         )
+        
+        # Add markers based on latency value
+        for i, (t, lat) in enumerate(zip(times, latencies)):
+            if lat == 120000000:
+                # 120s values get gray cross
+                ax.plot(t, lat, marker='x', color='gray',
+                       markersize=4, markeredgewidth=2, zorder=10)
+            else:
+                # Normal values get database-specific marker
+                ax.plot(t, lat, marker=style["marker"], color=style["color"],
+                       markersize=3, zorder=5)
+        
+        # Plot interpolated points with grey crosses
+        for i, (t, lat) in enumerate(zip(interp_times, interp_latencies)):
+            ax.plot(t, lat, marker='x', color='gray',
+                   markersize=4, markeredgewidth=2, zorder=10)
 
-        # Plot average latency
-        ax2.plot(
-            df["time"], df["avg_latency"],
-            label=db_name, color=style["color"],
-            linestyle=style["linestyle"], marker=style["marker"], markevery=1, markersize=3, linewidth=1
-        )
-
-        # Mark high-latency region (from halfway point for 60 seconds)
+    # Mark high-latency region (from halfway point for 60 seconds)
     halfway = (duration / 2)
-    ax1.axvspan(halfway, halfway + 60, color="grey", alpha=0.4)
-    ax2.axvspan(halfway, halfway + 60, color="grey", alpha=0.4)
-    # ax1.axvspan(halfway, df["time"].max(), color="grey", alpha=0.4)
-    # ax2.axvspan(halfway, df["time"].max(), color="grey", alpha=0.4)
+    ax.axvspan(halfway, halfway + 60, color="grey", alpha=0.4)
 
     # Labels and titles
-    yticks= [0, 0.1, 1, 10, 100, 1000, 10000]
-    yticksLabels=['0', '0.1', '1', '10', '100', '1K', '10K']
-    ax1.set_ylabel("Throughput (ops/sec)")
-    ax1.set_yscale("log")
-    ax1.set_yticks(yticks)
-    ax1.set_yticklabels(yticksLabels)
-    ax1.set_ylim(0, None)
-    ax1.grid(True, linestyle="--", linewidth=0.5)
-    ax1.set_xlim(0, duration)
-
-    yticks=[100, 1000, 10000, 100000, 1000000]
-    yticksLabels=['0ms', '1ms', '10ms', '100ms', '1s']
+    yticks=[100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
+    yticksLabels=['0ms', '1ms', '10ms', '100ms', '1s', '10s', '100s']
     xticks = list(range(0, duration + 1, 30))
-    ax2.set_xticks(xticks)
-    ax2.set_ylabel("Avg Latency (ms)")
-    ax2.set_yscale("log")
-    ax2.set_yticks(yticks)
-    ax2.set_yticklabels(yticksLabels)
-    
-    ax2.set_xlabel("Time (sec)")
-    ax2.grid(True, linestyle="--", linewidth=0.5)
-    ax2.set_xlim(0, duration)
-    ax2.set_ylim(100, None)
-    ax1.legend(ncols=6, loc="upper center", bbox_to_anchor=(0.5, 1.25), fontsize=8)
+    ax.set_xticks(xticks)
+    ax.set_ylabel("Avg Latency")
+    ax.set_yscale("log")
+    ax.set_yticks(yticks)
+    ax.set_yticklabels(yticksLabels)
 
-
-    
+    ax.set_xlabel("Time (sec)")
+    ax.grid(True, linestyle="--", linewidth=0.5)
+    ax.set_xlim(0, duration)
+    ax.set_ylim(100, None)
+    ax.legend(ncols=3, loc="upper center", bbox_to_anchor=(0.48, 1.5), fontsize=8)
 
     plt.tight_layout()
     plt.savefig(figure_path, dpi=500, bbox_inches="tight")
     plt.close()
-
 
 
 def main():

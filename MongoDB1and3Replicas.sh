@@ -107,11 +107,15 @@ do
     if [ $INJECT_FAULTS=true ]; then
         echo "Injecting faults by stopping the primary replica..."
         #simulate a network partition by adding a large latency between R1 and one of the replicas. 
-        docker container stop mongo1
+
+        # docker container stop mongo1
         # Wait for some time to let the system stabilize
+        docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo3 100000"
         sleep 60
+
+        docker container start mongo1
         # Restore normal latency
-        # docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo3 50"
+        docker exec -it mongo1-netem sh -c "/usr/local/bin/setup-latency.sh mongo1 mongo3 50"
         # echo "Network partition resolved."
     fi
 
