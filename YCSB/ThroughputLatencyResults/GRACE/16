@@ -1,0 +1,91 @@
+/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/YCSB/conf:/Users/pandey/work/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar site.ycsb.Client -t -db site.ycsb.db.GraphDBClient -P workloads/workload_grace -p HOSTURI=http://192.168.1.7:3000 -p DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt -p maxexecutiontime=60 -p threadcount=16
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+GraceClient  Created
+Starting GRACE client
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+Starting GRACE client
+Starting GRACE client
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+Starting GRACE client
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+Starting GRACE client
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+{recordcount=1000, operationcount=2000000, readproportion=0, scanproportion=.5, workload=site.ycsb.workloads.CoreWorkload, threadcount=16, updateproportion=.1, HOSTURI=http://192.168.1.7:3000, dotransactions=true, DATAFILE=/Users/pandey/work/SNAPDatasets/wiki-Talk.txt, maxexecutiontime=60, insertproportion=.3, readallfields=true, db=site.ycsb.db.GraphDBClient, requestdistribution=latest}
+[OVERALL], RunTime(ms), 60052
+[OVERALL], Throughput(ops/sec), 307.91647239059483
+[TOTAL_GCS_G1_Young_Generation], Count, 9
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 70
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.11656564310930527
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 9
+[TOTAL_GC_TIME], Time(ms), 70
+[TOTAL_GC_TIME_%], Time(%), 0.11656564310930527
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 0.375
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 3
+[CLEANUP], 50thPercentileLatency(us), 0
+[CLEANUP], 95thPercentileLatency(us), 3
+[CLEANUP], 99thPercentileLatency(us), 3
+[UPDATE], Operations, 2038
+[UPDATE], AverageLatency(us), 40572.08243375859
+[UPDATE], MinLatency(us), 0
+[UPDATE], MaxLatency(us), 107327
+[UPDATE], 50thPercentileLatency(us), 40063
+[UPDATE], 95thPercentileLatency(us), 52383
+[UPDATE], 99thPercentileLatency(us), 61727
+[UPDATE], Return=OK, 2038
+[INSERT], Operations, 6213
+[INSERT], AverageLatency(us), 76894.18702720103
+[INSERT], MinLatency(us), 29888
+[INSERT], MaxLatency(us), 269823
+[INSERT], 50thPercentileLatency(us), 74815
+[INSERT], 95thPercentileLatency(us), 97023
+[INSERT], 99thPercentileLatency(us), 125887
+[INSERT], Return=OK, 6213
+[SCAN], Operations, 10240
+[SCAN], AverageLatency(us), 38794.61328125
+[SCAN], MinLatency(us), 15656
+[SCAN], MaxLatency(us), 166143
+[SCAN], 50thPercentileLatency(us), 37631
+[SCAN], 95thPercentileLatency(us), 51807
+[SCAN], 99thPercentileLatency(us), 61663
+[SCAN], Return=OK, 10240

@@ -1,0 +1,7 @@
+dist
+node_modules
+Logs
+./Dockerfiles/PreloadData/*.json
+./Dockerfiles/PreloadData/*.csv
+.DS_Store
+
