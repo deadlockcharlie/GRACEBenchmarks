@@ -112,8 +112,8 @@ region_codes=("us-east-1" "us-west-2" "eu-central-1" "ap-south-1" "ap-southeast-
 DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
-# yeast mico ldbc frbs frbm frbo
-datasets=(yeast mico ldbc frbs frbm frbo)
+# yeast mico ldbc frbs frbm frbo frbl
+datasets=(frbl)
 
 
 
@@ -126,7 +126,7 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
 
 ## Replication and Latency Benchmarks
-REPLICAS=( 3 2 4 5 6)
+REPLICAS=(1 3 2 4 5 6)
 YCSB_THREADS=1
 for dataset in "${datasets[@]}"; do
     
