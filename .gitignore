@@ -7,3 +7,52 @@ PreloadData/edges.json
 PreloadData/vertices.json
 JanusgraphServer/
 distribution_config.json
+
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/terraform.tfstate.*.backup
+**/.terraformrc
+**/terraform.rc
+**/terraform.tfvars
+**/*.tfvars
+!**/*.tfvars.example
+**/crash.log
+**/crash.*.log
+**/.terraform.tfstate.lock.info
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+**/*.tfplan
+**/*.tfplan.json
+
+# GCP
+**/gcp-key.json
+**/gcp-credentials.json
+**/*-credentials.json
+**/*.key.json
+**/service-account*.json
+**/.gcp/
+**/gcloud/
+
+# AWS
+**/.aws/
+**/aws-credentials
+**/*.pem
+**/*.ppk
+**/awscliv2.zip
+**/.elasticbeanstalk/
+
+# Cloud deployment logs and outputs
+**/deployment-output.log
+**/provision.log
+**/*-deployment.log
+
+# Environment variables with secrets
+**/.env.local
+**/.env.*.local
+**/.env.production
+**/.env.production.local
