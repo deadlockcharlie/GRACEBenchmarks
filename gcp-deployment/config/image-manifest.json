@@ -1,0 +1,25 @@
+{
+  "project_id": "project-71a4f829-43ea-436f-be1",
+  "image_tag": "latest",
+  "database": "neo4j",
+  "replicas": 3,
+  "images": {
+    "grace_app": "gcr.io/project-71a4f829-43ea-436f-be1/grace-app:latest",
+    "grace_app_latest": "gcr.io/project-71a4f829-43ea-436f-be1/grace-app:latest",
+    "grace_app_replica1": "gcr.io/project-71a4f829-43ea-436f-be1/grace-app:replica1-latest",
+    "grace_app_replica2": "gcr.io/project-71a4f829-43ea-436f-be1/grace-app:replica2-latest",
+    "grace_app_replica3": "gcr.io/project-71a4f829-43ea-436f-be1/grace-app:replica3-latest",
+    "wsserver": "gcr.io/project-71a4f829-43ea-436f-be1/grace-wsserver:latest",
+    "wsserver_latest": "gcr.io/project-71a4f829-43ea-436f-be1/grace-wsserver:latest",
+    "wsserver_replica1": "gcr.io/project-71a4f829-43ea-436f-be1/grace-wsserver:replica1-latest",
+    "wsserver_replica2": "gcr.io/project-71a4f829-43ea-436f-be1/grace-wsserver:replica2-latest",
+    "wsserver_replica3": "gcr.io/project-71a4f829-43ea-436f-be1/grace-wsserver:replica3-latest"
+  },
+  "architecture": {
+    "description": "Each replica has its own GRACE app and WebSocket provider",
+    "replica_count": 3,
+    "provider_communication": "All providers are networked together on Shared_net",
+    "deployment_model": "Each GCP VM runs: 1 GRACE app + 1 provider + 1 database"
+  },
+  "built_at": "2026-01-13T13:26:58Z"
+}

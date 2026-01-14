@@ -6,6 +6,11 @@ A comprehensive benchmarking framework for evaluating GRACE against traditional 
 
 This repository contains the complete benchmarking suite used to evaluate GRACE's performance compared to popular graph databases including Neo4j, MemGraph, MongoDB, ArangoDB, and JanusGraph. The benchmarks assess various aspects of distributed graph database performance including throughput, latency, replication overhead, fault tolerance, and support for disconnected operations.
 
+## Deployment Options
+
+- **🚀 NEW: AWS Geo-Distributed Deployment** - See [aws-deployment/](aws-deployment/) for running real geo-distributed experiments across multiple AWS regions
+- **Local Single-Machine Deployment** - Continue reading below for traditional Docker-based local deployment
+
 ## Table of Contents
 
 - [Architecture](#architecture)
@@ -18,6 +23,7 @@ This repository contains the complete benchmarking suite used to evaluate GRACE'
 - [Configuration](#configuration)
 - [Results and Visualization](#results-and-visualization)
 - [Deployment Scripts](#deployment-scripts)
+- [AWS Deployment](#aws-deployment)
 
 ## Architecture
 
@@ -349,6 +355,39 @@ For each benchmark run, the following metrics are captured:
 - **Error rates**: Failed operations, timeouts
 - **Resource usage**: CPU, memory, network (when available)
 - **Replication lag**: Time to propagate updates across replicas
+
+## AWS Deployment
+
+### Real Geo-Distributed Experiments
+
+For running GRACE benchmarks across real geo-distributed infrastructure on AWS:
+
+```bash
+cd aws-deployment
+./quickstart.sh
+```
+
+This will:
+- Deploy EC2 instances across 3 AWS regions (US-East, US-West, EU-Central)
+- Use real network latency (no simulation)
+- Run benchmarks with actual geo-distribution
+- Collect results from all regions
+
+**Features:**
+- ✅ Real inter-region network latency
+- ✅ Automated Terraform infrastructure deployment
+- ✅ SSH-based orchestration across regions
+- ✅ Results collection and analysis
+- ✅ Cost optimization (spot instances supported)
+
+**Quick Links:**
+- [AWS Deployment README](aws-deployment/README.md)
+- [Migration Guide](aws-deployment/MIGRATION_GUIDE.md)
+- [Cost estimation and management](aws-deployment/README.md#cost-estimation)
+
+**Cost:** ~$1/hour for 3 regions with c5.2xlarge (can be reduced to ~$0.30/hour with spot instances)
+
+**⚠️ Important:** Remember to run `./scripts/teardown.sh` when done to avoid AWS charges!
 
 ## License
 

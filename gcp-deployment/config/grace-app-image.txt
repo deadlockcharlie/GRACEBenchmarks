@@ -1,0 +1,1 @@
+gcr.io/project-71a4f829-43ea-436f-be1/grace-app:latest

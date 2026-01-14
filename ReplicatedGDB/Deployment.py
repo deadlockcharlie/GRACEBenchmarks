@@ -2,7 +2,7 @@ import sys
 import string
 import subprocess
 import json
-import yaml
+# import yaml
 import os
 import re
 from textwrap import dedent, indent

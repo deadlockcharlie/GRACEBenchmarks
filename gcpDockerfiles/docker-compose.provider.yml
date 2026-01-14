@@ -1,0 +1,20 @@
+name: Provider
+services:
+  wsserver:
+    container_name: wsserver
+    build:
+      context: ../
+      dockerfile: ./gcpDockerfiles/WSServerDockerfile
+    ports:
+      - "1234:1234"
+    environment:
+      PORT: "1234"
+      HOST: "0.0.0.0"
+    cap_add:
+       - NET_ADMIN
+    networks:
+      - Shared_net
+
+networks:
+  Shared_net:
+     external: true
