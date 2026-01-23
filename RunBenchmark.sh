@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=120 #Benchmark duration in seconds
+DURATION=60 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 INJECT_FAULTS=false
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -113,20 +113,24 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo frbl
-datasets=(frbl)
+datasets=(yeast)
 
 
 
 # Eventually this set of commands will be in a loop and potentially parallel?
 
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
-
+# if the data directory does not exist, create it
+if [ ! -d "$DATA_DIRECTORY" ]; then
+    mkdir -p "$DATA_DIRECTORY"
+fi
 
 
 
 
 ## Replication and Latency Benchmarks
-REPLICAS=(1 3 2 4 5 6)
+# REPLICAS=(1 3 2 4 5 6)
+REPLICAS=(1)
 YCSB_THREADS=1
 for dataset in "${datasets[@]}"; do
     
@@ -156,10 +160,10 @@ for dataset in "${datasets[@]}"; do
     
     for db in "${DATABASES[@]}"; do
         mkdir -p $LOAD_TIME_DIRECTORY/$db
-    done
+    done 
     
     cd $YCSB_DIRECTORY
-    mvn clean package -DskipTests -q
+    mvn clean package -DskipTests
     
     cd $ROOT_DIRECTORY
     . ./ReplicaCountAndLatency.sh

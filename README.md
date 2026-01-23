@@ -135,16 +135,23 @@ The benchmark supports multiple graph datasets from various domains:
 - **Freebase** (small/medium/large): Knowledge graph subsets
 
 ### Preparing Datasets
+Before preparing the datasets, we need to download the datasets from LDBC. This step may take a while since the datasets are stored on tape. For this, execute the following: 
+``` bash 
+# Download LDBC SF1 dataset
+./downloadLDBCData.sh https://repository.surfsara.nl/datasets/cwi/ldbc-snb-interactive-v1-datagen-v100/files/social_network-sf1-CsvBasic-LongDateFormatter.tar.zst
+
+# Download LDBC SF3 dataset
+./downloadLDBCData.sh https://repository.surfsara.nl/datasets/cwi/ldbc-snb-interactive-v1-datagen-v100/files/social_network-sf3-CsvBasic-LongDateFormatter.tar.zst
+```
 
 ```bash
-# Download and preprocess datasets
+# Preprocess datasets
 ./PrepareDatasets.sh
 
 # This will:
-# 1. Download raw datasets from Zenodo
-# 2. Split into load/update workloads (80/20 split)
-# 3. Generate CSV files for database import
-# 4. Create vertex and edge files for each dataset
+# 1. Split into load/update workloads (80/20 split)
+# 2. Generate CSV files for database import
+# 3. Create vertex and edge files for each dataset
 ```
 
 The `workloadGenerator.py` script uses a parallel, streaming approach to handle large datasets efficiently:

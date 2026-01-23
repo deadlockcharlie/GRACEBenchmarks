@@ -12,6 +12,8 @@ import site.ycsb.DB;
 
 import org.apache.tinkerpop.gremlin.driver.remote.DriverRemoteConnection;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
+import org.janusgraph.core.JanusGraph;
+import org.janusgraph.core.JanusGraphFactory;
 import site.ycsb.DBException;
 import site.ycsb.Status;
 
@@ -22,7 +24,9 @@ import java.util.Properties;
 
 public class JanusGraphClient extends DB{
   GraphTraversalSource g;
+  JanusGraph graph;
   private static Properties props = new Properties();
+  private boolean useDirectConnection = true;
 
   @Override
   public void init() throws DBException {
@@ -36,6 +40,25 @@ public class JanusGraphClient extends DB{
     }
     System.out.println("DBTYPE: "+props.getProperty("DBTYPE"));
 
+    // Use direct connection to bypass server config issues
+    String configPath = props.getProperty("CONFIGPATH");
+    if (configPath != null && !configPath.isEmpty()) {
+      try {
+        System.out.println("Using direct JanusGraph connection with config: " + configPath);
+        
+        // Open JanusGraph directly with the config file
+        this.graph = JanusGraphFactory.open(configPath);
+        this.g = this.graph.traversal();
+        System.out.println("✅ Connected to JanusGraph directly with transactional support");
+        return;
+      } catch (Exception e) {
+        System.out.println("❌ Failed to use direct connection: " + e.getMessage());
+        e.printStackTrace();
+        throw new DBException("Failed to open direct JanusGraph connection", e);
+      }
+    }
+
+    // Fallback to remote connection
     if(props.getProperty("DBURI")==null){
       System.out.println("DBURI must be provided");
       throw new DBException("DBURI must be provided");
@@ -250,6 +273,19 @@ public class JanusGraphClient extends DB{
     catch (Exception e){
       System.out.println("Exception in getEdgesWithLabel: " + e.getMessage());
       return Status.ERROR;
+    }
+  }
+
+  @Override
+  public void cleanup() throws DBException {
+    try {
+      if (this.graph != null) {
+        this.graph.close();
+        System.out.println("JanusGraph connection closed");
+      }
+    } catch (Exception e) {
+      System.out.println("Error closing JanusGraph: " + e.getMessage());
+      throw new DBException(e);
     }
   }
 }

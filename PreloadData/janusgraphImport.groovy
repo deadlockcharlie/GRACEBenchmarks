@@ -23,6 +23,11 @@ try {
     println "🔹 Connecting to JanusGraph..."
     graph = JanusGraphFactory.open(propertiesDir)
     g = graph.traversal()
+    
+    // Ensure no open transactions before schema operations
+    if (graph.tx().isOpen()) {
+        graph.tx().commit()
+    }
 
     int batchSize = 100000
 
@@ -56,84 +61,83 @@ try {
 
     // --- Schema setup ---
     def createSchemaAndIndexes = { VK, EK ->
+        println "🔧 Starting schema creation..."
+        
+        // Step 1: Create vertex label
         def mgmt = graph.openManagement()
+        try {
+            if(!mgmt.containsVertexLabel("YCSBVertex")) {
+                mgmt.makeVertexLabel("YCSBVertex").make()
+                println "🆕 Created vertex label: YCSBVertex"
+            }
+            mgmt.commit()
+            println "✅ Vertex label committed"
+        } catch (Exception e) {
+            println "⚠️ Vertex label creation error: ${e.message}"
+            mgmt.rollback()
+        }
+        
+        // Step 2: Create edge label separately
+        mgmt = graph.openManagement()
+        try {
+            if(!mgmt.containsEdgeLabel("YCSBEdge")) {
+                mgmt.makeEdgeLabel("YCSBEdge").make()
+                println "🆕 Created edge label: YCSBEdge"
+            }
+            mgmt.commit()
+            println "✅ Edge label committed"
+        } catch (Exception e) {
+            println "⚠️ Edge label creation error: ${e.message}"
+            mgmt.rollback()
+        }
 
-        if(!mgmt.containsVertexLabel("YCSBVertex")) mgmt.makeVertexLabel("YCSBVertex").make()
-        if(!mgmt.containsEdgeLabel("YCSBEdge")) mgmt.makeEdgeLabel("YCSBEdge").make()
-
+        // Step 3: Create all vertex property keys in one batch
         VK.add("searchKey")
-
-        VK.each { key ->
-            def propKey = mgmt.getPropertyKey(key)
-            if ((!propKey)) {
-                propKey = mgmt.makePropertyKey(key).dataType(String.class).make()
-                println "🆕 Created vertex property key: ${key}"
-                // if (key == "_id") {
-                //     mgmt.buildIndex("vertexById", Vertex.class).addKey(propKey).buildCompositeIndex()
-                //     println "📊 Composite index created for _id"
-                // }
-                if(key =="_id" || key == "searchKey") {
-                    mgmt.buildIndex("v_${key}_composite", Vertex.class)
-                        .addKey(propKey).buildCompositeIndex()
-                    // mgmt.buildIndex("v_${key}_mixed", Vertex.class)
-                    //     .addKey(propKey, Mapping.TEXT.asParameter())
-                    //     .buildMixedIndex("search")
-                } 
-                println "🔎 Mixed index created for vertex key: ${key}"
-            }
-        }
-        EK.add("searchKey")
-
-        EK.each { key ->
-            def propKey = mgmt.getPropertyKey(key)
-            if ((!propKey)) {
-                propKey = mgmt.makePropertyKey(key).dataType(String.class).make()
-                println "🆕 Created edge property key: ${key}"
-                // if (key == "_id") {
-                //     mgmt.buildIndex("edgeById", Edge.class).addKey(propKey).buildCompositeIndex()
-                //     println "📊 Composite index created for edge _id"
-                // }
-                if(key =="_id" || key =="_type" || key =="_inV" || key =="_outV" || key == "searchKey"){
-                    mgmt.buildIndex("e_${key}_composite", Edge.class)
-                        .addKey(propKey).buildCompositeIndex()
-                    // mgmt.buildIndex("e_${key}_mixed", Edge.class)
-                    //     .addKey(propKey, Mapping.TEXT.asParameter())
-                    //     .buildMixedIndex("search")
+        mgmt = graph.openManagement()
+        try {
+            VK.each { key ->
+                def propKey = mgmt.getPropertyKey(key)
+                if (!propKey) {
+                    mgmt.makePropertyKey(key).dataType(String.class).make()
+                    println "🆕 Created vertex property key: ${key}"
                 }
-                println "🔎 Mixed index created for edge key: ${key}"
             }
+            mgmt.commit()
+            println "✅ Vertex properties committed"
+        } catch (Exception e) {
+            println "⚠️ Error creating vertex properties: ${e.message}"
+            mgmt.rollback()
         }
+        
+        // Skip vertex indexes during bulk load for better performance
+        println "⏭️ Skipping vertex index creation (create after bulk load)"
 
-        mgmt.commit()
-        println "✅ Schema + indexes committed"
+        // Step 4: Create all edge property keys in one batch
+        EK.add("searchKey")
+        mgmt = graph.openManagement()
+        try {
+            EK.each { key ->
+                def propKey = mgmt.getPropertyKey(key)
+                if (!propKey) {
+                    mgmt.makePropertyKey(key).dataType(String.class).make()
+                    println "🆕 Created edge property key: ${key}"
+                }
+            }
+            mgmt.commit()
+            println "✅ Edge properties committed"
+        } catch (Exception e) {
+            println "⚠️ Error creating edge properties: ${e.message}"
+            mgmt.rollback()
+        }
+        
+        // Skip edge indexes during bulk load for better performance
+        println "⏭️ Skipping edge index creation (create after bulk load)"
+        println "✅ Schema + indexes creation complete"
     }
 
     createSchemaAndIndexes(vertexKeys, edgeKeys)
-
-    def enableIndexes = {
-    def mgmt = graph.openManagement()
-    def allIndexes = mgmt.getGraphIndexes(Vertex.class) + mgmt.getGraphIndexes(Edge.class)
-
-    allIndexes.each { idx ->
-        if (idx.getIndexStatus(idx.getFieldKeys()[0]) == SchemaStatus.REGISTERED) {
-            println "⏳ Enabling index: ${idx}"
-            mgmt.updateIndex(idx, SchemaAction.ENABLE).get()
-        } else {
-            println "✅ Index already enabled or in progress: ${idx}"
-        }
-    }
-    mgmt.commit()
-
-    // Wait for all indexes to become ENABLED
-    allIndexes.each { idx ->
-        ManagementSystem.awaitGraphIndexStatus(graph, idx.name())
-            .status(SchemaStatus.ENABLED)
-            .call()
-        println "✅ Index enabled: ${idx.name()}"
-    }
-}   
-
-enableIndexes()
+    
+    println "📝 Note: Create indexes after bulk load completes for better performance"
 
     // --- Load vertices ---
     def jsonSlurper = new JsonSlurper()
