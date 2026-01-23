@@ -91,7 +91,7 @@ do
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
     #Run the benchmark with graphdb workload
-    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p CONFIGPATH=/Users/pandey/work/GRACE/conf/janusgraph-scylla-ycsb.properties -p maxexecutiontime=$((DURATION)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
+    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p CONFIGPATH=$ROOT_DIRECTORY/conf/janusgraph-scylla-ycsb.properties -p maxexecutiontime=$((DURATION)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
 
     cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
     ./bin/janusgraph-server.sh stop   
