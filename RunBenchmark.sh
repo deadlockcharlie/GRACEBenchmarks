@@ -113,7 +113,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo frbl
-datasets=(yeast)
+datasets=(mico ldbc frbs frbm frbo)
 
 
 

@@ -55,7 +55,6 @@ def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]
 
         operation, metric, value = [p.strip() for p in parts]
         operation = operation.strip("[]")
-        print(f"Processing line: operation={operation}, metric={metric}, value={value}")
         
         # Skip non-numeric values
         try:
