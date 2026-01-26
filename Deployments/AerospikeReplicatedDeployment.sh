@@ -2,47 +2,60 @@
 set -e
 
 
-COMPOSE_FILE="./Dockerfiles/Aerospike3Replicas"
+echo "Starting Aerospike replica set..."
 
-NETWORK_NAME="aerospike-net"
-
-# Check if network exists
-if ! docker network inspect "$NETWORK_NAME" >/dev/null 2>&1; then
-    echo "Creating Docker network $NETWORK_NAME..."
-    docker network create "$NETWORK_NAME"
-else
-    echo "Docker network $NETWORK_NAME already exists. Skipping..."
-fi
-
-echo "🚀 Starting Aerospike 3-node cluster..."
 docker compose -f $COMPOSE_FILE up -d
 
-
-# Wait until all nodes are up
-echo "⏳ Waiting for nodes to start..."
-for NODE in aerospike1; do
-    until docker exec "$NODE" grep -q "quorum" /var/log/aerospike/aerospike.log 2>/dev/null; do
-        echo "Waiting for $NODE..."
-        sleep 3
-    done
+replicas=""
+for (( j=1; j<=$i; j++ ))
+do
+  replicas+="aerospike$j "
 done
-echo "✅ All nodes are up!"
 
-
-
-# Use aerospike-tools container for AQL
-TOOLS="aerospike/aerospike-tools:latest"
-
-# Test write on node1
-echo "💾 Writing test record on aerospike1..."
-docker run --rm --network=$NETWORK $TOOLS \
-    aql -h aerospike1 -c "INSERT INTO test.demo (PK, name) VALUES ('1', 'Ayush');"
-
-# Test read on all nodes
-for NODE in aerospike1 aerospike2 aerospike3; do
-    echo "🔍 Reading test record from $NODE..."
-    docker run --rm --network=$NETWORK $TOOLS \
-        aql -h $NODE -c "SELECT * FROM test.demo WHERE PK='1';"
+echo "⏳ Waiting for Aerospike nodes to be ready..."
+for node in $replicas; do
+  echo "Waiting for $node to be ready..."
+  # Check if node accepts client connections by checking cluster_size
+  for attempt in {1..30}; do
+    CLUSTER_SIZE=$(docker exec $node asinfo -v "statistics" 2>/dev/null | grep -o "cluster_size=[0-9]*" | cut -d'=' -f2 || echo "0")
+    if [ -n "$CLUSTER_SIZE" ] && [ "$CLUSTER_SIZE" -ge $i ]; then
+      echo "✅ $node is ready (cluster_size=$CLUSTER_SIZE)"
+      break
+    fi
+    echo "  Attempt $attempt/30: $node not ready yet..."
+    sleep 2
+  done
 done
+echo "All nodes ready, waiting additional 5 seconds for full cluster stability..."
+sleep 5
+
+echo "⏳ Waiting for Aerospike Graph Service to be ready..."
+for attempt in {1..30}; do
+  if docker exec aerospike-graph-service gremlin.sh -e "g.V().count()" 2>/dev/null | grep -q "gremlin>"; then
+    echo "✅ Graph Service is ready"
+    break
+  fi
+  echo "  Attempt $attempt/30: Graph Service not ready yet..."
+  sleep 2
+done
+
+# Get the actual network name created by docker compose
+NETWORK_NAME=$(docker inspect aerospike1 --format='{{range $k, $v := .NetworkSettings.Networks}}{{$k}}{{end}}')
+echo "Using network: $NETWORK_NAME"
+
+echo "📊 Starting data preload using Gremlin bulk load..."
+
+# Execute Gremlin bulk load command
+echo "Loading vertices and edges from mounted volume..."
+docker exec aerospike-graph-service gremlin.sh -e "g.with('evaluationTimeout', 20000).call('aerospike.graphloader.admin.bulk-load.load').with('aerospike.graphloader.vertices', '/opt/aerospike-graph/data/vertices.json').with('aerospike.graphloader.edges', '/opt/aerospike-graph/data/edges.json').next()"
+
+if [ $? -eq 0 ]; then
+    echo "✅ Data preload completed successfully"
+else
+    echo "❌ Data preload failed"
+    exit 1
+fi
+
+echo "🎉 Aerospike deployment and preload complete!"
 
 echo "🎉 Replication test complete! If record appears on all nodes, replication works."

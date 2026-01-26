@@ -427,10 +427,6 @@ public class CoreWorkload extends Workload {
     return true;
   }
 
-
-
-
-
   public void doTransactionAddVertex(DB db) {
     try {
       Map<String, String> obj = vertexStreamer.nextObject();

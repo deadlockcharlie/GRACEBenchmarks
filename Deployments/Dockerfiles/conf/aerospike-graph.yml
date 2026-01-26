@@ -1,0 +1,16 @@
+aerospike:
+  client:
+    hosts:
+      - aerospike1:3000
+    policies:
+      write:
+        maxRetries: 2
+        socketTimeout: 30000
+        totalTimeout: 30000
+
+gremlin:
+  graphs:
+    default:
+      configuration:
+        aerospike.graphloader.vertices: /opt/aerospike-graph/data/vertices.json
+        aerospike.graphloader.edges: /opt/aerospike-graph/data/edges.json

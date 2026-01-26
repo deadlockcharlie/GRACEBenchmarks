@@ -49,8 +49,8 @@ fi
 # fi
 
 
-cp $ROOT_DIRECTORY/workloadGenerator.py $DATA_DIRECTORY/
-cp $ROOT_DIRECTORY/jsontoCSV.py $DATA_DIRECTORY/
+cp $ROOT_DIRECTORY/scripts/utilities/workloadGenerator.py $DATA_DIRECTORY/
+cp $ROOT_DIRECTORY/scripts/utilities/jsontoCSV.py $DATA_DIRECTORY/
 
 cd $DATA_DIRECTORY 
 

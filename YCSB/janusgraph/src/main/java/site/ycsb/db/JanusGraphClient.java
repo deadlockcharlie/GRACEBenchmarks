@@ -12,8 +12,6 @@ import site.ycsb.DB;
 
 import org.apache.tinkerpop.gremlin.driver.remote.DriverRemoteConnection;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
-import org.janusgraph.core.JanusGraph;
-import org.janusgraph.core.JanusGraphFactory;
 import site.ycsb.DBException;
 import site.ycsb.Status;
 
@@ -24,9 +22,7 @@ import java.util.Properties;
 
 public class JanusGraphClient extends DB{
   GraphTraversalSource g;
-  JanusGraph graph;
   private static Properties props = new Properties();
-  private boolean useDirectConnection = true;
 
   @Override
   public void init() throws DBException {
@@ -40,25 +36,6 @@ public class JanusGraphClient extends DB{
     }
     System.out.println("DBTYPE: "+props.getProperty("DBTYPE"));
 
-    // Use direct connection to bypass server config issues
-    String configPath = props.getProperty("CONFIGPATH");
-    if (configPath != null && !configPath.isEmpty()) {
-      try {
-        System.out.println("Using direct JanusGraph connection with config: " + configPath);
-        
-        // Open JanusGraph directly with the config file
-        this.graph = JanusGraphFactory.open(configPath);
-        this.g = this.graph.traversal();
-        System.out.println("✅ Connected to JanusGraph directly with transactional support");
-        return;
-      } catch (Exception e) {
-        System.out.println("❌ Failed to use direct connection: " + e.getMessage());
-        e.printStackTrace();
-        throw new DBException("Failed to open direct JanusGraph connection", e);
-      }
-    }
-
-    // Fallback to remote connection
     if(props.getProperty("DBURI")==null){
       System.out.println("DBURI must be provided");
       throw new DBException("DBURI must be provided");
@@ -123,7 +100,7 @@ public class JanusGraphClient extends DB{
   @Override
   public Status setVertexProperty(String id, String key, String value) {
     try{
-      GraphTraversal<Vertex, Vertex> t = this.g.V().has(T.id, id).property(key, value.toString());
+      GraphTraversal<Vertex, Vertex> t = this.g.V().has("_id", id).property(key, value.toString());
       t.valueMap().iterate();
 //      this.client.submit("g.V().has('i', i).property(k, v)", Map.of(T.id, id, "k", key, "v", value.toString()));
       return Status.OK;
@@ -149,7 +126,7 @@ public class JanusGraphClient extends DB{
   public Status removeVertex(String id) {
     int status = 0;
     try {
-      this.g.V().has(T.id, id).drop().iterate();
+      this.g.V().has("_id", id).drop().iterate();
 //      this.client.submit("g.V().has('i', i).drop()", Map.of(T.id, id));
       return Status.OK;
 
@@ -175,11 +152,11 @@ public class JanusGraphClient extends DB{
   @Override
   public Status removeVertexProperty(String id, String key) {
     try{
-      this.g.V().has(T.id, id).properties(key).drop().iterate();
+      this.g.V().has("_id", id).properties(key).drop().iterate();
 //      this.client.submit("g.V().has('i', i).properties(k).drop()", Map.of(T.id, id, "k", key));
       return Status.OK;
     }catch (Exception e){
-      System.out.println("Exception in removeVertexProperty: " + e);
+      System.out.println("Exception in removeVertexProperty: " + e.getMessage());
       return Status.ERROR;
     }
   }
@@ -201,7 +178,7 @@ public class JanusGraphClient extends DB{
   @Override
   public Status getVertexCount() {
     try{
-      this.g.V().count().next();
+      this.g.V().has("_count", 1).count().next();
 //      this.client.submit("g.V().count()");
       return Status.OK;
     }
@@ -214,7 +191,7 @@ public class JanusGraphClient extends DB{
   @Override
   public Status getEdgeCount() {
     try{
-      this.g.E().count().next();
+      this.g.E().has("_count", 1).count().next();
 //      this.client.submit("g.E().count()");
       return Status.OK;
     }
@@ -226,9 +203,9 @@ public class JanusGraphClient extends DB{
 
   @Override
   public Status getEdgeLabels() {
-    try{
-      this.g.E().label().dedup().toList();
-//      this.client.submit("g.E().label().dedup()");
+    try {
+      this.g.E().values("_type").dedup().toList();
+      //this.client.submit("g.E().values('_type').dedup()");
       return Status.OK;
     }
     catch (Exception e){
@@ -239,9 +216,9 @@ public class JanusGraphClient extends DB{
 
   @Override
   public Status getVertexWithProperty(String key, String value) {
-    try{
+    try {
       this.g.V().has(key, value.toString()).valueMap().toList();
-//      this.client.submit("g.V().has(k, v)", Map.of("k", key, "v", value.toString()));
+      //this.client.submit("g.V().has(k, v)", Map.of("k", key, "v", value.toString()));
       return Status.OK;
     }
     catch (Exception e){
@@ -252,9 +229,9 @@ public class JanusGraphClient extends DB{
 
   @Override
   public Status getEdgeWithProperty(String key, String value) {
-    try{
+    try {
       this.g.E().has(key, value.toString()).valueMap().toList();
-//      this.client.submit("g.E().has(k, v)", Map.of("k", key, "v", value.toString()));
+      //this.client.submit("g.E().has(k, v)", Map.of("k", key, "v", value.toString()));
       return Status.OK;
     }
     catch (Exception e){
@@ -267,25 +244,12 @@ public class JanusGraphClient extends DB{
   public Status getEdgesWithLabel(String label) {
     try{
       this.g.E().hasLabel(label).valueMap().toList();
-//      this.client.submit("g.E().hasLabel(l)", Map.of("l", label));
+      //this.client.submit("g.E().hasLabel(l)", Map.of("l", label));
       return Status.OK;
     }
     catch (Exception e){
       System.out.println("Exception in getEdgesWithLabel: " + e.getMessage());
       return Status.ERROR;
-    }
-  }
-
-  @Override
-  public void cleanup() throws DBException {
-    try {
-      if (this.graph != null) {
-        this.graph.close();
-        System.out.println("JanusGraph connection closed");
-      }
-    } catch (Exception e) {
-      System.out.println("Error closing JanusGraph: " + e.getMessage());
-      throw new DBException(e);
     }
   }
 }

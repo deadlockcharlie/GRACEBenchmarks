@@ -158,7 +158,7 @@ def create_combined_plot(data: pd.DataFrame, output_path: str) -> None:
         style = DB_STYLES.get(db, {})
         legend_elements.append(plt.Line2D([0], [0],
                                           color=style.get("color"),
-                                          linestyle=style.get("linestyle", "-"),
+                                        #   linestyle=style.get("linestyle", "-"),
                                           marker=style.get("marker", "o"),
                                           markersize=5, linewidth=1.5, label=db))
     fig.legend(handles=legend_elements, loc="upper center", bbox_to_anchor=(0.5, 0.98),

@@ -1,0 +1,50 @@
+services:
+  aerospike1:
+    image: container.aerospike.com/aerospike/aerospike-server
+    container_name: aerospike1
+    hostname: aerospike1
+    networks:
+      - aerospike-net
+    ports:
+      - "3000:3000"   # Client port
+    volumes:
+      - ./conf/aerospike1.conf:/etc/aerospike/aerospike.conf
+    restart: unless-stopped
+    ulimits:
+      nofile: 65536
+
+  aerospike-graph-service:
+    image: aerospike/aerospike-graph-service:latest
+    container_name: aerospike-graph-service
+    networks:
+      - aerospike-net
+    depends_on:
+      - aerospike1
+    ports:
+      - "8182:8182"   # Gremlin server port
+    volumes:
+      - ../../PreloadData:/opt/aerospike-graph/data:ro
+    environment:
+      - aerospike.client.host=aerospike1:3000
+      - aerospike.client.namespace=test
+    restart: unless-stopped
+  aerospike-tools:
+    image: container.aerospike.com/aerospike/aerospike-tools
+    container_name: aerospike-tools
+    networks:
+      - aerospike-net
+    depends_on:
+      - aerospike1
+    environment:
+      - AS_HOST=aerospike1
+      - AS_PORT=3000
+    entrypoint: tail -f /dev/null  # Keep the container running
+    restart: unless-stopped
+
+networks:
+  aerospike-net:
+    driver: bridge
+
+volumes:
+  aerospike_data:
+  aerospike_logs:

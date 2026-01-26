@@ -140,7 +140,7 @@ def create_single_legend(fig: plt.Figure, all_dbs: List[str], legend_pos: str = 
         style = DB_STYLES.get(db, {})
         legend_elements.append(plt.Line2D([0], [0], 
                                         color=style.get("color"),
-                                        linestyle=style.get("linestyle", "-"),
+                                        # linestyle=style.get("linestyle", "-"),
                                         marker=style.get("marker", "o"),
                                         markersize=6, linewidth=2, label=db))
 

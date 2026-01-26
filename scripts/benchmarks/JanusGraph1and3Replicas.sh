@@ -10,12 +10,33 @@ do
     COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB${i}Replicas"
 
     cd $DEPLOYMENTS_DIR
-    #Setup scylladb cluster
+    #Setup cassandra cluster
     . ./JanusgraphReplicatedDeployment.sh
 
 
     cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
-    ./bin/gremlin.sh -e $ROOT_DIRECTORY/PreloadData/janusgraphImport.groovy "$ROOT_DIRECTORY/PreloadData" "$ROOT_DIRECTORY/conf/janusgraph-scylla.properties"
+    # Use batch-loading config for preload
+    echo "🔄 Starting preload with batch-loading configuration..."
+    ./bin/gremlin.sh -e $ROOT_DIRECTORY/PreloadData/janusgraphImport.groovy "$ROOT_DIRECTORY/PreloadData" "$ROOT_DIRECTORY/conf/janusgraph-cassandra-preload.properties"
+
+    # Restart JanusGraph server with transactional config for benchmarking
+    echo "🔄 Restarting JanusGraph server with transactional configuration..."
+    ./bin/janusgraph-server.sh stop
+    sleep 5
+    
+    # Update server config to use Cassandra properties
+    cp $ROOT_DIRECTORY/conf/janusgraph-server.yaml ./conf/
+    ./bin/janusgraph-server.sh start ./conf/janusgraph-server.yaml
+    
+    echo "⏳ Waiting for JanusGraph to be ready..."
+    while true; do
+      if curl -s http://localhost:8182 2>&1 | grep -q "no gremlin script supplied"; then
+        echo "✅ JanusGraph is ready for benchmarking!"
+        break
+      fi
+      echo "Waiting for JanusGraph to restart..."
+      sleep 5
+    done
 
     cd $ROOT_DIRECTORY
 
@@ -90,8 +111,8 @@ do
     fi
     # Switch to the YCSB directory
     cd $YCSB_DIRECTORY
-    #Run the benchmark with graphdb workload
-    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p CONFIGPATH=$ROOT_DIRECTORY/conf/janusgraph-scylla-ycsb.properties -p maxexecutiontime=$((DURATION)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
+    #Run the benchmark with graphdb workload using remote Gremlin connection (faster than direct)
+    bin/ycsb.sh run janusgraph  -P workloads/workload_grace  -p DBTYPE="janusgraph" -p DBURI="ws://localhost:8182" -p maxexecutiontime=$((DURATION)) -p threadcount=$YCSB_THREADS -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json  -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json > $RESULTS_DIRECTORY/JanusGraph/${i}.txt
 
     cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
     ./bin/janusgraph-server.sh stop   

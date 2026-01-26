@@ -1,15 +1,15 @@
-# Benchmark with Neo4J
-echo "Benchmarking Neo4J with multiple replica configurations"
-export UID
-export GID="$(id -g)"
+# Benchmark with MemGraph
+echo "Benchmarking MemGraph with multiple replica configurations"
+ export UID
+ export GID="$(id -g)"
 # Define replica configurations to test
 
 for num_replicas in "${REPLICAS[@]}"; do
-    echo "Benchmarking Neo4J with $num_replicas Replica(s)"
+    echo "Benchmarking MemGraph with $num_replicas Replica(s)"
     
     # Deploy the replicas
     cd $LF_DIRECTORY
-    
+
     # Create a distribution configuration
     cat > $DIST_CONF <<EOL
 {
@@ -21,7 +21,7 @@ for num_replicas in "${REPLICAS[@]}"; do
   "provider_port": 1234,
   "provider": true,
 EOL
-    
+
     # Handle preload_data logic based on number of replicas
     if [ $num_replicas -eq 1 ]; then
         cat >> $DIST_CONF <<EOL
@@ -30,7 +30,7 @@ EOL
   "preload_edges": "$ROOT_DIRECTORY/GraphDBData/yeast_load_edges.json",
   "dataset_name": "${DATASET_NAME}",
 EOL
-        elif [ $num_replicas -eq 2 ]; then
+    elif [ $num_replicas -eq 2 ]; then
         cat >> $DIST_CONF <<EOL
   "preload_data": true,
   "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_vertices.json",
@@ -41,25 +41,24 @@ EOL
   "preload_data": false,
 EOL
     fi
-    
+
     # Add databases array
     echo '  "dbs" : [' >> $DIST_CONF
     
-    for ((x=1; x<=num_replicas; x++)); do
+    for ((i=1; i<=num_replicas; i++)); do
         log_level="error"
-        
         # Add database entry
         cat >> $DIST_CONF <<EOL
     {
-     "database": "neo4j",
+     "database": "memgraph", 
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "$log_level"
-    }
+    } 
 EOL
         
         # Add comma if not last entry
-        if [ $x -lt $num_replicas ]; then
+        if [ $i -lt $num_replicas ]; then
             echo "," >> $DIST_CONF
         fi
     done
@@ -67,18 +66,18 @@ EOL
     echo '' >> $DIST_CONF
     echo '  ]' >> $DIST_CONF
     echo '}' >> $DIST_CONF
-    
+
     # Start the replicas
     python3 Deployment.py up $DIST_CONF
     sleep 5
-    cd $ROOT_DIRECTORY
+
+   cd $ROOT_DIRECTORY
     # Wait for server to be ready
     wait_interval=5
-    
-        cd $ROOT_DIRECTORY
-      . ./waitForPreload.sh
-    
-    
+
+    cd $ROOT_DIRECTORY
+  . ./scripts/data-preparation/waitForPreload.sh
+
     if [ $num_replicas -gt 1 ]; then
         echo "Adding network latency between replicas..."
         echo "Using AWS inter-region latencies from cloudping.co"
@@ -146,43 +145,40 @@ EOL
     else
         echo "Only 1 replica, skipping latency configuration"
     fi
-    
+
     STATUS_STRING=''
     if [ $INJECT_FAULTS=true ]; then
         STATUS_STRING='-s'
     fi
 
-
     # Run the benchmark with grace workload
     echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
     cd $YCSB_DIRECTORY
     # Build the ycsb command
-    ycsb_cmd="bin/ycsb.sh run grace $STATUS_STRING -P workloads/workload_grace \
-    -p HOSTURI=\"http://localhost:3000\" \
-    -p DBTYPE=\"neo4j\" \
-    -p DBURI=\"bolt://localhost:7687\" \
-    -p maxexecutiontime=$((DURATION)) \
-    -p threadcount=$YCSB_THREADS \
-    -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
-    -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
-    -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
-    -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
-    &> $RESULTS_DIRECTORY/Neo4j/$num_replicas.txt"
+    ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace $STATUS_STRING\
+        -p HOSTURI=\"http://localhost:3000\" \
+        -p DBTYPE=\"memgraph\" \
+        -p DBURI=\"bolt://localhost:7687\" \
+        -p maxexecutiontime=$DURATION \
+        -p threadcount=$YCSB_THREADS \
+        -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
+        -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
+        -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
+        -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
+        &> $RESULTS_DIRECTORY/MemGraph/$num_replicas.txt"
     
-    eval $ycsb_cmd & YCSB_PID=$!
+    eval $ycsb_cmd & YCSB_PID=$! 
     sleep $((DURATION/2))
     if [ $INJECT_FAULTS=true ]; then
         echo "Injecting faults by stopping the primary replica..."
         #simulate a network partition by adding a large latency between R1 and one of the replicas. 
-        docker exec Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 100000"
-
-        # Wait for some time to let the system stabilize
+        docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 100000"
         sleep 60
         # Restore normal latency
-        docker exec Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50"
+        docker exec -it Replica1 sh -c "/usr/local/bin/setup-latency.sh Replica1 Replica2 50"
         echo "Network partition resolved."
+        
     fi
-
     wait $YCSB_PID
 
     # Switch to GRACE directory for cleanup
@@ -198,4 +194,4 @@ EOL
     echo "----------------------------------------"
 done
 
-echo "All Neo4J benchmarking completed!"
+echo "All MemGraph benchmarking completed!"
