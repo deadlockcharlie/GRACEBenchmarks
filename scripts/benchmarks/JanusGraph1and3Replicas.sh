@@ -17,14 +17,14 @@ do
     cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
     # Use batch-loading config for preload
     echo "🔄 Starting preload with batch-loading configuration..."
-    ./bin/gremlin.sh -e $ROOT_DIRECTORY/PreloadData/janusgraphImport.groovy "$ROOT_DIRECTORY/PreloadData" "$ROOT_DIRECTORY/conf/janusgraph-cassandra-preload.properties"
+    ./bin/gremlin.sh -e $ROOT_DIRECTORY/PreloadData/janusgraphImport.groovy "$ROOT_DIRECTORY/PreloadData" "$ROOT_DIRECTORY/conf/janusgraph-scylla-preload.properties"
 
     # Restart JanusGraph server with transactional config for benchmarking
     echo "🔄 Restarting JanusGraph server with transactional configuration..."
     ./bin/janusgraph-server.sh stop
     sleep 5
     
-    # Update server config to use Cassandra properties
+    # Update server config to use Scylla properties
     cp $ROOT_DIRECTORY/conf/janusgraph-server.yaml ./conf/
     ./bin/janusgraph-server.sh start ./conf/janusgraph-server.yaml
     

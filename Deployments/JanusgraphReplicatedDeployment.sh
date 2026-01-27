@@ -36,8 +36,8 @@ rm -rf $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
 unzip -qq $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0.zip -d $JANUSGRAPH_DIRECTORY 
 cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
 # Copy both config files
-cp $ROOT_DIRECTORY/conf/janusgraph-cassandra-preload.properties $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0/conf
-cp $ROOT_DIRECTORY/conf/janusgraph-cassandra-ycsb.properties $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0/conf
+cp $ROOT_DIRECTORY/conf/janusgraph-scylla-preload.properties $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0/conf
+cp $ROOT_DIRECTORY/conf/janusgraph-scylla-ycsb.properties $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0/conf
 # cp $ROOT_DIRECTORY/conf/janusgraph-scylla-preload.properties $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0/conf
 
 ./bin/janusgraph-server.sh start $ROOT_DIRECTORY/conf/janusgraph-server-preload.yaml   

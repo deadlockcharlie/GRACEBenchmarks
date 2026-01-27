@@ -18,7 +18,7 @@ evaluationTimeout: 30000
 channelizer: org.apache.tinkerpop.gremlin.server.channel.WsAndHttpChannelizer
 graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs: {
-  graph: conf/janusgraph-cassandra-preload.properties
+  graph: conf/janusgraph-scylla-preload.properties
 }
 scriptEngines: {
   gremlin-groovy: {

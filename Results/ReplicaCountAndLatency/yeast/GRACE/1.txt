@@ -1,212 +1,140 @@
-grace-binding
-[WARN] YCSB libraries not found.  Attempting to build...
-[INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Build Order:
-[INFO] 
-[INFO] YCSB Root                                                          [pom]
-[INFO] Core YCSB                                                          [jar]
-[INFO] YCSB Datastore Binding Parent                                      [pom]
-[INFO] Grace Client                                                       [jar]
-[INFO] 
-[INFO] ---------------------------< site.ycsb:root >---------------------------
-[INFO] Building YCSB Root 0.18.0-SNAPSHOT                                 [1/4]
-[INFO]   from pom.xml
-[INFO] --------------------------------[ pom ]---------------------------------
-[INFO] 
-[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ root ---
-[INFO] 
-[INFO] ---------------------------< site.ycsb:core >---------------------------
-[INFO] Building Core YCSB 0.18.0-SNAPSHOT                                 [2/4]
-[INFO]   from core/pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ core ---
-[INFO] 
-[INFO] --- resources:3.3.1:resources (default-resources) @ core ---
-[WARNING] File encoding has not been set, using platform encoding UTF-8. Build is platform dependent!
-[WARNING] See https://maven.apache.org/general.html#encoding-warning
-[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] Copying 1 resource from src/main/resources to target/classes
-[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
-[INFO] 
-[INFO] --- compiler:3.7.0:compile (default-compile) @ core ---
-[INFO] Changes detected - recompiling the module!
-[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-[INFO] Compiling 62 source files to /Users/pandey/work/GRACE/YCSB/core/target/classes
-[WARNING] /Users/pandey/work/GRACE/YCSB/core/src/main/java/site/ycsb/workloads/CoreWorkload.java:[27,25] sun.security.util.ArrayUtil is internal proprietary API and may be removed in a future release
-[INFO] /Users/pandey/work/GRACE/YCSB/core/src/main/java/site/ycsb/Client.java: Some input files use or override a deprecated API.
-[INFO] /Users/pandey/work/GRACE/YCSB/core/src/main/java/site/ycsb/Client.java: Recompile with -Xlint:deprecation for details.
-[INFO] 
-[INFO] --- resources:3.3.1:testResources (default-testResources) @ core ---
-[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory /Users/pandey/work/GRACE/YCSB/core/src/test/resources
-[INFO] 
-[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ core ---
-[INFO] Changes detected - recompiling the module!
-[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-[INFO] Compiling 12 source files to /Users/pandey/work/GRACE/YCSB/core/target/test-classes
-[INFO] 
-[INFO] --- surefire:3.2.5:test (default-test) @ core ---
-[INFO] Tests are skipped.
-[INFO] 
-[INFO] --- jar:3.4.1:jar (default-jar) @ core ---
-[INFO] Building jar: /Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar
-[INFO] 
-[INFO] --- dependency:3.7.0:copy-dependencies (stage-dependencies) @ core ---
-[INFO] Copying artifact 'org.apache.htrace:htrace-core4:jar:4.1.0-incubating:compile' (/Users/pandey/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar) to /Users/pandey/work/GRACE/YCSB/core/target/dependency/htrace-core4-4.1.0-incubating.jar
-[INFO] Copying artifact 'org.codehaus.jackson:jackson-mapper-asl:jar:1.9.4:compile' (/Users/pandey/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.4/jackson-mapper-asl-1.9.4.jar) to /Users/pandey/work/GRACE/YCSB/core/target/dependency/jackson-mapper-asl-1.9.4.jar
-[INFO] Copying artifact 'org.codehaus.jackson:jackson-core-asl:jar:1.9.4:compile' (/Users/pandey/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar) to /Users/pandey/work/GRACE/YCSB/core/target/dependency/jackson-core-asl-1.9.4.jar
-[INFO] Copying artifact 'org.hdrhistogram:HdrHistogram:jar:2.1.12:compile' (/Users/pandey/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar) to /Users/pandey/work/GRACE/YCSB/core/target/dependency/HdrHistogram-2.1.12.jar
-[INFO] 
-[INFO] ----------------------< site.ycsb:binding-parent >----------------------
-[INFO] Building YCSB Datastore Binding Parent 0.18.0-SNAPSHOT             [3/4]
-[INFO]   from binding-parent/pom.xml
-[INFO] --------------------------------[ pom ]---------------------------------
-[INFO] 
-[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ binding-parent ---
-[INFO] 
-[INFO] --- dependency:2.10:copy-dependencies (stage-dependencies) @ binding-parent ---
-[INFO] 
-[INFO] ----------------------< site.ycsb:grace-binding >-----------------------
-[INFO] Building Grace Client 0.18.0-SNAPSHOT                              [4/4]
-[INFO]   from grace/pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- enforcer:3.0.0-M1:enforce (enforce-maven) @ grace-binding ---
-[INFO] 
-[INFO] --- resources:3.3.1:resources (default-resources) @ grace-binding ---
-[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory /Users/pandey/work/GRACE/YCSB/grace/src/main/resources
-[INFO] 
-[INFO] --- compiler:3.7.0:compile (default-compile) @ grace-binding ---
-[INFO] Nothing to compile - all classes are up to date
-[INFO] 
-[INFO] --- resources:3.3.1:testResources (default-testResources) @ grace-binding ---
-[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory /Users/pandey/work/GRACE/YCSB/grace/src/test/resources
-[INFO] 
-[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ grace-binding ---
-[INFO] No sources to compile
-[INFO] 
-[INFO] --- surefire:3.2.5:test (default-test) @ grace-binding ---
-[INFO] Tests are skipped.
-[INFO] 
-[INFO] --- jar:3.4.1:jar (default-jar) @ grace-binding ---
-[INFO] 
-[INFO] --- dependency:2.10:copy-dependencies (stage-dependencies) @ grace-binding ---
-[INFO] com.arangodb:arangodb-java-driver:jar:7.22.0 already exists in destination.
-[INFO] org.codehaus.groovy:groovy-json:jar:indy:2.5.15 already exists in destination.
-[INFO] io.netty:netty-handler-ssl-ocsp:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-resolver:jar:4.1.86.Final already exists in destination.
-[INFO] com.fasterxml.jackson.core:jackson-core:jar:2.19.0 already exists in destination.
-[INFO] com.arangodb:jackson-serde-json:jar:7.22.0 already exists in destination.
-[INFO] org.codehaus.groovy:groovy-console:jar:2.5.15 already exists in destination.
-[INFO] io.netty:netty-codec:jar:4.1.86.Final already exists in destination.
-[INFO] org.apache.commons:commons-lang3:jar:3.12.0 already exists in destination.
-[INFO] com.fasterxml.jackson.core:jackson-annotations:jar:2.19.0 already exists in destination.
-[INFO] com.google.j2objc:j2objc-annotations:jar:1.3 already exists in destination.
-[INFO] io.netty:netty-transport-udt:jar:4.1.86.Final already exists in destination.
-[INFO] org.mongodb:bson-record-codec:jar:5.5.1 already exists in destination.
-[INFO] jakarta.json:jakarta.json-api:jar:2.1.3 already exists in destination.
-[INFO] org.apache.htrace:htrace-core4:jar:4.1.0-incubating already exists in destination.
-[INFO] org.apache.tinkerpop:gremlin-util:jar:3.7.0 already exists in destination.
-[INFO] io.netty:netty-transport-sctp:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-transport-native-kqueue:jar:osx-aarch_64:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-resolver-dns-native-macos:jar:osx-aarch_64:4.1.86.Final already exists in destination.
-[INFO] org.apache.tinkerpop:gremlin-driver:jar:3.7.0 already exists in destination.
-[INFO] org.locationtech.spatial4j:spatial4j:jar:0.8 already exists in destination.
-[INFO] org.mongodb:mongodb-driver-sync:jar:5.5.1 already exists in destination.
-[INFO] commons-logging:commons-logging:jar:1.2 already exists in destination.
-[INFO] com.carrotsearch:hppc:jar:0.7.1 already exists in destination.
-[INFO] io.netty:netty-codec-http2:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-codec-haproxy:jar:4.1.86.Final already exists in destination.
-[INFO] com.google.guava:guava:jar:31.1-jre already exists in destination.
-[INFO] org.apache.commons:commons-text:jar:1.10.0 already exists in destination.
-[INFO] io.netty:netty-transport-classes-kqueue:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-transport-native-epoll:jar:linux-aarch_64:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-codec-stomp:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-resolver-dns-classes-macos:jar:4.1.86.Final already exists in destination.
-[INFO] com.github.ben-manes.caffeine:caffeine:jar:2.3.1 already exists in destination.
-[INFO] org.apache.tinkerpop:gremlin-core:jar:3.6.2 already exists in destination.
-[INFO] io.netty:netty-buffer:jar:4.1.86.Final already exists in destination.
-[INFO] org.apache.ivy:ivy:jar:2.5.1 already exists in destination.
-[INFO] org.yaml:snakeyaml:jar:1.32 already exists in destination.
-[INFO] org.locationtech.jts:jts-core:jar:1.17.0 already exists in destination.
-[INFO] commons-beanutils:commons-beanutils:jar:1.9.4 already exists in destination.
-[INFO] io.netty:netty-handler-proxy:jar:4.1.86.Final already exists in destination.
-[INFO] org.janusgraph:janusgraph-driver:jar:1.0.0-rc2 already exists in destination.
-[INFO] io.netty:netty-transport-native-kqueue:jar:osx-x86_64:4.1.86.Final already exists in destination.
-[INFO] org.mongodb:mongodb-driver-core:jar:5.5.1 already exists in destination.
-[INFO] io.netty:netty-codec-dns:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-codec-socks:jar:4.1.86.Final already exists in destination.
-[INFO] org.mongodb:bson:jar:5.5.1 already exists in destination.
-[INFO] org.codehaus.groovy:groovy-cli-picocli:jar:2.5.15 already exists in destination.
-[INFO] org.codehaus.groovy:groovy-xml:jar:2.5.15 already exists in destination.
-[INFO] com.arangodb:http-protocol:jar:7.22.0 already exists in destination.
-[INFO] io.netty:netty-resolver-dns:jar:4.1.86.Final already exists in destination.
-[INFO] com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava already exists in destination.
-[INFO] io.netty:netty-codec-mqtt:jar:4.1.86.Final already exists in destination.
-[INFO] io.vertx:vertx-web-client:jar:4.5.7 already exists in destination.
-[INFO] io.vertx:vertx-auth-common:jar:4.5.7 already exists in destination.
-[INFO] org.reactivestreams:reactive-streams:jar:1.0.3 already exists in destination.
-[INFO] io.netty:netty-codec-memcache:jar:4.1.86.Final already exists in destination.
-[INFO] jline:jline:jar:2.14.6 already exists in destination.
-[INFO] io.netty:netty-transport-native-unix-common:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-transport:jar:4.1.86.Final already exists in destination.
-[INFO] org.codehaus.groovy:groovy:jar:indy:2.5.15 already exists in destination.
-[INFO] org.codehaus.groovy:groovy-templates:jar:2.5.15 already exists in destination.
-[INFO] org.neo4j.driver:neo4j-java-driver:jar:4.4.3 already exists in destination.
-[INFO] org.slf4j:jcl-over-slf4j:jar:1.7.25 already exists in destination.
-[INFO] org.apache.tinkerpop:gremlin-groovy:jar:3.6.2 already exists in destination.
-[INFO] io.netty:netty-handler:jar:4.1.86.Final already exists in destination.
-[INFO] org.javatuples:javatuples:jar:1.2 already exists in destination.
-[INFO] com.fasterxml.jackson.core:jackson-databind:jar:2.19.0 already exists in destination.
-[INFO] org.apache.tinkerpop:gremlin-shaded:jar:3.6.2 already exists in destination.
-[INFO] com.google.guava:failureaccess:jar:1.0.1 already exists in destination.
-[INFO] io.netty:netty-transport-classes-epoll:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.86.Final already exists in destination.
-[INFO] net.objecthunter:exp4j:jar:0.4.8 already exists in destination.
-[INFO] info.picocli:picocli:jar:4.3.2 already exists in destination.
-[INFO] com.jcabi:jcabi-manifests:jar:1.2.1 already exists in destination.
-[INFO] io.vertx:vertx-web-common:jar:4.5.7 already exists in destination.
-[INFO] com.google.errorprone:error_prone_annotations:jar:2.11.0 already exists in destination.
-[INFO] com.fasterxml.jackson.datatype:jackson-datatype-jakarta-jsonp:jar:2.19.0 already exists in destination.
-[INFO] org.apache.tinkerpop:gremlin-language:jar:3.6.2 already exists in destination.
-[INFO] org.noggit:noggit:jar:0.8 already exists in destination.
-[INFO] io.netty:netty-all:jar:4.1.86.Final already exists in destination.
-[INFO] org.mindrot:jbcrypt:jar:0.4 already exists in destination.
-[INFO] io.netty:netty-codec-smtp:jar:4.1.86.Final already exists in destination.
-[INFO] com.google.code.findbugs:jsr305:jar:3.0.2 already exists in destination.
-[INFO] io.netty:netty-codec-xml:jar:4.1.86.Final already exists in destination.
-[INFO] org.codehaus.groovy:groovy-jsr223:jar:indy:2.5.15 already exists in destination.
-[INFO] io.netty:netty-codec-redis:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-codec-http:jar:4.1.86.Final already exists in destination.
-[INFO] io.netty:netty-common:jar:4.1.86.Final already exists in destination.
-[INFO] com.arangodb:core:jar:7.22.0 already exists in destination.
-[INFO] org.apache.commons:commons-configuration2:jar:2.8.0 already exists in destination.
-[INFO] com.jcabi:jcabi-log:jar:0.20.0 already exists in destination.
-[INFO] io.netty:netty-resolver-dns-native-macos:jar:osx-x86_64:4.1.86.Final already exists in destination.
-[INFO] org.codehaus.groovy:groovy-swing:jar:2.5.15 already exists in destination.
-[INFO] io.vertx:vertx-core:jar:4.5.7 already exists in destination.
-[INFO] org.antlr:antlr4-runtime:jar:4.9.1 already exists in destination.
-[INFO] io.netty:netty-transport-rxtx:jar:4.1.86.Final already exists in destination.
-[INFO] commons-collections:commons-collections:jar:3.2.2 already exists in destination.
-[INFO] org.slf4j:slf4j-api:jar:1.7.25 already exists in destination.
-[INFO] org.hdrhistogram:HdrHistogram:jar:2.1.12 already exists in destination.
-[INFO] org.codehaus.groovy:groovy-groovysh:jar:indy:2.5.15 already exists in destination.
-[INFO] io.vertx:vertx-uri-template:jar:4.5.7 already exists in destination.
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for YCSB Root 0.18.0-SNAPSHOT:
-[INFO] 
-[INFO] YCSB Root .......................................... SUCCESS [  0.207 s]
-[INFO] Core YCSB .......................................... SUCCESS [  1.543 s]
-[INFO] YCSB Datastore Binding Parent ...................... SUCCESS [  0.254 s]
-[INFO] Grace Client ....................................... SUCCESS [  0.215 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.299 s
-[INFO] Finished at: 2026-01-21T14:44:38+01:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Error trying to build project. Exiting.
+/usr/bin/java  -classpath /home/ayush/work/GRACEBenchmarks/YCSB/conf:/home/ayush/work/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/antlr4-runtime-4.9.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/arangodb-java-driver-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/bson-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/bson-record-codec-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/caffeine-2.3.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-beanutils-1.9.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-collections-3.2.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-configuration2-2.8.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-lang3-3.12.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-logging-1.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/commons-text-1.10.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/core-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/error_prone_annotations-2.11.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/exp4j-0.4.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/failureaccess-1.0.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-core-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-driver-3.7.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-groovy-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-language-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-shaded-3.6.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/gremlin-util-3.7.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-cli-picocli-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-console-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-groovysh-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-json-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-jsr223-2.5.15-indy.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-swing-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-templates-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/groovy-xml-2.5.15.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/guava-31.1-jre.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/hppc-0.7.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/http-protocol-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/ivy-2.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/j2objc-annotations-1.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-annotations-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-core-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-databind-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jackson-serde-json-7.22.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jakarta.json-api-2.1.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/janusgraph-driver-1.0.0-rc2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/javatuples-1.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jbcrypt-0.4.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jcabi-log-0.20.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jcabi-manifests-1.2.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jcl-over-slf4j-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jline-2.14.6.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jsr305-3.0.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/jts-core-1.17.0.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/mongodb-driver-core-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/mongodb-driver-sync-5.5.1.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-all-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-buffer-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-dns-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-http-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-http2-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-redis-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-socks-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-codec-xml-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-common-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-handler-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/netty-transport-udt-4.1.86.Final.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/noggit-0.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/picocli-4.3.2.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/reactive-streams-1.0.3.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/snakeyaml-1.32.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/spatial4j-0.8.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-auth-common-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-core-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-uri-template-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-web-client-4.5.7.jar:/home/ayush/work/GRACEBenchmarks/YCSB/grace/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.GraceClient -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=120 -p threadcount=1 -p loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json -p vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_edges.json
+Loaded 1867 vertices and 7737 edges
+Initializing db: site.ycsb.db.GraceClient
+GraceClient  Created
+Using Database: site.ycsb.DBWrapper
+Starting GRACE client
+{deleteproportion=1, loadEdgeFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json, edgeAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=120, vertexAddFile=/home/ayush/work/GRACEBenchmarks/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest}
+GRACE HOSTURI: http://localhost:3000
+DBTYPE: memgraph
+DBURI: bolt://localhost:7687
+[OVERALL], RunTime(ms), 120004
+[OVERALL], Throughput(ops/sec), 476.1424619179361
+[TOTAL_GCS_G1_Young_Generation], Count, 7
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 114
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.09499683343888536
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 7
+[TOTAL_GC_TIME], Time(ms), 114
+[TOTAL_GC_TIME_%], Time(%), 0.09499683343888536
+[REMOVE_VERTEX], Operations, 494
+[REMOVE_VERTEX], AverageLatency(us), 4446.099190283401
+[REMOVE_VERTEX], MinLatency(us), 3064
+[REMOVE_VERTEX], MaxLatency(us), 26895
+[REMOVE_VERTEX], 50thPercentileLatency(us), 4227
+[REMOVE_VERTEX], 95thPercentileLatency(us), 5947
+[REMOVE_VERTEX], 99thPercentileLatency(us), 10519
+[REMOVE_VERTEX], Return=OK, 494
+[GET_EDGE_WITH_PROPERTY], Operations, 4078
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 1087.2761157430114
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 460
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 54015
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 1035
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 1560
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 2473
+[GET_EDGE_WITH_PROPERTY], Return=OK, 4078
+[ADD_EDGE], Operations, 1937
+[ADD_EDGE], AverageLatency(us), 4897.1889519876095
+[ADD_EDGE], MinLatency(us), 3140
+[ADD_EDGE], MaxLatency(us), 208255
+[ADD_EDGE], 50thPercentileLatency(us), 4803
+[ADD_EDGE], 95thPercentileLatency(us), 5955
+[ADD_EDGE], 99thPercentileLatency(us), 9815
+[ADD_EDGE], Return=OK, 1937
+[ADD_VERTEX], Operations, 494
+[ADD_VERTEX], AverageLatency(us), 5099.546558704454
+[ADD_VERTEX], MinLatency(us), 3244
+[ADD_VERTEX], MaxLatency(us), 87423
+[ADD_VERTEX], 50thPercentileLatency(us), 4691
+[ADD_VERTEX], 95thPercentileLatency(us), 7795
+[ADD_VERTEX], 99thPercentileLatency(us), 11647
+[ADD_VERTEX], Return=OK, 494
+[GET_VERTEX_WITH_PROPERTY], Operations, 4147
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 1041.5898239691344
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 415
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 5135
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 995
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 1476
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 2311
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 4147
+[REMOVE_EDGE_PROPERTY], Operations, 4087
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 4265.0464888671395
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 2132
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 34559
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 4355
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 5139
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 9079
+[REMOVE_EDGE_PROPERTY], Return=OK, 4087
+[REMOVE_EDGE], Operations, 1937
+[REMOVE_EDGE], AverageLatency(us), 4353.324728962313
+[REMOVE_EDGE], MinLatency(us), 2914
+[REMOVE_EDGE], MaxLatency(us), 19647
+[REMOVE_EDGE], 50thPercentileLatency(us), 4387
+[REMOVE_EDGE], 95thPercentileLatency(us), 5067
+[REMOVE_EDGE], 99thPercentileLatency(us), 8967
+[REMOVE_EDGE], Return=OK, 1937
+[GET_EDGE_LABELS], Operations, 4044
+[GET_EDGE_LABELS], AverageLatency(us), 1049.1807616221563
+[GET_EDGE_LABELS], MinLatency(us), 432
+[GET_EDGE_LABELS], MaxLatency(us), 29183
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 993
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 1515
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 2401
+[GET_EDGE_LABELS], Return=OK, 4044
+[REMOVE_VERTEX_PROPERTY], Operations, 4129
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 4228.552434003391
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 2098
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 21295
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 4343
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 5071
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 8583
+[REMOVE_VERTEX_PROPERTY], Return=OK, 4129
+[GET_VERTEX_COUNT], Operations, 4092
+[GET_VERTEX_COUNT], AverageLatency(us), 1005.1087487781036
+[GET_VERTEX_COUNT], MinLatency(us), 465
+[GET_VERTEX_COUNT], MaxLatency(us), 37439
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 957
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 1441
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 2241
+[GET_VERTEX_COUNT], Return=OK, 4092
+[GET_EDGES_WITH_LABEL], Operations, 4104
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 1263.0394736842106
+[GET_EDGES_WITH_LABEL], MinLatency(us), 454
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 30399
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 1117
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 2321
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 3235
+[GET_EDGES_WITH_LABEL], Return=OK, 4104
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 4.0
+[CLEANUP], MinLatency(us), 4
+[CLEANUP], MaxLatency(us), 4
+[CLEANUP], 50thPercentileLatency(us), 4
+[CLEANUP], 95thPercentileLatency(us), 4
+[CLEANUP], 99thPercentileLatency(us), 4
+[SET_EDGE_PROPERTY], Operations, 4127
+[SET_EDGE_PROPERTY], AverageLatency(us), 4290.239883692755
+[SET_EDGE_PROPERTY], MinLatency(us), 2132
+[SET_EDGE_PROPERTY], MaxLatency(us), 24767
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 4383
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 5135
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 8943
+[SET_EDGE_PROPERTY], Return=OK, 4127
+[SET_VERTEX_PROPERTY], Operations, 3963
+[SET_VERTEX_PROPERTY], AverageLatency(us), 4264.208680292708
+[SET_VERTEX_PROPERTY], MinLatency(us), 2170
+[SET_VERTEX_PROPERTY], MaxLatency(us), 43135
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 4367
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 5079
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 8383
+[SET_VERTEX_PROPERTY], Return=OK, 3963
+[GET_EDGE_COUNT], Operations, 4189
+[GET_EDGE_COUNT], AverageLatency(us), 1039.3048460253044
+[GET_EDGE_COUNT], MinLatency(us), 444
+[GET_EDGE_COUNT], MaxLatency(us), 15455
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 990
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 1521
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 2283
+[GET_EDGE_COUNT], Return=OK, 4189

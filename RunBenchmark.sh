@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=120 #Benchmark duration in seconds
+DURATION=60 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 INJECT_FAULTS=false
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -113,7 +113,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo frbl
-datasets=(yeast)
+datasets=(mico ldbc frbs frbm frbo)
 
 
 
