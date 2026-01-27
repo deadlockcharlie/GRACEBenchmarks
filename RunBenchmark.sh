@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=240 #Benchmark duration in seconds
+DURATION=120 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 INJECT_FAULTS=false
 echo "Root Directory: $ROOT_DIRECTORY"

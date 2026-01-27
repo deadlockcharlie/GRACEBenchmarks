@@ -8,11 +8,11 @@ docker compose -f $COMPOSE_FILE up -d
 replicas=""
 for (( j=1; j<=$i; j++ ))
 do
-  replicas+="cassandra$j "
+  replicas+="scylla$j "
 done
 
-# Step 1: Wait for cassandra nodes to be ready
-echo "⏳ Waiting for cassandra cluster to be ready..."
+# Step 1: Wait for scylla nodes to be ready
+echo "⏳ Waiting for scylla cluster to be ready..."
 for node in $replicas; do
   until docker exec $node cqlsh -e "DESCRIBE KEYSPACES;" >/dev/null 2>&1; do
     echo "Waiting for $node..."
@@ -22,7 +22,7 @@ done
 
 MAJORITY=$((i / 2 +1))
 # Set replication factor to 3
-docker exec cassandra1 cqlsh -e "CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':$i}" || exit 1
+docker exec scylla1 cqlsh -e "CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':$i} AND TABLETS = {'enabled': false}" || exit 1
 
 # Step 2: Wait for Elasticsearch to be ready
 echo "⏳ Waiting for Elasticsearch to be ready..."

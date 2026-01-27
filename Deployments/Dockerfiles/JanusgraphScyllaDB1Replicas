@@ -1,17 +1,11 @@
 services:
-  cassandra1:
-    container_name: cassandra1
-    image: cassandra:latest
+  scylla1:
+    container_name: scylla1
+    image: scylladb/scylla:2025.3
     restart: always
+    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
     ports:
       - "9042:9042"
-    environment:
-      - CASSANDRA_START_RPC=true       # default
-      - CASSANDRA_RPC_ADDRESS=0.0.0.0  # default
-      - CASSANDRA_LISTEN_ADDRESS=auto  # default, use IP addr of container # = CASSANDRA_BROADCAST_ADDRESS
-      - CASSANDRA_CLUSTER_NAME=my-cluster
-      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
-      - CASSANDRA_DC=datacenter1
     healthcheck:
       test: ["CMD-SHELL", "nodetool status | grep UN"]
       interval: 10s
