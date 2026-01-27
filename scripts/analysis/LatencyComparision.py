@@ -63,8 +63,8 @@ def parse_results(replica_count: int, db_path: Path, db_name: str) -> List[dict]
             print(f"Skipping non-numeric value: {value}")
             continue
         # If the operation is read, and db is not grace deduct 4 micros from the latency, injected due to traffic shaping. 
-        # if operation in OPERATION_MAPPING and OPERATION_MAPPING[operation].startswith("R") and db_name != "GRACE":
-            # value = max(0, value - 2000)  # Ensure latency doesn't go negative        
+        if operation in OPERATION_MAPPING and OPERATION_MAPPING[operation].startswith("R") and db_name != "GRACE" and replica_count == 3:
+            value = max(0, value - 2000)  # Ensure latency doesn't go negative        
         # Store failed values
         if operation.endswith("-FAILED"):
             base_op = operation.replace("-FAILED", "")

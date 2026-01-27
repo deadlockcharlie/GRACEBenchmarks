@@ -1,5 +1,7 @@
 _id
 _type
-category
 item
+long
 oid
+pin
+short

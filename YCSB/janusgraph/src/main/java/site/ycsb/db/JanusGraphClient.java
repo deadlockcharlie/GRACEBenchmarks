@@ -67,7 +67,7 @@ public class JanusGraphClient extends DB{
       for (Map.Entry<String, String> entry : properties.entrySet()) {
         t = t.property(entry.getKey(), entry.getValue().toString());
       }
-      t.valueMap().next();
+      t.values().next();
 
       return Status.OK;
     } catch (Exception e) {
@@ -84,7 +84,7 @@ public class JanusGraphClient extends DB{
       for (Map.Entry<String, String> entry : properties.entrySet()) {
         t = t.property(entry.getKey(), entry.getValue());
       }
-      t.valueMap().next();
+      t.values().next();
 //      this.client.submit("g.V().has('i', from).as('a').V().has('i', to).addE(l).from('a').property('i', i)", Map.of("from", from, "to", to, "l", label, T.id, id));
 //      for (Map.Entry<String, String> entry : properties.entrySet()) {
 //        this.client.submit("g.E().has('i', i).property(k, v)", Map.of(T.id, id, "k", entry.getKey(), "v", entry.getValue().toString()));
@@ -101,7 +101,7 @@ public class JanusGraphClient extends DB{
   public Status setVertexProperty(String id, String key, String value) {
     try{
       GraphTraversal<Vertex, Vertex> t = this.g.V().has("_id", id).property(key, value.toString());
-      t.valueMap().iterate();
+      t.values().iterate();
 //      this.client.submit("g.V().has('i', i).property(k, v)", Map.of(T.id, id, "k", key, "v", value.toString()));
       return Status.OK;
     } catch (Exception e){
@@ -113,7 +113,7 @@ public class JanusGraphClient extends DB{
   @Override
   public Status setEdgeProperty(String id, String key, String value) {
     try {
-      this.g.E().has("_id", id).property(key, value.toString()).valueMap().iterate();
+      this.g.E().has("_id", id).property(key, value.toString()).values().iterate();
 //      this.client.submit("g.E().has('i', i).property(k, v)", Map.of(T.id, id, "k", key, "v", value.toString()));
       return Status.OK;
     } catch (Exception e) {
@@ -230,7 +230,7 @@ public class JanusGraphClient extends DB{
   @Override
   public Status getEdgeWithProperty(String key, String value) {
     try {
-      this.g.E().has(key, value.toString()).valueMap().toList();
+      this.g.E().has(key, value.toString()).values().toList();
       //this.client.submit("g.E().has(k, v)", Map.of("k", key, "v", value.toString()));
       return Status.OK;
     }
@@ -243,7 +243,7 @@ public class JanusGraphClient extends DB{
   @Override
   public Status getEdgesWithLabel(String label) {
     try{
-      this.g.E().hasLabel(label).valueMap().toList();
+      this.g.E().hasLabel(label).values().toList();
       //this.client.submit("g.E().hasLabel(l)", Map.of("l", label));
       return Status.OK;
     }

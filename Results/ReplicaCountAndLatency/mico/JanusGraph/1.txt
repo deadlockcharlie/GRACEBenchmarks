@@ -7,6 +7,220 @@ Starting Janusgraph client
 DBTYPE: janusgraph
 DBURI: ws://localhost:8182
 Connected to Janusgraph successfully
-Exception in getEdgeCount: org.apache.tinkerpop.gremlin.driver.exception.ResponseException: A timeout occurred during traversal evaluation of [RequestMessage{, requestId=c80ed4b4-c2fd-4ff4-a78b-476562bd51a7, op='bytecode', processor='traversal', args={gremlin=[[], [E(), has(_count, 1), count()]], aliases={g=g}}}] - consider increasing the limit given to evaluationTimeout
-Exception in getEdgeLabels: org.apache.tinkerpop.gremlin.driver.exception.ResponseException: A timeout occurred during traversal evaluation of [RequestMessage{, requestId=5ba846c3-1017-4bb0-b5be-90e1e150caf7, op='bytecode', processor='traversal', args={gremlin=[[], [E(), values(_type), dedup()]], aliases={g=g}}}] - consider increasing the limit given to evaluationTimeout
-Exception in getVertexWithProperty: org.apache.tinkerpop.gremlin.driver.exception.ResponseException: A timeout occurred during traversal evaluation of [RequestMessage{, requestId=ddd2e5ff-9317-45e2-ac28-999bb8084e42, op='bytecode', processor='traversal', args={gremlin=[[], [V(), has(searchKey, wzuRuFss), valueMap()]], aliases={g=g}}}] - consider increasing the limit given to evaluationTimeout
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+Still waiting for thread Thread-1 to complete. Workload status: true
+[OVERALL], RunTime(ms), 475645
+[OVERALL], Throughput(ops/sec), 0.03363853293948218
+[TOTAL_GCS_G1_Young_Generation], Count, 6
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 131
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.02754154884420103
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 6
+[TOTAL_GC_TIME], Time(ms), 131
+[TOTAL_GC_TIME_%], Time(%), 0.02754154884420103
+[REMOVE_VERTEX], Operations, 1
+[REMOVE_VERTEX], AverageLatency(us), 14236.0
+[REMOVE_VERTEX], MinLatency(us), 14232
+[REMOVE_VERTEX], MaxLatency(us), 14239
+[REMOVE_VERTEX], 50thPercentileLatency(us), 14239
+[REMOVE_VERTEX], 95thPercentileLatency(us), 14239
+[REMOVE_VERTEX], 99thPercentileLatency(us), 14239
+[REMOVE_VERTEX], Return=OK, 1
+[GET_EDGE_WITH_PROPERTY], Operations, 1
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 3544064.0
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 3543040
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 3545087
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 3545087
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 3545087
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 3545087
+[GET_EDGE_WITH_PROPERTY], Return=OK, 1
+[ADD_EDGE], Operations, 1
+[ADD_EDGE], AverageLatency(us), 367232.0
+[ADD_EDGE], MinLatency(us), 367104
+[ADD_EDGE], MaxLatency(us), 367359
+[ADD_EDGE], 50thPercentileLatency(us), 367359
+[ADD_EDGE], 95thPercentileLatency(us), 367359
+[ADD_EDGE], 99thPercentileLatency(us), 367359
+[ADD_EDGE], Return=OK, 1
+[GET_VERTEX_WITH_PROPERTY], Operations, 1
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 2.3093248E7
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 23085056
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 23101439
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 23101439
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 23101439
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 23101439
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 1
+[ADD_VERTEX], Operations, 1
+[ADD_VERTEX], AverageLatency(us), 374656.0
+[ADD_VERTEX], MinLatency(us), 374528
+[ADD_VERTEX], MaxLatency(us), 374783
+[ADD_VERTEX], 50thPercentileLatency(us), 374783
+[ADD_VERTEX], 95thPercentileLatency(us), 374783
+[ADD_VERTEX], 99thPercentileLatency(us), 374783
+[ADD_VERTEX], Return=OK, 1
+[REMOVE_EDGE], Operations, 1
+[REMOVE_EDGE], AverageLatency(us), 2683904.0
+[REMOVE_EDGE], MinLatency(us), 2682880
+[REMOVE_EDGE], MaxLatency(us), 2684927
+[REMOVE_EDGE], 50thPercentileLatency(us), 2684927
+[REMOVE_EDGE], 95thPercentileLatency(us), 2684927
+[REMOVE_EDGE], 99thPercentileLatency(us), 2684927
+[REMOVE_EDGE], Return=OK, 1
+[REMOVE_EDGE_PROPERTY], Operations, 1
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 3279872.0
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 3278848
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 3280895
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 3280895
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 3280895
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 3280895
+[REMOVE_EDGE_PROPERTY], Return=OK, 1
+[GET_EDGE_LABELS], Operations, 1
+[GET_EDGE_LABELS], AverageLatency(us), 4.5006848E7
+[GET_EDGE_LABELS], MinLatency(us), 44990464
+[GET_EDGE_LABELS], MaxLatency(us), 45023231
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 45023231
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 45023231
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 45023231
+[GET_EDGE_LABELS], Return=OK, 1
+[GET_VERTEX_COUNT], Operations, 2
+[GET_VERTEX_COUNT], AverageLatency(us), 459296.0
+[GET_VERTEX_COUNT], MinLatency(us), 256256
+[GET_VERTEX_COUNT], MaxLatency(us), 662527
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 256383
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 662527
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 662527
+[GET_VERTEX_COUNT], Return=OK, 2
+[REMOVE_VERTEX_PROPERTY], Operations, 1
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 245312.0
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 245248
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 245375
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 245375
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 245375
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 245375
+[REMOVE_VERTEX_PROPERTY], Return=OK, 1
+[GET_EDGES_WITH_LABEL], Operations, 1
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 2905088.0
+[GET_EDGES_WITH_LABEL], MinLatency(us), 2904064
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 2906111
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 2906111
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 2906111
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 2906111
+[GET_EDGES_WITH_LABEL], Return=OK, 1
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 1.0
+[CLEANUP], MinLatency(us), 1
+[CLEANUP], MaxLatency(us), 1
+[CLEANUP], 50thPercentileLatency(us), 1
+[CLEANUP], 95thPercentileLatency(us), 1
+[CLEANUP], 99thPercentileLatency(us), 1
+[SET_EDGE_PROPERTY], Operations, 1
+[SET_EDGE_PROPERTY], AverageLatency(us), 2454528.0
+[SET_EDGE_PROPERTY], MinLatency(us), 2453504
+[SET_EDGE_PROPERTY], MaxLatency(us), 2455551
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 2455551
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 2455551
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 2455551
+[SET_EDGE_PROPERTY], Return=OK, 1
+[SET_VERTEX_PROPERTY], Operations, 1
+[SET_VERTEX_PROPERTY], AverageLatency(us), 865536.0
+[SET_VERTEX_PROPERTY], MinLatency(us), 865280
+[SET_VERTEX_PROPERTY], MaxLatency(us), 865791
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 865791
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 865791
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 865791
+[SET_VERTEX_PROPERTY], Return=OK, 1
+[GET_EDGE_COUNT], Operations, 2
+[GET_EDGE_COUNT], AverageLatency(us), 1.94838528E8
+[GET_EDGE_COUNT], MinLatency(us), 171311104
+[GET_EDGE_COUNT], MaxLatency(us), 218365951
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 171442175
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 218365951
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 218365951
+[GET_EDGE_COUNT], Return=OK, 2

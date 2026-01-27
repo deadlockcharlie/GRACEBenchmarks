@@ -1,51 +1,71 @@
 services:
   scylla1:
-    container_name: scylla1
     image: scylladb/scylla:2025.3
-    restart: always
-    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    container_name: scylla1
+    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll --broadcast-rpc-address=127.0.0.1
+    networks:
+      scylla-net:
+        aliases:
+          - scylla1
+    ports:
+      - "9042:9042"
     healthcheck:
       test: ["CMD-SHELL", "nodetool status | grep UN"]
       interval: 10s
       timeout: 5s
       retries: 10
-    ports:
-      - "9042:9042"
+
+
   scylla1-netem:
     image: gaiadocker/iproute2
     container_name: scylla1-netem
-    network_mode: "service:scylla1"   # share net namespace with scylla1
-    cap_add:
+    network_mode: "service:scylla1" 
+    cap_add: 
       - NET_ADMIN
     volumes:
       - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
     entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+    depends_on:
+      - scylla1
 
   scylla2:
-    container_name: scylla2
     image: scylladb/scylla:2025.3
-    restart: always
-    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    container_name: scylla2
+    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll --broadcast-rpc-address=127.0.0.1
+    networks:
+      scylla-net:
+        aliases:
+          - scylla2
+    ports:
+      - "9043:9042"
     healthcheck:
       test: ["CMD-SHELL", "nodetool status | grep UN"]
       interval: 10s
       timeout: 5s
       retries: 10
+
   scylla2-netem:
     image: gaiadocker/iproute2
     container_name: scylla2-netem
-    network_mode: "service:scylla2"   # share net namespace with scylla2
-    cap_add:
+    network_mode: "service:scylla2"
+    cap_add: 
       - NET_ADMIN
-    volumes:  
+    volumes:
       - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
     entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+    depends_on:
+      - scylla2
 
   scylla3:
-    container_name: scylla3
     image: scylladb/scylla:2025.3
-    restart: always
-    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    container_name: scylla3
+    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll --broadcast-rpc-address=127.0.0.1
+    networks:
+      scylla-net:
+        aliases:
+          - scylla3
+    ports:
+      - "9044:9042"
     healthcheck:
       test: ["CMD-SHELL", "nodetool status | grep UN"]
       interval: 10s
@@ -54,14 +74,15 @@ services:
   scylla3-netem:
     image: gaiadocker/iproute2
     container_name: scylla3-netem
-    network_mode: "service:scylla3"   # share net namespace with scylla3
-    cap_add:
+    network_mode: "service:scylla3"
+    cap_add: 
       - NET_ADMIN
     volumes:
       - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
-    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]  
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+    depends_on:
+      - scylla3
 
-  
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.20
     container_name: elasticsearch
@@ -88,3 +109,9 @@ services:
       timeout: 10s
       retries: 5
       start_period: 60s
+    networks:
+      - scylla-net
+
+networks:
+  scylla-net:
+    driver: bridge

@@ -19,10 +19,11 @@ for node in $replicas; do
     sleep 10
   done
 done
-
 MAJORITY=$((i / 2 +1))
-# Set replication factor to 3
-docker exec scylla1 cqlsh -e "CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = {'class':'NetworkTopologyStrategy','replication_factor':$i} AND TABLETS = {'enabled': false}" || exit 1
+# Set replication factor to number of replicas
+
+docker exec scylla1 cqlsh -e " CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = { 'class':'NetworkTopologyStrategy', 'datacenter1': $i } AND TABLETS = {'enabled': false}" || exit 1
+
 
 # Step 2: Wait for Elasticsearch to be ready
 echo "⏳ Waiting for Elasticsearch to be ready..."

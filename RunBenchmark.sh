@@ -2,7 +2,7 @@
 
 ROOT_DIRECTORY=$(pwd)
 PRELOAD=false
-DURATION=60 #Benchmark duration in seconds
+DURATION=120 #Benchmark duration in seconds
 echo "Benchmark duration: $DURATION seconds"
 INJECT_FAULTS=false
 echo "Root Directory: $ROOT_DIRECTORY"
@@ -113,10 +113,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo frbl
-datasets=(mico ldbc frbs frbm frbo)
-
-
-
+datasets=(yeast)
 # Eventually this set of commands will be in a loop and potentially parallel?
 
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
@@ -130,7 +127,7 @@ fi
 
 ## Replication and Latency Benchmarks
 # REPLICAS=(1 3 2 4 5 6)
-REPLICAS=(1)
+REPLICAS=(3)
 YCSB_THREADS=1
 for dataset in "${datasets[@]}"; do
     
