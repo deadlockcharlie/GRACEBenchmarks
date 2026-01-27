@@ -1,7 +1,7 @@
 services:
   cassandra1:
     container_name: cassandra1
-    image: cassandra:4.1
+    image: cassandra:latest
     restart: always
     environment:
       - CASSANDRA_SEEDS=cassandra1
@@ -29,7 +29,7 @@ services:
 
   cassandra2:
     container_name: cassandra2
-    image: cassandra:4.1
+    image: cassandra:latest
     restart: always
     environment:
       - CASSANDRA_SEEDS=cassandra1
@@ -55,7 +55,7 @@ services:
 
   cassandra3:
     container_name: cassandra3
-    image: cassandra:4.1
+    image: cassandra:latest
     restart: always
     environment:
       - CASSANDRA_SEEDS=cassandra1
@@ -80,7 +80,7 @@ services:
     entrypoint: ["/bin/sh", "-c", "sleep 9999999"]  
   cassandra4:
     container_name: cassandra4
-    image: cassandra:4.1
+    image: cassandra:latest
     restart: always
     environment:
       - CASSANDRA_SEEDS=cassandra1

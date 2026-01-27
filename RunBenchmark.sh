@@ -113,7 +113,7 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo frbl
-datasets=(yeast mico ldbc frbs frbm frbo)
+datasets=(yeast)
 
 
 
@@ -130,7 +130,7 @@ fi
 
 ## Replication and Latency Benchmarks
 # REPLICAS=(1 3 2 4 5 6)
-REPLICAS=(1 3)
+REPLICAS=(3)
 YCSB_THREADS=1
 for dataset in "${datasets[@]}"; do
     
