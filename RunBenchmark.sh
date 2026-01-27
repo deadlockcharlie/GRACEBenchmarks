@@ -130,7 +130,7 @@ fi
 
 ## Replication and Latency Benchmarks
 # REPLICAS=(1 3 2 4 5 6)
-REPLICAS=(3)
+REPLICAS=(1)
 YCSB_THREADS=1
 for dataset in "${datasets[@]}"; do
     

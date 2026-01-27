@@ -39,6 +39,7 @@ public class DiscreteGenerator extends Generator<String> {
 
   private final Collection<Pair> values = new ArrayList<>();
   private String lastvalue;
+  private int nextIndex = 0;
 
   public DiscreteGenerator() {
     lastvalue = null;
@@ -49,24 +50,23 @@ public class DiscreteGenerator extends Generator<String> {
    */
   @Override
   public String nextValue() {
-    double sum = 0;
-
-    for (Pair p : values) {
-      sum += p.weight;
+    // Deterministically return the next operation in order, cycling if needed
+    if (values.isEmpty()) {
+      throw new AssertionError("No values to return.");
     }
-
-    double val = ThreadLocalRandom.current().nextDouble();
-
+    // Use a static index to keep track of the next value
+    if (nextIndex >= values.size()) {
+      nextIndex = 0;
+    }
+    int i = 0;
     for (Pair p : values) {
-      double pw = p.weight / sum;
-      if (val < pw) {
+      if (i == nextIndex) {
+        nextIndex++;
         return p.value;
       }
-
-      val -= pw;
+      i++;
     }
-
-    throw new AssertionError("oops. should not get here.");
+    throw new AssertionError("Index out of bounds in nextValue().");
 
   }
 

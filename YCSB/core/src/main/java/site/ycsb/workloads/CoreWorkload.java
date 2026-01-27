@@ -372,6 +372,7 @@ public class CoreWorkload extends Workload {
   @Override
   public boolean doTransaction(DB db, Object threadstate) {
     String operation = operationchooser.nextString();
+    // System.out.println("Selected operation: " + operation);
     if(operation == null) {
       return false;
     }
