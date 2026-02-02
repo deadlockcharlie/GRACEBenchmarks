@@ -554,7 +554,7 @@ if __name__ == "__main__":
     VERBOSE = args.verbose 
     command = args.command
     PATH= args.distconf
-    PRELOAD_DATA=os.environ["PRELOAD_DATA"]
+    PRELOAD_DATA = os.environ.get("PRELOAD_DATA", False)
 
     # BENCHMARK = args.benchmark
     

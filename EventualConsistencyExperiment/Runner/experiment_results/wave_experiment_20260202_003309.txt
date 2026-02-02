@@ -1,0 +1,27 @@
+=== WAVE-BASED DIVERGENCE EXPERIMENT RESULTS ===
+Timestamp: Mon Feb 02 00:33:09 CET 2026
+
+--- Configuration ---
+Replica 1: localhost:8182
+Replica 2: localhost:8183
+Vertices: 100
+Number of waves: 5
+Updates per wave (per replica): 50
+Conflict rate: 80.0%
+Update delay: 10ms
+Reconciliation wait: 3000ms
+
+--- Time Series Results ---
+Wave   Divergence   Same   Different  Missing  Duration     AvgLatency R1    AvgLatency R2   
+----------------------------------------------------------------------------------------------------
+1      0.00       % 50     0          0        1349 ms      14.72 ms         9.18 ms         
+2      0.00       % 50     0          0        1349 ms      14.98 ms         9.70 ms         
+3      0.00       % 50     0          0        1290 ms      13.68 ms         8.54 ms         
+4      0.00       % 50     0          0        1375 ms      15.32 ms         9.70 ms         
+5      0.00       % 50     0          0        1297 ms      14.20 ms         8.68 ms         
+
+--- Summary Statistics ---
+Average divergence: 0.00%
+Maximum divergence: 0.00%
+Minimum divergence: 0.00%
+Trend: 0.00% per wave

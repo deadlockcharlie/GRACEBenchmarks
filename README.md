@@ -29,15 +29,15 @@ This repository contains the complete benchmarking suite used to evaluate GRACE'
 
 The benchmarking framework is built on three main components:
 
-1. **ReplicatedGDB**: Core implementation of GRACE middleware
-2. **replicatedGDBLF**: Reference implementation with primary-backup replication
+1. **GRACE**: Core implementation of GRACE middleware
+2. **LeaderFollower**: Reference implementation with primary-backup replication
 3. **YCSB**: Modified Yahoo! Cloud Serving Benchmark for graph database workloads
 
 ## Prerequisites
 
 - **Docker** (for containerized database deployments)
 - **Python 3.8+** with dependencies:
-  - `pandas`, `matplotlib`, `numpy`
+  - `pandas`, `matplotlib`, `numpy`, `ijson`, `gremlinpython`
   - `ijson` (for streaming JSON parsing)
 - **Java 11+** (for YCSB and JanusGraph)
 - **Maven** (for building Java components)
@@ -56,7 +56,7 @@ Download and extract the repository to your local machine.
 pip3 install pandas matplotlib numpy ijson
 ```
 
-All Java components (YCSB, ReplicatedGDB, replicatedGDBLF) are included in the distribution.
+All Java components (YCSB, GRACE, LeaderFollower) are included in the distribution.
 
 ## Project Structure
 
@@ -68,8 +68,8 @@ GRACE/
 ├── workloadGenerator.py                # Splits datasets into load/update workloads
 ├── jsontoCSV.py                        # Converts JSON data to CSV format
 │
-├── ReplicatedGDB/                      # GRACE middleware implementation
-├── replicatedGDBLF/                    # Reference implementation with primary-backup
+├── GRACE/                      # GRACE middleware implementation
+├── LeaderFollower/                    # Reference implementation with primary-backup
 ├── YCSB/                               # Modified YCSB benchmark
 │
 ├── Deployments/                        # Database deployment scripts

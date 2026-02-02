@@ -233,32 +233,32 @@ try {
     def edgeJson = jsonSlurper.parse(edgeFileObj)
     println "Found ${edgeJson.size()} edges to process"
 
-    edgeJson.each { obj ->
-        try {
-            def outV = vertexMap[obj["_outV"]]
-            def inV  = vertexMap[obj["_inV"]]
-            if (outV && inV) {
-                def inVertex = g.V(inV).next()
-                def edge = g.V(outV).addE("YCSBEdge").to(inVertex)
-                obj.each { key, value ->
-                    if (value != null) edge.property(key, value.toString())
-                }
-                // Add count property for fast counting
-                edge.property("_count", 1)
-                edge.next()
-                edgeCounter++
-                if (edgeCounter % batchSize == 0) {
-                    graph.tx().commit()
-                    println "🔄 Committed ${edgeCounter} edges..."
-                }
-            } else {
-                skippedEdges++
-            }
-        } catch (Exception e) {
-            skippedEdges++
-            println "❌ Edge error ${obj['_id']}: ${e.message}"
-        }
-    }
+    // edgeJson.each { obj ->
+    //     try {
+    //         def outV = vertexMap[obj["_outV"]]
+    //         def inV  = vertexMap[obj["_inV"]]
+    //         if (outV && inV) {
+    //             def inVertex = g.V(inV).next()
+    //             def edge = g.V(outV).addE("YCSBEdge").to(inVertex)
+    //             obj.each { key, value ->
+    //                 if (value != null) edge.property(key, value.toString())
+    //             }
+    //             // Add count property for fast counting
+    //             edge.property("_count", 1)
+    //             edge.next()
+    //             edgeCounter++
+    //             if (edgeCounter % batchSize == 0) {
+    //                 graph.tx().commit()
+    //                 println "🔄 Committed ${edgeCounter} edges..."
+    //             }
+    //         } else {
+    //             skippedEdges++
+    //         }
+    //     } catch (Exception e) {
+    //         skippedEdges++
+    //         println "❌ Edge error ${obj['_id']}: ${e.message}"
+    //     }
+    // }
     graph.tx().commit()
     println "✅ Loaded ${edgeCounter} edges"
     if (skippedEdges > 0) println "⚠️ Skipped ${skippedEdges} edges"

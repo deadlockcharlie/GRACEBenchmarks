@@ -175,20 +175,20 @@ def create_plot(data: pd.DataFrame, output_path: str) -> None:
             linewidth=1
         )
 
-        # annotate each point with its thread count
-        for _, row in db_data.iterrows():
-            x = row["Throughput"]
-            y = row["AvgLatency"]
-            txt = str(int(row["ThreadCount"]))
-            ax.annotate(
-                txt,
-                xy=(x, y),
-                xytext=(1, 0),
-                textcoords="offset points",
-                fontsize=3,
-                ha="left",
-                va="top"
-            )
+        # # annotate each point with its thread count
+        # for _, row in db_data.iterrows():
+        #     x = row["Throughput"]
+        #     y = row["AvgLatency"]
+        #     txt = str(int(row["ThreadCount"]))
+        #     ax.annotate(
+        #         txt,
+        #         xy=(x, y),
+        #         xytext=(1, 0),
+        #         textcoords="offset points",
+        #         fontsize=3,
+        #         ha="left",
+        #         va="top"
+        #     )
 
     ax.set_xlabel("Throughput (ops/sec) logscale")
     ax.set_ylabel("Latency")

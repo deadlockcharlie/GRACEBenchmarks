@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Directories (adjust paths if needed)
-REPLICATED_DIR="$HOME/work/ReplicatedGDB"
+REPLICATED_DIR="$HOME/work/GRACE"
 YCSB_DIR="$HOME/work/YCSB"
 
 # Path where your scenario configs are stored
-CONFIG_DIR="$HOME/work/ReplicatedGDB/BenchmarkScripts/DistributionConfigs"
+CONFIG_DIR="$HOME/work/GRACE/BenchmarkScripts/DistributionConfigs"
 
 # Get all configs in the directory (you can also hardcode)
 SCENARIOS=("$CONFIG_DIR"/*.json)

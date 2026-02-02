@@ -6,13 +6,29 @@
   "base_grafana_port": 5000,
   "provider_port": 1234,
   "provider": true,
-  "preload_data": false,
+  "preload_data": true,
+  "preload_vertices": "/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json",
+  "preload_edges": "/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json",
+  "dataset_name": "yeast",
   "dbs" : [
     {
-     "database": "mongodb", 
+     "database": "memgraph", 
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"
-    }
+    },
+    {
+     "database": "memgraph", 
+      "password": "verysecretpassword",
+      "user": "pandey",
+      "app_log_level": "error"
+    },
+    {
+     "database": "memgraph", 
+      "password": "verysecretpassword",
+      "user": "pandey",
+      "app_log_level": "error"
+    } 
+
   ]
 }

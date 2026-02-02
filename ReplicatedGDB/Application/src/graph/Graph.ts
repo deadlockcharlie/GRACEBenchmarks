@@ -271,7 +271,8 @@ export class Vertex_Edge {
     this.GVertices.observe((event, transaction) => {
       if (!transaction.local) {
         event.changes.keys.forEach((change, key) => {
-          if (change.action === "add") {
+          logger.error("Remote vertex update observed", JSON.stringify(change));
+          if (change.action === "add" || change.action === "update") {
             logger.info("Remote update observed " + transaction);
             const vertex = this.GVertices.get(key);
             if (vertex) {
@@ -292,7 +293,7 @@ export class Vertex_Edge {
     this.GEdges.observe((event, transaction) => {
       if (!transaction.local) {
         event.changes.keys.forEach((change, key) => {
-          if (change.action === "add") {
+          if (change.action === "add" || change.action === "update") {
             const edge = this.GEdges.get(key);
             if (edge) {
               this.addEdge(

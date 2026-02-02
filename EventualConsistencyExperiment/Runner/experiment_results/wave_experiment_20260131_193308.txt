@@ -1,0 +1,58 @@
+=== WAVE-BASED DIVERGENCE EXPERIMENT RESULTS ===
+Timestamp: Sat Jan 31 19:33:08 CET 2026
+
+--- Configuration ---
+Replica 1: localhost:8182
+Replica 2: localhost:8183
+Vertices: 100
+Number of waves: 5
+Replica 1: localhost:8182
+Replica 2: localhost:8183
+Vertices: 100
+Number of waves: 5
+Updates per wave (per replica): 50
+Conflict rate: 80.0%
+Update delay: 10ms
+Reconciliation wait: 3000ms
+
+--- Time Series Results ---
+Wave   Divergence   Same   Different  Missing  Duration     AvgLatency R1    AvgLatency R2   
+----------------------------------------------------------------------------------------------------
+1      0.00       % 50     0          0        8086 ms      13.24 ms         149.22 ms       
+2      26.00      % 37     13         0        2293 ms      8.46 ms          33.96 ms        
+3      28.00      % 36     14         0        1500 ms      6.48 ms          17.98 ms        
+4      44.00      % 28     22         0        1741 ms      5.88 ms          22.74 ms        
+5      58.00      % 21     29         0        1302 ms      9.22 ms          14.20 ms        
+
+--- Summary Statistics ---
+Average divergence: 31.20%
+Maximum divergence: 58.00%
+Minimum divergence: 0.00%
+Trend: 13.40% per wave
+
+--- Convergence Check (post-wave quiescence) ---
+Polls taken      : 19
+Total wait       : 60259 ms
+Converged        : false
+
+Elapsed(ms)  Same         Different    Missing      Divergence    
+--------------------------------------------------------------
+494          50           50           0            50.00        %
+3905         50           50           0            50.00        %
+7243         50           50           0            50.00        %
+10667        50           50           0            50.00        %
+14036        50           50           0            50.00        %
+17408        50           50           0            50.00        %
+20721        50           50           0            50.00        %
+24058        50           50           0            50.00        %
+27426        50           50           0            50.00        %
+30883        50           50           0            50.00        %
+34242        50           50           0            50.00        %
+37546        50           50           0            50.00        %
+40892        50           50           0            50.00        %
+44215        50           50           0            50.00        %
+47604        50           50           0            50.00        %
+50880        50           50           0            50.00        %
+54255        50           50           0            50.00        %
+57530        50           50           0            50.00        %
+60259        50           50           0            50.00        %

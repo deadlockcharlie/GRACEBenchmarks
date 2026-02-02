@@ -1,226 +1,139 @@
-/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/GRACE/YCSB/conf:/Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/janusgraph-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/amqp-client-5.19.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/antlr4-runtime-4.9.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/asm-9.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/asm-analysis-9.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/asm-tree-9.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/asm-util-9.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/caffeine-2.9.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-beanutils-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-codec-1.15.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-collections-3.2.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-configuration-1.10.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-configuration2-2.9.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-io-2.11.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-lang-2.6.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-lang3-3.12.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-logging-1.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/commons-text-1.10.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/config-1.4.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/error_prone_annotations-2.10.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/exp4j-0.4.8.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/failureaccess-1.0.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-core-3.7.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-driver-3.7.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-groovy-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-language-3.7.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-shaded-3.7.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/gremlin-util-3.7.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-console-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-groovysh-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-json-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-jsr223-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-swing-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-templates-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/groovy-xml-4.0.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/guava-32.1.3-jre.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/hppc-0.7.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/ivy-2.5.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/j2objc-annotations-2.8.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-annotations-2.13.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-core-2.13.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-core-asl-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-databind-2.13.2.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jackson-mapper-asl-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/janusgraph-core-1.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/janusgraph-cql-1.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/janusgraph-driver-1.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/janusgraph-scylla-1.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/java-driver-core-4.17.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/java-driver-query-builder-4.17.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/javaparser-core-3.25.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/javapoet-1.13.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/javassist-3.22.0-GA.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/javatuples-1.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jbcrypt-0.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jcip-annotations-1.0-1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jcl-over-slf4j-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jctools-core-4.0.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jffi-1.3.9-native.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jffi-1.3.9.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jline-2.14.6.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jnr-a64asm-1.0.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jnr-constants-0.10.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jnr-ffi-2.2.11.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jnr-posix-3.1.15.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jnr-x86asm-1.0.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jsr305-3.0.2.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/jts-core-1.17.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/metrics-core-4.1.18.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/metrics-graphite-4.2.21.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/metrics-jmx-4.2.21.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/native-protocol-1.5.1.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-all-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-buffer-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-dns-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-haproxy-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-http-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-http2-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-memcache-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-mqtt-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-redis-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-smtp-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-socks-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-stomp-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-codec-xml-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-common-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-handler-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-handler-proxy-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-handler-ssl-ocsp-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-classes-macos-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.101.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.101.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-classes-epoll-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-classes-kqueue-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.101.Final-linux-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.101.Final-linux-x86_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.101.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.101.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-native-unix-common-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-rxtx-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-sctp-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/netty-transport-udt-4.1.101.Final.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/noggit-0.8.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/org.abego.treelayout.core-1.0.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/reactive-streams-1.0.3.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/reflections8-0.11.7.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/slf4j-api-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/snakeyaml-2.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/spatial4j-0.8.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/spotbugs-annotations-3.1.12.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/tinkergraph-gremlin-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/vavr-0.10.4.jar:/Users/pandey/work/GRACE/YCSB/janusgraph/target/dependency/vavr-match-0.10.4.jar site.ycsb.Client -t -db site.ycsb.db.JanusGraphClient -P workloads/workload_grace -p DBTYPE=janusgraph -p DBURI=ws://localhost:8182 -p maxexecutiontime=300 -p threadcount=1 -p loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/mico_load_vertices.json -p loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/mico_load_edges.json -p vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/mico_update_vertices.json -p edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/mico_update_edges.json
-Loaded 79736 vertices and 549680 edges
+/usr/bin/java  -classpath /home/ayush/GRACEBenchmarks/YCSB/conf:/home/ayush/GRACEBenchmarks/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/janusgraph-binding-0.18.0-SNAPSHOT.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/HdrHistogram-2.1.12.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/amqp-client-5.19.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/antlr4-runtime-4.9.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/asm-9.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/asm-analysis-9.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/asm-tree-9.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/asm-util-9.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/caffeine-2.9.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-beanutils-1.9.4.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-codec-1.15.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-collections-3.2.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-configuration-1.10.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-configuration2-2.9.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-io-2.11.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-lang-2.6.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-lang3-3.12.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-logging-1.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/commons-text-1.10.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/config-1.4.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/core-0.18.0-SNAPSHOT.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/error_prone_annotations-2.10.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/exp4j-0.4.8.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/failureaccess-1.0.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-core-3.7.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-driver-3.7.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-groovy-3.7.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-language-3.7.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-shaded-3.7.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/gremlin-util-3.7.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-console-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-groovysh-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-json-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-jsr223-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-swing-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-templates-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/groovy-xml-4.0.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/guava-32.1.3-jre.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/hppc-0.7.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/ivy-2.5.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/j2objc-annotations-2.8.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jackson-annotations-2.13.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jackson-core-2.13.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jackson-core-asl-1.9.4.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jackson-databind-2.13.2.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jackson-mapper-asl-1.9.4.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/janusgraph-core-1.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/janusgraph-cql-1.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/janusgraph-driver-1.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/janusgraph-scylla-1.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/java-driver-core-4.17.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/java-driver-query-builder-4.17.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javaparser-core-3.25.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javapoet-1.13.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javassist-3.22.0-GA.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/javatuples-1.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jbcrypt-0.4.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jcip-annotations-1.0-1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jcl-over-slf4j-1.7.25.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jctools-core-4.0.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jffi-1.3.9-native.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jffi-1.3.9.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jline-2.14.6.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jnr-a64asm-1.0.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jnr-constants-0.10.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jnr-ffi-2.2.11.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jnr-posix-3.1.15.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jnr-x86asm-1.0.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jsr305-3.0.2.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/jts-core-1.17.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/metrics-core-4.1.18.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/metrics-graphite-4.2.21.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/metrics-jmx-4.2.21.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/native-protocol-1.5.1.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-all-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-buffer-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-dns-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-haproxy-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-http-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-http2-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-memcache-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-mqtt-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-redis-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-smtp-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-socks-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-stomp-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-codec-xml-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-common-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-handler-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-handler-proxy-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-handler-ssl-ocsp-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-classes-macos-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.101.Final-osx-aarch_64.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-resolver-dns-native-macos-4.1.101.Final-osx-x86_64.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-classes-epoll-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-classes-kqueue-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.101.Final-linux-aarch_64.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-epoll-4.1.101.Final-linux-x86_64.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.101.Final-osx-aarch_64.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-kqueue-4.1.101.Final-osx-x86_64.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-native-unix-common-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-rxtx-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-sctp-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/netty-transport-udt-4.1.101.Final.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/noggit-0.8.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/org.abego.treelayout.core-1.0.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/reactive-streams-1.0.3.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/reflections8-0.11.7.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/slf4j-api-1.7.25.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/snakeyaml-2.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/spatial4j-0.8.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/spotbugs-annotations-3.1.12.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/tinkergraph-gremlin-3.7.0.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/vavr-0.10.4.jar:/home/ayush/GRACEBenchmarks/YCSB/janusgraph/target/dependency/vavr-match-0.10.4.jar site.ycsb.Client -t -db site.ycsb.db.JanusGraphClient -P workloads/workload_grace -p DBTYPE=janusgraph -p DBURI=ws://localhost:8182 -p operationcount=14 -p threadcount=1 -p loadVertexFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_load_vertices.json -p loadEdgeFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_load_edges.json -p vertexAddFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_update_vertices.json -p edgeAddFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_update_edges.json
+Loaded 80165 vertices and 559601 edges
 Initializing db: site.ycsb.db.JanusGraphClient
 Using Database: site.ycsb.DBWrapper
 Starting Janusgraph client
-{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/mico_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/mico_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/mico_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=janusgraph, dotransactions=true, createproportion=1, DBURI=ws://localhost:8182, maxexecutiontime=300, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/mico_update_vertices.json, readallfields=true, db=site.ycsb.db.JanusGraphClient, requestdistribution=latest}
+{deleteproportion=1, loadEdgeFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_load_edges.json, recordcount=10000, operationcount=14, loadVertexFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_load_vertices.json, edgeAddFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=janusgraph, dotransactions=true, createproportion=1, DBURI=ws://localhost:8182, vertexAddFile=/home/ayush/GRACEBenchmarks/GraphDBData/mico_update_vertices.json, readallfields=true, db=site.ycsb.db.JanusGraphClient, requestdistribution=latest}
 DBTYPE: janusgraph
 DBURI: ws://localhost:8182
 Connected to Janusgraph successfully
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-Still waiting for thread Thread-1 to complete. Workload status: true
-[OVERALL], RunTime(ms), 475645
-[OVERALL], Throughput(ops/sec), 0.03363853293948218
-[TOTAL_GCS_G1_Young_Generation], Count, 6
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 131
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.02754154884420103
+[OVERALL], RunTime(ms), 413650
+[OVERALL], Throughput(ops/sec), 0.033845038075667834
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 272
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.06575607397558322
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 6
-[TOTAL_GC_TIME], Time(ms), 131
-[TOTAL_GC_TIME_%], Time(%), 0.02754154884420103
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 272
+[TOTAL_GC_TIME_%], Time(%), 0.06575607397558322
 [REMOVE_VERTEX], Operations, 1
-[REMOVE_VERTEX], AverageLatency(us), 14236.0
-[REMOVE_VERTEX], MinLatency(us), 14232
-[REMOVE_VERTEX], MaxLatency(us), 14239
-[REMOVE_VERTEX], 50thPercentileLatency(us), 14239
-[REMOVE_VERTEX], 95thPercentileLatency(us), 14239
-[REMOVE_VERTEX], 99thPercentileLatency(us), 14239
+[REMOVE_VERTEX], AverageLatency(us), 16244.0
+[REMOVE_VERTEX], MinLatency(us), 16240
+[REMOVE_VERTEX], MaxLatency(us), 16247
+[REMOVE_VERTEX], 50thPercentileLatency(us), 16247
+[REMOVE_VERTEX], 95thPercentileLatency(us), 16247
+[REMOVE_VERTEX], 99thPercentileLatency(us), 16247
 [REMOVE_VERTEX], Return=OK, 1
 [GET_EDGE_WITH_PROPERTY], Operations, 1
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 3544064.0
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 3543040
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 3545087
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 3545087
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 3545087
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 3545087
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 6240256.0
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 6238208
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 6242303
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 6242303
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 6242303
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 6242303
 [GET_EDGE_WITH_PROPERTY], Return=OK, 1
 [ADD_EDGE], Operations, 1
-[ADD_EDGE], AverageLatency(us), 367232.0
-[ADD_EDGE], MinLatency(us), 367104
-[ADD_EDGE], MaxLatency(us), 367359
-[ADD_EDGE], 50thPercentileLatency(us), 367359
-[ADD_EDGE], 95thPercentileLatency(us), 367359
-[ADD_EDGE], 99thPercentileLatency(us), 367359
+[ADD_EDGE], AverageLatency(us), 399488.0
+[ADD_EDGE], MinLatency(us), 399360
+[ADD_EDGE], MaxLatency(us), 399615
+[ADD_EDGE], 50thPercentileLatency(us), 399615
+[ADD_EDGE], 95thPercentileLatency(us), 399615
+[ADD_EDGE], 99thPercentileLatency(us), 399615
 [ADD_EDGE], Return=OK, 1
 [GET_VERTEX_WITH_PROPERTY], Operations, 1
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 2.3093248E7
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 23085056
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 23101439
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 23101439
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 23101439
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 23101439
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 3.8715392E7
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 38699008
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 38731775
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 38731775
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 38731775
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 38731775
 [GET_VERTEX_WITH_PROPERTY], Return=OK, 1
 [ADD_VERTEX], Operations, 1
-[ADD_VERTEX], AverageLatency(us), 374656.0
-[ADD_VERTEX], MinLatency(us), 374528
-[ADD_VERTEX], MaxLatency(us), 374783
-[ADD_VERTEX], 50thPercentileLatency(us), 374783
-[ADD_VERTEX], 95thPercentileLatency(us), 374783
-[ADD_VERTEX], 99thPercentileLatency(us), 374783
+[ADD_VERTEX], AverageLatency(us), 398208.0
+[ADD_VERTEX], MinLatency(us), 398080
+[ADD_VERTEX], MaxLatency(us), 398335
+[ADD_VERTEX], 50thPercentileLatency(us), 398335
+[ADD_VERTEX], 95thPercentileLatency(us), 398335
+[ADD_VERTEX], 99thPercentileLatency(us), 398335
 [ADD_VERTEX], Return=OK, 1
 [REMOVE_EDGE], Operations, 1
-[REMOVE_EDGE], AverageLatency(us), 2683904.0
-[REMOVE_EDGE], MinLatency(us), 2682880
-[REMOVE_EDGE], MaxLatency(us), 2684927
-[REMOVE_EDGE], 50thPercentileLatency(us), 2684927
-[REMOVE_EDGE], 95thPercentileLatency(us), 2684927
-[REMOVE_EDGE], 99thPercentileLatency(us), 2684927
+[REMOVE_EDGE], AverageLatency(us), 6580224.0
+[REMOVE_EDGE], MinLatency(us), 6578176
+[REMOVE_EDGE], MaxLatency(us), 6582271
+[REMOVE_EDGE], 50thPercentileLatency(us), 6582271
+[REMOVE_EDGE], 95thPercentileLatency(us), 6582271
+[REMOVE_EDGE], 99thPercentileLatency(us), 6582271
 [REMOVE_EDGE], Return=OK, 1
 [REMOVE_EDGE_PROPERTY], Operations, 1
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 3279872.0
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 3278848
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 3280895
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 3280895
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 3280895
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 3280895
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 6256640.0
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 6254592
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 6258687
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 6258687
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 6258687
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 6258687
 [REMOVE_EDGE_PROPERTY], Return=OK, 1
 [GET_EDGE_LABELS], Operations, 1
-[GET_EDGE_LABELS], AverageLatency(us), 4.5006848E7
-[GET_EDGE_LABELS], MinLatency(us), 44990464
-[GET_EDGE_LABELS], MaxLatency(us), 45023231
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 45023231
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 45023231
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 45023231
+[GET_EDGE_LABELS], AverageLatency(us), 8.2280448E7
+[GET_EDGE_LABELS], MinLatency(us), 82247680
+[GET_EDGE_LABELS], MaxLatency(us), 82313215
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 82313215
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 82313215
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 82313215
 [GET_EDGE_LABELS], Return=OK, 1
-[GET_VERTEX_COUNT], Operations, 2
-[GET_VERTEX_COUNT], AverageLatency(us), 459296.0
-[GET_VERTEX_COUNT], MinLatency(us), 256256
-[GET_VERTEX_COUNT], MaxLatency(us), 662527
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 256383
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 662527
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 662527
-[GET_VERTEX_COUNT], Return=OK, 2
+[GET_VERTEX_COUNT], Operations, 1
+[GET_VERTEX_COUNT], AverageLatency(us), 1474048.0
+[GET_VERTEX_COUNT], MinLatency(us), 1473536
+[GET_VERTEX_COUNT], MaxLatency(us), 1474559
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 1474559
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 1474559
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 1474559
+[GET_VERTEX_COUNT], Return=OK, 1
 [REMOVE_VERTEX_PROPERTY], Operations, 1
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 245312.0
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 245248
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 245375
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 245375
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 245375
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 245375
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 220480.0
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 220416
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 220543
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 220543
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 220543
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 220543
 [REMOVE_VERTEX_PROPERTY], Return=OK, 1
 [GET_EDGES_WITH_LABEL], Operations, 1
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 2905088.0
-[GET_EDGES_WITH_LABEL], MinLatency(us), 2904064
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 2906111
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 2906111
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 2906111
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 2906111
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 6363136.0
+[GET_EDGES_WITH_LABEL], MinLatency(us), 6361088
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 6365183
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 6365183
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 6365183
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 6365183
 [GET_EDGES_WITH_LABEL], Return=OK, 1
 [CLEANUP], Operations, 1
-[CLEANUP], AverageLatency(us), 1.0
-[CLEANUP], MinLatency(us), 1
-[CLEANUP], MaxLatency(us), 1
-[CLEANUP], 50thPercentileLatency(us), 1
-[CLEANUP], 95thPercentileLatency(us), 1
-[CLEANUP], 99thPercentileLatency(us), 1
+[CLEANUP], AverageLatency(us), 3.0
+[CLEANUP], MinLatency(us), 3
+[CLEANUP], MaxLatency(us), 3
+[CLEANUP], 50thPercentileLatency(us), 3
+[CLEANUP], 95thPercentileLatency(us), 3
+[CLEANUP], 99thPercentileLatency(us), 3
 [SET_EDGE_PROPERTY], Operations, 1
-[SET_EDGE_PROPERTY], AverageLatency(us), 2454528.0
-[SET_EDGE_PROPERTY], MinLatency(us), 2453504
-[SET_EDGE_PROPERTY], MaxLatency(us), 2455551
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 2455551
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 2455551
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 2455551
+[SET_EDGE_PROPERTY], AverageLatency(us), 6367232.0
+[SET_EDGE_PROPERTY], MinLatency(us), 6365184
+[SET_EDGE_PROPERTY], MaxLatency(us), 6369279
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 6369279
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 6369279
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 6369279
 [SET_EDGE_PROPERTY], Return=OK, 1
 [SET_VERTEX_PROPERTY], Operations, 1
-[SET_VERTEX_PROPERTY], AverageLatency(us), 865536.0
-[SET_VERTEX_PROPERTY], MinLatency(us), 865280
-[SET_VERTEX_PROPERTY], MaxLatency(us), 865791
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 865791
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 865791
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 865791
+[SET_VERTEX_PROPERTY], AverageLatency(us), 1167872.0
+[SET_VERTEX_PROPERTY], MinLatency(us), 1167360
+[SET_VERTEX_PROPERTY], MaxLatency(us), 1168383
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 1168383
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 1168383
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 1168383
 [SET_VERTEX_PROPERTY], Return=OK, 1
-[GET_EDGE_COUNT], Operations, 2
-[GET_EDGE_COUNT], AverageLatency(us), 1.94838528E8
-[GET_EDGE_COUNT], MinLatency(us), 171311104
-[GET_EDGE_COUNT], MaxLatency(us), 218365951
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 171442175
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 218365951
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 218365951
-[GET_EDGE_COUNT], Return=OK, 2
+[GET_EDGE_COUNT], Operations, 1
+[GET_EDGE_COUNT], AverageLatency(us), 2.56835584E8
+[GET_EDGE_COUNT], MinLatency(us), 256770048
+[GET_EDGE_COUNT], MaxLatency(us), 256901119
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 256901119
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 256901119
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 256901119
+[GET_EDGE_COUNT], Return=OK, 1

@@ -1,0 +1,30 @@
+services:
+  janusgraph-dc1:
+    image: janusgraph/janusgraph:1.0.0
+    container_name: janusgraph-dc1
+    environment:
+      - janusgraph.storage.backend=cql
+      - janusgraph.storage.hostname=scylla1
+      - janusgraph.storage.cql.local-datacenter=dc1
+      - janusgraph.storage.cql.keyspace=janusgraph
+      # # - janusgraph.storage.cql.replication-strategy-class=org.apache.cassandra.locator.NetworkTopologyStrategy
+      - janusgraph.storage.cql.replication-strategy-options=dc1,1,dc2,1
+      - janusgraph.storage.cql.read-consistency-level=ONE
+      - janusgraph.storage.cql.write-consistency-level=ONE
+      - janusgraph.graph.set-vertex-id=true
+      - janusgraph.graph.set-edge-id=true
+      - janusgraph.graph.allow-custom-vid-types=true
+      - janusgraph.graph.allow-custom-eid-types=true
+      - gremlinserver.threadPoolWorker=1
+      - gremlinserver.graphs.graph=conf/janusgraph-cql.properties
+    volumes:
+      - ../conf/janusgraphDC1.properties:/opt/janusgraph/conf/janusgraph-cql.properties
+    #   - ../conf/janusgraph1.yaml:/opt/janusgraph/conf/gremlin-server/gremlin-server.yaml
+    networks:
+      - scylla-net
+    ports:
+      - "8182:8182"
+networks:
+  scylla-net:
+    external: true
+    name: dockerfiles_scylla-net  # UPDATE THIS to match your actual network name

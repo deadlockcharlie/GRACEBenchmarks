@@ -36,8 +36,12 @@ export class MemGraphDriver extends DatabaseDriver {
   async addVertex(labels, properties) {
     logger.info("Adding vertex");
     const labelString = labels.join(":");
-    // Build and execute Cypher query
-    const query = `CREATE (n:${labelString} $properties) RETURN n`;
+    // MERGE ensures upsert behavior - matches CRDT semantics
+    const query = `
+      MERGE (n:${labelString} {id: $properties.id})
+      SET n = $properties
+      RETURN n
+    `;
     const params = { properties: properties };
     try {
       await this.driver.executeQuery(query, params);
@@ -48,10 +52,12 @@ export class MemGraphDriver extends DatabaseDriver {
   }
 
   async deleteVertex(id) {
-    const query = 'MATCH (n {id: "' + id + '"}) DELETE n';
-    // logger.error("Delete vertex query: "+ query);
+    // Fixed: Use parameterized query to prevent injection
+    const query = 'MATCH (n {id: $id}) DETACH DELETE n';
+    const params = { id: id };
+    
     try {
-      await this.driver.executeQuery(query, null);
+      await this.driver.executeQuery(query, params);
     } catch (err) {
       logger.error("Error in delete vertex: " + err);
       throw err;
@@ -68,18 +74,18 @@ export class MemGraphDriver extends DatabaseDriver {
   ) {
     const relationLabelString = relationLabels.join(":");
 
+    // MERGE ensures upsert behavior for edges too
+    // Note: Using dynamic property names in MERGE requires careful handling
     const query = `
-          MATCH (a {${sourcePropName}: "${sourcePropValue}"}), 
-                (b {${targetPropName}: "${targetPropValue}"})
-          CREATE (a)-[r:${relationLabelString}]->(b)
-          SET r += $properties
-          RETURN r;
-            `;
+          MATCH (a {${sourcePropName}: $sourcePropValue}), 
+                (b {${targetPropName}: $targetPropValue})
+          MERGE (a)-[r:${relationLabelString} {id: $properties.id}]->(b)
+          SET r = $properties
+          RETURN r
+    `;
 
     const params = {
-      sourcePropName: sourcePropName,
       sourcePropValue: sourcePropValue,
-      targetPropName: targetPropName,
       targetPropValue: targetPropValue,
       properties: properties,
     };
@@ -93,10 +99,13 @@ export class MemGraphDriver extends DatabaseDriver {
   }
 
   async deleteEdge(id: string) {
-    const query = 'MATCH ()-[r {id: "' + id + '"}]-() DELETE r';
+    // Fixed: Use parameterized query
+    const query = 'MATCH ()-[r {id: $id}]-() DELETE r';
+    const params = { id: id };
+    
     logger.info("Delete edge query: " + query);
     try {
-      await this.driver.executeQuery(query, null);
+      await this.driver.executeQuery(query, params);
     } catch (err) {
       logger.error("Error in delete edge: " + err);
       throw err;
@@ -104,19 +113,19 @@ export class MemGraphDriver extends DatabaseDriver {
   }
 
   async setVertexProperty(vid: string, key: string, value: string) {
-    const query =
-      'MATCH (n {id: "' +
-      vid +
-      '"}) SET n.' +
-      key +
-      '="' +
-      value +
-      '"  RETURN n;';
+    // Fixed: Use parameterized query and MERGE for idempotency
+    // Note: Dynamic property keys still require string interpolation
+    const query = `
+      MATCH (n {id: $vid})
+      SET n.${key} = $value
+      RETURN n
+    `;
+    const params = { vid: vid, value: value };
 
     logger.info("Set vertex property query: " + query);
 
     try {
-      const result = await this.driver.executeQuery(query, null);
+      const result = await this.driver.executeQuery(query, params);
       if (result.records.length === 0) {
         throw new Error(`Vertex with id ${vid} not found.`);
       }
@@ -126,18 +135,18 @@ export class MemGraphDriver extends DatabaseDriver {
       throw err;
     }
   }
+
   async setEdgeProperty(eid: string, key: string, value: string) {
-    const query =
-      'MATCH ()-[r {id: "' +
-      eid +
-      '"}]->() SET r.' +
-      key +
-      '="' +
-      value +
-      '"  RETURN r';
+    // Fixed: Use parameterized query
+    const query = `
+      MATCH ()-[r {id: $eid}]->()
+      SET r.${key} = $value
+      RETURN r
+    `;
+    const params = { eid: eid, value: value };
 
     try {
-      const result = await this.driver.executeQuery(query, null);
+      const result = await this.driver.executeQuery(query, params);
       if (result.records.length === 0) {
         throw new Error(`Edge with id ${eid} not found.`);
       }
@@ -149,9 +158,16 @@ export class MemGraphDriver extends DatabaseDriver {
   }
 
   async removeVertexProperty(vid: string, key: string) {
-    const query = 'MATCH (n {id: "' + vid + '"}) REMOVE n.' + key + " RETURN n";
+    // Fixed: Use parameterized query
+    const query = `
+      MATCH (n {id: $vid})
+      REMOVE n.${key}
+      RETURN n
+    `;
+    const params = { vid: vid };
+    
     try {
-      const result = await this.driver.executeQuery(query, null);
+      const result = await this.driver.executeQuery(query, params);
       if (result.records.length === 0) {
         throw new Error(`Vertex with id ${vid} not found.`);
       }
@@ -163,11 +179,16 @@ export class MemGraphDriver extends DatabaseDriver {
   }
 
   async removeEdgeProperty(eid: string, key: string) {
-    const query =
-      'MATCH ()-[r {id: "' + eid + '"}]->() REMOVE r.' + key + " RETURN r";
+    // Fixed: Use parameterized query
+    const query = `
+      MATCH ()-[r {id: $eid}]->()
+      REMOVE r.${key}
+      RETURN r
+    `;
+    const params = { eid: eid };
 
     try {
-      const result = await this.driver.executeQuery(query, null);
+      const result = await this.driver.executeQuery(query, params);
       if (result.records.length === 0) {
         throw new Error(`Edge with id ${eid} not found.`);
       }

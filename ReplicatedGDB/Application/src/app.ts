@@ -109,8 +109,22 @@ import {
 import { final } from "stream-chain";
 
 {
+  app.post("/reset", async (req, res) => {
+    graph.GVertices.clear();
+    graph.GEdges.clear();
+    res.status(200).json({ status: "Graph reset successful" });
+  });
 
-
+  app.get("/getVertex", async (req, res) => {
+    const id = req.query.id as string;
+    const vertex = graph.getVertex(id);
+    if (vertex) {
+      res.status(200).json(vertex);
+    } else {
+      res.status(404).json({ error: "Vertex not found" });
+    }
+  });
+  
   app.get('/ready', (req, res) => {
       if (preloadDone) res.sendStatus(200);
       else res.sendStatus(503); // 503 = Service Unavailable

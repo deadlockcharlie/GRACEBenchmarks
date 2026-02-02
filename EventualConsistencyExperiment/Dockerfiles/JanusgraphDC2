@@ -1,0 +1,92 @@
+services:
+  scylla4:
+    image: scylladb/scylla:5.1.4
+    container_name: scylla4
+    command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll 
+    networks:
+      - scylla-net
+    ports:
+      - "9045:9042"
+    volumes:
+      - ../conf/DC2.yaml:/etc/scylla/scylla.yaml:ro
+      - ../conf/DC2.properties:/etc/scylla/cassandra-rackdc.properties:ro
+    healthcheck:
+      test: ["CMD-SHELL", "nodetool status | grep UN"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  scylla4-netem:
+    image: gaiadocker/iproute2
+    container_name: scylla4-netem
+    network_mode: "service:scylla4" 
+    cap_add: 
+      - NET_ADMIN
+    volumes:
+      - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+    entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+    depends_on:
+      - scylla4
+
+  # scylla5:
+  #   image: scylladb/scylla:5.1.4
+  #   container_name: scylla5
+  #   command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+  #   networks:
+  #     - scylla-net
+  #   ports:
+  #     - "9046:9042"
+  #   volumes:
+  #     - ../conf/DC2.yaml:/etc/scylla/scylla.yaml:ro
+  #     - ../conf/DC2.properties:/etc/scylla/cassandra-rackdc.properties:ro
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "nodetool status | grep UN"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 10
+
+  # scylla5-netem:
+  #   image: gaiadocker/iproute2
+  #   container_name: scylla5-netem
+  #   network_mode: "service:scylla5"
+  #   cap_add: 
+  #     - NET_ADMIN
+  #   volumes:
+  #     - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+  #   entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+  #   depends_on:
+  #     - scylla5
+
+  # scylla6:
+  #   image: scylladb/scylla:5.1.4
+  #   container_name: scylla6
+  #   command: --seeds=scylla1 --smp 1 --memory 10G --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+  #   networks:
+  #     - scylla-net
+  #   ports:
+  #     - "9047:9042"
+  #   volumes:
+  #     - ../conf/DC2.yaml:/etc/scylla/scylla.yaml:ro
+  #     - ../conf/DC2.properties:/etc/scylla/cassandra-rackdc.properties:ro
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "nodetool status | grep UN"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 10
+
+  # scylla6-netem:
+  #   image: gaiadocker/iproute2
+  #   container_name: scylla6-netem
+  #   network_mode: "service:scylla6"
+  #   cap_add: 
+  #     - NET_ADMIN
+  #   volumes:
+  #     - ../setup-latency.sh:/usr/local/bin/setup-latency.sh
+  #   entrypoint: ["/bin/sh", "-c", "sleep 9999999"]
+  #   depends_on:
+  #     - scylla6
+
+networks:
+  scylla-net:
+    external: true
+    name: dockerfiles_scylla-net

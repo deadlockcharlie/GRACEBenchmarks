@@ -7,8 +7,8 @@ echo "Benchmark duration: $DURATION seconds"
 INJECT_FAULTS=false
 echo "Root Directory: $ROOT_DIRECTORY"
 DEPLOYMENTS_DIR="$ROOT_DIRECTORY/Deployments"
-GRACE_DIRECTORY="$ROOT_DIRECTORY/ReplicatedGDB"
-LF_DIRECTORY="$ROOT_DIRECTORY/replicatedGDBLF"
+GRACE_DIRECTORY="$ROOT_DIRECTORY/GRACE"
+LF_DIRECTORY="$ROOT_DIRECTORY/LeaderFollower"
 YCSB_DIRECTORY="$ROOT_DIRECTORY/YCSB"
 PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
 export PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
@@ -127,7 +127,7 @@ fi
 
 ## Replication and Latency Benchmarks
 # REPLICAS=(1 3 2 4 5 6)
-REPLICAS=(3)
+REPLICAS=(1)
 YCSB_THREADS=1
 for dataset in "${datasets[@]}"; do
     
@@ -169,11 +169,11 @@ for dataset in "${datasets[@]}"; do
     
 done
 
-cd $ROOT_DIRECTORY
+# cd $ROOT_DIRECTORY
 
-python3 ./scripts/analysis/LatencyComparision.py 1 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/SingleReplicaLatency.png
+# python3 ./scripts/analysis/LatencyComparision.py 1 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/SingleReplicaLatency.png
 
-python3 ./scripts/analysis/LatencyComparision.py 3 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/MultiReplicaLatency.png
+# python3 ./scripts/analysis/LatencyComparision.py 3 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/MultiReplicaLatency.png
 
 # # 3 replica throughput
 # REPLICAS=(3)
@@ -323,5 +323,153 @@ python3 ./scripts/analysis/LatencyComparision.py 3 ./Results/ReplicaCountAndLate
 #     . ./ReplicaCountAndLatency.sh
     
 # done
+
+
+echo "Benchmarking consistency between GRACE's TCC and Janusgraph's Eventual consistency"
+
+DATASET_NAME=yeast
+cd $ROOT_DIRECTORY
+. ./scripts/data-preparation/PrepareDatasets.sh
+RESULTS_DIRECTORY="$ROOT_DIRECTORY/Results/Consistency/$DATASET_NAME"
+LOAD_TIME_DIRECTORY="$ROOT_DIRECTORY/LoadTimes/Consistency/$DATASET_NAME"
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.loaded $YCSB_DIRECTORY/Vertices.loaded
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.loaded $YCSB_DIRECTORY/Edges.loaded   
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.csv $PRELOAD_DATA/vertices.csv
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.csv $PRELOAD_DATA/edges.csv
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json $PRELOAD_DATA/vertices.json
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.json $PRELOAD_DATA/edges.json
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_vertices.keys $PRELOAD_DATA/vertices.keys
+cp $DATA_DIRECTORY/${DATASET_NAME}_load_edges.keys $PRELOAD_DATA/edges.keys 
+
+# Create results directory if it doesn't exist
+mkdir -p $RESULTS_DIRECTORY
+PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
+export PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
+i=3
+cd $DEPLOYMENTS_DIR
+echo "Running benchmark with 3 replicas..."
+COMPOSE_FILE="./Dockerfiles/JanusgraphScyllaDB${i}Replicas"
+
+echo "Starting JanusGraph replica set..."
+
+docker compose -f $COMPOSE_FILE up -d
+
+
+for (( j=1; j<=$i; j++ ))
+do
+  replicas+="scylla$j "
+done
+
+# Step 1: Wait for scylla nodes to be ready
+echo "⏳ Waiting for scylla cluster to be ready..."
+for node in $replicas; do
+  until docker exec $node cqlsh -e "DESCRIBE KEYSPACES;" >/dev/null 2>&1; do
+    echo "Waiting for $node..."
+    sleep 10
+  done
+done
+MAJORITY=$((i / 2 +1))
+# Set replication factor to number of replicas
+
+docker exec scylla1 cqlsh -e " CREATE KEYSPACE IF NOT EXISTS janusgraph WITH REPLICATION = { 'class':'NetworkTopologyStrategy', 'datacenter1': $i } AND TABLETS = {'enabled': false}" || exit 1
+
+# Step 2: Wait for Elasticsearch to be ready
+echo "⏳ Waiting for Elasticsearch to be ready..."
+until curl -s http://localhost:9200/_cluster/health | grep -q '"status":"green"'; do
+  echo "Waiting for Elasticsearch..."
+  sleep 5
+done
+echo "✅ Elasticsearch is ready!"
+
+cd $ROOT_DIRECTORY/scripts/
+. ./benchmarks/DoubleJanus.sh
+sleep 20
+echo "Creating janusgraph schema..."
+cd $JANUSGRAPH_DIRECTORY/janusgraph-full-1.1.0
+./bin/gremlin.sh -e $ROOT_DIRECTORY/PreloadData/janusgraphDivergent.groovy $ROOT_DIRECTORY/conf/janusgraph-scylla1-divergent.properties
+
+
+# echo "Adding network latency between replicas..."
+# echo "Using AWS inter-region latencies from cloudping.co"
+# echo ""
+# echo "Latency Matrix (milliseconds):"
+# echo "═══════════════════════════════════════════════════════════════════════════"
+
+# # Print the matrix header
+# printf "%-25s " ""
+# for (( col=0; col<i; col++ )); do
+#     printf "%-8s " "R$((col+1))"
+# done
+# echo
+# printf "%-25s " ""
+# for (( col=0; col<i; col++ )); do
+#     printf "%-8s " "(${region_codes[$col]#*-})"
+# done
+# echo
+# echo "───────────────────────────────────────────────────────────────────────────"
+
+# # Print the matrix with row labels
+# for (( row=0; row<i; row++ )); do
+#     printf "R%-2d %-20s " $((row+1)) "${region_names[$row]}"
+#     for (( col=0; col<i; col++ )); do
+#         if [ $row -eq $col ]; then
+#             printf "%-8s " "-"
+#         else
+#             printf "%-8d " "$(get_latency $row $col)"
+#         fi
+#     done
+#     echo
+# done
+# echo "═══════════════════════════════════════════════════════════════════════════"
+# echo ""
+
+# # Configure latencies for each container
+# for (( j=1; j<=i; j++ )); do
+#     # Build arguments for all peers of container j
+#     latency_args=""
+#     for (( k=1; k<=i; k++ )); do
+#         if [ $j -ne $k ]; then
+#             echo $j $k
+#             # Get latency from matrix (convert from 1-indexed to 0-indexed)
+#             latency_value=$(get_latency $((j-1)) $((k-1)))
+#             latency_args="$latency_args scylla${k} ${latency_value}"
+#             echo " scylla${j} (${region_codes[$((j-1))]}) -> scylla${k} (${region_codes[$((k-1))]}): ${latency_value}ms"
+#         fi
+#     done
+    
+#     echo "Configuring all latencies for scylla${j}..."
+#     if ! docker exec scylla${j}-netem sh -c "/usr/local/bin/setup-latency.sh scylla${j} $latency_args"; then
+#         echo "❌ Failed to configure latencies for scylla${j}"
+#     else
+#         echo "✅ Configured latencies for scylla${j}"
+#     fi
+# done
+
+echo ""
+echo "✅ Network latency configuration completed"
+echo ""
+echo "Region Summary:"
+for (( idx=0; idx<i; idx++ )); do
+    echo "  R$((idx+1)): ${region_names[$idx]} (${region_codes[$idx]})"
+done
+
+
+
+cd $ROOT_DIRECTORY
+python3 scripts/benchmarks/DivergenceInjection.py
+# cd $ROOT_DIRECTORY/GRACE
+# python3 Deployment.py up
+
+# # Inject network latencies between replicas. 
+# latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
+# for ((i=2; i<=3; i++)); do
+#     latency_value=$(get_latency $((0)) $((i-1)))
+#     echo " wsserver(${region_codes[0]}) -> Replica${i-1} (${region_codes[$((i-1))]}): 2500ms"
+#     latency_cmd="$latency_cmd Grace$i 2500"
+# done
+# latency_cmd="$latency_cmd\""
+# eval $latency_cmd
+
+
 
 echo "Benchmarking completed. Results are stored in the Results directory."
