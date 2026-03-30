@@ -1,0 +1,153 @@
+# Headless service for StatefulSet pod DNS
+apiVersion: v1
+kind: Service
+metadata:
+  name: replicatedgdb-headless
+  labels:
+    app: replicatedgdb
+spec:
+  clusterIP: None
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: replicatedgdb
+---
+# Regular service for load-balanced access
+apiVersion: v1
+kind: Service
+metadata:
+  name: replicatedgdb
+  labels:
+    app: replicatedgdb
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: replicatedgdb
+---
+# Individual NodePort services for each instance
+apiVersion: v1
+kind: Service
+metadata:
+  name: replicatedgdb-0
+  labels:
+    app: replicatedgdb
+    instance: "0"
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30000
+    protocol: TCP
+    name: http
+  selector:
+    app: replicatedgdb
+    statefulset.kubernetes.io/pod-name: replicatedgdb-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: replicatedgdb-1
+  labels:
+    app: replicatedgdb
+    instance: "1"
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30001
+    protocol: TCP
+    name: http
+  selector:
+    app: replicatedgdb
+    statefulset.kubernetes.io/pod-name: replicatedgdb-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: replicatedgdb-2
+  labels:
+    app: replicatedgdb
+    instance: "2"
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30002
+    protocol: TCP
+    name: http
+  selector:
+    app: replicatedgdb
+    statefulset.kubernetes.io/pod-name: replicatedgdb-2
+---
+# Memgraph Lab services for each instance
+apiVersion: v1
+kind: Service
+metadata:
+  name: memgraphlab-0
+  labels:
+    app: replicatedgdb
+    instance: "0"
+    component: memgraph-lab
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 31000
+    protocol: TCP
+    name: lab
+  selector:
+    app: replicatedgdb
+    statefulset.kubernetes.io/pod-name: replicatedgdb-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memgraphlab-1
+  labels:
+    app: replicatedgdb
+    instance: "1"
+    component: memgraph-lab
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 31001
+    protocol: TCP
+    name: lab
+  selector:
+    app: replicatedgdb
+    statefulset.kubernetes.io/pod-name: replicatedgdb-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memgraphlab-2
+  labels:
+    app: replicatedgdb
+    instance: "2"
+    component: memgraph-lab
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 31002
+    protocol: TCP
+    name: lab
+  selector:
+    app: replicatedgdb
+    statefulset.kubernetes.io/pod-name: replicatedgdb-2
+

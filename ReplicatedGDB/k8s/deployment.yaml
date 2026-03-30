@@ -1,0 +1,140 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: replicatedgdb
+  labels:
+    app: replicatedgdb
+spec:
+  serviceName: replicatedgdb-headless
+  replicas: 3
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: replicatedgdb
+  template:
+    metadata:
+      labels:
+        app: replicatedgdb
+    spec:
+      # Share process namespace so containers can see each other's processes (optional for debugging)
+      shareProcessNamespace: false
+      
+      containers:
+      # Memgraph database container - starts first, needs to be ready before others
+      - name: memgraph
+        image: memgraph/memgraph:latest
+        command: ["/usr/lib/memgraph/memgraph"]
+        args:
+        - "--log-level=INFO"
+        - "--also-log-to-stderr"
+        - "--storage-properties-on-edges=true"
+        ports:
+        - containerPort: 7687
+          name: bolt
+        - containerPort: 7444
+          name: monitoring
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        startupProbe:
+          tcpSocket:
+            port: 7687
+          initialDelaySeconds: 5
+          periodSeconds: 2
+          failureThreshold: 30  # 60 seconds max startup time
+        livenessProbe:
+          tcpSocket:
+            port: 7687
+          periodSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 7687
+          periodSeconds: 5
+          failureThreshold: 3
+      
+      # Memgraph Lab container - waits for Memgraph to be ready
+      - name: memgraphlab
+        image: memgraph/lab:latest
+        ports:
+        - containerPort: 3000
+          name: lab
+        env:
+        - name: QUICK_CONNECT_MG_HOST
+          value: "127.0.0.1"
+        - name: QUICK_CONNECT_MG_PORT
+          value: "7687"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        # Removed probes temporarily to allow container to start
+        # Add back once confirmed working
+      
+      # Node.js application container
+      - name: replicatedgdb
+        image: replicatedgdb:latest
+        imagePullPolicy: Never  # Use local image for development
+        ports:
+        - containerPort: 8080
+          name: http
+        envFrom:
+        - configMapRef:
+            name: replicatedgdb-config
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        # Port changed to 8080 to avoid conflict with Memgraph Lab (port 3000)
+        - name: PORT
+          value: "8080"
+        # Connect to local Memgraph sidecar
+        - name: DB_HOST
+          value: "localhost"
+        - name: DB_PORT
+          value: "7687"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+        startupProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 30  # 150 seconds max startup time for preload
+        livenessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 10
+
+

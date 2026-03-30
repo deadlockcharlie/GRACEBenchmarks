@@ -1,0 +1,60 @@
+# StatefulSet with per-instance ConfigMaps
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: replicatedgdb
+  labels:
+    app: replicatedgdb
+spec:
+  serviceName: replicatedgdb-headless
+  replicas: 3
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: replicatedgdb
+  template:
+    metadata:
+      labels: 
+        app: replicatedgdb
+    spec:
+      containers:
+      - name: replicatedgdb
+        image: replicatedgdb:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+          name: http
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_ORDINAL
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['pod-ordinal']
+        - name: PORT
+          value: "3000"
+        # Load configuration from instance-specific ConfigMap
+        envFrom:
+        - configMapRef:
+            name: replicatedgdb-config-$(POD_ORDINAL)
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+        livenessProbe:
+          httpGet:
+            path: /ready
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 5

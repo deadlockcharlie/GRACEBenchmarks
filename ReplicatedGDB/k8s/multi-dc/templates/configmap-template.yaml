@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: replicatedgdb-config
+  namespace: {{DC_ID}}
+  labels:
+    app: replicatedgdb
+    datacenter: {{DC_ID}}
+data:
+  # Database selection: NEO4J, MEMGRAPH, JANUSGRAPH, ARANGODB, or MONGODB
+  DATABASE: "MEMGRAPH"
+  
+  # WebSocket URI for Y.js synchronization
+  # This should point to your global Y.js WebSocket server for cross-DC sync
+  WS_URI: "ws://yjs-hub.yjs.svc.cluster.local:1234"
+  
+  # Data Center identifier (dc1, dc2, dc3, dc4, dc5, dc6)
+  # Used for routing, metrics, and data locality decisions
+  DC_ID: "{{DC_ID}}"
+  
+  # Region identifier (for geo-distributed deployments)
+  # Examples: us-east-1, us-west-1, eu-central-1, ap-southeast-1
+  DC_REGION: "{{DC_REGION}}"
+  
+  # Set to "Yes" for the pod that should handle preloading
+  # Only one pod across all DCs should have this set to "Yes"
+  IS_PRELOAD_LEADER: "{{IS_PRELOAD_LEADER}}"
+  
+  # Additional database connection settings can be added here
+  # depending on which database driver is being used

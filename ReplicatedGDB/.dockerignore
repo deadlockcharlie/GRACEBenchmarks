@@ -1,1 +1,51 @@
-/node_modules
+# Node modules
+node_modules
+npm-debug.log
+
+# Build outputs
+dist
+*.tgz
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+
+# Logs
+Logs/
+*.log
+
+# Test files
+test/
+*.test.ts
+*.spec.ts
+
+# CI/CD
+.github
+.gitlab-ci.yml
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Kubernetes manifests (not needed in image)
+k8s/
+*.yaml
+*.yml
+!package*.json

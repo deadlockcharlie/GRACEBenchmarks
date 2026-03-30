@@ -1,0 +1,223 @@
+import { logger } from "../helpers/logging";
+import { DatabaseDriver } from "./driver";
+import neo4j from "neo4j-driver";
+import { graph } from "../app";
+
+export class MemGraphDriver extends DatabaseDriver {
+  driver;
+  constructor() {
+    super();
+
+    const dbUri = process.env.DATABASE_URI || "bolt://localhost:7687";
+    const dbUser = process.env.NEO4J_USER || "";
+    const dbPassword = process.env.NEO4J_PASSWORD || "";
+    
+    logger.info(`Connecting to bolt on: ${dbUri}`);
+    logger.info(`DB User: '${dbUser}' (length: ${dbUser.length})`);
+    logger.info(`DB URI defined: ${!!process.env.DATABASE_URI}`);
+    
+    this.driver = neo4j.driver(
+      dbUri,
+      neo4j.auth.basic(dbUser, dbPassword)
+    );
+    (async () => {
+      await this.driver.getServerInfo();
+
+      logger.info("Connected to the Database.");
+    })();
+  }
+
+  async getGraph() {
+    const query = `MATCH (n) RETURN n LIMIT 50`;
+    const params = null;
+
+    try {
+      const result = await this.driver.executeQuery(query);
+      return result;
+    } catch (err) {
+      logger.error(err);
+      throw err;
+    }
+  }
+
+  async addVertex(labels, properties) {
+    logger.info("Adding vertex");
+    const labelString = labels.join(":");
+    // MERGE ensures upsert behavior - matches CRDT semantics
+    const query = `
+      MERGE (n:${labelString} {id: $properties.id})
+      SET n = $properties
+      RETURN n
+    `;
+    const params = { properties: properties };
+    try {
+      await this.driver.executeQuery(query, params);
+    } catch (err) {
+      logger.error("Error in add vertex: " + err);
+      throw err;
+    }
+  }
+
+  async deleteVertex(id) {
+    // Fixed: Use parameterized query to prevent injection
+    const query = 'MATCH (n {id: $id}) DETACH DELETE n';
+    const params = { id: id };
+    
+    try {
+      await this.driver.executeQuery(query, params);
+    } catch (err) {
+      logger.error("Error in delete vertex: " + err);
+      throw err;
+    }
+  }
+
+  async addEdge(
+    relationLabels: [string],
+    sourcePropName: string,
+    sourcePropValue: any,
+    targetPropName: string,
+    targetPropValue: any,
+    properties: { [key: string]: any }
+  ) {
+    const relationLabelString = relationLabels.join(":");
+
+    // MERGE ensures upsert behavior for edges too
+    // Note: Using dynamic property names in MERGE requires careful handling
+    const query = `
+          MATCH (a {${sourcePropName}: $sourcePropValue}), 
+                (b {${targetPropName}: $targetPropValue})
+          MERGE (a)-[r:${relationLabelString} {id: $properties.id}]->(b)
+          SET r = $properties
+          RETURN r
+    `;
+
+    const params = {
+      sourcePropValue: sourcePropValue,
+      targetPropValue: targetPropValue,
+      properties: properties,
+    };
+
+    try {
+      await this.driver.executeQuery(query, params);
+    } catch (err) {
+      logger.error("Error in add edge: " + err);
+      throw err;
+    }
+  }
+
+  async deleteEdge(id: string) {
+    // Fixed: Use parameterized query
+    const query = 'MATCH ()-[r {id: $id}]-() DELETE r';
+    const params = { id: id };
+    
+    logger.info("Delete edge query: " + query);
+    try {
+      await this.driver.executeQuery(query, params);
+    } catch (err) {
+      logger.error("Error in delete edge: " + err);
+      throw err;
+    }
+  }
+
+  async setVertexProperty(vid: string, key: string, value: string) {
+    // Fixed: Use parameterized query and MERGE for idempotency
+    // Note: Dynamic property keys still require string interpolation
+    const query = `
+      MATCH (n {id: $vid})
+      SET n.${key} = $value
+      RETURN n
+    `;
+    const params = { vid: vid, value: value };
+
+    logger.info("Set vertex property query: " + query);
+
+    try {
+      const result = await this.driver.executeQuery(query, params);
+      if (result.records.length === 0) {
+        throw new Error(`Vertex with id ${vid} not found.`);
+      }
+      logger.info(`Property ${key} set to ${value} for vertex with id ${vid}`);
+    } catch (err) {
+      logger.error("Error in set vertex property: " + err);
+      throw err;
+    }
+  }
+
+  async setEdgeProperty(eid: string, key: string, value: string) {
+    // Fixed: Use parameterized query
+    const query = `
+      MATCH ()-[r {id: $eid}]->()
+      SET r.${key} = $value
+      RETURN r
+    `;
+    const params = { eid: eid, value: value };
+
+    try {
+      const result = await this.driver.executeQuery(query, params);
+      if (result.records.length === 0) {
+        throw new Error(`Edge with id ${eid} not found.`);
+      }
+      logger.info(`Property ${key} set to ${value} for edge with id ${eid}`);
+    } catch (err) {
+      logger.error("Error in set edge property: " + err);
+      throw err;
+    }
+  }
+
+  async removeVertexProperty(vid: string, key: string) {
+    // Fixed: Use parameterized query
+    const query = `
+      MATCH (n {id: $vid})
+      REMOVE n.${key}
+      RETURN n
+    `;
+    const params = { vid: vid };
+    
+    try {
+      const result = await this.driver.executeQuery(query, params);
+      if (result.records.length === 0) {
+        throw new Error(`Vertex with id ${vid} not found.`);
+      }
+      logger.info(`Property ${key} removed from vertex with id ${vid}`);
+    } catch (err) {
+      logger.error("Error in remove vertex property: " + err);
+      throw err;
+    }
+  }
+
+  async removeEdgeProperty(eid: string, key: string) {
+    // Fixed: Use parameterized query
+    const query = `
+      MATCH ()-[r {id: $eid}]->()
+      REMOVE r.${key}
+      RETURN r
+    `;
+    const params = { eid: eid };
+
+    try {
+      const result = await this.driver.executeQuery(query, params);
+      if (result.records.length === 0) {
+        throw new Error(`Edge with id ${eid} not found.`);
+      }
+      logger.info(`Property ${key} removed from edge with id ${eid}`);
+    } catch (err) {
+      logger.error("Error in remove edge property: " + err);
+      throw err;
+    }
+  }
+
+  async *streamQuery(session: any, query: string, batchSize: number = 10000) {
+    let skip = 0;
+    while (true) {
+      const result = await this.driver.executeQuery(
+        `${query} SKIP $skip LIMIT $limit`,
+        { skip: neo4j.int(skip), limit: neo4j.int(batchSize) }
+      );
+
+      if (result.records.length === 0) break;
+
+      yield result.records; // yield a batch of records
+      skip += batchSize;
+    }
+  }
+}

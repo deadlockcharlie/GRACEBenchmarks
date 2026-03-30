@@ -1,0 +1,38 @@
+# ConfigMap for Instance 0 - Memgraph
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: replicatedgdb-config-0
+  labels:
+    app: replicatedgdb
+    instance: "0"
+data:
+  DATABASE: "MEMGRAPH"
+  WS_URI: "ws://yjs-server:1234"
+  IS_PRELOAD_LEADER: "Yes"
+---
+# ConfigMap for Instance 1 - ArangoDB
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: replicatedgdb-config-1
+  labels:
+    app: replicatedgdb
+    instance: "1"
+data:
+  DATABASE: "ARANGODB"
+  WS_URI: "ws://yjs-server:1234"
+  IS_PRELOAD_LEADER: "No"
+---
+# ConfigMap for Instance 2 - MongoDB
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: replicatedgdb-config-2
+  labels:
+    app: replicatedgdb
+    instance: "2"
+data:
+  DATABASE: "MONGODB"
+  WS_URI: "ws://yjs-server:1234"
+  IS_PRELOAD_LEADER: "No"

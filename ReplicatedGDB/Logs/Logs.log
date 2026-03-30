@@ -1,0 +1,233 @@
+2026-01-28T09:14:07.546Z [ERROR]: No
+2026-01-28T09:14:07.546Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:15:49.915Z [ERROR]: No
+2026-01-28T09:15:49.916Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:16:27.712Z [ERROR]: No
+2026-01-28T09:16:27.713Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:16:41.722Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T09:18:12.470Z [ERROR]: No
+2026-01-28T09:18:12.471Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:18:18.029Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T09:19:02.715Z [ERROR]: No
+2026-01-28T09:19:02.716Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:19:05.259Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T09:19:39.051Z [ERROR]: No
+2026-01-28T09:19:39.052Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:20:08.637Z [ERROR]: No
+2026-01-28T09:20:08.638Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:20:27.351Z [ERROR]: No
+2026-01-28T09:20:27.352Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:20:40.551Z [ERROR]: Error adding edge TypeError: properties.get is not a function
+2026-01-28T09:21:24.560Z [ERROR]: No
+2026-01-28T09:21:24.561Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:21:32.553Z [ERROR]: Error adding edge Error: Source and/or target vertex do not exist. Edge: 15 15
+2026-01-28T09:21:38.458Z [ERROR]: Error adding vertex Error: Vertex with id "Product2" already exists
+2026-01-28T09:21:42.283Z [ERROR]: Error adding edge Error: Source and/or target vertex do not exist. Edge: 15 15
+2026-01-28T09:22:07.342Z [ERROR]: Error setting vertex property TypeError: vertex.properties.set is not a function
+2026-01-28T09:30:49.286Z [ERROR]: No
+2026-01-28T09:30:49.286Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:30:51.908Z [ERROR]: Error setting vertex property Error: Vertex with id Product2 does not exist
+2026-01-28T09:30:57.871Z [ERROR]: Error adding vertex TypeError: content is not iterable (cannot read property undefined)
+2026-01-28T09:31:57.019Z [ERROR]: No
+2026-01-28T09:31:57.019Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:31:58.334Z [ERROR]: Error adding vertex TypeError: content is not iterable (cannot read property undefined)
+2026-01-28T09:32:52.253Z [ERROR]: No
+2026-01-28T09:32:52.254Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:32:54.083Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T09:34:21.648Z [ERROR]: No
+2026-01-28T09:34:21.648Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:34:22.690Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T09:34:52.879Z [ERROR]: No
+2026-01-28T09:34:52.880Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:34:55.054Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T09:35:48.049Z [ERROR]: No
+2026-01-28T09:35:48.050Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:35:49.736Z [ERROR]: Error adding vertex TypeError: properties.forEach is not a function
+2026-01-28T09:36:21.426Z [ERROR]: No
+2026-01-28T09:36:21.427Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:36:21.957Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T09:36:23.265Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T09:37:09.746Z [ERROR]: No
+2026-01-28T09:37:09.747Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:37:29.942Z [ERROR]: No
+2026-01-28T09:37:29.943Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:38:07.524Z [ERROR]: No
+2026-01-28T09:38:07.525Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T09:49:45.578Z [ERROR]: No
+2026-01-28T09:49:45.579Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:00:48.245Z [ERROR]: No
+2026-01-28T10:00:48.246Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:02:06.717Z [ERROR]: No
+2026-01-28T10:02:06.717Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:04:14.119Z [ERROR]: No
+2026-01-28T10:04:14.120Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:04:30.402Z [ERROR]: No
+2026-01-28T10:04:30.403Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:04:35.493Z [ERROR]: Error setting vertex property Error: Vertex with id Product1 does not exist
+2026-01-28T10:04:44.755Z [ERROR]: Error setting vertex property Error: Vertex with id Product1 does not exist
+2026-01-28T10:04:54.184Z [ERROR]: Error removing vertex Error: Vertex with id "Product1" does not exist
+2026-01-28T10:05:49.898Z [ERROR]: No
+2026-01-28T10:05:49.898Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:05:51.778Z [ERROR]: Error setting vertex property Error: Vertex with id Product1 does not exist
+2026-01-28T10:06:13.196Z [ERROR]: No
+2026-01-28T10:06:13.196Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:06:14.485Z [ERROR]: Remote transaction observed [object Object]
+2026-01-28T10:06:18.083Z [ERROR]: Remote transaction observed [object Object]
+2026-01-28T10:06:27.438Z [ERROR]: No
+2026-01-28T10:06:27.440Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:06:28.799Z [ERROR]: Remote transaction observed {"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false}
+2026-01-28T10:06:32.814Z [ERROR]: Remote transaction observed {"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false}
+2026-01-28T10:07:45.989Z [ERROR]: No
+2026-01-28T10:07:45.989Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:07:47.559Z [ERROR]: Remote transaction observed [{"target":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"currentTarget":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"transaction":{"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false},"_changes":null,"_keys":null,"_delta":null,"_path":null,"keysChanged":{}}]
+2026-01-28T10:09:05.982Z [ERROR]: No
+2026-01-28T10:09:05.982Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:09:08.793Z [ERROR]: Remote transaction observed {"target":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"currentTarget":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"transaction":{"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false},"_changes":null,"_keys":null,"_delta":null,"_path":null,"keysChanged":{}}
+2026-01-28T10:10:14.110Z [ERROR]: Remote transaction observed {"target":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"currentTarget":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"transaction":{"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false},"_changes":null,"_keys":null,"_delta":null,"_path":null,"keysChanged":{}}
+2026-01-28T10:11:20.645Z [ERROR]: No
+2026-01-28T10:11:20.645Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:11:25.049Z [ERROR]: Remote transaction observed [{"target":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"currentTarget":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"transaction":{"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false},"_changes":null,"_keys":null,"_delta":null,"_path":null,"keysChanged":{}}]
+2026-01-28T10:11:49.676Z [ERROR]: Remote transaction observed [{"target":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"currentTarget":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"transaction":{"doc":{"GVertices":{"Product1":{"id":"Product1","labels":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true,"name1":"LaptopUpdated4"}}},"GEdges":{}},"deleteSet":{"clients":{}},"beforeState":{},"afterState":{},"changed":{},"changedParentTypes":{},"_mergeStructs":[],"origin":null,"meta":{},"local":true,"subdocsAdded":{},"subdocsRemoved":{},"subdocsLoaded":{},"_needFormattingCleanup":false},"_changes":null,"_keys":null,"_delta":null,"_path":null,"keysChanged":{}}]
+2026-01-28T10:12:48.298Z [ERROR]: No
+2026-01-28T10:12:48.299Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:13:08.848Z [ERROR]: No
+2026-01-28T10:13:08.848Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:13:11.211Z [ERROR]: Remote update observed [object Object]
+2026-01-28T10:13:20.196Z [ERROR]: No
+2026-01-28T10:13:20.196Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:13:20.504Z [ERROR]: Remote update observed {"action":"add"}
+2026-01-28T10:14:54.891Z [ERROR]: No
+2026-01-28T10:14:54.892Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:15:11.800Z [ERROR]: No
+2026-01-28T10:15:11.800Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:15:12.322Z [ERROR]: Remote update observed {"action":"add"}
+2026-01-28T10:36:33.049Z [ERROR]: No
+2026-01-28T10:36:33.049Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:36:38.714Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T10:37:41.547Z [ERROR]: No
+2026-01-28T10:37:41.548Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:37:42.729Z [ERROR]: Adding Vertex: []
+2026-01-28T10:37:42.729Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T10:39:06.425Z [ERROR]: No
+2026-01-28T10:39:06.425Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:39:07.373Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T10:39:25.439Z [ERROR]: No
+2026-01-28T10:39:25.440Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:39:26.536Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:39:26.536Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:40:32.586Z [ERROR]: No
+2026-01-28T10:40:32.587Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:40:33.774Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:40:33.774Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:42:31.553Z [ERROR]: No
+2026-01-28T10:42:31.553Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:42:33.884Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T10:44:24.737Z [ERROR]: No
+2026-01-28T10:44:24.737Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:44:25.009Z [ERROR]: Error adding vertex TypeError: labels.join is not a function
+2026-01-28T10:44:39.359Z [ERROR]: No
+2026-01-28T10:44:39.359Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:44:41.207Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:44:41.207Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:45:19.363Z [ERROR]: No
+2026-01-28T10:45:19.363Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:45:20.760Z [ERROR]: Label String: 
+2026-01-28T10:45:20.778Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:45:20.778Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:45:45.143Z [ERROR]: No
+2026-01-28T10:45:45.144Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:45:47.226Z [ERROR]: Labels: []
+2026-01-28T10:45:47.244Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:45:47.244Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:46:13.306Z [ERROR]: No
+2026-01-28T10:46:13.306Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:46:15.511Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:46:15.512Z [ERROR]: Labels: []
+2026-01-28T10:46:15.522Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:46:15.522Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:46:44.239Z [ERROR]: No
+2026-01-28T10:46:44.240Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:46:46.072Z [ERROR]: Add Vertex called with label: ["ProductItem"]
+2026-01-28T10:46:46.072Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:46:46.072Z [ERROR]: Labels: []
+2026-01-28T10:46:46.090Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:46:46.090Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:47:37.160Z [ERROR]: No
+2026-01-28T10:47:37.161Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:47:38.456Z [ERROR]: Add Vertex called with label: []
+2026-01-28T10:47:38.456Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:47:38.456Z [ERROR]: Labels: []
+2026-01-28T10:47:38.466Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:47:38.466Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:50:07.953Z [ERROR]: No
+2026-01-28T10:50:07.954Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:50:08.927Z [ERROR]: Add Vertex called with label: []
+2026-01-28T10:50:08.927Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:50:08.927Z [ERROR]: Labels: []
+2026-01-28T10:50:08.943Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:50:08.944Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:50:37.884Z [ERROR]: No
+2026-01-28T10:50:37.884Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:50:39.478Z [ERROR]: Add Vertex called with label: object
+2026-01-28T10:50:39.478Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:50:39.478Z [ERROR]: Labels: []
+2026-01-28T10:50:39.491Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:50:39.492Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:50:55.980Z [ERROR]: No
+2026-01-28T10:50:55.981Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:50:59.377Z [ERROR]: Add Vertex called with label: "object"
+2026-01-28T10:50:59.378Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:50:59.378Z [ERROR]: Labels: []
+2026-01-28T10:50:59.396Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:50:59.397Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:51:15.558Z [ERROR]: No
+2026-01-28T10:51:15.559Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:51:18.038Z [ERROR]: Error adding vertex TypeError: label.toArray is not a function
+2026-01-28T10:51:35.823Z [ERROR]: No
+2026-01-28T10:51:35.824Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:51:37.292Z [ERROR]: Add Vertex called with label: {"label":["ProductItem"],"properties":{"id":"Product1","name":"Laptop1","price":999.99,"inStock":true}}
+2026-01-28T10:51:37.293Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:51:37.294Z [ERROR]: Labels: []
+2026-01-28T10:51:37.309Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:51:37.309Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:54:26.615Z [ERROR]: No
+2026-01-28T10:54:26.616Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:56:08.367Z [ERROR]: Add Vertex called with label: []
+2026-01-28T10:56:08.368Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:56:08.368Z [ERROR]: Labels: []
+2026-01-28T10:56:08.395Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:56:08.395Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:57:09.098Z [ERROR]: No
+2026-01-28T10:57:09.098Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T10:57:11.643Z [ERROR]: Label before: ["ProductItem"]
+2026-01-28T10:57:11.644Z [ERROR]: Y.Array length: 0
+2026-01-28T10:57:11.644Z [ERROR]: Y.Array content: []
+2026-01-28T10:57:11.644Z [ERROR]: Adding vertex with labels: []
+2026-01-28T10:57:11.644Z [ERROR]: Labels: []
+2026-01-28T10:57:11.654Z [ERROR]: Error in add vertex: Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T10:57:11.655Z [ERROR]: Error adding vertex Neo4jError: Parameter for dynamic node labels must be of type STRING or LIST[STRING]
+2026-01-28T11:05:25.482Z [ERROR]: No
+2026-01-28T11:05:25.483Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T11:05:27.592Z [ERROR]: Labels: ["ProductItem"]
+2026-01-28T12:36:46.644Z [ERROR]: No
+2026-01-28T12:36:46.645Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T12:36:55.890Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T12:39:59.771Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T12:40:05.620Z [ERROR]: No
+2026-01-28T12:40:05.621Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T12:40:06.805Z [ERROR]: Error adding vertex TypeError: properties.get is not a function
+2026-01-28T12:40:19.795Z [ERROR]: No
+2026-01-28T12:40:19.795Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T12:42:05.880Z [ERROR]: No
+2026-01-28T12:42:05.880Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T12:42:12.916Z [ERROR]: Error adding vertex Error: Vertex with id "Product1" already exists
+2026-01-28T13:05:40.409Z [ERROR]: No
+2026-01-28T13:05:40.410Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T13:06:37.425Z [ERROR]: No
+2026-01-28T13:06:37.426Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T13:08:25.625Z [ERROR]: No
+2026-01-28T13:08:25.625Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T13:09:06.175Z [ERROR]: No
+2026-01-28T13:09:06.176Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
+2026-01-28T13:10:24.940Z [ERROR]: No
+2026-01-28T13:10:24.940Z [ERROR]: I am not the crdt preload leader. Waiting for remote updates
