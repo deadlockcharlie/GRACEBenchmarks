@@ -53,29 +53,39 @@ for db_config_idx in $(seq 3 3); do
   "provider": true,
 EOL
 
-
-    # Add databases array
-    echo '  "dbs" : [' >> $DIST_CONF
+    # Add replicas_per_dc and datacenters array (new configuration format)
+    # Each datacenter now has 2 replicas
+    echo '  "replicas_per_dc": 2,' >> $DIST_CONF
     
-    for ((i=1; i<=num_replicas; i++)); do
+    # Calculate number of datacenters needed (each DC has 2 replicas)
+    num_datacenters=$(( (num_replicas + 1) / 2 ))
+    
+    echo '  "datacenters" : [' >> $DIST_CONF
+    
+    for ((i=1; i<=num_datacenters; i++)); do
         # Determine which database to use
-        if [ $i -le $((num_replicas - db_config_idx)) ]; then
+        # For simplicity, we assign the same database type to both replicas in a DC
+        # Based on the original logic, map DC index to replica index
+        replica_idx_for_dc=$((i * 2 - 1))  # First replica of the DC
+        
+        if [ $replica_idx_for_dc -le $((num_replicas - db_config_idx)) ]; then
             # Use memgraph for initial replicas
             current_db="memgraph"
         else
             # Use alternate database from list
-            alt_db_idx=$((i - (num_replicas - db_config_idx) - 1))
+            alt_db_idx=$((replica_idx_for_dc - (num_replicas - db_config_idx) - 1))
             alt_db_idx=$((alt_db_idx % $num_replicas))
             current_db="${DATABASES[$alt_db_idx]}"
         fi
         
-        # Store database for this replica (for later use in YCSB commands)
+        # Store database for this datacenter (for later use in YCSB commands)
         replica_databases[$i]="$current_db"
         log_level="error"
         
-        # Add database entry
+        # Add datacenter entry
         cat >> $DIST_CONF <<EOL
     {
+     "name": "DC${i}",
      "database": "$current_db", 
       "password": "verysecretpassword",
       "user": "pandey",
@@ -84,7 +94,7 @@ EOL
 EOL
         
         # Add comma if not last entry
-        if [ $i -lt $num_replicas ]; then
+        if [ $i -lt $num_datacenters ]; then
             echo "," >> $DIST_CONF
         fi
     done

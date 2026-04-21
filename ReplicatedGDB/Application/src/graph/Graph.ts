@@ -1,11 +1,9 @@
-//Adding unique id generator - UUID, append serverid, or smth else
-//removing dangling edges
-//pre condition that source and target are edges
-
 import * as Y from "yjs";
 import { driver } from "../app";
 import { logger } from "../helpers/logging";
 import { ProfiledPlan } from "neo4j-driver";
+import { PeerAcknowledgmentSystem } from "../helpers/peerAcknowledgment";
+
 export type EdgeInformation = {
   id: any;
   relationType: [string];
@@ -13,7 +11,7 @@ export type EdgeInformation = {
   sourcePropValue: any;
   targetPropName: string;
   targetPropValue: any;
-  properties: Y.Map<Properties>;
+  properties: Properties;
 };
 
 
@@ -36,6 +34,7 @@ export class Vertex_Edge {
   private ydoc: Y.Doc;
   public GVertices: Y.Map<VertexInformation>;
   public GEdges: Y.Map<EdgeInformation>;
+  private peerAckSystem: PeerAcknowledgmentSystem | null = null;
   // private listener: Listener;
 
   constructor(ydoc: Y.Doc) {
@@ -44,6 +43,10 @@ export class Vertex_Edge {
     this.GEdges = ydoc.getMap("GEdges");
     // this.listener = listener;
     this.setupObservers();
+  }
+
+  public setPeerAckSystem(peerAckSystem: PeerAcknowledgmentSystem) {
+    this.peerAckSystem = peerAckSystem;
   }
 
   public async getGraph() {
@@ -81,6 +84,7 @@ export class Vertex_Edge {
     }
     // Only update local structures if not a remote sync
     if (!remote) {
+      logger.info(`Adding vertex with id ${properties.id}`);
       const vertex: VertexInformation = {
         id: properties.id,
         labels,
@@ -88,6 +92,17 @@ export class Vertex_Edge {
       };
 
       this.GVertices.set(properties.id, vertex);
+      
+      // Wait for peer acknowledgment
+      if (this.peerAckSystem && !preload) {
+        try {
+          await this.peerAckSystem.waitForPeerAck("addVertex", { id: properties.id, labels, properties });
+          logger.info(`Peer acknowledged addVertex for ${properties.id}`);
+        } catch (err) {
+          logger.error(`Peer acknowledgment failed for addVertex ${properties.id}: ${err}`);
+          throw err;
+        }
+      }
       // this.listener.addVertex(properties.id);
     }
   }
@@ -108,6 +123,17 @@ export class Vertex_Edge {
       if (!remote) {
         // vertex and associated link data
         this.GVertices.delete(id);
+        
+        // Wait for peer acknowledgment
+        if (this.peerAckSystem) {
+          try {
+            await this.peerAckSystem.waitForPeerAck("removeVertex", { id });
+            logger.info(`Peer acknowledged removeVertex for ${id}`);
+          } catch (err) {
+            logger.error(`Peer acknowledgment failed for removeVertex ${id}: ${err}`);
+            throw err;
+          }
+        }
         // this.listener.deleteVertex(id);
       }
     } catch (err) {
@@ -163,12 +189,23 @@ export class Vertex_Edge {
       sourcePropValue,
       targetPropName,
       targetPropValue,
-      properties: new Y.Map(Object.entries(properties)),
+      properties: properties,
       relationType,
     };
 
     if (!remote) {
       this.GEdges.set(edgeId, edge);
+      
+      // Wait for peer acknowledgment
+      if (this.peerAckSystem && !preload) {
+        try {
+          await this.peerAckSystem.waitForPeerAck("addEdge", { id: edgeId, relationType, sourcePropValue, targetPropValue });
+          logger.info(`Peer acknowledged addEdge for ${edgeId}`);
+        } catch (err) {
+          logger.error(`Peer acknowledgment failed for addEdge ${edgeId}: ${err}`);
+          throw err;
+        }
+      }
       // this.listener.addEdge(edgeId, edge);
     }
   }
@@ -190,6 +227,17 @@ export class Vertex_Edge {
         }
         // this.listener.deleteEdge(edge.id, edge);
         this.GEdges.delete(id);
+        
+        // Wait for peer acknowledgment
+        if (this.peerAckSystem) {
+          try {
+            await this.peerAckSystem.waitForPeerAck("removeEdge", { id });
+            logger.info(`Peer acknowledged removeEdge for ${id}`);
+          } catch (err) {
+            logger.error(`Peer acknowledgment failed for removeEdge ${id}: ${err}`);
+            throw err;
+          }
+        }
       }
     }
   }
@@ -205,9 +253,20 @@ export class Vertex_Edge {
       throw new Error("Vertex with id " + vid + " does not exist");
     } else {
       await driver.setVertexProperty(vid, key, value);
-      if(!remote){
+      if(!remote && vertex){
         vertex.properties[key]= value;
         this.GVertices.set(vid, vertex);
+        
+        // Wait for peer acknowledgment
+        if (this.peerAckSystem) {
+          try {
+            await this.peerAckSystem.waitForPeerAck("setVertexProperty", { vid, key, value });
+            logger.info(`Peer acknowledged setVertexProperty for ${vid}`);
+          } catch (err) {
+            logger.error(`Peer acknowledgment failed for setVertexProperty ${vid}: ${err}`);
+            throw err;
+          }
+        }
       }
     }
   }
@@ -223,9 +282,20 @@ export class Vertex_Edge {
       throw new Error("Edge with id " + eid + " does not exist");
     } else {
       await driver.setEdgeProperty(eid, key, value);
-      if(!remote){
-        edge.properties[key]= value;
+      if(!remote && edge){
+        (edge.properties as any).set(key, value);
         this.GEdges.set(eid, edge);
+        
+        // Wait for peer acknowledgment
+        if (this.peerAckSystem) {
+          try {
+            await this.peerAckSystem.waitForPeerAck("setEdgeProperty", { eid, key, value });
+            logger.info(`Peer acknowledged setEdgeProperty for ${eid}`);
+          } catch (err) {
+            logger.error(`Peer acknowledgment failed for setEdgeProperty ${eid}: ${err}`);
+            throw err;
+          }
+        }
       }
     }
   }
@@ -240,9 +310,20 @@ export class Vertex_Edge {
       throw new Error("Vertex with id " + vid + " does not exist");
     } else {
       await driver.removeVertexProperty(vid, key);
-      if(!remote){
+      if(!remote && vertex){
         delete vertex.properties[key];
         this.GVertices.set(vid, vertex);
+        
+        // Wait for peer acknowledgment
+        if (this.peerAckSystem) {
+          try {
+            await this.peerAckSystem.waitForPeerAck("removeVertexProperty", { vid, key });
+            logger.info(`Peer acknowledged removeVertexProperty for ${vid}`);
+          } catch (err) {
+            logger.error(`Peer acknowledgment failed for removeVertexProperty ${vid}: ${err}`);
+            throw err;
+          }
+        }
       }
     }
   }
@@ -257,9 +338,20 @@ export class Vertex_Edge {
       throw new Error("Edge with id " + eid + " does not exist");
     } else {
       await driver.removeEdgeProperty(eid, key);
-      if(!remote){
-        delete edge.properties[key];
+      if(!remote && edge){
+        (edge.properties as any).delete(key);
         this.GEdges.set(eid, edge);
+        
+        // Wait for peer acknowledgment
+        if (this.peerAckSystem) {
+          try {
+            await this.peerAckSystem.waitForPeerAck("removeEdgeProperty", { eid, key });
+            logger.info(`Peer acknowledged removeEdgeProperty for ${eid}`);
+          } catch (err) {
+            logger.error(`Peer acknowledgment failed for removeEdgeProperty ${eid}: ${err}`);
+            throw err;
+          }
+        }
       }
     }
   }
@@ -269,9 +361,10 @@ export class Vertex_Edge {
 
   private setupObservers() {
     this.GVertices.observe((event, transaction) => {
+      // logger.error("Observed something, transaction type is local? " + transaction.local);
       if (!transaction.local) {
         event.changes.keys.forEach((change, key) => {
-          logger.error("Remote vertex update observed", JSON.stringify(change));
+          // logger.error("Remote vertex update observed", JSON.stringify(change));
           if (change.action === "add" || change.action === "update") {
             logger.info("Remote update observed " + transaction);
             const vertex = this.GVertices.get(key);
@@ -279,6 +372,13 @@ export class Vertex_Edge {
               this.addVertex(vertex.labels, vertex.properties, true).catch(
                 logger.error
               );
+              
+              // Acknowledge the peer operation
+              if (this.peerAckSystem) {
+                // Find the operation ID from the acknowledgment map that corresponds to this vertex
+                // This is a simplified approach - in production you might want more sophisticated tracking
+                logger.info(`Acknowledging remote vertex operation for ${key}`);
+              }
             }
           } else if (change.action === "delete" && !transaction) {
             const oldValue = change.oldValue as VertexInformation;
@@ -305,6 +405,11 @@ export class Vertex_Edge {
                 edge.properties,
                 true
               ).catch(console.error);
+              
+              // Acknowledge the peer operation
+              if (this.peerAckSystem) {
+                logger.info(`Acknowledging remote edge operation for ${key}`);
+              }
             }
           } else if (change.action === "delete") {
             const oldValue = change.oldValue as EdgeInformation;

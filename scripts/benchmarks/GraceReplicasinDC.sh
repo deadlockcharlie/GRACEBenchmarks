@@ -21,59 +21,38 @@ for num_replicas in "${REPLICAS[@]}"; do
   "provider": true,
 EOL
 
-    # Handle preload_data logic based on number of replicas
-    if [ $num_replicas -eq 1 ]; then
-        cat >> $DIST_CONF <<EOL
-  "preload_data": true,
-  "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/yeast_load_vertices.json",
-  "preload_edges": "$ROOT_DIRECTORY/GraphDBData/yeast_load_edges.json",
-  "dataset_name": "${DATASET_NAME}",
-EOL
-    elif [ $num_replicas -eq 2 ]; then
-        cat >> $DIST_CONF <<EOL
+      cat >> $DIST_CONF <<EOL
   "preload_data": true,
   "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_vertices.json",
   "preload_edges": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_edges.json",
   "dataset_name": "${DATASET_NAME}",
+  "replicas_per_dc": 2,
+  "datacenters": [
 EOL
-    else
-        cat >> $DIST_CONF <<EOL
-  "preload_data": false,
-EOL
-    fi
 
-    # Add databases array (legacy format - 1 replica per DC)
-    echo '  "dbs" : [' >> $DIST_CONF
-    
+    # Add datacenters array dynamically based on num_replicas (each DC has 2 replicas)
     for ((i=1; i<=num_replicas; i++)); do
-        # Set log level based on replica count
-        if [ $num_replicas -eq 1 ]; then
-            log_level="error"
-        elif [ $num_replicas -eq 2 ]; then
-            log_level="info"
-        else
-            log_level="error"
-        fi
-        
-        # Add database entry
         cat >> $DIST_CONF <<EOL
     {
-     "database": "memgraph", 
+      "name": "DC$i",
+      "database": "memgraph",
       "password": "verysecretpassword",
       "user": "pandey",
-      "app_log_level": "$log_level"
-    } 
+      "app_log_level": "error"
+    }
 EOL
-        
         # Add comma if not last entry
         if [ $i -lt $num_replicas ]; then
             echo "," >> $DIST_CONF
         fi
     done
     
-    echo '' >> $DIST_CONF
-    echo '  ]' >> $DIST_CONF
-    echo '}' >> $DIST_CONF
+    # Close the datacenters array and configuration
+    cat >> $DIST_CONF <<EOL
+
+  ]
+}
+EOL
 
     # Start the replicas
     python3 Deployment.py up $DIST_CONF -v

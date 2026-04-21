@@ -118,7 +118,16 @@ def generate_provider(config, external_network_instances):
     return filepath
   
   
-def generate_compose_file(i, db_conf, config):
+def generate_compose_file(dc_idx, replica_idx, dc_conf, config):
+    """
+    Generate a compose file for a specific replica in a datacenter.
+    dc_idx: datacenter index (0-based)
+    replica_idx: replica index within the datacenter (0-based)
+    """
+    replicas_per_dc = config.get("replicas_per_dc", 1)
+    # Calculate global replica index
+    i = dc_idx * replicas_per_dc + replica_idx
+    
     website_port = config["base_website_port"] + i
     protocol_port = config["base_protocol_port"] + i
     app_port = config["base_app_port"] + i
@@ -126,11 +135,11 @@ def generate_compose_file(i, db_conf, config):
     grafana_port = config["base_grafana_port"] + i
 
     
-    app_log_level = db_conf["app_log_level"]
-    database = db_conf["database"]
-    password = db_conf["password"]
-    # connected_to_provider = db_conf["connected_to_provider"]
-    db_user = db_conf["user"]
+    app_log_level = dc_conf["app_log_level"]
+    database = dc_conf["database"]
+    password = dc_conf["password"]
+    db_user = dc_conf["user"]
+    dc_name = dc_conf.get("name", f"DC{dc_idx + 1}")
 
     db_name = f"{database}{i+1}"
     preloadName = f"preload{i+1}"
@@ -140,6 +149,16 @@ def generate_compose_file(i, db_conf, config):
     grafana_name = f"Grafana{i+1}"
     network_name = f"Grace_net_{i+1}"
 
+    # Determine replica IDs for peer-to-peer replication
+    replica_id = f"{dc_name}-replica-{replica_idx}"
+    # Peer is the other replica in the same datacenter
+    # Only set a peer if there are 2 or more replicas per DC
+    if replicas_per_dc >= 2:
+        peer_replica_idx = 1 - replica_idx if replicas_per_dc == 2 else (replica_idx + 1) % replicas_per_dc
+        peer_replica_id = f"{dc_name}-replica-{peer_replica_idx}"
+    else:
+        # No peer for single replica per DC
+        peer_replica_id = "none"
     
     preload_block = ""
     volume_block= ""
@@ -198,7 +217,6 @@ def generate_compose_file(i, db_conf, config):
           image: memgraph/memgraph:latest
           container_name: {db_name}
           command: ["--log-level=TRACE"]
-          pull_policy: always
           volumes:
             - {PRELOAD_DATA}:/var/lib/memgraph/import
           healthcheck:
@@ -228,7 +246,6 @@ def generate_compose_file(i, db_conf, config):
             - Shared_net
         lab{i+1}:
           image: memgraph/lab
-          pull_policy: always
           container_name: lab{i+1}
           depends_on:
             {db_name}:
@@ -357,7 +374,10 @@ def generate_compose_file(i, db_conf, config):
     USER: {db_user}
     DATABASE: {database.upper()}
     LOG_LEVEL: {app_log_level}
-    IS_PRELOAD_LEADER: {"Yes" if i==0 else "No"}
+    IS_PRELOAD_LEADER: {"Yes" if i==0 and replica_idx==0 else "No"}
+    REPLICA_ID: "{replica_id}"
+    PEER_REPLICA_ID: "{peer_replica_id}"
+    DATACENTER_ID: "{dc_name}"
     """).strip("\n")
 
 
@@ -413,15 +433,31 @@ def generate_compose_file(i, db_conf, config):
 def generate_all():
     config = load_config()
     files = []
-    n = len(config['dbs'])
-    external_network_instances = []   
+    external_network_instances = []
+    
     if(config["provider"]):
       provider = generate_provider(config, external_network_instances)
       files.append(provider) 
     
-    for i in range(n):
-        files.append(generate_compose_file(i, config['dbs'][i], config))
-        # if config['dbs'][i]['connected_to_provider']: external_network_instances.append((f"Grace_net_{i+1}"))
+    # New configuration structure with datacenters
+    if "datacenters" in config:
+        datacenters = config["datacenters"]
+        replicas_per_dc = config.get("replicas_per_dc", 2)
+        
+        for dc_idx, dc_conf in enumerate(datacenters):
+            for replica_idx in range(replicas_per_dc):
+                files.append(generate_compose_file(dc_idx, replica_idx, dc_conf, config))
+    else:
+        # Legacy support for old configuration (1 replica per DC)
+        # Each entry in 'dbs' represents one datacenter with one replica
+        n = len(config['dbs'])
+        # Ensure replicas_per_dc is set to 1 for legacy format
+        if 'replicas_per_dc' not in config:
+            config['replicas_per_dc'] = 1
+        for i in range(n):
+            # dc_idx = i, replica_idx = 0 (single replica per DC)
+            files.append(generate_compose_file(i, 0, config['dbs'][i], config))
+    
     return files
 
 def up_all():
@@ -479,7 +515,15 @@ def is_stack_running(stack_name):
 def down_all():
     config = load_config()
     
-    for i in range(len(config["dbs"])):
+    # Determine total number of replicas
+    if "datacenters" in config:
+        num_datacenters = len(config["datacenters"])
+        replicas_per_dc = config.get("replicas_per_dc", 2)
+        total_replicas = num_datacenters * replicas_per_dc
+    else:
+        total_replicas = len(config["dbs"])
+    
+    for i in range(total_replicas):
         file = f"docker-compose.{i+1}.yml"
         network = f"Grace_net_{i+1}"
         print(f"Stopping containers from {'./Dockerfiles/'+file}...")
@@ -494,7 +538,15 @@ def down_all():
 def force_clean():
   config = load_config()
   
-  files = [f'./Dockerfiles/docker-compose.{i+1}.yml' for i in range(len(config['dbs']))]
+  # Determine total number of replicas
+  if "datacenters" in config:
+      num_datacenters = len(config["datacenters"])
+      replicas_per_dc = config.get("replicas_per_dc", 2)
+      total_replicas = num_datacenters * replicas_per_dc
+  else:
+      total_replicas = len(config['dbs'])
+  
+  files = [f'./Dockerfiles/docker-compose.{i+1}.yml' for i in range(total_replicas)]
   if config.get('provider'):
     files.append('./Dockerfiles/docker-compose.provider.yml')
     

@@ -36,12 +36,19 @@ import WebSocketPolyfill from "ws";
 
 let ydoc = new Y.Doc();
 
-new WebsocketProvider(
+const wsProvider = new WebsocketProvider(
   process.env.WS_URI,
   "GraceSyncKey",
   ydoc,
   WebSocketPolyfill
 );
+
+// Peer-to-peer replication setup
+export const REPLICA_ID = process.env.REPLICA_ID || "replica-0";
+export const PEER_REPLICA_ID = process.env.PEER_REPLICA_ID || "replica-1";
+export const DATACENTER_ID = process.env.DATACENTER_ID || "dc-0";
+
+logger.info(`Replica ${REPLICA_ID} in ${DATACENTER_ID}, peer: ${PEER_REPLICA_ID}`);
 
 // Setup Database
 import { GremlinDriver } from "./drivers/germlinDriver";
@@ -79,8 +86,14 @@ switch (dbname) {
 // Setup graph
 import { Graph } from "./graph/GraphManager";
 import { EdgeInformation, Vertex_Edge, VertexInformation } from "./graph/Graph";
+import { PeerAcknowledgmentSystem } from "./helpers/peerAcknowledgment";
+
 const GraphManager = new Graph();
 export const graph = new Vertex_Edge(ydoc);
+export const peerAckSystem = new PeerAcknowledgmentSystem(ydoc);
+
+// Connect peer acknowledgment system to graph
+graph.setPeerAckSystem(peerAckSystem);
 
 import {
   VertexSchema,
@@ -410,7 +423,7 @@ async function onListening() {
                 sourcePropValue: value._outV.toString(),
                 targetPropName: "id",
                 targetPropValue: value._inV.toString(),
-                properties: new Y.Map(Object.entries(value)),
+                properties: value,
                 relationType: ["YCSBEdge"],
               };
             

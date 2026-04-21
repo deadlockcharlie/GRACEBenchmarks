@@ -10,25 +10,28 @@
   "preload_vertices": "/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json",
   "preload_edges": "/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json",
   "dataset_name": "yeast",
-  "dbs" : [
+  "replicas_per_dc": 2,
+  "datacenters": [
     {
-     "database": "memgraph", 
+      "name": "DC1",
+      "database": "memgraph",
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"
     },
     {
-     "database": "memgraph", 
+      "name": "DC2",
+      "database": "memgraph",
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"
     },
     {
-     "database": "memgraph", 
+      "name": "DC3",
+      "database": "memgraph",
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"
-    } 
-
+    }
   ]
 }

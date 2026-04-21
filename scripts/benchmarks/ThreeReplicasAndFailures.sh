@@ -56,20 +56,17 @@ cat > $DIST_CONF <<EOL
   "provider_port": 1234,
   "provider": true,
   "preload_data": false,
-  "dbs" : [
+  "replicas_per_dc": 2,
+  "datacenters" : [
     {
+     "name": "DC1",
      "database": "memgraph", 
       "password": "verysecretpassword",
       "user": "pandey",
       "app_log_level": "error"
     },
     {
-     "database": "memgraph", 
-      "password": "verysecretpassword",
-      "user": "pandey",
-      "app_log_level": "error"
-    },
-    {
+     "name": "DC2",
      "database": "memgraph", 
       "password": "verysecretpassword",
       "user": "pandey",
