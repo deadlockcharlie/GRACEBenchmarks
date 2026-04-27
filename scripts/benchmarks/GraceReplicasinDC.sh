@@ -19,6 +19,7 @@ for num_replicas in "${REPLICAS[@]}"; do
   "base_grafana_port": 5000,
   "provider_port": 1234,
   "provider": true,
+  "ack_level": "peer",
 EOL
 
       cat >> $DIST_CONF <<EOL
@@ -69,17 +70,17 @@ EOL
         sleep $wait_interval
     done
 
-    # # Setup latencies for multi-replica configurations
-    # if [ $num_replicas -gt 1 ]; then
-    #     latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
-    #     for ((i=2; i<=num_replicas; i++)); do
-    #         latency_value=$(get_latency $((0)) $((i-1)))
-    #         echo " wsserver(${region_codes[0]}) -> Replica${i-1} (${region_codes[$((i-1))]}): ${latency_value}ms"
-    #         latency_cmd="$latency_cmd Grace$i ${latency_value}"
-    #     done
-    #     latency_cmd="$latency_cmd\""
-    #     eval $latency_cmd
-    # fi
+    # Setup latencies for multi-replica configurations
+    if [ $num_replicas -gt 1 ]; then
+        latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
+        for ((i=2; i<=num_replicas; i++)); do
+            latency_value=$(get_latency $((0)) $((i-1)))
+            echo " wsserver(${region_codes[0]}) -> Replica${i-1} (${region_codes[$((i-1))]}): ${latency_value}ms"
+            latency_cmd="$latency_cmd Grace$i ${latency_value}"
+        done
+        latency_cmd="$latency_cmd\""
+        eval $latency_cmd
+    fi
 
 
 

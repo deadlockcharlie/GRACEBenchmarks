@@ -136,6 +136,7 @@ def generate_compose_file(dc_idx, replica_idx, dc_conf, config):
 
     
     app_log_level = dc_conf["app_log_level"]
+    ack_level = config.get("ack_level", "none")
     database = dc_conf["database"]
     password = dc_conf["password"]
     db_user = dc_conf["user"]
@@ -159,7 +160,16 @@ def generate_compose_file(dc_idx, replica_idx, dc_conf, config):
     else:
         # No peer for single replica per DC
         peer_replica_id = "none"
-    
+
+    # Determine peer datacenter ID for cross-DC sync replication
+    datacenters = config.get("datacenters", [])
+    if len(datacenters) >= 2:
+        peer_dc_idx = (dc_idx + 1) % len(datacenters)
+        peer_dc_conf = datacenters[peer_dc_idx]
+        peer_dc_id = peer_dc_conf.get("name", f"DC{peer_dc_idx + 1}")
+    else:
+        peer_dc_id = "none"
+
     preload_block = ""
     volume_block= ""
   
@@ -377,7 +387,9 @@ def generate_compose_file(dc_idx, replica_idx, dc_conf, config):
     IS_PRELOAD_LEADER: {"Yes" if i==0 and replica_idx==0 else "No"}
     REPLICA_ID: "{replica_id}"
     PEER_REPLICA_ID: "{peer_replica_id}"
+    PEER_DC_ID: "{peer_dc_id}"
     DATACENTER_ID: "{dc_name}"
+    ACK_LEVEL: "{ack_level}"
     """).strip("\n")
 
 

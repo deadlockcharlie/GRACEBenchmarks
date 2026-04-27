@@ -46,9 +46,12 @@ const wsProvider = new WebsocketProvider(
 // Peer-to-peer replication setup
 export const REPLICA_ID = process.env.REPLICA_ID || "replica-0";
 export const PEER_REPLICA_ID = process.env.PEER_REPLICA_ID || "replica-1";
+export const PEER_DC_ID = process.env.PEER_DC_ID || "dc-1";
 export const DATACENTER_ID = process.env.DATACENTER_ID || "dc-0";
+export type AckLevel = "none" | "peer" | "dc" | "both";
+export const ACK_LEVEL: AckLevel = (process.env.ACK_LEVEL as AckLevel) || "both";
 
-logger.info(`Replica ${REPLICA_ID} in ${DATACENTER_ID}, peer: ${PEER_REPLICA_ID}`);
+logger.info(`Replica ${REPLICA_ID} in ${DATACENTER_ID}, peer: ${PEER_REPLICA_ID}, ack_level: ${ACK_LEVEL}`);
 
 // Setup Database
 import { GremlinDriver } from "./drivers/germlinDriver";

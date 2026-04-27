@@ -1,7 +1,5 @@
 _id
 _type
+freebaseid
 item
-long
-oid
-pin
-short
+mid
