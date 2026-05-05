@@ -1,5 +1,5 @@
-/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/GRACE/YCSB/conf:/Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/antlr4-runtime-4.9.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/arangodb-java-driver-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-record-codec-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/caffeine-2.3.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-beanutils-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-collections-3.2.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-configuration2-2.8.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-lang3-3.12.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-logging-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-text-1.10.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/core-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/error_prone_annotations-2.11.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/exp4j-0.4.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/failureaccess-1.0.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-core-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-driver-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-groovy-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-language-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-shaded-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-util-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-cli-picocli-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-console-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-groovysh-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-json-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-jsr223-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-swing-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-templates-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-xml-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/guava-31.1-jre.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/hppc-0.7.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/http-protocol-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/ivy-2.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/j2objc-annotations-1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-annotations-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-core-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-databind-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-serde-json-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jakarta.json-api-2.1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/janusgraph-driver-1.0.0-rc2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/javatuples-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jbcrypt-0.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-log-0.20.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-manifests-1.2.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcl-over-slf4j-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jline-2.14.6.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jsr305-3.0.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jts-core-1.17.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-core-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-sync-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-all-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-buffer-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http2-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-redis-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-socks-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-xml-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-udt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/noggit-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/picocli-4.3.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/reactive-streams-1.0.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/snakeyaml-1.32.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/spatial4j-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-auth-common-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-core-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-uri-template-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-client-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.GraceClient -s -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=20 -p threadcount=1 -p loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json -p vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json
-Command line: -t -db site.ycsb.db.GraceClient -s -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=20 -p threadcount=1 -p loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json -p vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json
+/Users/pandey/.sdkman/candidates/java/current/bin/java  -classpath /Users/pandey/work/GRACE/YCSB/conf:/Users/pandey/work/GRACE/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/grace-binding-0.18.0-SNAPSHOT.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/HdrHistogram-2.1.12.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/antlr4-runtime-4.9.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/arangodb-java-driver-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/bson-record-codec-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/caffeine-2.3.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-beanutils-1.9.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-collections-3.2.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-configuration2-2.8.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-lang3-3.12.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-logging-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/commons-text-1.10.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/core-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/error_prone_annotations-2.11.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/exp4j-0.4.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/failureaccess-1.0.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-core-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-driver-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-groovy-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-language-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-shaded-3.6.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/gremlin-util-3.7.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-cli-picocli-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-console-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-groovysh-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-json-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-jsr223-2.5.15-indy.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-swing-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-templates-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/groovy-xml-2.5.15.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/guava-31.1-jre.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/hppc-0.7.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/htrace-core4-4.1.0-incubating.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/http-protocol-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/ivy-2.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/j2objc-annotations-1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-annotations-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-core-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-databind-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-datatype-jakarta-jsonp-2.19.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jackson-serde-json-7.22.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jakarta.json-api-2.1.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/janusgraph-driver-1.0.0-rc2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/javatuples-1.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jbcrypt-0.4.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-log-0.20.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcabi-manifests-1.2.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jcl-over-slf4j-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jline-2.14.6.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jsr305-3.0.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/jts-core-1.17.0.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-core-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/mongodb-driver-sync-5.5.1.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-all-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-buffer-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-haproxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-http2-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-memcache-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-mqtt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-redis-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-smtp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-socks-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-stomp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-codec-xml-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-proxy-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-handler-ssl-ocsp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-classes-macos-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-resolver-dns-native-macos-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-epoll-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-classes-kqueue-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-epoll-4.1.86.Final-linux-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-aarch_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-kqueue-4.1.86.Final-osx-x86_64.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-native-unix-common-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-rxtx-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-sctp-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/netty-transport-udt-4.1.86.Final.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/noggit-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/picocli-4.3.2.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/reactive-streams-1.0.3.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/slf4j-api-1.7.25.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/snakeyaml-1.32.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/spatial4j-0.8.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-auth-common-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-core-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-uri-template-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-client-4.5.7.jar:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/vertx-web-common-4.5.7.jar site.ycsb.Client -t -db site.ycsb.db.GraceClient -s -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json -p vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json
+Command line: -t -db site.ycsb.db.GraceClient -s -P workloads/workload_grace -p HOSTURI=http://localhost:3000 -p DBTYPE=memgraph -p DBURI=bolt://localhost:7687 -p maxexecutiontime=60 -p threadcount=1 -p loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json -p loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json -p vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json -p edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json
 YCSB Client 0.18.0-SNAPSHOT
 
 Loading workload...
@@ -10,126 +10,130 @@ SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 GraceClient  Created
-Maximum execution time specified as: 20 secs
+Maximum execution time specified as: 60 secs
 Using Database: site.ycsb.DBWrapper
 Starting GRACE client
-{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=20, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest, status=true}
+{deleteproportion=1, loadEdgeFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_edges.json, recordcount=10000, operationcount=20000000, loadVertexFile=/Users/pandey/work/GRACE/GraphDBData/yeast_load_vertices.json, edgeAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_edges.json, readproportion=1, workload=site.ycsb.workloads.CoreWorkload, threadcount=1, updateproportion=1, DBTYPE=memgraph, dotransactions=true, HOSTURI=http://localhost:3000, createproportion=1, DBURI=bolt://localhost:7687, maxexecutiontime=60, vertexAddFile=/Users/pandey/work/GRACE/GraphDBData/yeast_update_vertices.json, readallfields=true, db=site.ycsb.db.GraceClient, requestdistribution=latest, status=true}
 GRACE HOSTURI: http://localhost:3000
 DBTYPE: memgraph
 DBURI: bolt://localhost:7687
-2026-04-20 13:48:51:287 0 sec: 0 operations; est completion in 0 second 
+2026-04-28 13:35:41:116 0 sec: 0 operations; est completion in 0 second 
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent0$3 (file:/Users/pandey/work/GRACE/YCSB/grace/target/dependency/neo4j-java-driver-4.4.3.jar)
 WARNING: Please consider reporting this to the maintainers of class org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent0$3
 WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
 DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
-2026-04-20 13:49:01:264 10 sec: 3034 operations; 303.37 current ops/sec; est completion in 18 hours 18 minutes [REMOVE_VERTEX: Count=216, Max=10463, Min=2044, Avg=3365.81, 50=2923, 90=4675, 99=8879, 99.9=10463, 99.99=10463] [GET_EDGE_WITH_PROPERTY: Count=217, Max=6095, Min=457, Avg=875.35, 50=730, 90=1188, 99=5091, 99.9=6095, 99.99=6095] [ADD_EDGE: Count=217, Max=38047, Min=2568, Avg=3895.34, 50=3425, 90=5091, 99=9183, 99.9=38047, 99.99=38047] [GET_VERTEX_WITH_PROPERTY: Count=217, Max=46079, Min=1425, Avg=2920.39, 50=2489, 90=3373, 99=5955, 99.9=46079, 99.99=46079] [ADD_VERTEX: Count=217, Max=23247, Min=2074, Avg=3455.43, 50=2987, 90=4859, 99=13871, 99.9=23247, 99.99=23247] [REMOVE_EDGE: Count=217, Max=13367, Min=4640, Avg=6125.97, 50=5699, 90=7667, 99=11639, 99.9=13367, 99.99=13367] [REMOVE_EDGE_PROPERTY: Count=216, Max=15063, Min=3422, Avg=4888.81, 50=4431, 90=6323, 99=12159, 99.9=15063, 99.99=15063] [GET_EDGE_LABELS: Count=217, Max=13119, Min=751, Avg=1631.03, 50=1403, 90=2207, 99=4735, 99.9=13119, 99.99=13119] [GET_VERTEX_COUNT: Count=217, Max=11663, Min=602, Avg=1151.57, 50=879, 90=1862, 99=4687, 99.9=11663, 99.99=11663] [REMOVE_VERTEX_PROPERTY: Count=216, Max=17503, Min=2152, Avg=3480.84, 50=3079, 90=4903, 99=6123, 99.9=17503, 99.99=17503] [GET_EDGES_WITH_LABEL: Count=217, Max=13327, Min=1425, Avg=2198.53, 50=1900, 90=3041, 99=7235, 99.9=13327, 99.99=13327] [SET_EDGE_PROPERTY: Count=217, Max=14295, Min=3520, Avg=4906, 50=4559, 90=6211, 99=11583, 99.9=14295, 99.99=14295] [SET_VERTEX_PROPERTY: Count=217, Max=39615, Min=2378, Avg=4176.2, 50=3665, 90=5611, 99=12839, 99.9=39615, 99.99=39615] [GET_EDGE_COUNT: Count=217, Max=6127, Min=419, Avg=988.23, 50=745, 90=1417, 99=4875, 99.9=6127, 99.99=6127] 
+2026-04-28 13:35:51:103 10 sec: 3722 operations; 372.2 current ops/sec; est completion in 14 hours 55 minutes [REMOVE_VERTEX: Count=266, Max=6275, Min=1895, Avg=2781.24, 50=2585, 90=3651, 99=6163, 99.9=6275, 99.99=6275] [GET_EDGE_WITH_PROPERTY: Count=266, Max=1776, Min=427, Avg=655.47, 50=602, 90=859, 99=1564, 99.9=1776, 99.99=1776] [ADD_EDGE: Count=266, Max=8439, Min=2460, Avg=3218.07, 50=3015, 90=4039, 99=5715, 99.9=8439, 99.99=8439] [GET_VERTEX_WITH_PROPERTY: Count=266, Max=4999, Min=2007, Avg=2413.78, 50=2331, 90=2705, 99=4035, 99.9=4999, 99.99=4999] [ADD_VERTEX: Count=266, Max=7619, Min=1922, Avg=2681.56, 50=2429, 90=3665, 99=5751, 99.9=7619, 99.99=7619] [REMOVE_EDGE: Count=266, Max=15703, Min=4304, Avg=5267.32, 50=5007, 90=5999, 99=8359, 99.9=15703, 99.99=15703] [REMOVE_EDGE_PROPERTY: Count=266, Max=7667, Min=3184, Avg=3966.08, 50=3787, 90=4723, 99=6079, 99.9=7667, 99.99=7667] [GET_EDGE_LABELS: Count=267, Max=14415, Min=1040, Avg=1374.16, 50=1253, 90=1580, 99=3589, 99.9=14415, 99.99=14415] [GET_VERTEX_COUNT: Count=267, Max=11815, Min=457, Avg=869.45, 50=711, 90=1155, 99=2771, 99.9=11815, 99.99=11815] [REMOVE_VERTEX_PROPERTY: Count=266, Max=11479, Min=2036, Avg=2901.32, 50=2631, 90=3705, 99=5995, 99.9=11479, 99.99=11479] [GET_EDGES_WITH_LABEL: Count=266, Max=5139, Min=1347, Avg=1774.2, 50=1736, 90=1987, 99=2861, 99.9=5139, 99.99=5139] [SET_EDGE_PROPERTY: Count=266, Max=12743, Min=3224, Avg=4117.31, 50=3913, 90=4751, 99=7855, 99.9=12743, 99.99=12743] [SET_VERTEX_PROPERTY: Count=266, Max=51135, Min=2190, Avg=3325.49, 50=2963, 90=3935, 99=6699, 99.9=51135, 99.99=51135] [GET_EDGE_COUNT: Count=267, Max=3355, Min=384, Avg=687.38, 50=606, 90=951, 99=1505, 99.9=3355, 99.99=3355] 
+2026-04-28 13:36:01:104 20 sec: 8190 operations; 446.71 current ops/sec; est completion in 13 hours 33 minutes [REMOVE_VERTEX: Count=198, Max=5731, Min=1834, Avg=2401.75, 50=2301, 90=2821, 99=4111, 99.9=5731, 99.99=5731] [GET_EDGE_WITH_PROPERTY: Count=319, Max=3791, Min=388, Avg=671.14, 50=589, 90=857, 99=1678, 99.9=3791, 99.99=3791] [ADD_EDGE: Count=319, Max=6939, Min=2210, Avg=2884.88, 50=2737, 90=3441, 99=4931, 99.9=6939, 99.99=6939] [GET_VERTEX_WITH_PROPERTY: Count=319, Max=6871, Min=489, Avg=2391.97, 50=2311, 90=2699, 99=3817, 99.9=6871, 99.99=6871] [ADD_VERTEX: Count=198, Max=4591, Min=1743, Avg=2355.95, 50=2207, 90=2909, 99=4531, 99.9=4591, 99.99=4591] [REMOVE_EDGE: Count=319, Max=15599, Min=4228, Avg=4926.02, 50=4799, 90=5423, 99=7339, 99.9=15599, 99.99=15599] [REMOVE_EDGE_PROPERTY: Count=319, Max=8423, Min=3082, Avg=3717.2, 50=3593, 90=4375, 99=5647, 99.9=8423, 99.99=8423] [GET_EDGE_LABELS: Count=319, Max=6495, Min=969, Avg=1285.81, 50=1208, 90=1453, 99=3063, 99.9=6495, 99.99=6495] [GET_VERTEX_COUNT: Count=319, Max=24559, Min=392, Avg=798.86, 50=667, 90=1008, 99=1729, 99.9=24559, 99.99=24559] [REMOVE_VERTEX_PROPERTY: Count=319, Max=5831, Min=1883, Avg=2575.71, 50=2445, 90=3127, 99=4775, 99.9=5831, 99.99=5831] [GET_EDGES_WITH_LABEL: Count=320, Max=3397, Min=800, Avg=1686.22, 50=1635, 90=1980, 99=3041, 99.9=3397, 99.99=3397] [SET_EDGE_PROPERTY: Count=319, Max=5795, Min=3030, Avg=3772.29, 50=3685, 90=4275, 99=5303, 99.9=5795, 99.99=5795] [SET_VERTEX_PROPERTY: Count=319, Max=8311, Min=2124, Avg=2865.13, 50=2737, 90=3511, 99=4539, 99.9=8311, 99.99=8311] [GET_EDGE_COUNT: Count=319, Max=1777, Min=325, Avg=623.41, 50=563, 90=873, 99=1602, 99.9=1777, 99.99=1777] 
+2026-04-28 13:36:11:103 30 sec: 13193 operations; 500.35 current ops/sec; est completion in 12 hours 37 minutes [REMOVE_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_WITH_PROPERTY: Count=358, Max=3803, Min=361, Avg=651.65, 50=571, 90=871, 99=1850, 99.9=3803, 99.99=3803] [ADD_EDGE: Count=357, Max=7403, Min=2236, Avg=2890.04, 50=2693, 90=3631, 99=4823, 99.9=7403, 99.99=7403] [GET_VERTEX_WITH_PROPERTY: Count=358, Max=20671, Min=1725, Avg=2486.82, 50=2321, 90=2681, 99=5715, 99.9=20671, 99.99=20671] [ADD_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE: Count=357, Max=13975, Min=4152, Avg=4966.34, 50=4779, 90=5551, 99=8967, 99.9=13975, 99.99=13975] [REMOVE_EDGE_PROPERTY: Count=357, Max=8583, Min=2894, Avg=3659.86, 50=3489, 90=4263, 99=6779, 99.9=8583, 99.99=8583] [GET_EDGE_LABELS: Count=357, Max=4267, Min=836, Avg=1248.99, 50=1182, 90=1483, 99=2079, 99.9=4267, 99.99=4267] [GET_VERTEX_COUNT: Count=357, Max=8791, Min=372, Avg=716.37, 50=621, 90=974, 99=1777, 99.9=8791, 99.99=8791] [REMOVE_VERTEX_PROPERTY: Count=357, Max=4819, Min=1874, Avg=2471.5, 50=2371, 90=3055, 99=3903, 99.9=4819, 99.99=4819] [GET_EDGES_WITH_LABEL: Count=357, Max=8447, Min=497, Avg=1662.33, 50=1608, 90=1893, 99=3101, 99.9=8447, 99.99=8447] [SET_EDGE_PROPERTY: Count=358, Max=7519, Min=3038, Avg=3711.26, 50=3613, 90=4259, 99=5463, 99.9=7519, 99.99=7519] [SET_VERTEX_PROPERTY: Count=358, Max=7079, Min=2050, Avg=2777.34, 50=2587, 90=3579, 99=4927, 99.9=7079, 99.99=7079] [GET_EDGE_COUNT: Count=357, Max=3505, Min=346, Avg=616.43, 50=558, 90=813, 99=1908, 99.9=3505, 99.99=3505] 
+2026-04-28 13:36:21:103 40 sec: 18249 operations; 505.6 current ops/sec; est completion in 12 hours 10 minutes [REMOVE_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_WITH_PROPERTY: Count=361, Max=4391, Min=318, Avg=643.91, 50=588, 90=847, 99=1653, 99.9=4391, 99.99=4391] [ADD_EDGE: Count=361, Max=9231, Min=2182, Avg=2793.34, 50=2651, 90=3279, 99=5287, 99.9=9231, 99.99=9231] [GET_VERTEX_WITH_PROPERTY: Count=361, Max=9647, Min=1667, Avg=2470.54, 50=2327, 90=2773, 99=6663, 99.9=9647, 99.99=9647] [ADD_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE: Count=361, Max=31679, Min=4148, Avg=4958.42, 50=4743, 90=5503, 99=8175, 99.9=31679, 99.99=31679] [REMOVE_EDGE_PROPERTY: Count=361, Max=7775, Min=2934, Avg=3623.93, 50=3509, 90=4199, 99=5895, 99.9=7775, 99.99=7775] [GET_EDGE_LABELS: Count=361, Max=2511, Min=858, Avg=1233.19, 50=1190, 90=1440, 99=2221, 99.9=2511, 99.99=2511] [GET_VERTEX_COUNT: Count=361, Max=5011, Min=340, Avg=712.66, 50=650, 90=985, 99=1863, 99.9=5011, 99.99=5011] [REMOVE_VERTEX_PROPERTY: Count=361, Max=9559, Min=1807, Avg=2527.45, 50=2387, 90=3117, 99=4995, 99.9=9559, 99.99=9559] [GET_EDGES_WITH_LABEL: Count=361, Max=5235, Min=715, Avg=1615.35, 50=1549, 90=1942, 99=3843, 99.9=5235, 99.99=5235] [SET_EDGE_PROPERTY: Count=361, Max=11303, Min=2992, Avg=3664.33, 50=3543, 90=4143, 99=5655, 99.9=11303, 99.99=11303] [SET_VERTEX_PROPERTY: Count=361, Max=9319, Min=2050, Avg=2724.78, 50=2531, 90=3513, 99=5263, 99.9=9319, 99.99=9319] [GET_EDGE_COUNT: Count=361, Max=2515, Min=324, Avg=599.18, 50=548, 90=809, 99=1681, 99.9=2515, 99.99=2515] 
+2026-04-28 13:36:31:107 50 sec: 23461 operations; 520.99 current ops/sec; est completion in 11 hours 49 minutes [REMOVE_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_WITH_PROPERTY: Count=372, Max=1213, Min=296, Avg=597.22, 50=569, 90=770, 99=1114, 99.9=1213, 99.99=1213] [ADD_EDGE: Count=373, Max=9455, Min=2180, Avg=2730.05, 50=2613, 90=3129, 99=6179, 99.9=9455, 99.99=9455] [GET_VERTEX_WITH_PROPERTY: Count=372, Max=6315, Min=941, Avg=2343.4, 50=2257, 90=2567, 99=3861, 99.9=6315, 99.99=6315] [ADD_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE: Count=373, Max=9255, Min=4172, Avg=4850.29, 50=4711, 90=5427, 99=8207, 99.9=9255, 99.99=9255] [REMOVE_EDGE_PROPERTY: Count=372, Max=10551, Min=2956, Avg=3538.11, 50=3461, 90=3999, 99=5447, 99.9=10551, 99.99=10551] [GET_EDGE_LABELS: Count=372, Max=4567, Min=825, Avg=1235.88, 50=1175, 90=1425, 99=2391, 99.9=4567, 99.99=4567] [GET_VERTEX_COUNT: Count=372, Max=5287, Min=348, Avg=659.08, 50=591, 90=867, 99=2183, 99.9=5287, 99.99=5287] [REMOVE_VERTEX_PROPERTY: Count=373, Max=5675, Min=1827, Avg=2388.56, 50=2295, 90=2815, 99=4443, 99.9=5675, 99.99=5675] [GET_EDGES_WITH_LABEL: Count=372, Max=4503, Min=1146, Avg=1585.23, 50=1517, 90=1857, 99=3377, 99.9=4503, 99.99=4503] [SET_EDGE_PROPERTY: Count=372, Max=15031, Min=3030, Avg=3667.56, 50=3515, 90=4115, 99=7431, 99.9=15031, 99.99=15031] [SET_VERTEX_PROPERTY: Count=372, Max=6103, Min=1932, Avg=2619.9, 50=2489, 90=3285, 99=4791, 99.9=6103, 99.99=6103] [GET_EDGE_COUNT: Count=372, Max=1582, Min=328, Avg=555.78, 50=507, 90=762, 99=1077, 99.9=1582, 99.99=1582] 
 Maximum time elapsed. Requesting stop for the workload.
 Stop requested for workload. Now Joining!
-2026-04-20 13:49:11:266 20 sec: 6659 operations; 362.46 current ops/sec; est completion in 16 hours 40 minutes [REMOVE_VERTEX: Count=248, Max=50943, Min=2020, Avg=3165.33, 50=2593, 90=4231, 99=9879, 99.9=50943, 99.99=50943] [GET_EDGE_WITH_PROPERTY: Count=259, Max=10207, Min=395, Avg=754.12, 50=641, 90=989, 99=2187, 99.9=10207, 99.99=10207] [ADD_EDGE: Count=259, Max=17839, Min=2398, Avg=3444.7, 50=2985, 90=4179, 99=14583, 99.9=17839, 99.99=17839] [GET_VERTEX_WITH_PROPERTY: Count=259, Max=9351, Min=1073, Avg=2548.86, 50=2423, 90=2929, 99=5279, 99.9=9351, 99.99=9351] [ADD_VERTEX: Count=247, Max=12991, Min=1860, Avg=2756.29, 50=2441, 90=3551, 99=7915, 99.9=12991, 99.99=12991] [REMOVE_EDGE: Count=258, Max=45855, Min=4428, Avg=5905.64, 50=5263, 90=7383, 99=14031, 99.9=45855, 99.99=45855] [REMOVE_EDGE_PROPERTY: Count=259, Max=14335, Min=3128, Avg=4250.84, 50=3887, 90=5299, 99=11087, 99.9=14335, 99.99=14335] [GET_EDGE_LABELS: Count=259, Max=8207, Min=979, Avg=1397.92, 50=1271, 90=1604, 99=4099, 99.9=8207, 99.99=8207] [GET_VERTEX_COUNT: Count=259, Max=6123, Min=462, Avg=811.59, 50=735, 90=1062, 99=1961, 99.9=6123, 99.99=6123] [REMOVE_VERTEX_PROPERTY: Count=259, Max=31263, Min=2082, Avg=3293.1, 50=2747, 90=4005, 99=15919, 99.9=31263, 99.99=31263] [GET_EDGES_WITH_LABEL: Count=259, Max=5675, Min=1064, Avg=1889.41, 50=1767, 90=2355, 99=4939, 99.9=5675, 99.99=5675] [CLEANUP: Count=1, Max=1, Min=1, Avg=1, 50=1, 90=1, 99=1, 99.9=1, 99.99=1] [SET_EDGE_PROPERTY: Count=259, Max=29503, Min=3336, Avg=4415.06, 50=4005, 90=5167, 99=14743, 99.9=29503, 99.99=29503] [SET_VERTEX_PROPERTY: Count=259, Max=14175, Min=2256, Avg=3248.44, 50=3047, 90=4175, 99=6491, 99.9=14175, 99.99=14175] [GET_EDGE_COUNT: Count=259, Max=3665, Min=409, Avg=731.54, 50=626, 90=950, 99=3329, 99.9=3665, 99.99=3665] 
-2026-04-20 13:49:11:281 20 sec: 6660 operations; 62.5 current ops/sec; est completion in 16 hours 41 minutes [REMOVE_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_WITH_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [ADD_EDGE: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_VERTEX_WITH_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [ADD_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_LABELS: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_VERTEX_COUNT: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_VERTEX_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGES_WITH_LABEL: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [CLEANUP: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [SET_EDGE_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [SET_VERTEX_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_COUNT: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] 
-[OVERALL], RunTime(ms), 20007
-[OVERALL], Throughput(ops/sec), 332.8834907782276
-[TOTAL_GCS_G1_Young_Generation], Count, 2
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 11
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0549807567351427
+2026-04-28 13:36:41:104 60 sec: 29767 operations; 630.85 current ops/sec; est completion in 11 hours 10 minutes [REMOVE_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_WITH_PROPERTY: Count=450, Max=10503, Min=350, Avg=641.38, 50=572, 90=808, 99=1390, 99.9=10503, 99.99=10503] [ADD_EDGE: Count=203, Max=5499, Min=2134, Avg=2590, 50=2477, 90=2973, 99=4127, 99.9=5499, 99.99=5499] [GET_VERTEX_WITH_PROPERTY: Count=451, Max=23663, Min=547, Avg=2397.13, 50=2279, 90=2637, 99=4807, 99.9=23663, 99.99=23663] [ADD_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE: Count=203, Max=7847, Min=4112, Avg=4702.24, 50=4599, 90=5191, 99=6123, 99.9=7847, 99.99=7847] [REMOVE_EDGE_PROPERTY: Count=451, Max=9191, Min=2898, Avg=3434.75, 50=3317, 90=3837, 99=5087, 99.9=9191, 99.99=9191] [GET_EDGE_LABELS: Count=451, Max=4679, Min=483, Avg=1225.51, 50=1172, 90=1448, 99=2065, 99.9=4679, 99.99=4679] [GET_VERTEX_COUNT: Count=451, Max=4135, Min=309, Avg=624.95, 50=591, 90=834, 99=1378, 99.9=4135, 99.99=4135] [REMOVE_VERTEX_PROPERTY: Count=450, Max=6859, Min=1737, Avg=2281.53, 50=2143, 90=2651, 99=4763, 99.9=6859, 99.99=6859] [GET_EDGES_WITH_LABEL: Count=450, Max=5031, Min=951, Avg=1540.08, 50=1491, 90=1801, 99=3133, 99.9=5031, 99.99=5031] [CLEANUP: Count=1, Max=1, Min=1, Avg=1, 50=1, 90=1, 99=1, 99.9=1, 99.99=1] [SET_EDGE_PROPERTY: Count=450, Max=9983, Min=2896, Avg=3536.72, 50=3407, 90=3953, 99=5999, 99.9=9983, 99.99=9983] [SET_VERTEX_PROPERTY: Count=450, Max=11175, Min=1916, Avg=2547.77, 50=2395, 90=3045, 99=4535, 99.9=11175, 99.99=11175] [GET_EDGE_COUNT: Count=451, Max=3297, Min=336, Avg=576.18, 50=521, 90=755, 99=1457, 99.9=3297, 99.99=3297] 
+2026-04-28 13:36:41:113 60 sec: 29769 operations; 200 current ops/sec; est completion in 11 hours 10 minutes [REMOVE_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_WITH_PROPERTY: Count=1, Max=1270, Min=1270, Avg=1270, 50=1270, 90=1270, 99=1270, 99.9=1270, 99.99=1270] [ADD_EDGE: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_VERTEX_WITH_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [ADD_VERTEX: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_EDGE_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_LABELS: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_VERTEX_COUNT: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [REMOVE_VERTEX_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGES_WITH_LABEL: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [CLEANUP: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [SET_EDGE_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [SET_VERTEX_PROPERTY: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] [GET_EDGE_COUNT: Count=0, Max=0, Min=0, Avg=0, 50=0, 90=0, 99=0, 99.9=0, 99.99=0] 
+[OVERALL], RunTime(ms), 60004
+[OVERALL], Throughput(ops/sec), 496.11692553829744
+[TOTAL_GCS_G1_Young_Generation], Count, 6
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 25
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.041663889074061725
 [TOTAL_GCS_G1_Concurrent_GC], Count, 0
 [TOTAL_GC_TIME_G1_Concurrent_GC], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Concurrent_GC], Time(%), 0.0
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 2
-[TOTAL_GC_TIME], Time(ms), 11
-[TOTAL_GC_TIME_%], Time(%), 0.0549807567351427
+[TOTAL_GCs], Count, 6
+[TOTAL_GC_TIME], Time(ms), 25
+[TOTAL_GC_TIME_%], Time(%), 0.041663889074061725
 [REMOVE_VERTEX], Operations, 464
-[REMOVE_VERTEX], AverageLatency(us), 3258.655172413793
-[REMOVE_VERTEX], MinLatency(us), 2020
-[REMOVE_VERTEX], MaxLatency(us), 50943
-[REMOVE_VERTEX], 50thPercentileLatency(us), 2745
-[REMOVE_VERTEX], 95thPercentileLatency(us), 5631
-[REMOVE_VERTEX], 99thPercentileLatency(us), 9879
+[REMOVE_VERTEX], AverageLatency(us), 2619.301724137931
+[REMOVE_VERTEX], MinLatency(us), 1834
+[REMOVE_VERTEX], MaxLatency(us), 6275
+[REMOVE_VERTEX], 50thPercentileLatency(us), 2449
+[REMOVE_VERTEX], 95thPercentileLatency(us), 3711
+[REMOVE_VERTEX], 99thPercentileLatency(us), 5347
 [REMOVE_VERTEX], Return=OK, 464
-[GET_EDGE_WITH_PROPERTY], Operations, 476
-[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 809.390756302521
-[GET_EDGE_WITH_PROPERTY], MinLatency(us), 395
-[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 10207
-[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 676
-[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 1407
-[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 2905
-[GET_EDGE_WITH_PROPERTY], Return=OK, 476
-[ADD_EDGE], Operations, 476
-[ADD_EDGE], AverageLatency(us), 3650.1365546218485
-[ADD_EDGE], MinLatency(us), 2398
-[ADD_EDGE], MaxLatency(us), 38047
-[ADD_EDGE], 50thPercentileLatency(us), 3147
-[ADD_EDGE], 95thPercentileLatency(us), 5759
-[ADD_EDGE], 99thPercentileLatency(us), 11927
-[ADD_EDGE], Return=OK, 476
-[GET_VERTEX_WITH_PROPERTY], Operations, 476
-[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 2718.233193277311
-[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 1073
-[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 46079
-[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 2451
-[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 3721
-[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 5955
-[GET_VERTEX_WITH_PROPERTY], Return=OK, 476
+[GET_EDGE_WITH_PROPERTY], Operations, 2127
+[GET_EDGE_WITH_PROPERTY], AverageLatency(us), 642.3356840620593
+[GET_EDGE_WITH_PROPERTY], MinLatency(us), 296
+[GET_EDGE_WITH_PROPERTY], MaxLatency(us), 10503
+[GET_EDGE_WITH_PROPERTY], 50thPercentileLatency(us), 580
+[GET_EDGE_WITH_PROPERTY], 95thPercentileLatency(us), 986
+[GET_EDGE_WITH_PROPERTY], 99thPercentileLatency(us), 1574
+[GET_EDGE_WITH_PROPERTY], Return=OK, 2127
+[ADD_EDGE], Operations, 1879
+[ADD_EDGE], AverageLatency(us), 2852.8493879723255
+[ADD_EDGE], MinLatency(us), 2134
+[ADD_EDGE], MaxLatency(us), 9455
+[ADD_EDGE], 50thPercentileLatency(us), 2703
+[ADD_EDGE], 95thPercentileLatency(us), 3871
+[ADD_EDGE], 99thPercentileLatency(us), 5343
+[ADD_EDGE], Return=OK, 1879
+[GET_VERTEX_WITH_PROPERTY], Operations, 2127
+[GET_VERTEX_WITH_PROPERTY], AverageLatency(us), 2416.5961448048897
+[GET_VERTEX_WITH_PROPERTY], MinLatency(us), 489
+[GET_VERTEX_WITH_PROPERTY], MaxLatency(us), 23663
+[GET_VERTEX_WITH_PROPERTY], 50thPercentileLatency(us), 2301
+[GET_VERTEX_WITH_PROPERTY], 95thPercentileLatency(us), 2985
+[GET_VERTEX_WITH_PROPERTY], 99thPercentileLatency(us), 4807
+[GET_VERTEX_WITH_PROPERTY], Return=OK, 2127
 [ADD_VERTEX], Operations, 464
-[ADD_VERTEX], AverageLatency(us), 3083.2586206896553
-[ADD_VERTEX], MinLatency(us), 1860
-[ADD_VERTEX], MaxLatency(us), 23247
-[ADD_VERTEX], 50thPercentileLatency(us), 2653
-[ADD_VERTEX], 95thPercentileLatency(us), 5175
-[ADD_VERTEX], 99thPercentileLatency(us), 10407
+[ADD_VERTEX], AverageLatency(us), 2542.614224137931
+[ADD_VERTEX], MinLatency(us), 1743
+[ADD_VERTEX], MaxLatency(us), 7619
+[ADD_VERTEX], 50thPercentileLatency(us), 2367
+[ADD_VERTEX], 95thPercentileLatency(us), 3749
+[ADD_VERTEX], 99thPercentileLatency(us), 4967
 [ADD_VERTEX], Return=OK, 464
-[REMOVE_EDGE], Operations, 475
-[REMOVE_EDGE], AverageLatency(us), 6006.298947368421
-[REMOVE_EDGE], MinLatency(us), 4428
-[REMOVE_EDGE], MaxLatency(us), 45855
-[REMOVE_EDGE], 50thPercentileLatency(us), 5455
-[REMOVE_EDGE], 95thPercentileLatency(us), 8967
-[REMOVE_EDGE], 99thPercentileLatency(us), 13287
-[REMOVE_EDGE], Return=OK, 475
-[REMOVE_EDGE_PROPERTY], Operations, 475
-[REMOVE_EDGE_PROPERTY], AverageLatency(us), 4540.951578947368
-[REMOVE_EDGE_PROPERTY], MinLatency(us), 3128
-[REMOVE_EDGE_PROPERTY], MaxLatency(us), 15063
-[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 4115
-[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 7039
-[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 12159
-[REMOVE_EDGE_PROPERTY], Return=OK, 475
-[GET_EDGE_LABELS], Operations, 476
-[GET_EDGE_LABELS], AverageLatency(us), 1504.1911764705883
-[GET_EDGE_LABELS], MinLatency(us), 751
-[GET_EDGE_LABELS], MaxLatency(us), 13119
-[GET_EDGE_LABELS], 50thPercentileLatency(us), 1325
-[GET_EDGE_LABELS], 95thPercentileLatency(us), 2393
-[GET_EDGE_LABELS], 99thPercentileLatency(us), 4735
-[GET_EDGE_LABELS], Return=OK, 476
-[GET_VERTEX_COUNT], Operations, 476
-[GET_VERTEX_COUNT], AverageLatency(us), 966.5798319327731
-[GET_VERTEX_COUNT], MinLatency(us), 462
-[GET_VERTEX_COUNT], MaxLatency(us), 11663
-[GET_VERTEX_COUNT], 50thPercentileLatency(us), 799
-[GET_VERTEX_COUNT], 95thPercentileLatency(us), 1956
-[GET_VERTEX_COUNT], 99thPercentileLatency(us), 4491
-[GET_VERTEX_COUNT], Return=OK, 476
-[REMOVE_VERTEX_PROPERTY], Operations, 475
-[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 3378.4736842105262
-[REMOVE_VERTEX_PROPERTY], MinLatency(us), 2082
-[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 31263
-[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 2889
-[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 5387
-[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 13983
-[REMOVE_VERTEX_PROPERTY], Return=OK, 475
-[GET_EDGES_WITH_LABEL], Operations, 476
-[GET_EDGES_WITH_LABEL], AverageLatency(us), 2030.329831932773
-[GET_EDGES_WITH_LABEL], MinLatency(us), 1064
-[GET_EDGES_WITH_LABEL], MaxLatency(us), 13327
-[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 1837
-[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 3265
-[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 5923
-[GET_EDGES_WITH_LABEL], Return=OK, 476
+[REMOVE_EDGE], Operations, 1879
+[REMOVE_EDGE], AverageLatency(us), 4949.010111761575
+[REMOVE_EDGE], MinLatency(us), 4112
+[REMOVE_EDGE], MaxLatency(us), 31679
+[REMOVE_EDGE], 50thPercentileLatency(us), 4775
+[REMOVE_EDGE], 95thPercentileLatency(us), 5983
+[REMOVE_EDGE], 99thPercentileLatency(us), 8175
+[REMOVE_EDGE], Return=OK, 1879
+[REMOVE_EDGE_PROPERTY], Operations, 2126
+[REMOVE_EDGE_PROPERTY], AverageLatency(us), 3631.6194731890873
+[REMOVE_EDGE_PROPERTY], MinLatency(us), 2894
+[REMOVE_EDGE_PROPERTY], MaxLatency(us), 10551
+[REMOVE_EDGE_PROPERTY], 50thPercentileLatency(us), 3505
+[REMOVE_EDGE_PROPERTY], 95thPercentileLatency(us), 4591
+[REMOVE_EDGE_PROPERTY], 99thPercentileLatency(us), 5779
+[REMOVE_EDGE_PROPERTY], Return=OK, 2126
+[GET_EDGE_LABELS], Operations, 2127
+[GET_EDGE_LABELS], AverageLatency(us), 1260.2708039492243
+[GET_EDGE_LABELS], MinLatency(us), 483
+[GET_EDGE_LABELS], MaxLatency(us), 14415
+[GET_EDGE_LABELS], 50thPercentileLatency(us), 1191
+[GET_EDGE_LABELS], 95thPercentileLatency(us), 1651
+[GET_EDGE_LABELS], 99thPercentileLatency(us), 2481
+[GET_EDGE_LABELS], Return=OK, 2127
+[GET_VERTEX_COUNT], Operations, 2127
+[GET_VERTEX_COUNT], AverageLatency(us), 717.9238363892807
+[GET_VERTEX_COUNT], MinLatency(us), 309
+[GET_VERTEX_COUNT], MaxLatency(us), 24559
+[GET_VERTEX_COUNT], 50thPercentileLatency(us), 636
+[GET_VERTEX_COUNT], 95thPercentileLatency(us), 1184
+[GET_VERTEX_COUNT], 99thPercentileLatency(us), 1948
+[GET_VERTEX_COUNT], Return=OK, 2127
+[REMOVE_VERTEX_PROPERTY], Operations, 2126
+[REMOVE_VERTEX_PROPERTY], AverageLatency(us), 2495.6533396048917
+[REMOVE_VERTEX_PROPERTY], MinLatency(us), 1737
+[REMOVE_VERTEX_PROPERTY], MaxLatency(us), 11479
+[REMOVE_VERTEX_PROPERTY], 50thPercentileLatency(us), 2357
+[REMOVE_VERTEX_PROPERTY], 95thPercentileLatency(us), 3489
+[REMOVE_VERTEX_PROPERTY], 99thPercentileLatency(us), 4819
+[REMOVE_VERTEX_PROPERTY], Return=OK, 2126
+[GET_EDGES_WITH_LABEL], Operations, 2126
+[GET_EDGES_WITH_LABEL], AverageLatency(us), 1632.5785512699906
+[GET_EDGES_WITH_LABEL], MinLatency(us), 497
+[GET_EDGES_WITH_LABEL], MaxLatency(us), 8447
+[GET_EDGES_WITH_LABEL], 50thPercentileLatency(us), 1577
+[GET_EDGES_WITH_LABEL], 95thPercentileLatency(us), 2071
+[GET_EDGES_WITH_LABEL], 99thPercentileLatency(us), 3109
+[GET_EDGES_WITH_LABEL], Return=OK, 2126
 [CLEANUP], Operations, 1
 [CLEANUP], AverageLatency(us), 1.0
 [CLEANUP], MinLatency(us), 1
@@ -137,27 +141,27 @@ Stop requested for workload. Now Joining!
 [CLEANUP], 50thPercentileLatency(us), 1
 [CLEANUP], 95thPercentileLatency(us), 1
 [CLEANUP], 99thPercentileLatency(us), 1
-[SET_EDGE_PROPERTY], Operations, 476
-[SET_EDGE_PROPERTY], AverageLatency(us), 4638.871848739495
-[SET_EDGE_PROPERTY], MinLatency(us), 3336
-[SET_EDGE_PROPERTY], MaxLatency(us), 29503
-[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 4203
-[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 6591
-[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 11967
-[SET_EDGE_PROPERTY], Return=OK, 476
-[SET_VERTEX_PROPERTY], Operations, 476
-[SET_VERTEX_PROPERTY], AverageLatency(us), 3671.3865546218485
-[SET_VERTEX_PROPERTY], MinLatency(us), 2256
-[SET_VERTEX_PROPERTY], MaxLatency(us), 39615
-[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 3273
-[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 5775
-[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 8027
-[SET_VERTEX_PROPERTY], Return=OK, 476
-[GET_EDGE_COUNT], Operations, 476
-[GET_EDGE_COUNT], AverageLatency(us), 848.5567226890756
-[GET_EDGE_COUNT], MinLatency(us), 409
-[GET_EDGE_COUNT], MaxLatency(us), 6127
-[GET_EDGE_COUNT], 50thPercentileLatency(us), 700
-[GET_EDGE_COUNT], 95thPercentileLatency(us), 1753
-[GET_EDGE_COUNT], 99thPercentileLatency(us), 4049
-[GET_EDGE_COUNT], Return=OK, 476
+[SET_EDGE_PROPERTY], Operations, 2126
+[SET_EDGE_PROPERTY], AverageLatency(us), 3718.6632173095013
+[SET_EDGE_PROPERTY], MinLatency(us), 2896
+[SET_EDGE_PROPERTY], MaxLatency(us), 15031
+[SET_EDGE_PROPERTY], 50thPercentileLatency(us), 3595
+[SET_EDGE_PROPERTY], 95thPercentileLatency(us), 4575
+[SET_EDGE_PROPERTY], 99thPercentileLatency(us), 5959
+[SET_EDGE_PROPERTY], Return=OK, 2126
+[SET_VERTEX_PROPERTY], Operations, 2126
+[SET_VERTEX_PROPERTY], AverageLatency(us), 2774.0305738476013
+[SET_VERTEX_PROPERTY], MinLatency(us), 1916
+[SET_VERTEX_PROPERTY], MaxLatency(us), 51135
+[SET_VERTEX_PROPERTY], 50thPercentileLatency(us), 2587
+[SET_VERTEX_PROPERTY], 95thPercentileLatency(us), 3923
+[SET_VERTEX_PROPERTY], 99thPercentileLatency(us), 4975
+[SET_VERTEX_PROPERTY], Return=OK, 2126
+[GET_EDGE_COUNT], Operations, 2127
+[GET_EDGE_COUNT], AverageLatency(us), 604.3121767748002
+[GET_EDGE_COUNT], MinLatency(us), 324
+[GET_EDGE_COUNT], MaxLatency(us), 3505
+[GET_EDGE_COUNT], 50thPercentileLatency(us), 551
+[GET_EDGE_COUNT], 95thPercentileLatency(us), 941
+[GET_EDGE_COUNT], 99thPercentileLatency(us), 1504
+[GET_EDGE_COUNT], Return=OK, 2127

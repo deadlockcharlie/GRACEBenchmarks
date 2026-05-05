@@ -8,7 +8,6 @@ This repository contains the complete benchmarking suite used to evaluate GRACE'
 
 ## Deployment Options
 
-- **🚀 NEW: AWS Geo-Distributed Deployment** - See [aws-deployment/](aws-deployment/) for running real geo-distributed experiments across multiple AWS regions
 - **Local Single-Machine Deployment** - Continue reading below for traditional Docker-based local deployment
 
 ## Table of Contents
@@ -268,8 +267,7 @@ Measures overhead of integrity constraint enforcement:
       "database": "memgraph",
       "port": 7688
     }
-  ],
-  "latency_matrix": [[0, 48], [48, 0]]
+  ]
 }
 ```
 
@@ -363,40 +361,7 @@ For each benchmark run, the following metrics are captured:
 - **Resource usage**: CPU, memory, network (when available)
 - **Replication lag**: Time to propagate updates across replicas
 
-## AWS Deployment
-
-### Real Geo-Distributed Experiments
-
-For running GRACE benchmarks across real geo-distributed infrastructure on AWS:
-
-```bash
-cd aws-deployment
-./quickstart.sh
-```
-
-This will:
-- Deploy EC2 instances across 3 AWS regions (US-East, US-West, EU-Central)
-- Use real network latency (no simulation)
-- Run benchmarks with actual geo-distribution
-- Collect results from all regions
-
-**Features:**
-- ✅ Real inter-region network latency
-- ✅ Automated Terraform infrastructure deployment
-- ✅ SSH-based orchestration across regions
-- ✅ Results collection and analysis
-- ✅ Cost optimization (spot instances supported)
-
-**Quick Links:**
-- [AWS Deployment README](aws-deployment/README.md)
-- [Migration Guide](aws-deployment/MIGRATION_GUIDE.md)
-- [Cost estimation and management](aws-deployment/README.md#cost-estimation)
-
-**Cost:** ~$1/hour for 3 regions with c5.2xlarge (can be reduced to ~$0.30/hour with spot instances)
-
-**⚠️ Important:** Remember to run `./scripts/teardown.sh` when done to avoid AWS charges!
-
-## License
+#### License
 
 This project is licensed under the MIT License.
 

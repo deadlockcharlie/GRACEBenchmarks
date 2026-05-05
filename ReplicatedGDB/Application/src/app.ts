@@ -35,6 +35,7 @@ import { WebsocketProvider } from "y-websocket";
 import WebSocketPolyfill from "ws";
 
 let ydoc = new Y.Doc();
+ydoc.gc = true;
 
 const wsProvider = new WebsocketProvider(
   process.env.WS_URI,
@@ -435,7 +436,8 @@ async function onListening() {
         });
         await once(edgePipeline, "end");
         preloadDone = true;
-        let size = Y.encodeStateAsUpdate(ydoc).byteLength;
+        let size = Y.encodeStateAsUpdateV2(ydoc).length;
+        // logger.error(JSON.stringify(Y.encodeStateAsUpdate(ydoc)))
         logger.error(
           `✅ All edges inserted. Preload complete. Yjs document size is ${size} bytes`
         );      
