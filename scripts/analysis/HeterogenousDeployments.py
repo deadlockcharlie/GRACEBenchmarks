@@ -316,23 +316,23 @@ def create_heterogeneous_plot(data: pd.DataFrame, baseline: Dict[str, float], re
         yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s']
         # ax.axhline(1.0, color="black", linestyle="--", linewidth=1)
         
-        ax.set_title(title)
+        ax.set_title(title, fontsize=10)
         ax.set_xticks(x)
         ax.set_yscale("log")
         ax.set_yticks(yticks)
-        ax.set_yticklabels(yticklabels)
-        ax.set_xticklabels(deployments)
+        ax.set_yticklabels(yticklabels, fontsize=8)
+        ax.set_xticklabels(deployments, fontsize=8)
     
     # Reads subplot
     plot_subplot(axes[0], reads, "Reads")
     
     # Create a single centered legend at the top
-    fig.legend(handles=list(legend_elements.values()), loc='upper center', ncol=4, bbox_to_anchor=(0.5, 1.1))
+    fig.legend(handles=list(legend_elements.values()), loc='upper center', ncol=2, bbox_to_anchor=(0.6, 1.2), fontsize=10)
 
     # Writes subplot
     plot_subplot(axes[1], writes, "Writes")
-    fig.supylabel("Latency")
-    fig.supxlabel("Heterogeneous database count")
+    fig.supylabel(t="Latency", x=0.05, y=0.6, fontsize=10)
+    fig.supxlabel(t="Heterogeneous database count",x=0.55, y=0.1, fontsize=10)
     
     plt.tight_layout()
     fig.savefig(output_path, dpi=500, bbox_inches='tight')

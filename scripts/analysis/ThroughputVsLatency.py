@@ -156,7 +156,7 @@ def create_plot(data: pd.DataFrame, output_path: str) -> None:
         print("No data to plot")
         return
 
-    fig, ax = plt.subplots(figsize=(4, 2.5))
+    fig, ax = plt.subplots(figsize=(4.5, 2.7))
 
     for db in [db for db in DB_STYLES.keys()]:
         # 🔑 sort by ThreadCount to ensure line goes 1 → 2 → 3 … max
@@ -190,24 +190,24 @@ def create_plot(data: pd.DataFrame, output_path: str) -> None:
         #         va="top"
         #     )
 
-    ax.set_xlabel("Throughput (ops/sec) logscale")
-    ax.set_ylabel("Latency")
+    ax.set_xlabel("Throughput (ops/sec) logscale", fontsize=8)
+    ax.set_ylabel("Latency", fontsize=8)
     
     ax.set_yscale("log")  # log scale on latency
     ax.set_xscale("log")  # linear scale on throughput
     # Set yticks labels to be readable
-    yticks = [100, 1000, 10000, 100000, 1000000, 10000000]
-    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s']
+    yticks = [100, 1000, 10000, 100000, 1000000, 10000000, 100000000]
+    yticklabels = ['0ms', '1ms', '10ms', '100ms', '1s', '10s', '100s']
     xticks = [1, 10, 100, 1000, 10000]
     xticklabels = ['1', '10', '100', '1k', '10k']
     ax.set_xticks(xticks)
-    ax.set_xticklabels(xticklabels) 
+    ax.set_xticklabels(xticklabels, fontsize=8) 
     ax.set_yticks(yticks)
-    ax.set_yticklabels(yticklabels)
+    ax.set_yticklabels(yticklabels, fontsize=8)
     ax.grid(axis="both", linestyle="--", alpha=0.7)
-    ax.legend(ncol=3 , fontsize=7, loc="upper center", frameon=True, bbox_to_anchor=(0.5, 1.35))
+    ax.legend(ncol=3 , fontsize=8, loc="upper center", frameon=True, bbox_to_anchor=(0.48, 1.5))
     fig.tight_layout()
-    fig.savefig(output_path, dpi=300, bbox_inches="tight")
+    fig.savefig(output_path, dpi=500, bbox_inches="tight")
     plt.close(fig)
 
 

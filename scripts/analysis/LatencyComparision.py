@@ -254,7 +254,7 @@ def plot_operations_comparison(replica_count: int, root_dir: str, figure_path: s
         all_dbs.update(pivot_df.columns)
 
     # Add common y-label
-    fig.text(0.02, 0.5, "Latency (µs)", va="center", rotation="vertical", fontsize=12)
+    fig.text(0.02, 0.5, "Latency", va="center", rotation="vertical", fontsize=12)
 
     # Create single legend
     if all_dbs:

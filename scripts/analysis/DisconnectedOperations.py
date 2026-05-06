@@ -173,12 +173,13 @@ def plot_results(duration: int, db_results: Dict[str, pd.DataFrame], figure_path
     yticksLabels=['0ms', '1ms', '10ms', '100ms', '1s', '10s', '100s']
     xticks = list(range(0, duration + 1, 30))
     ax.set_xticks(xticks)
-    ax.set_ylabel("Avg Latency")
+    ax.set_xticklabels(xticks, fontsize=8)
+    ax.set_ylabel("Latency", fontsize=8)
     ax.set_yscale("log")
     ax.set_yticks(yticks)
-    ax.set_yticklabels(yticksLabels)
+    ax.set_yticklabels(yticksLabels, fontsize=8)
 
-    ax.set_xlabel("Time (sec)")
+    ax.set_xlabel("Time (sec)", fontsize=8)
     ax.grid(True, linestyle="--", linewidth=0.5)
     ax.set_xlim(0, duration)
     ax.set_ylim(100, None)
