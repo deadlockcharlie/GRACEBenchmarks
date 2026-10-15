@@ -36,7 +36,7 @@ def open_json_array_writer(path):
 def write_json_obj_to_array(f, obj, first):
     if not first:
         f.write(",\n")
-    f.write(json.dumps(obj, ensure_ascii=False))
+    f.write(json.dumps(obj, ensure_ascii=False, default=float))
     return False
 
 def close_json_array_writer(f):
@@ -119,7 +119,7 @@ def partition_edges(input_file, tmpdir, num_shards, shard_prefix="edge_shard"):
                     b = str(obj.get("_inV",""))
                     h = blake2b((a + ":" + b).encode("utf-8"), digest_size=8).digest()
                     idx = int.from_bytes(h, "big") % num_shards
-                    shard_files[idx].write(json.dumps(obj, ensure_ascii=False) + "\n")
+                    shard_files[idx].write(json.dumps(obj, ensure_ascii=False, default=float) + "\n")
 
     for sf in shard_files:
         sf.close()
@@ -187,7 +187,7 @@ def merge_array_files(shard_json_paths, dst_path):
                 for obj in arr:
                     if not first:
                         out.write(",\n")
-                    out.write(json.dumps(obj, ensure_ascii=False))
+                    out.write(json.dumps(obj, ensure_ascii=False, default=float))
                     first = False
         out.write("\n]\n")
 

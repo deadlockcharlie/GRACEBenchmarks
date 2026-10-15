@@ -2,7 +2,7 @@
 echo "Benchmarking GRACE with multiple replica configurations"
 
 # Define replica configurations to test
-
+echo "faults at the beginning ${INJECT_FAULTS}"
 for num_replicas in "${REPLICAS[@]}"; do
     echo "Benchmarking GRACE with $num_replicas Replica(s)"
     
@@ -76,77 +76,80 @@ EOL
     echo '}' >> $DIST_CONF
 
     # Start the replicas
+    #./resource_monitor.sh start 2 $RESULTS_DIRECTORY/resource_logs/${num_replicas}replica
     python3 Deployment.py up $DIST_CONF -v
     sleep 5
 
-    # cd $ROOT_DIRECTORY
+    cd $ROOT_DIRECTORY
 
     # # Wait for server to be ready
-    # wait_interval=5
-
+    wait_interval=5
+ . ./scripts/data-preparation/waitForPreload.sh
     
-    # until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
-    #     echo "Waiting for server preload to finish..."
-    #     sleep $wait_interval
-    # done
 
-    # # # Setup latencies for multi-replica configurations
-    # # if [ $num_replicas -gt 1 ]; then
-    # #     latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
-    # #     for ((i=2; i<=num_replicas; i++)); do
-    # #         latency_value=$(get_latency $((0)) $((i-1)))
-    # #         echo " wsserver(${region_codes[0]}) -> Replica${i-1} (${region_codes[$((i-1))]}): ${latency_value}ms"
-    # #         latency_cmd="$latency_cmd Grace$i ${latency_value}"
-    # #     done
-    # #     latency_cmd="$latency_cmd\""
-    # #     eval $latency_cmd
-    # # fi
+
+     # Setup latencies for multi-replica configurations
+     if [ $num_replicas -gt 1 ]; then
+         latency_cmd="docker exec -it wsserver sh -c \"/usr/local/bin/setup-latency.sh wsserver"
+         for ((i=2; i<=num_replicas; i++)); do
+             latency_value=$(get_latency $((0)) $((i-1)))
+             echo " wsserver(${region_codes[0]}) -> Replica${i-1} (${region_codes[$((i-1))]}): ${latency_value}ms"
+             latency_cmd="$latency_cmd Grace$i ${latency_value}"
+         done
+         latency_cmd="$latency_cmd\""
+         eval $latency_cmd
+     fi
 
 
 
-    # STATUS_STRING=''
-    # if [ $INJECT_FAULTS=true ]; then
-    #     STATUS_STRING='-s'
-    # fi
-    # # Run the benchmark with grace workload
-    # echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
-    # cd $YCSB_DIRECTORY
-    # # Build the ycsb command
-    # ycsb_cmd="bin/ycsb.sh run grace $STATUS_STRING -P workloads/workload_grace \
-    #     -p HOSTURI=\"http://localhost:3000\" \
-    #     -p DBTYPE=\"memgraph\" \
-    #     -p DBURI=\"bolt://localhost:7687\" \
-    #     -p maxexecutiontime=$DURATION \
-    #     -p threadcount=$YCSB_THREADS \
-    #     -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
-    #     -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
-    #     -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
-    #     -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
-    #     &> $RESULTS_DIRECTORY/GRACE/$num_replicas.txt"
-    
-    # eval $ycsb_cmd & YCSB_PID=$! 
-    # sleep $((DURATION/2))
-    # if [ "$INJECT_FAULTS" = true ]; then
-    #     echo "Fault injection enabled. Simulating network partition."
-    #     #simulate a network partition by adding a large latency between R1 and one of the replicas. 
-    #     docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 100000"
-
-    #     # Wait for some time to let the system stabilize
-    #     sleep 60
-
-    #     # Restore normal latency
-    #     docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50"
-    #     echo "Network partition resolved."
-    # fi
-    # wait $YCSB_PID
+     STATUS_STRING=''
+     echo "inject faults before the command $INJECT_FAULTS"
+     if [ "$INJECT_FAULTS" = true ]; then
+        echo "called"
+         STATUS_STRING='-s'
+     fi
+     # Run the benchmark with grace workload
+     
+     echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
+     cd $YCSB_DIRECTORY
+     # Build the ycsb command
+     ycsb_cmd="bin/ycsb.sh run grace $STATUS_STRING -P workloads/workload_grace \
+         -p HOSTURI=\"http://localhost:3000\" \
+         -p DBTYPE=\"memgraph\" \
+         -p DBURI=\"bolt://localhost:7687\" \
+         -p maxexecutiontime=$DURATION \
+         -p threadcount=$YCSB_THREADS \
+         -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
+         -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
+         -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
+         -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
+         &> $RESULTS_DIRECTORY/GRACE/0.1with${num_replicas}replica.txt"
+         #add replicaid/number & total num of replicas, each replica will skip 3 entires on read , do change in core workload ycsb, might be running out of data
+    #&> $RESULTS_DIRECTORY/GRACE/$num_replicas.txt"
+    #echo $ycsb_cmd
+    eval $ycsb_cmd & YCSB_PID=$! 
+    sleep $((DURATION/2))
+     if [ "$INJECT_FAULTS" = true ]; then
+         echo "Fault injection enabled. Simulating network partition."
+         #simulate a network partition by adding a large latency between R1 and one of the replicas. 
+         docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 100000"
+         # Wait for some time to let the system stabilize
+         sleep 60
+         # Restore normal latency
+         docker exec -it wsserver sh -c "/usr/local/bin/setup-latency.sh wsserver Grace2 50"
+         echo "Network partition resolved."
+     fi
+     wait $YCSB_PID
     # # Switch to GRACE directory for cleanup
-    # cd $GRACE_DIRECTORY
     
-    # # Tear down the deployment
-    # python3 Deployment.py down $DIST_CONF
+    cd $GRACE_DIRECTORY
     
-    # # Remove the distribution configuration file
-    # rm $DIST_CONF
+    ./resource_monitor.sh stop $RESULTS_DIRECTORY/resource_logs/${num_replicas}replica
+    # Tear down the deployment
+    python3 Deployment.py down $DIST_CONF
+    ./resource_monitor.sh analyze $RESULTS_DIRECTORY/resource_logs/${num_replicas}replica  
+    # Remove the distribution configuration file
+    rm $DIST_CONF
     
     echo "Completed benchmarking with $num_replicas replica(s)"
     echo "----------------------------------------"

@@ -49,7 +49,7 @@ def run_command(cmd):
     if rc == 0:
       print("✅ Done.")  
     else:
-      print(f"❌ Command failed with code {rc}")
+      print(f"❌ {cmd} Command failed with code {rc}")
     return rc
     
 
@@ -226,7 +226,7 @@ def generate_compose_file(dc_idx, replica_idx, dc_conf, config):
         {db_name}:
           image: memgraph/memgraph:latest
           container_name: {db_name}
-          command: ["--log-level=TRACE"]
+          command: ["--log-level=ERROR"]  
           volumes:
             - {PRELOAD_DATA}:/var/lib/memgraph/import
           healthcheck:
@@ -542,9 +542,10 @@ def down_all():
 
         run_command(["docker","compose", "-f", './Dockerfiles/'+file , "down"])
         print(f"Removing network {network}...")
-        run_command(["docker", "network", "rm", network])
+        #run_command(["docker", "network", "rm", network])
     if (config["provider"]):
         run_command(["docker","compose", "-f", './Dockerfiles/docker-compose.provider.yml' , "down"])
+    print(f"Removing network {network}...")
     run_command(["docker", "network", "rm", "Shared_net"])
         
 def force_clean():

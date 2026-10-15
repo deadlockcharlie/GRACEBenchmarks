@@ -3,4 +3,9 @@ _inV
 _label
 _outV
 _type
+classYear
+creationDate
 item
+joinDate
+original_type
+workFrom
