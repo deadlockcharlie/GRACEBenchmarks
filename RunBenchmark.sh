@@ -14,15 +14,15 @@ PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
 export PRELOAD_DATA="$ROOT_DIRECTORY/PreloadData"
 
 
-JANUSGRAPH_DIRECTORY="$ROOT_DIRECTORY/JanusgraphServer"
-cd $JANUSGRAPH_DIRECTORY
-if [ ! -f "./janusgraph-full-1.1.0.zip" ]; then    
-    wget -P . https://github.com/JanusGraph/janusgraph/releases/download/v1.1.0/janusgraph-full-1.1.0.zip
-fi
-
-if [ ! -d "janusgraph-full-1.1.0" ]; then
-    unzip janusgraph-full-1.1.0.zip
-fi
+#JANUSGRAPH_DIRECTORY="$ROOT_DIRECTORY/JanusgraphServer"
+#cd $JANUSGRAPH_DIRECTORY
+#if [ ! -f "./janusgraph-full-1.1.0.zip" ]; then    
+#    wget -P . https://github.com/JanusGraph/janusgraph/releases/download/v1.1.0/janusgraph-full-1.1.0.zip
+#fi
+#
+#if [ ! -d "janusgraph-full-1.1.0" ]; then
+#    unzip janusgraph-full-1.1.0.zip
+#fi
 
 
 DIST_CONF=$ROOT_DIRECTORY"/distribution_config.json"
@@ -114,20 +114,19 @@ DATABASES=(GRACE MemGraph Neo4j ArangoDB MongoDB JanusGraph)
 
 
 # yeast mico ldbc frbs frbm frbo
-datasets=(yeast mico ldbc frbs frbm frbo)
+datasets=(ldbc)
 
 
 
 # Eventually this set of commands will be in a loop and potentially parallel?
 
 DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
-
-
+mkdir $DATA_DIRECTORY
 
 
 
 ## Replication and Latency Benchmarks
- REPLICAS=(3)
+ REPLICAS=(1)
  YCSB_THREADS=1
  for dataset in "${datasets[@]}"; do
     
@@ -167,11 +166,12 @@ DATA_DIRECTORY="$ROOT_DIRECTORY/GraphDBData"
 
  done
 
- cd $ROOT_DIRECTORY
 
- python3 LatencyComparision.py 1 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/SingleReplicaLatency.png
+cd $ROOT_DIRECTORY
 
- python3 LatencyComparision.py 3 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/MultiReplicaLatency.png
+# python3 LatencyComparision.py 1 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/SingleReplicaLatency.png
+
+# python3 LatencyComparision.py 3 ./Results/ReplicaCountAndLatency/ ./BenchmarkPlots/MultiReplicaLatency.png
 
 # # 3 replica throughput 
 # REPLICAS=(3)

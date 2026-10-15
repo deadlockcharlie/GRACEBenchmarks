@@ -25,15 +25,15 @@ EOL
     if [ $num_replicas -eq 1 ]; then
         cat >> $DIST_CONF <<EOL
   "preload_data": true,
-  "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_vertices.json",
-  "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/yeast_load_edges.json",
+  "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/yeast_load_vertices.json",
+  "preload_edges": "$ROOT_DIRECTORY/GraphDBData/yeast_load_edges.json",
   "dataset_name": "${DATASET_NAME}",
 EOL
     elif [ $num_replicas -eq 2 ]; then
         cat >> $DIST_CONF <<EOL
   "preload_data": true,
-  "preload_vertices": "/home/pandey/work/GRACEBenchmarks/GraphDBData/${DATASET_NAME}_load_vertices.json",
-  "preload_edges": "/home/pandey/work/GRACEBenchmarks/GraphDBData/${DATASET_NAME}_load_edges.json",
+  "preload_vertices": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_vertices.json",
+  "preload_edges": "$ROOT_DIRECTORY/GraphDBData/${DATASET_NAME}_load_edges.json",
 EOL
     else
         cat >> $DIST_CONF <<EOL
@@ -75,7 +75,7 @@ EOL
     echo '}' >> $DIST_CONF
 
     # Start the replicas
-    # python3 Deployment.py up $DIST_CONF
+    python3 Deployment.py up $DIST_CONF
     sleep 5
 
     cd $ROOT_DIRECTORY
@@ -84,10 +84,10 @@ EOL
     wait_interval=5
 
     
-    # until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
-    #     echo "Waiting for server preload to finish..."
-    #     sleep $wait_interval
-    # done
+    until curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ready | grep -q 200; do
+        echo "Waiting for server preload to finish..."
+        sleep $wait_interval
+    done
 
     # Setup latencies for multi-replica configurations
     if [ $num_replicas -gt 1 ]; then
@@ -103,29 +103,29 @@ EOL
 
 
 
-    # # Run the benchmark with grace workload
-    # echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
-    # cd $YCSB_DIRECTORY
-    # # Build the ycsb command
-    # ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
-    #     -p HOSTURI=\"http://localhost:3000\" \
-    #     -p DBTYPE=\"memgraph\" \
-    #     -p DBURI=\"bolt://localhost:7687\" \
-    #     -p maxexecutiontime=$DURATION \
-    #     -p threadcount=$YCSB_THREADS \
-    #     -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
-    #     -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
-    #     -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
-    #     -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
-    #     > $RESULTS_DIRECTORY/GRACE/$num_replicas.txt"
-    
-    # eval $ycsb_cmd
+     # Run the benchmark with grace workload
+     echo "Running YCSB benchmark with Grace workload for $num_replicas replicas"
+     cd $YCSB_DIRECTORY
+     # Build the ycsb command
+     ycsb_cmd="bin/ycsb.sh run grace -P workloads/workload_grace \
+         -p HOSTURI=\"http://localhost:3000\" \
+         -p DBTYPE=\"memgraph\" \
+         -p DBURI=\"bolt://localhost:7687\" \
+         -p maxexecutiontime=$DURATION \
+         -p threadcount=$YCSB_THREADS \
+         -p loadVertexFile=$DATA_DIRECTORY/${DATASET_NAME}_load_vertices.json \
+         -p loadEdgeFile=$DATA_DIRECTORY/${DATASET_NAME}_load_edges.json \
+         -p vertexAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_vertices.json \
+         -p edgeAddFile=$DATA_DIRECTORY/${DATASET_NAME}_update_edges.json \
+         > $RESULTS_DIRECTORY/GRACE/$num_replicas.txt"
 
-    # # Switch to GRACE directory for cleanup
-    # cd $GRACE_DIRECTORY
-    
-    # # Tear down the deployment
-    # python3 Deployment.py down $DIST_CONF
+     eval $ycsb_cmd
+
+     # Switch to GRACE directory for cleanup
+     cd $GRACE_DIRECTORY
+
+     # Tear down the deployment
+     python3 Deployment.py down $DIST_CONF
     
     # Remove the distribution configuration file
     rm $DIST_CONF
